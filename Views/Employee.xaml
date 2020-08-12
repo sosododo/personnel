@@ -1,0 +1,66 @@
+﻿<Window x:Class="personnel.Views.Employee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:personnel.Views"
+        mc:Ignorable="d"
+        Title="ذاتية العقود والاداريين"   Width="700" ResizeMode="NoResize" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="1.8*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+
+        <GroupBox  Grid.Column="2"   Header="بحث عن موظف حسب:" FlowDirection="RightToLeft"  Grid.RowSpan="2"  >
+            <Grid Margin="0,0,0,53">
+                <TextBox Margin="10,149,10,136" TextWrapping="Wrap" Height="25" />
+                <RadioButton Content="بحث حسب الاسم" GroupName="search" HorizontalAlignment="Left" Margin="10,38,-2,233" Width="131" />
+                <RadioButton Content="بحث حسب مكان العمل" GroupName="search" Margin="10,86,10,195"/>
+                <Button Content="بحـــث" Margin="10,200,10,81"/>
+
+
+            </Grid>
+        </GroupBox>
+        <Button Content="ادخال بطاقة جديدة" FontWeight="Bold" FontSize="12" Margin="10,5,10,5" Grid.Row="2" Grid.Column="2" RenderTransformOrigin="0.458,2.867"/>
+
+        <GroupBox  Grid.Row="0"  Header="بيانات الموظف :" FlowDirection="RightToLeft"  Grid.ColumnSpan="2" Grid.RowSpan="3"  >
+            <Grid Margin="0,0,0,6">
+                <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                <DataGrid   Margin="10,63,10,0" Height="250" VerticalAlignment="Top"  MinColumnWidth="100" HorizontalGridLinesBrush="#FFC48DD8" VerticalGridLinesBrush="#FFC48DD8" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="Black"  >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="الرقم الذاتي"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="رقم الاضبارة"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="فئة الاضبارة"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="الفئة"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="مكان العمل"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="المسمى الوظيفي"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="تاريخ المباشرة"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="تاريخ الميلاد"/>
+                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="الحالة"/>
+
+
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Content="عرض البطاقة"  Width="75" Height="40"  VerticalAlignment="Bottom" Margin="453,0,3,0"/>
+                <Button Content="تعديل"  Margin="373,0,83,0"   VerticalAlignment="Bottom" Width="75" Height="40" RenderTransformOrigin="-0.333,0.45" Click="Button_Click"/>
+
+            </Grid>
+
+        </GroupBox>
+
+
+
+
+
+    </Grid>
+</Window>

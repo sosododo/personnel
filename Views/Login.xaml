@@ -1,0 +1,34 @@
+﻿<Window x:Class="personnel.Views.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:personnel.Views"
+        mc:Ignorable="d"
+         Title="واجهة الدخول" Height="450" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="1*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+
+        </Grid.RowDefinitions>
+
+
+        <!--<Border BorderBrush="#FF8F8888" BorderThickness="2" HorizontalAlignment="Left" Height="38" Margin="67,22,0,0" VerticalAlignment="Top" Width="381" Background="#FFF0EDED"/>-->
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="تسجيل الدخول"  FontFamily="Arial" Height="38" Width="167" FontSize="35" FontWeight="Bold" Foreground="#FF787878" TextAlignment="Right" />
+        <TextBlock Grid.Column="1" Grid.Row="1"  TextWrapping="Wrap" Text="اسم المستخدم"   FontSize="20" Foreground="#FF787878" FrameworkElement.FlowDirection="RightToLeft" Margin="329,43,27,148"/>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="كلمة المرور"  FontSize="20" Foreground="#FF787878" Margin="339,114,27,71" FrameworkElement.FlowDirection="RightToLeft" />
+        <TextBox  Grid.Column="1" Grid.Row="1"  TextWrapping="Wrap" VerticalAlignment="Top" FrameworkElement.FlowDirection="RightToLeft" Margin="10,45,163,0" Height="36" />
+        <TextBox  Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,113,163,0"  FrameworkElement.FlowDirection="RightToLeft" Height="39"/>
+        <Button  Grid.Column="1" Grid.Row="2"  VerticalAlignment="Top" Height="62" FontSize="15" Foreground="#FF807A7A"  Margin="10,7,320,0" Content="دخول" Click="Button_Click" />
+
+    </Grid>
+</Window>

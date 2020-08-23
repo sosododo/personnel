@@ -24,7 +24,6 @@ namespace personnel.Views
         {
             InitializeComponent();
 
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -76,10 +75,7 @@ namespace personnel.Views
         {
 
             if (e.Key == Key.Enter)
-            { Button_Click(sender, e); }
-
-         
-                
+            { Button_Click(sender, e); }         
         }
 
         private void username_KeyDown(object sender, KeyEventArgs e)

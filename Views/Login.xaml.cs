@@ -1,5 +1,7 @@
-﻿using System;
+﻿using personnel.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,18 +19,77 @@ namespace personnel.Views
     /// </summary>
     public partial class Login : Window
     {
+        public static int user_id;
         public Login()
         {
             InitializeComponent();
+
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            PersonelDBContext db = new PersonelDBContext();
+            User login_user = new User();
             MainWindow win1 = new MainWindow();
-            win1.Show();
-            this.Close();
-           
+
+            string rule = "";
+            string user = username.Text;
+            string pass = password.Text;
+            int num = db.Users.Where(x => x.UserName == user && x.Password == pass).Count();
+
+            if (num == 1)
+            {
+                login_user = db.Users.Where(x => x.UserName == user && x.Password == pass).FirstOrDefault();
+                App.Current.Properties["user_id"] = login_user.UserId;
+                rule = login_user.Rule;
+                win1.currentu.Text = login_user.UserName+"أهلا بك" ;
+                switch (rule)
+                {
+                    case "duser":
+                        win1.b1.IsEnabled = false;
+                        win1.Show();
+                        this.Close();
+                        break;
+                    case "suser":
+                        win1.b2.IsEnabled = false;
+                        win1.Show();
+                        this.Close();
+                        break;
+                    case "admin":
+                        win1.Show();
+                        this.Close();
+                        break;
+                }
+              
+            }
+            else
+            {
+                MessageBox.Show("اسم المستخدم أو كلمة المرور غير صحيحة ");
+                username.Text = "";
+                password.Text = "";
+                
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.Key == Key.Enter)
+            { Button_Click(sender, e); }
+
+         
+                
+        }
+
+        private void username_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                password.Focus();
+                e.Handled = true;
+            }
+
         }
     }
 }

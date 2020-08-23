@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:personnel.Views"
         mc:Ignorable="d"
-         Title="واجهة الدخول" Height="450" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+         Title="واجهة الدخول" Height="450" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -26,9 +26,9 @@
         <TextBlock Grid.Column="1" Grid.Row="0" Text="تسجيل الدخول"  FontFamily="Arial" Height="38" Width="167" FontSize="35" FontWeight="Bold" Foreground="#FF787878" TextAlignment="Right" />
         <TextBlock Grid.Column="1" Grid.Row="1"  TextWrapping="Wrap" Text="اسم المستخدم"   FontSize="20" Foreground="#FF787878" FrameworkElement.FlowDirection="RightToLeft" Margin="329,43,27,148"/>
         <TextBlock Grid.Column="1" Grid.Row="1" Text="كلمة المرور"  FontSize="20" Foreground="#FF787878" Margin="339,114,27,71" FrameworkElement.FlowDirection="RightToLeft" />
-        <TextBox  Grid.Column="1" Grid.Row="1"  TextWrapping="Wrap" VerticalAlignment="Top" FrameworkElement.FlowDirection="RightToLeft" Margin="10,45,163,0" Height="36" />
-        <TextBox  Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,113,163,0"  FrameworkElement.FlowDirection="RightToLeft" Height="39"/>
-        <Button  Grid.Column="1" Grid.Row="2"  VerticalAlignment="Top" Height="62" FontSize="15" Foreground="#FF807A7A"  Margin="10,7,320,0" Content="دخول" Click="Button_Click" />
+        <TextBox  Grid.Column="1" Grid.Row="1"  TextWrapping="Wrap" VerticalAlignment="Top" FrameworkElement.FlowDirection="RightToLeft" Margin="10,45,163,0" Height="36" Name="username" KeyDown="username_KeyDown"/>
+        <TextBox  Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,113,163,0"  FrameworkElement.FlowDirection="RightToLeft" Height="39" Name="password"/>
+        <Button  Grid.Column="1" Grid.Row="2"  VerticalAlignment="Top" Height="62" FontSize="15" Foreground="#FF807A7A"  Margin="10,7,320,0" Content="دخول"  Click="Button_Click" />
 
     </Grid>
 </Window>

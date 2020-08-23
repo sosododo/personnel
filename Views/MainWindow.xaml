@@ -31,10 +31,11 @@
         </TextBlock>
         <Button Grid.Row="1"  Grid.Column="3" Content="ذاتية العاملين" Width="100" Height="50" Click="Button_Click" />
         <Button Grid.Row="1"   Grid.Column="2" Content="تبدلات طارئة"  Height="50"  Width="100"/>
-        <Button  Grid.Row="1"  Grid.Column="1" Content="احصائيات"  Width="100" Height="50"/>
-        <Button Grid.Row="1"   Grid.Column="0" Content="ملاكات الجامعة" Width="100" Height="50"/>
+        <Button  Grid.Row="1"  Grid.Column="1" Content="احصائيات"  Width="100" Height="50" Name="b2"/>
+        <Button Grid.Row="1"   Grid.Column="0" Content="ملاكات الجامعة" Width="100" Height="50" Name="b1"/>
         <RadioButton Grid.Row="1"  Grid.Column="3" Content="عقد / اداري" IsChecked="True" FlowDirection="RightToLeft" Margin="14,161,54,10" Grid.RowSpan="2"/>
         <RadioButton   Grid.Row="2" Grid.Column="3" Content="تدريسي"   FlowDirection="RightToLeft" Margin="14,64,54,10" Grid.RowSpan="2" />
+        <TextBlock Grid.Column="3"  Margin="93,54,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="14" FontWeight="Bold" Name="currentu"/>
 
     </Grid>
 </Window>

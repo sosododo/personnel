@@ -20,6 +20,7 @@ namespace personnel.Views
     public partial class Employee : Window
     {
         PersonelDBContext db = new PersonelDBContext();
+      public  List<SelfCard> sc;
        // SelfCard sc = new SelfCard();
         public Employee()
         {
@@ -66,6 +67,45 @@ namespace personnel.Views
         private void Edit_Employee(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Insert_Employee(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void View_Employee(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Serch_Employee(object sender, RoutedEventArgs e)
+        {
+            //FULL NAME FOR SEARCH????
+            string inputsearch = search.Text;
+
+            if (sname.IsChecked == true)
+            {
+                int num = db.SelfCards.Where(x => x.FirstName == inputsearch).Count();
+
+                if (num == 1)
+                {
+                     sc = db.SelfCards.Where(x => x.FirstName == inputsearch).ToList();
+                    search_emp.ItemsSource = sc;
+
+
+
+                }
+            }
+            else
+            {
+                int num = db.SelfCards.Where(x => x.FirstName == inputsearch).Count();
+
+                if (num == 1)
+                {
+                    //   sc = db.SelfCards.Where(x => x.Workplace == inputsearch).FirstOrDefault();
+                }
+            }
         }
     }
 }

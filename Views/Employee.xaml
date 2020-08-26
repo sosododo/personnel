@@ -14,32 +14,41 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="6*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
 
-        <GroupBox  Grid.Column="2"   Header="بحث عن موظف حسب:" FlowDirection="RightToLeft"  Grid.RowSpan="2"  >
-            <Grid Margin="0,0,0,53">
-                <TextBox Margin="10,149,10,136" TextWrapping="Wrap" Height="25" />
-                <RadioButton Content="بحث حسب الاسم" GroupName="search" HorizontalAlignment="Left" Margin="10,38,-2,233" Width="131" />
-                <RadioButton Content="بحث حسب مكان العمل" GroupName="search" Margin="10,86,10,195"/>
-                <Button Content="بحـــث" Margin="10,200,10,81"/>
 
+        <GroupBox  Grid.Column="2"  Grid.Row="0"  Header="حقل البحث" FlowDirection="RightToLeft"   >
+            <Grid>
+
+
+                <RadioButton Content="بحث حسب مكان العمل" GroupName="search" Name="splace"/>
+                <RadioButton Content="بحث حسب الاسم" GroupName="search"  Margin="0,20,0,155" Width="131" Name="sname"  />
+            </Grid>
+        </GroupBox>
+        <GroupBox  Grid.Column="2"  Grid.Row="1"  Header="البحث" FlowDirection="RightToLeft"  >
+            <Grid>
+                <TextBox  TextWrapping="Wrap" Width="100" Height="25" Name="search" IsEnabled="True" />
+
+                <Button Content="بحـــث" Margin="22,184,42,101" Width="75" Height="25" Click="Serch_Employee"/>
 
             </Grid>
         </GroupBox>
-        <Button Content="ادخال بطاقة جديدة" FontWeight="Bold" FontSize="12" Margin="10,5,10,5" Grid.Row="2" Grid.Column="2" RenderTransformOrigin="0.458,2.867"/>
+
+
+        <Button Content="ادخال بطاقة جديدة" FontWeight="Bold" FontSize="12" Margin="10,5,10,0" Grid.Row="2" Grid.Column="2" RenderTransformOrigin="0.458,2.867" Height="20" VerticalAlignment="Top" Click="Insert_Employee"/>
 
         <GroupBox  Grid.Row="0"  Header="بيانات الموظف :" FlowDirection="RightToLeft"  Grid.ColumnSpan="2" Grid.RowSpan="3"  >
             <Grid Margin="0,0,0,6">
                 <TextBlock Grid.Row="0" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <DataGrid   Margin="10,63,10,0" Height="250" VerticalAlignment="Top"  MinColumnWidth="100" HorizontalGridLinesBrush="#FFC48DD8" VerticalGridLinesBrush="#FFC48DD8" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="Black"  >
+                <DataGrid   Margin="10,63,10,0" Height="250" VerticalAlignment="Top"  MinColumnWidth="100" HorizontalGridLinesBrush="#FFC48DD8" VerticalGridLinesBrush="#FFC48DD8" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="Black" Name="search_emp" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="الرقم الذاتي"/>
-                        <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="رقم الاضبارة"/>
+                        <DataGridTextColumn Binding="{Binding EmployeeId}" ClipboardContentBinding="{x:Null}" Header="الرقم الذاتي"/>
+                        <DataGridTextColumn Binding="{Binding }" ClipboardContentBinding="{x:Null}" Header="رقم الاضبارة"/>
                         <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="فئة الاضبارة"/>
                         <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="الفئة"/>
                         <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="مكان العمل"/>
@@ -51,8 +60,8 @@
 
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button Content="عرض البطاقة"  Width="75" Height="40"  VerticalAlignment="Bottom" Margin="453,0,3,0"/>
-                <Button Content="تعديل"  Margin="373,0,83,0"   VerticalAlignment="Bottom" Width="75" Height="40" RenderTransformOrigin="-0.333,0.45" Click="Button_Click"/>
+                <Button Content="عرض البطاقة"  Width="75" Height="40"  VerticalAlignment="Bottom" Margin="453,0,3,0" Click="View_Employee"/>
+                <Button Content="تعديل"  Margin="373,0,83,0"   VerticalAlignment="Bottom" Width="75" Height="40" RenderTransformOrigin="-0.333,0.45" Click="Edit_Employee"/>
 
             </Grid>
 

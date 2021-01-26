@@ -1,0 +1,135 @@
+﻿<UserControl x:Class="personnel.Views.Add_Bonus"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:personnel.Views"
+      mc:Ignorable="d" 
+      xmlns:model="clr-namespace:personnel.Models"
+      d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft"
+      >
+    <UserControl.DataContext>
+        <model:Decision>
+        </model:Decision>
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="4,6,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="FontFamily" Value="tahoma"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="40"/>
+            <!--<Setter Property="TextWrapping" Value="Wrap"/>-->
+            <!--<Setter Property="Width" Value="auto"/>-->
+
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="4,6,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="25"/>
+            <!--<Setter Property="Width" Value="auto"/>-->
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+
+
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="4,4,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="25"/>
+            <!--<Setter Property="Width" Value="90"/>-->
+            <Setter Property="FlowDirection" Value="RightToLeft"/>
+
+
+        </Style>
+
+    </UserControl.Resources>
+    <Grid VerticalAlignment="Center">
+
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto" MinHeight="79.96"/>
+            <RowDefinition Height="auto" MinHeight="40"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+
+
+        </Grid.RowDefinitions>
+        <Label Content="قرار ترفيعة" Grid.Column="3" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="3" Margin="72,10,0,0" VerticalAlignment="Top" Height="40" Width="112"/>
+        <Label Content="الراتب" Grid.Column="2" Grid.Row="1" Height="40" Width="40" Margin="0,26,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Label Content="الترفيعة" Grid.Column="5" Grid.Row="1" Height="40" Width="48" Margin="58,26,0,0" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="7" Grid.Row="2" x:Name="sal_bonus" Margin="2,0,103,0" Height="30" VerticalAlignment="Center"/>
+        <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
+        <TextBox Grid.Column="7" Grid.Row="1"    x:Name="bon" Height="29" Margin="2,33,103,0"/>
+        <!--<RadioButton Grid.Column="1" Grid.Row="2"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionSource}" Name="dec_source">
+            
+        </RadioButton>-->
+
+        <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="5" Visibility="Hidden" Height="25" Width="28" Margin="0,6,0,0" Grid.RowSpan="2" />
+        <Button Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="5" Grid.Column="3"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Center" Margin="60,0,10,0" Click="insert_rest"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="dec_id" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2" ></TextBlock>
+        <CheckBox Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2"></CheckBox>
+        <TextBox x:Name="sal" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" Text="" Width="78" Height="29" VerticalAlignment="Center"/>
+        <Button x:Name="cmdUp" x:FieldModifier="private" Content="🔺" Width="20" Height="15" Grid.Column="3" Grid.Row="1" FontSize="4" Padding="0" Margin="132,99,25,29" RenderTransformOrigin="0.875,2.467" Click="cmdUp_Click" Grid.RowSpan="2" />
+        <Button x:Name="cmdDown" x:FieldModifier="private"  Content="🔻" Width="20" Height="15" Grid.Column="3"  FontSize="4" Padding="0" Margin="130,51,27,37" Grid.Row="1" RenderTransformOrigin="-1.436,0.61" Click="cmdDown_Click_1" />
+        <Label Content="الراتب بعد الترفيعة" Grid.Row="2" RenderTransformOrigin="0.283,-0.538" Margin="55,9,0,0" Height="40" Width="99" Grid.Column="5" Grid.RowSpan="4" VerticalAlignment="Top"/>
+        <TextBox x:Name="day" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="2" Text="" Width="76" Height="29"/>
+        <Label Content="أيام الدوام" Grid.Column="2" Grid.Row="2" RenderTransformOrigin="0.561,0.896" Height="40" Width="58" HorizontalAlignment="Center" Grid.RowSpan="4"/>
+        <GroupBox  Grid.Row="1"  Header="" FlowDirection="RightToLeft"   Margin="10,0,10,40" Grid.RowSpan="2" Grid.ColumnSpan="2"  MaxHeight="400"  >
+
+
+            <Grid VerticalAlignment="Center" Height="auto"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <ListView x:Name="list"  Grid.Row="1" MaxHeight="100" VerticalContentAlignment="Top" ScrollViewer.CanContentScroll="True"  ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Single" Grid.ColumnSpan="2" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="اسم الموظف" />
+                        </GridView>
+                    </ListView.View>
+
+                </ListView>
+                <Button Content="حذف الموظف المحدد" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Height="20" VerticalAlignment="Top" Click="Button_Click"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="cmdDown_Copy" x:FieldModifier="private"  Content="🔻" Width="20" Height="16" Grid.Column="3"  FontSize="4" Padding="0" Margin="132,0,25,0" Grid.Row="2" RenderTransformOrigin="-1.436,0.61" Click="cmdDown_Copy_Click" VerticalAlignment="Center" />
+        <Button x:Name="cmdUp_Copy" x:FieldModifier="private" Content="🔺" Width="20" Height="15" Grid.Column="3" Grid.Row="1" FontSize="4" Padding="0" Margin="130,35,27,53" RenderTransformOrigin="0.875,2.467" Click="cmdUp_Copy_Click" />
+        <Button x:Name="cmdUp_Copy1" x:FieldModifier="private" Content="🔺" Width="20" Height="15" Grid.Column="7" Grid.Row="1"  FontSize="4" Padding="0" Margin="132,30,24,58" RenderTransformOrigin="0.875,2.467" Click="cmdUp_Copy1_Click" />
+        <Button x:Name="cmdDown_Copy1" x:FieldModifier="private"  Content="🔻" Width="20" Height="15" Grid.Column="7"  FontSize="4" Padding="0" Margin="132,46,24,42" Grid.Row="1" RenderTransformOrigin="-1.436,0.61" Click="cmdDown_Copy1_Click" />
+        <Button x:Name="cmdUp_Copy2" x:FieldModifier="private" Content="🔺" Width="20" Height="15" Grid.Column="7" Grid.Row="2" FontSize="4" Padding="0" Margin="130,3,26,22" RenderTransformOrigin="0.875,2.467" Click="cmdUp_Copy2_Click" />
+        <Button x:Name="cmdDown_Copy2" x:FieldModifier="private"  Content="🔻" Width="20" Height="15" Grid.Column="7"  FontSize="4" Padding="0" Margin="118,19,39,6" Grid.Row="2" RenderTransformOrigin="-1.436,0.61" Click="cmdDown_Copy2_Click" />
+
+
+    </Grid>
+</UserControl>

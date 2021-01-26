@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="personnel.Views.Delegation_tech"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:personnel.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft"
+      >
+
+    <Grid>
+        <DataGrid x:Name="detailsDataGrid" MaxHeight="200" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"   AutoGenerateColumns="False"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="7" Margin="68,1,57,-1" CanUserAddRows="False" CanUserDeleteRows="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn  ClipboardContentBinding="{x:Null}"  Header="بيانات القرار"  Binding="{Binding fu}" />
+                <DataGridTextColumn  ClipboardContentBinding="{x:Null}" Header="نوع الإيفاد" Binding="{Binding DelegatingType }" />
+                <DataGridTextColumn  ClipboardContentBinding="{x:Null}"  Header="مدة الإيفاد" Binding="{Binding PeriodNum}"/>
+                <DataGridTextColumn   ClipboardContentBinding="{x:Null}"  Header="يوم/شهر/سنة" Binding="{Binding PeriodType}"/>
+                <DataGridTextColumn    ClipboardContentBinding="{x:Null}" Header="تاريخ بداية الإيفاد" Binding="{Binding DelegatingStart, StringFormat='yyyy/MM/dd' }" />
+                <DataGridTextColumn  ClipboardContentBinding="{x:Null}"  Header="تاريخ نهاية الإيفاد" Binding="{Binding  DelegatingEnd ,StringFormat='yyyy/MM/dd'}"/>
+                <DataGridTextColumn  ClipboardContentBinding="{x:Null}"  Header="سبب الإيفاد" Binding="{Binding DelegatingReason}" />
+                <DataGridTextColumn  ClipboardContentBinding="{x:Null}" Header="بلد الإيفاد" Binding="{Binding DelegatingCountry}" />
+                <DataGridTextColumn  ClipboardContentBinding="{x:Null}" Header="ملاحظات" Binding="{Binding Notes}" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

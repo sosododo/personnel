@@ -19,9 +19,9 @@ namespace personnel.Models
         [Column("password")]
         [StringLength(10)]
         public string Password { get; set; }
-        [Column("name")]
-        [StringLength(50)]
-        public string Name { get; set; }
+        //[Column("name")]
+        //[StringLength(50)]
+        //public string Name { get; set; }
         [Column("rule")]
         [StringLength(50)]
         public string Rule { get; set; }

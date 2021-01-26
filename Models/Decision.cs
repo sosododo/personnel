@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace personnel.Models
 {
@@ -16,6 +18,7 @@ namespace personnel.Models
             Punishments = new HashSet<Punishment>();
             Rests = new HashSet<Rest>();
             Secondments = new HashSet<Secondment>();
+            Full= DecisionNumber + " " + DecisionType + " " + DecisionYear;
         }
 
         [Key]
@@ -45,7 +48,20 @@ namespace personnel.Models
         [Column("attachment")]
         public string Attachment { get; set; }
         [Column("result")]
-        public bool Result { get; set; }
+        [StringLength(50)]
+        public string Result { get; set; }
+
+        [Column("full")]
+      
+        public string Full { get; set; }
+
+
+        [Column("isexcute")]
+
+        public bool IsExcute { get; set; }
+
+
+        //[DefaultValue("N'false'")]
 
         [InverseProperty("Decision")]
         public virtual ICollection<Bonuse> Bonuses { get; set; }
@@ -59,5 +75,14 @@ namespace personnel.Models
         public virtual ICollection<Rest> Rests { get; set; }
         [InverseProperty("Decision")]
         public virtual ICollection<Secondment> Secondments { get; set; }
+
+        public string getdata()
+        {
+            
+            string result = DecisionNumber + " " +DecisionType + " " + DecisionYear;
+            return result;
+        }
+
+        
     }
 }

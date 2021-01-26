@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace personnel.Models
 {
@@ -19,7 +20,7 @@ namespace personnel.Models
         public string RestType { get; set; }
         [Column("rest_period")]
         [StringLength(20)]
-        public string RestPeriod { get; set; }
+        public int RestPeriod { get; set; }
         [Column("rest_start", TypeName = "date")]
         public DateTime? RestStart { get; set; }
         [Column("rest_end", TypeName = "date")]
@@ -27,6 +28,13 @@ namespace personnel.Models
         [Column("notes")]
         [StringLength(30)]
         public string Notes { get; set; }
+        [Column("attachment")]
+        [StringLength(100)]
+        public string Attachment { get; set; }
+        [Column("period")]
+        [StringLength(30)]
+        public string Period { get; set; }
+       
 
         [ForeignKey(nameof(DecisionId))]
         [InverseProperty(nameof(Models.Decision.Rests))]
@@ -34,5 +42,17 @@ namespace personnel.Models
         [ForeignKey(nameof(PersonId))]
         [InverseProperty(nameof(SelfCard.Rests))]
         public virtual SelfCard Person { get; set; }
+
+
+
+
+        public string getdata(long desId)
+        {
+            PersonelDBContext db = new PersonelDBContext();
+            Decision des;
+            des = (Decision)db.Decisions.Where(x => x.DecisionId == desId);
+            string result = des.DecisionNumber + ' ' + des.DecisionType + ' ' + des.DecisionYear;
+            return result;
+        }
     }
 }

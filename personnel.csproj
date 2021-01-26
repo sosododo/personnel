@@ -1,10 +1,27 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿
+ 
+
+	
+	 
+ 
+	  <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icon\computer.jpg" />
+    <None Remove="Icon\image1.jpg" />
+    <None Remove="Icon\login.jpg" />
+    <None Remove="Icon\pass.jpg" />
+    <None Remove="Report\PersReport.rdlc" />
+    <None Remove="Report\Report1.rdlc" />
+    <None Remove="Report\repzat.rdlc" />
+  </ItemGroup>
 
  
 
@@ -14,6 +31,81 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.ReportViewer.Runtime.WinForms" Version="12.0.2402.15" />
+    <PackageReference Include="Microsoft.ReportViewer.WinForms" Version="10.0.40219.1" />
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.4" />
+  </ItemGroup>
+
+ 
+
+  <ItemGroup>
+    <Resource Include="Icon\computer.jpg" />
+    <Resource Include="Icon\image1.jpg" />
+    <Resource Include="Icon\login.jpg" />
+    <Resource Include="Icon\pass.jpg" />
+    <Content Include="Report\PersReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report\Report1.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report\repzat.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+ 
+
+  <ItemGroup>
+    <Compile Update="ds.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ds.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="personnelDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>personnelDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Add_Delegation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ShowTeacher.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ZATDataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ZATDataSet1.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+ 
+
+  <ItemGroup>
+    <None Update="ds.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="personnelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>personnelDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="ZATDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZATDataSet1.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+ 
+
+  <ItemGroup>
+    <Page Update="Views\Add_Delegation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ShowTeacher.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

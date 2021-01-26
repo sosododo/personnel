@@ -5,16 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:personnel.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="أقسام البرنامج الرئيسية" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"  FlowDirection="RightToLeft">
+    <Window.Resources>
+        <Style TargetType="Button">
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="26" Background="#FFCDC7C7" BorderThickness="2" BorderBrush="#FFCBADAD" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+
+        </Style>
+    </Window.Resources>
     <Grid >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFECE7E7" Offset="0"/>
+                <GradientStop Color="GhostWhite" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
 
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="0.40*"/>
-            <RowDefinition Height="0.40*"/>
-            <RowDefinition Height="0.40*"/>
+            <RowDefinition Height="auto"/>
+
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -25,17 +47,22 @@
 
 
         </Grid.ColumnDefinitions>
-        <TextBlock   HorizontalAlignment="Left" TextWrapping="NoWrap" Text="ادارة شؤون العاملين في جامعة البعث" VerticalAlignment="Top" FlowDirection="RightToLeft" Height="30" FontSize="15" Foreground="#FF787878" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="1" Width="264" Margin="52,10,0,0">
+        <TextBlock   HorizontalAlignment="Center" TextWrapping="NoWrap" Text="ادارة شؤون العاملين في جامعة البعث" VerticalAlignment="Top" FlowDirection="RightToLeft" Height="30" FontSize="20" Foreground="#FF851313" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="1" Width="306" Margin="0,26,0,0" FontFamily="Segoe UI">
 
 
         </TextBlock>
-        <Button Grid.Row="1"  Grid.Column="3" Content="ذاتية العاملين" Width="100" Height="50" Click="Button_Click" />
-        <Button Grid.Row="1"   Grid.Column="2" Content="تبدلات طارئة"  Height="50"  Width="100"/>
-        <Button  Grid.Row="1"  Grid.Column="1" Content="احصائيات"  Width="100" Height="50" Name="b2"/>
-        <Button Grid.Row="1"   Grid.Column="0" Content="ملاكات الجامعة" Width="100" Height="50" Name="b1"/>
-        <RadioButton Grid.Row="1"  Grid.Column="3" Content="عقد / اداري" IsChecked="True" FlowDirection="RightToLeft" Margin="14,161,54,10" Grid.RowSpan="2"/>
-        <RadioButton   Grid.Row="2" Grid.Column="3" Content="تدريسي"   FlowDirection="RightToLeft" Margin="14,64,54,10" Grid.RowSpan="2" />
-        <TextBlock Grid.Column="3"  Margin="93,54,0,0" Text="" TextWrapping="NoWrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" FontSize="14" FontWeight="Bold" Name="currentu"/>
+        <Button Grid.Row="1"  Grid.Column="0" Content="ذاتية العاملين" Width="100" Height="50" Click="Button_Click" Foreground="#FF9B2525" FontWeight="Bold" />
+        <Button Grid.Row="1"   Grid.Column="1" Content="تبدلات طارئة"  Height="50"  Width="100" Foreground="#FF9B2525" FontWeight="Bold" Click="GoToDecisions"/>
+        <Button  Grid.Row="1"  Grid.Column="2" Content="احصائيات"  Width="100" Height="50" Name="b2" Foreground="#FF9B2525" FontWeight="Bold"/>
+        <Button Grid.Row="1"   Grid.Column="3" Content="ملاكات الجامعة" Width="100" Height="50" Name="b1" Foreground="#FF9B2525" FontWeight="Bold"/>
+        <RadioButton  Grid.Column="0" Content="عقد / اداري" IsChecked="True" FlowDirection="RightToLeft"  FontWeight="Bold" Foreground="#FFCD8B8B" Margin="56,10,50,172" Grid.Row="1"  Name="em"/>
+        <RadioButton   Grid.Row="1" Grid.Column="1" Content="تدريسي"   FlowDirection="RightToLeft" Margin="69,10,48,172" FontWeight="Bold" Foreground="#FFCD8B8B"  Name="teach"/>
+        <StatusBar  Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="3" Width="auto" >
+            <StatusBarItem >
+                <TextBlock Grid.Column="0"  Grid.Row="3" Text="" TextWrapping="NoWrap" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="14" FontWeight="Bold" Name="currentu" Foreground="#FF851313"/>
+            </StatusBarItem>
+        </StatusBar>
+
 
     </Grid>
 </Window>

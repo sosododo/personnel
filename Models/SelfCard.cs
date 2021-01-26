@@ -20,13 +20,21 @@ namespace personnel.Models
 
         [Key]
         [Column("person_id")]
+
         public long PersonId { get; set; }
+
+
         [Column("employee_id")]
         public long? EmployeeId { get; set; }
         [Column("insurance_id")]
-        public long? InsuranceId { get; set; }
+        [StringLength(50)]
+        public string InsuranceId { get; set; }
+        [Column("nation_id")]
+        [StringLength(50)]
+        public string NationId { get; set; }
         [Column("file_id")]
-        public int FileId { get; set; }
+        [StringLength(50)]
+        public string FileId { get; set; }
         [Required]
         [Column("file_class")]
         [StringLength(50)]
@@ -109,8 +117,9 @@ namespace personnel.Models
         public string Status { get; set; }
         [Column("salary")]
         public double? Salary { get; set; }
+        [Required]
         [Column("beginning_date", TypeName = "date")]
-        public DateTime BeginningDate { get; set; }
+        public DateTime? BeginningDate { get; set; }
         [Column("certificate")]
         [StringLength(30)]
         public string Certificate { get; set; }
@@ -121,7 +130,7 @@ namespace personnel.Models
         [StringLength(20)]
         public string NominationType { get; set; }
         [Column("insurance_card")]
-        [StringLength(10)]
+        [StringLength(20)]
         public string InsuranceCard { get; set; }
         [Column("notes")]
         [StringLength(30)]
@@ -134,6 +143,16 @@ namespace personnel.Models
         [Column("training_courses")]
         [StringLength(50)]
         public string TrainingCourses { get; set; }
+        [Column("work_contract")]
+        [StringLength(30)]
+        public string WorkContracts { get; set; }
+
+        [Column("isTeacher")]
+       
+        public int IsTeacher { get; set; }
+
+
+
 
         [InverseProperty("Person")]
         public virtual ICollection<Bonuse> Bonuses { get; set; }
@@ -147,5 +166,12 @@ namespace personnel.Models
         public virtual ICollection<Rest> Rests { get; set; }
         [InverseProperty("Person")]
         public virtual ICollection<Secondment> Secondments { get; set; }
+
+        public string Username
+        {
+            get { return FirstName + ' ' + FatherName + ' '  + LastName ; }
+        }
+
     }
+    
 }

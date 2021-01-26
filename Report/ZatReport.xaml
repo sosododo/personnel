@@ -1,0 +1,19 @@
+﻿<Window x:Class="personnel.Report.ZatReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"    
+        xmlns:local="clr-namespace:personnel.Report"
+        mc:Ignorable="d"
+        Title="ZatReport" Height="450" Width="800" WindowState="Maximized">
+    <Grid>
+        <WindowsFormsHost HorizontalAlignment="Center"  VerticalAlignment="Center" Height="800" Width="1200">
+            <rv:ReportViewer x:Name="reportViewer1">
+            </rv:ReportViewer>
+
+
+        </WindowsFormsHost>
+
+    </Grid>
+</Window>

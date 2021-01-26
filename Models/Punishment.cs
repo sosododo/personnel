@@ -16,6 +16,9 @@ namespace personnel.Models
         public long PersonId { get; set; }
         [Column("punishment_type")]
         [StringLength(20)]
+        public string periodType { get; set; }
+        [Column("period_type")]
+        [StringLength(20)]
         public string PunishmentType { get; set; }
         [Column("reason")]
         public string Reason { get; set; }

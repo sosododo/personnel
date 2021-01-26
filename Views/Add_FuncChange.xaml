@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="personnel.Views.Add_FuncChange"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:personnel.Views"
+             xmlns:model="clr-namespace:personnel.Models"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <model:Decision>
+        </model:Decision>
+    </UserControl.DataContext>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+        </Grid.RowDefinitions>
+        <GroupBox Header="بيانات التبدل الوظيفي" FlowDirection="RightToLeft"  Margin="10,10,10,10" Grid.Row="1">
+            <Grid VerticalAlignment="Center" Margin="10,20,10,10" >
+                <Grid.ColumnDefinitions>
+
+
+
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="الفئة"   Grid.Row="2" Grid.Column="0"/>
+                <TextBlock  Text="المسمى الوظيفي"  Grid.Column="2" Grid.Row="2"/>
+                <TextBlock  Text="مكان العمل"  Grid.Column="4" Grid.Row="1"/>
+                <TextBlock Text="تاريخ التبدل الوظيفي" Grid.Column="2" Grid.Row="1"/>
+                <TextBlock Text="اسم الموظف" Grid.Column="0" Grid.Row="1"/>
+                <TextBlock Grid.Column="4"   Grid.Row="2" Text="المهمة"/>
+                <TextBlock  Grid.Column="0" Text="الحالة" Grid.Row="3"  />
+                <TextBlock  FlowDirection="RightToLeft" Text="الراتب" Grid.Column="2" Grid.Row="3"/>
+                <DatePicker  VerticalAlignment="Center"  Margin="4,0,0,0" Grid.Column="3" Grid.Row="1"  Name="chandate1" Height="30"  />
+                <ComboBox   Grid.Column="1" Grid.Row="2" Name="grade" DropDownClosed="grade_DropDownClosed" >
+                    <ComboBoxItem Content="الأولى" />
+                    <ComboBoxItem Content="الثانية"/>
+                    <ComboBoxItem Content="الثالثة"/>
+                    <ComboBoxItem Content="الرابعة"/>
+                    <ComboBoxItem Content="الخامسة"/>
+
+
+
+                </ComboBox>
+                <ComboBox Grid.Column="3" Grid.Row="2" Name="job"   >
+                    <!--<ComboBoxItem Content="ii"/>
+                    <ComboBoxItem Content="oo"/>-->
+
+                </ComboBox>
+                <ComboBox Grid.Column="5" Grid.Row="1" x:Name="pp">
+                    <!--<ComboBoxItem Content="الادارة المركزية" IsSelected="True"/>-->
+                    <!--<ComboBoxItem Content="كلية التربية"/>-->
+
+                </ComboBox>
+                <ComboBox Grid.Column="1" Grid.Row="3" Name="status"  >
+                    <ComboBoxItem Content="قائم على رأس عمله" IsSelected="True"/>
+                    <ComboBoxItem Content="بلا أجر"/>
+                    <ComboBoxItem Content="متوفى"/>
+                    <ComboBoxItem Content="مسرح صحياً"/>
+                    <ComboBoxItem Content="مندوب"/>
+                    <ComboBoxItem Content="معار داخلياً"/>
+                    <ComboBoxItem Content="معار خارجياً"/>
+                    <ComboBoxItem Content="مستقيل"/>
+                    <ComboBoxItem Content="بحكم المستقيل"/>
+                    <ComboBoxItem Content="كف اليد"/>
+                    <ComboBoxItem Content="مصروف من الخدمة"/>
+                    <ComboBoxItem Content="متقاعد"/>
+                    <ComboBoxItem Content="اجازة دراسية"/>
+                    <ComboBoxItem Content="موفد خارجياً"/>
+                    <ComboBoxItem Content="موفد داخلياً"/>
+                    <ComboBoxItem Content="احتياط"/>
+                    <ComboBoxItem Content="خدمة الزامية"/>
+                    <ComboBoxItem Content="منقول خارج الجامعة"/>
+                    <ComboBoxItem Content="مكلف خارج الجامعة"/>
+                    <ComboBoxItem Content="مجمد"/>
+                    <ComboBoxItem Content="مفرغ للحزب"/>
+
+                </ComboBox>
+
+
+
+
+
+
+
+                <ComboBox Grid.Column="5" Grid.Row="2" Name="mission" >
+                    <ComboBoxItem Content="موظف" IsSelected="true"/>
+                    <ComboBoxItem Content="رئيس جامعة"/>
+                    <ComboBoxItem Content="نائب رئيس جامعة"/>
+                    <ComboBoxItem Content="أمين جامعة"/>
+                    <ComboBoxItem Content="رئيس دائرة"/>
+                    <ComboBoxItem Content="رئيس شعبة"/>
+                    <ComboBoxItem Content="أمين مستودع"/>
+                    <ComboBoxItem Content="أمين مكتبة"/>
+                    <ComboBoxItem Content="مشرف وحدة"/>
+                    <ComboBoxItem Content="مدير معهد"/>
+                    <ComboBoxItem Content="أمين مساعد"/>
+                    <ComboBoxItem Content="معتمد رسوم طلاب"/>
+                    <ComboBoxItem Content="معتمد بيع كتب"/>
+
+
+                </ComboBox>
+
+                <TextBox  Grid.Column="3" Grid.Row="3" Name="salary"/>
+                <ComboBox Grid.Column="1" Grid.Row="1" Name="emp_name" IsTextSearchEnabled="True" IsEditable="True" >
+                    <!--<ComboBoxItem Content="الادارة المركزية" IsSelected="True"/>
+                    <ComboBoxItem Content="كلية التربية"/>-->
+
+                </ComboBox>
+
+
+
+
+
+
+
+
+
+            </Grid>
+        </GroupBox>
+        <TextBlock HorizontalAlignment="Center"  Text="إضافة تبدل وظيفي" VerticalAlignment="Center"  FontWeight="Bold"  FontSize="20" Height="27" Foreground="#FF777C66" FontFamily="Segoe UI Semibold" />
+        <!--<Button Content="خروج"    Grid.Row="2" VerticalAlignment="Top" Height="35" Width="70" Margin="159,17,571,0"   Click="Exit"/>
+        <Button Content="تفريغ الخلابا"   VerticalAlignment="Top" Height="35" Width="70" Grid.Row="2"  Margin="365,17,365,0" Click="Clear_Form" RenderTransformOrigin="0.473,0.467"  />-->
+        <Button Content="إضافة" Width="70" Grid.Row="2" Margin="324,17,406,0"  Click="Add_Change"  />
+        <TextBlock Grid.Row="2" Visibility="Visible" Name="dec_id" Margin="587,0,0,0" />
+        <CheckBox Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}"></CheckBox>
+
+    </Grid>
+
+</UserControl>

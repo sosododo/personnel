@@ -51,14 +51,17 @@ namespace personnel.Views
             //    this.Close();
             //}
 
-            MessageBoxResult result = MessageBox.Show("هل تريد الخروج ؟ ",
-                                              "تأكيد",
-                                              MessageBoxButton.OKCancel,
-                                              MessageBoxImage.Question);
-            if (result == MessageBoxResult.OK)
-            {
-                Application.Current.Shutdown();
-            }
+            //MessageBoxResult result = MessageBox.Show("هل تريد الخروج ؟ ",
+            //                                  "تأكيد",
+            //                                  MessageBoxButton.OKCancel,
+            //                                  MessageBoxImage.Question);
+            //if (result == MessageBoxResult.OK)
+            //{
+            //    Application.Current.Shutdown();
+            //}
+            Teacher mw = new Teacher();
+            this.Close();
+            mw.Show();
         }
 
         private void Add_person(object sender, RoutedEventArgs e)

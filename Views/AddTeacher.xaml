@@ -479,9 +479,9 @@
             </Grid>
         </GroupBox>
         <TextBlock HorizontalAlignment="Center"  Text="إضافة ذاتية عضو هيئة فنية/ تدريسية "  FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold"  />
-        <Button Content="خروج"    Grid.Row="3" VerticalAlignment="Top" Height="35" Width="70" Margin="699,15,47,0" Grid.Column="1" Click="Exit" Grid.RowSpan="2"/>
+        <Button Content="عودة"    Grid.Row="3" Width="70" Margin="722,15,69,0" Grid.Column="1" Click="Exit" Grid.RowSpan="2"/>
         <Button Content="تفريغ الخلابا"   VerticalAlignment="Top" Height="35" Width="70" Grid.Row="3" Grid.Column="1" Margin="618,15,128,0" Click="Clear_Form" Grid.RowSpan="2"  />
-        <Button Content="إضافة" Width="70" Grid.Row="3" Grid.Column="1" Height="35" Margin="547,15,229,0" Grid.RowSpan="2" Click="Add_person"  />
+        <Button Content="إضافة" Width="70"  Grid.Row="3" Grid.Column="1" Height="35" Margin="547,15,229,0" Grid.RowSpan="2" Click="Add_person"  />
 
     </Grid>
 </Window>

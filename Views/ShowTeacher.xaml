@@ -407,6 +407,6 @@
                 <Button Content="خروج"  Height="30"   FontWeight="Bold" VerticalAlignment="Top"  FontSize="12"     HorizontalAlignment="Stretch"  Margin="5,7,5,0" />
             </StackPanel>
         </GroupBox>
-        <Button Content="خروج" Grid.Column="1"   Grid.Row="3" Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="15,20,15,20" Click="Button_Click"  />
+        <Button Content="عودة" Grid.Column="1"   Grid.Row="3" Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="15,20,15,20" Click="Button_Click"  />
     </Grid>
 </Window>

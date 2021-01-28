@@ -127,6 +127,7 @@
                         <DataGridTextColumn Binding="{Binding EffectType}" ClipboardContentBinding="{x:Null}" Header="نوع التأثير"/>
                         <DataGridTextColumn Binding="{Binding Result}" ClipboardContentBinding="{x:Null}" Header="نتيجة القرار"/>
                         <DataGridTextColumn Binding="{Binding IsExcute}" ClipboardContentBinding="{x:Null}" Header="التنفيذ"/>
+                        <DataGridTextColumn Binding="{Binding DecisionStatus}" ClipboardContentBinding="{x:Null}" Header="حالة القرار"/>
 
 
 
@@ -171,5 +172,6 @@
                 <TextBlock Visibility="Hidden" Name="dec_id"/>
             </Grid>
         </GroupBox>
+        <Button Content="عودة" Grid.Column="1" HorizontalAlignment="Left" Margin="58,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="138" Height="24" Click="Button_Click"/>
     </Grid>
 </Window>

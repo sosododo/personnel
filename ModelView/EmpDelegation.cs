@@ -29,8 +29,8 @@ namespace personnel.ModelView
 
             IEnumerable query = (from p in db.Delegatings
                                  join d in db.Decisions on p.DecisionId equals d.DecisionId
-                                where p.PersonId == id
-                             select new { p.DecisionId, fu = (d.DecisionNumber + " " + d.DecisionType + " " + d.DecisionYear), p.DelegatingType, p.DelegatingReason, p.DelegatingStart, p.DelegatingEnd, p.PeriodNum, p.Notes, p.PeriodType,p.DelegatingCountry }).ToList();
+                                where p.PersonId == id && p.DelegatingReason== "الحصول على مؤهل علمي"
+                                 select new { p.DecisionId, fu = (d.DecisionNumber + " " + d.DecisionType + " " + d.DecisionYear), p.DelegatingType, p.DelegatingReason, p.DelegatingStart, p.DelegatingEnd, p.PeriodNum, p.Notes, p.PeriodType,p.DelegatingCountry }).ToList();
 
             return query;
 

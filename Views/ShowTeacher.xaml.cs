@@ -123,6 +123,9 @@ namespace personnel.Views
             cc.Visibility = Visibility.Collapsed;
             sec.Visibility = Visibility.Collapsed;
             delegation.Visibility = Visibility.Collapsed;
+            Employee emp = new Employee();
+            this.Close();
+            emp.Show();
 
         }
 

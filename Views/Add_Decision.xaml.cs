@@ -58,7 +58,8 @@ namespace personnel.Views
                             DecisionEnd = dec_end.SelectedDate,
                             DecisionSource = dec_source.Text,
                             EffectType = dec_effect.Text,
-                            Result = dec_result.Text
+                            Result = dec_result.Text,
+                            DecisionStatus="قرار ساري"
 
 
 

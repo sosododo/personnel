@@ -42,6 +42,12 @@ namespace personnel.Models
         [Column("decision_source")]
         [StringLength(30)]
         public string DecisionSource { get; set; }
+
+        [Column("decision_status")]
+        [StringLength(30)]
+        public string DecisionStatus { get; set; }
+
+        
         [Column("effect_type")]
         [StringLength(10)]
         public string EffectType { get; set; }

@@ -1,0 +1,179 @@
+﻿<Window x:Name="result1" x:Class="personnel.Views.Decision_View"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:personnel.Views"
+        xmlns:modell="clr-namespace:personnel.Models"
+        mc:Ignorable="d"
+        Title="التبدلات الطارئة"   FlowDirection="RightToLeft"  Width="1250" Height="500" ResizeMode="CanResize" >
+    <Window.DataContext>
+        <modell:Decision>
+        </modell:Decision>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <Style TargetType="GroupBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="1.3"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="BorderBrush" Value="#FFC18BE6"/>
+            <Setter Property="Background" Value="#FFC8ADDA"/>
+            <Setter Property="Foreground" Value="#FF633656"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+
+                </Style>
+            </Style.Resources>
+
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush  EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
+                <GradientStop Color="#FFD8CFD8" Offset="0"/>
+                <GradientStop Color="GhostWhite" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="5*" />
+            <!--<ColumnDefinition Width="auto"/>-->
+
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+
+
+
+        <GroupBox  Grid.Column="0"  Grid.Row="0"  Header="حقل البحث" FlowDirection="RightToLeft"   Margin="10,10,0,12"   >
+
+
+            <Grid VerticalAlignment="Center" Height="auto"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <CheckBox Content="سنة"    Grid.Column="0" Grid.Row="0"    Name="ch_year" Foreground="#FF633656" FontSize="12" FontWeight="ExtraBold"   Width="50" Height="25"  FlowDirection="RightToLeft" Checked="che_year"  />
+                <TextBox   Name="tx_year" Margin="10,5,10,10"  Grid.Row="0" Height="auto"  Grid.Column="1"  Width="100" IsEnabled="False"/>
+                <CheckBox Content="رقم"  Name="ch_id" HorizontalAlignment="Center" VerticalAlignment="Top"  Foreground="#FF633656" FontSize="12" FontWeight="ExtraBold"  Grid.Row="1"  Width="50" Height="25" Margin="0,2,0,0" Checked="che_id"  />
+                <TextBox  Height="auto" Margin="10,5,10,10"   Name="tx_id" Grid.Row="1" Grid.Column="1" IsEnabled="False" />
+
+                <CheckBox Content="نوع"  Name="ch_type" HorizontalAlignment="Center"  Foreground="#FF633656" FontSize="12" FontWeight="ExtraBold"  Grid.Row="2"   Width="50" Height="25"  Checked="che_type"  />
+                <ComboBox Margin="10,5,10,10" Grid.Column="1"  Grid.Row="2"  Name="tx_type" FlowDirection="LeftToRight" IsEnabled="False"  >
+                    <ComboBoxItem Content="قرار وزاري"/>
+                    <ComboBoxItem Content="قرار رئاسي"/>
+                    <ComboBoxItem Content="قرار نائب رئيس"/>
+                    <ComboBoxItem Content="مرسوم"/>
+                    <ComboBoxItem Content="قانون"/>
+                    <ComboBoxItem Content="كتاب"/>
+                </ComboBox>
+                <Button x:Name="srch" Content="بحـــث" Height="25" FontWeight="Bold" FontSize="12" Grid.ColumnSpan="2" Grid.Row="3" Margin="17,5,2,35" Click="search"  />
+                <Button Content="تراجع" Height="25" FontWeight="Bold" FontSize="12" Grid.ColumnSpan="2" Grid.Row="3" Margin="17,34,2,6" Click="butt"  />
+
+
+
+            </Grid>
+        </GroupBox>
+
+
+        <Button Content="ادخال قرار جديد"  FontWeight="Bold" FontSize="12"  Grid.Row="2" Grid.Column="0"  Width="auto" Margin="30,5,25,0" Click="add"/>
+
+
+        <GroupBox  Grid.Row="0"  Header="بيانات الموظف :" FlowDirection="RightToLeft"   Grid.Column="1" Margin="20,10,20,10"   >
+            <Grid x:Name="decesionGrid"  Width="auto" Height="auto" >
+                <DataGrid   Margin="10,10,10,0" Height="auto" VerticalAlignment="Top"  MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF633656"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF633656"   FontSize="12" AutoGenerateColumns="False" Name="result"  SelectionChanged="select_item" CanUserAddRows="False"   ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxHeight="300">
+
+                    <!--<DataGrid.Resources>
+                            <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#FFC1C7E6" />
+                          
+                        </Style>
+                        </DataGrid.Resources>-->
+
+                    <DataGrid.Columns >
+
+                        <DataGridTextColumn Binding="{Binding Full}"  ClipboardContentBinding="{x:Null}" Header="بيانات القرار"/>
+
+                        <DataGridTextColumn Binding="{Binding DecisionStart,StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="تاريخ صدور القرار"/>
+                        <DataGridTextColumn Binding="{Binding DecisionEnd,StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="تاريخ نهاية القرار"/>
+                        <DataGridTextColumn Binding="{Binding DecisionContent}" ClipboardContentBinding="{x:Null}" Header="مضمون القرار"/>
+                        <DataGridTextColumn Binding="{Binding DecisionSource}" ClipboardContentBinding="{x:Null}" Header="الجهة المصدرة للقرار"/>
+                        <DataGridTextColumn Binding="{Binding EffectType}" ClipboardContentBinding="{x:Null}" Header="نوع التأثير"/>
+                        <DataGridTextColumn Binding="{Binding Result}" ClipboardContentBinding="{x:Null}" Header="نتيجة القرار"/>
+                        <DataGridTextColumn Binding="{Binding IsExcute}" ClipboardContentBinding="{x:Null}" Header="التنفيذ"/>
+                        <DataGridTextColumn Binding="{Binding DecisionStatus}" ClipboardContentBinding="{x:Null}" Header="حالة القرار"/>
+                        <DataGridTextColumn Binding="{Binding CollapsDate, StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="تاريخ الطي"/>
+
+
+
+                    </DataGrid.Columns>
+                </DataGrid>
+
+
+            </Grid>
+
+        </GroupBox>
+        <GroupBox Grid.Row="1"  FlowDirection="RightToLeft"  Grid.Column="0"  Height="auto" Margin="10,0,0,12"   >
+            <StackPanel Margin="10,10,10,10">
+                <Button Content="عرض التفصيل" Height="25" Margin="10,10,10,10"  VerticalAlignment="Top"  FontWeight="Bold" FontSize="12" IsEnabled="False" Name="show_but" Click="show_but_Click" />
+                <Button Content="تنفيذ القرار"  Height="25"  Margin="10,10,10,10"  FontWeight="Bold" FontSize="12" IsEnabled="False"  Name="excute_but" Click="excute_but_Click"/>
+                <Button Content="تعديل"  Height="25"  Grid.Row="2" Margin="10,10,10,10" FontWeight="Bold" FontSize="12" Name="edit_but" Click="edit" IsEnabled="False"/>
+
+            </StackPanel>
+        </GroupBox>
+        <GroupBox   Header="********" FlowDirection="RightToLeft"   Grid.Column="1" Grid.Row="1" Margin="20,0,20,10"   >
+            <Grid Margin="0,0,0,0">
+
+                <local:UpdateDecision   Visibility="Collapsed"  x:Name="mm"/>
+
+                <local:Add_Decision Visibility="Collapsed" x:Name="ins" />
+                <local:Add_Rest Visibility="Collapsed" x:Name="res"/>
+                <local:Add_FuncChange Visibility="Collapsed" x:Name="fc"/>
+                <local:Add_Delegation Visibility="Collapsed" x:Name="de"/>
+                <local:Rest_Details Visibility="Collapsed" x:Name="details"/>
+                <local:Add_Secondment Visibility="Collapsed" x:Name="secondment"/>
+                <local:Add_Punishment Visibility="Collapsed" x:Name="punish"/>
+                <local:Add_Reward Visibility="Collapsed" x:Name="reward"/>
+                <local:Add_Bonus Visibility="Collapsed" x:Name="bonus"/>
+                <local:FunctionChange_Details Visibility="Collapsed" x:Name="fcd"/>
+                <local:Delegation_Details Visibility="Collapsed" x:Name="dd"/>
+                <local:Punishment_Details Visibility="Collapsed" x:Name="pd"/>
+                <local:Secondment_Details Visibility="Collapsed" x:Name="sd"/>
+                <local:Bonus_Details Visibility="Collapsed" x:Name="bd"/>
+                <local:Reward_Details Visibility="Collapsed" x:Name="rdd"/>
+                <local:Decision_Collaps Visibility="Collapsed" x:Name="decCollaps"/>
+
+
+                <TextBlock Visibility="Hidden" Name="dec_id"/>
+            </Grid>
+        </GroupBox>
+        <Button Content="عودة" Grid.Column="1" HorizontalAlignment="Left" Margin="348,0,0,-4" Grid.Row="2" VerticalAlignment="Bottom" Width="138" Height="24" Click="Button_Click"/>
+        <Button x:Name="collaps" Content="طي القرار" Grid.Column="1" HorizontalAlignment="Left" Margin="105,7,0,0" Grid.Row="2" VerticalAlignment="Top" Height="24" Width="121" Click="collaps_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,1098 @@
+﻿<Window x:Class="personnel.Views.UpdateTeacher"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:personnel.Views"
+         xmlns:models="clr-namespace:personnel.Models"
+        mc:Ignorable="d"
+       
+        Title="تعديل بيانات الذاتية لأعضاء الهيئة التدريسية"  FlowDirection="RightToLeft">
+    <Window.DataContext>
+        <models:SelfCard></models:SelfCard>
+    </Window.DataContext>
+    <!--<Window.Resources>
+       
+        <Style TargetType="GroupBox">
+
+            <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="bold"/>
+            <Setter Property="Foreground" Value="#FF777C66"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+
+
+
+        </Style>
+
+        <Style TargetType="{x:Type DatePickerTextBox}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" />
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DatePickerTextBox">
+                        <Grid>
+                            <Grid.Resources>
+                                <SolidColorBrush x:Key="WatermarkBrush" Color="#FFAAAAAA"/>
+                            </Grid.Resources>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0" />
+                                        <VisualTransition To="MouseOver" GeneratedDuration="0:0:0.1" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState Name="Normal" />
+                                    <VisualState Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="#FF99C1E2" Duration="0"/>
+                                            <ColorAnimation Storyboard.TargetName="watermark_decorator" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="#FF99C1E2" Duration="0"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup Name="WatermarkStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState Name="Unwatermarked" />
+                                    <VisualState Name="Watermarked">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Opacity" To="0" Duration="0" />
+                                            <DoubleAnimation Storyboard.TargetName="PART_Watermark" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup Name="FocusStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState Name="Unfocused" />
+                                    <VisualState Name="Focused">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="FocusVisual" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+
+                            <Border x:Name="Border" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="1" 
+                            Opacity="1">
+                                <Grid x:Name="WatermarkContent"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                    <Border x:Name="ContentElement" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="#FFFFFFFF"/>
+                                        </Border.BorderBrush>
+                                    </Border>
+                                    <Border x:Name="watermark_decorator" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="#FFFFFFFF"/>
+                                        </Border.BorderBrush>
+                                        <ContentControl x:Name="PART_Watermark"
+                                                    Opacity="0"
+                                                    Focusable="False"
+                                                    IsHitTestVisible="False"
+                                                    Padding="2">
+                                            <ContentControl.Template>
+                                                <ControlTemplate>
+                                                    <TextBlock Text="اختر تاريخ"/>
+                                                </ControlTemplate>
+                                            </ContentControl.Template>
+                                        </ContentControl>
+                                    </Border>
+                                    <ScrollViewer x:Name="PART_ContentHost" 
+                                          Margin="0"
+                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    <Border x:Name="FocusVisual" BorderBrush="#FF45D6FA" CornerRadius="1" Opacity="0" IsHitTestVisible="False"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="4,6,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+
+            <Setter Property="Foreground" Value="#FF606453"/>
+
+            -->
+    <!--<Setter Property="Width" Value="auto"/>-->
+    <!--
+
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="4,6,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="23"/>
+            -->
+    <!--<Setter Property="Width" Value="90"/>-->
+    <!--
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+
+
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="4,6,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="25"/>
+            -->
+    <!--<Setter Property="Width" Value="90"/>-->
+    <!--
+            <Setter Property="FlowDirection" Value="LeftToRight"/>
+           
+
+
+
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="BorderBrush" Value="#FF938A31"/>
+            <Setter Property="Background" Value="#FFDAD59D"/>
+            <Setter Property="Foreground" Value="#FF403C17"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+
+                </Style>
+            </Style.Resources>
+
+        </Style>
+
+
+    </Window.Resources>
+
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Beige" Offset="-1"/>
+                <GradientStop Color="#FFECECCF" Offset="0"/>
+                <GradientStop Color="GhostWhite" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        -->
+    <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="659*"/>
+        </Grid.ColumnDefinitions>-->
+    <!--
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+
+
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.2*"/>
+
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="البيانات الشخصية"    FlowDirection="RightToLeft" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5"   >
+
+            <Grid  VerticalAlignment="Center"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
+
+
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock   Text="الاسم الأول" Grid.Column="1" Grid.Row="0" />
+                <TextBlock Grid.Column="3"     Text="الاسم الأخير" Grid.Row="0" />
+                <TextBlock Grid.Column="5"  Text="اسم الأب" Grid.Row="0" />
+                <TextBlock Grid.Column="7"   Text="اسم الأم ونسبتها" Grid.Row="0" />
+                <TextBlock Grid.Column="9"   Text="الجنس"  Grid.Row="0"/>
+                <TextBlock    Text="تاريخ الولادة"  Grid.Column="1"  Grid.Row="1"/>
+                <TextBlock  Text="العنوان" Grid.Column="1" Grid.Row="3" />
+                <TextBlock   Text="مكان الولادة"  Grid.Column="3"  Grid.Row="1"/>
+                <TextBlock   Text="الهاتف" Grid.Column="3" Grid.Row="3"/>
+                <TextBlock    Text="محل ورقم القيد"  Grid.Column="5" Grid.Row="1"/>
+                <TextBlock   Text="الخدمة العسكرية"  Grid.Column="5" Grid.Row="2"/>
+                <TextBlock  Text="الجنسية" Grid.Column="9" Grid.Row="2" />
+                <TextBlock    Text="شعبة التجنيد" Grid.Column="7" Grid.Row="2"/>
+                <TextBlock   Text="الديانة"  Grid.Column="9" Grid.Row="1"/>
+                <TextBlock   Text="الصورة"  Grid.Column="7" Grid.Row="1"/>
+                <TextBox    Grid.Column="2" Grid.Row="0"/>
+                <TextBox    Grid.Column="4" Grid.Row="0" />
+                <TextBox     Grid.Column="6" Grid.Row="0" />
+                <TextBox     Grid.Column="8" Grid.Row="0" />
+                <TextBox    Grid.Column="6" Grid.Row="1"  />
+                <TextBox    Grid.Column="2" Grid.Row="2" />
+                <TextBox   Grid.Column="4" Grid.Row="2"/>
+                <TextBox  Grid.Column="6"  Grid.Row="3"/>
+                <TextBox     Grid.Column="8"  Grid.Row="3" />
+                <TextBox  Grid.Column="8" Grid.Row="1"/>
+                <TextBox   Grid.Column="4" Grid.Row="1"/>
+                <ComboBox Grid.Column="10" Grid.Row="0"  >
+                    <ComboBoxItem Content="ذكر"/>
+                    <ComboBoxItem Content="أنثى"/>
+                </ComboBox>
+                <ComboBox Grid.Column="10" Grid.Row="2" >
+                    <ComboBoxItem Content="عربي سوري"/>
+                    <ComboBoxItem Content="لبناني"/>
+                    <ComboBoxItem Content="فلسطيني سوري"/>
+
+
+                </ComboBox>
+                <ComboBox Grid.Column="10" Grid.Row="1"   >
+                    <ComboBoxItem Content="اسلام"/>
+                    <ComboBoxItem Content="مسيحية"/>
+                </ComboBox>
+                <DatePicker HorizontalAlignment="Stretch" VerticalAlignment="Top"   Margin="4,6,4,4" Grid.Column="2" Grid.Row="1"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="بيانات العمل"   Grid.Row="2" FlowDirection="RightToLeft"  Grid.Column="1"  Margin="5,5,5,5" >
+            <Grid VerticalAlignment="Center" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
+
+
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock   Text="الرقم الذاتي" Grid.Column="1" Grid.Row="1"/>
+                <TextBlock Text="الفئة"   Grid.Row="2" Grid.Column="1"/>
+                <TextBlock  Text="المؤهل العلمي"  Grid.Column="3" Grid.Row="1"/>
+                <TextBlock  Text="المسمى الوظيفي"  Grid.Column="3" Grid.Row="2"/>
+                <TextBlock Text="الاختصاص"  Grid.Column="5" Grid.Row="1" />
+                <TextBlock  Text="نوع العقد"  Grid.Column="5" Grid.Row="2"/>
+                <TextBlock  Text="مكان العمل"  Grid.Column="7" Grid.Row="2" />
+                <TextBlock  Text="الجهة العاملة" Grid.Column="9" Grid.Row="2" />
+                <TextBlock Text="تاريخ المباشرة" Grid.Column="1" Grid.Row="4"/>
+                <TextBlock Grid.Column="5"   Grid.Row="3" Text="نوع التعيين"/>
+                <TextBlock Grid.Column="7"  Grid.Row="3" Text="حالة بطاقة التأمين" />
+                <TextBlock  Grid.Column="9" Text="الحالة" Grid.Row="3"  />
+                <TextBlock  Text="القسم" Grid.Column="1" Grid.Row="3" />
+                <TextBlock  Grid.Column="3" Grid.Row="3" Text="الشعبة"/>
+                <TextBlock  FlowDirection="RightToLeft" Text="الراتب" Grid.Column="3" Grid.Row="4"/>
+                <TextBlock Grid.Column="7" Grid.Row="4"  Text="ملاحظات"/>
+                <TextBlock Grid.Column="3" Grid.Row="4" />
+                <TextBlock Grid.Column="7"   Grid.Row="1"  Text="رقم الاضبارة"/>
+                <TextBlock Grid.Column="9"   Grid.Row="1"  Text="فئة الاضبارة"/>
+                <TextBlock Grid.Column="9" Grid.Row="4"  Text="اسم المسجل" />
+                <TextBox Grid.Column="8" Grid.Row="1" />
+                <TextBox  Grid.Column="2" Grid.Row="1"/>
+                <TextBox  Grid.Column="4" Grid.Row="1"/>
+                <TextBox  Grid.Column="6" Grid.Row="1"/>
+                <ComboBox   Grid.Column="2" Grid.Row="2" >
+                <ComboBoxItem Content="الأولى"/>
+                <ComboBoxItem Content="الثانية"/>
+                <ComboBoxItem Content="الثالثة"/>
+                <ComboBoxItem Content="الرابعة"/>
+                <ComboBoxItem Content="الخامسة"/>
+
+
+
+                </ComboBox>
+                <ComboBox Grid.Column="4" Grid.Row="2"    />
+                
+                <ComboBox Grid.Column="6"  Grid.Row="2"  >
+                <ComboBoxItem Content="عقد سنوي"/>
+                <ComboBoxItem Content="عقد موسمي"/>
+                    </ComboBox>
+                        <ComboBox Grid.Column="10" Grid.Row="1"    >
+                    <ComboBoxItem Content="الثالثة"/>
+                    <ComboBoxItem Content="الرابعة"/>
+                    <ComboBoxItem Content="الخامسة"/>
+                </ComboBox>
+                <ComboBox Grid.Column="8" Grid.Row="2" />
+
+
+                <ComboBox Grid.Column="10" Grid.Row="2" >
+                    <ComboBoxItem Content="جامعة البعث"/>
+                    <ComboBoxItem Content="خارج جامعة البعث"/>
+                </ComboBox>
+                <ComboBox Grid.Column="6" Grid.Row="3" >
+                <ComboBoxItem Content="شاغرة"/>
+                <ComboBoxItem Content="محدثة"/>
+                <ComboBoxItem Content="عقد"/>
+                </ComboBox>
+                    -->
+    <!--شاغرة او محدثة او عقد تتغير اذا تم تثبيت العقد-->
+    <!--
+                <ComboBox Grid.Column="8" Grid.Row="3" >
+                    <ComboBoxItem Content="ضمن الخدمة"/>
+                    <ComboBoxItem Content="خارج الخدمة "/>
+                </ComboBox>
+                <ComboBox Grid.Column="10" Grid.Row="3"   >
+                    <ComboBoxItem Content="الأولى"/>
+                    <ComboBoxItem Content="الثانية"/>
+                </ComboBox>
+                <TextBox   Grid.Column="10" Grid.Row="4"/>
+
+
+                <TextBox  Grid.Column="8" Grid.Row="4"/>
+                <TextBox  Grid.Column="4" Grid.Row="4"/>
+                <TextBox  Grid.Column="2" Grid.Row="3"/>
+                <TextBox  Grid.Column="4" Grid.Row="3"/>
+
+                <DatePicker HorizontalAlignment="Stretch"  VerticalAlignment="Top"  Margin="4,6,4,4" Grid.Column="2" Grid.Row="4"   />
+
+
+
+            </Grid>
+        </GroupBox>
+        <TextBlock HorizontalAlignment="Center"  Text="تعديل ذاتية موظف" VerticalAlignment="Center"  FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold" />
+        <Button Content="عودة"    Grid.Row="3" VerticalAlignment="Top" Height="35" Width="70" Margin="601,15,10,0" Grid.Column="1" BorderBrush="#FF938A31"/>
+        <Button Content="تعديل"   VerticalAlignment="Top" Height="35" Width="70" Grid.Row="3" Grid.Column="1" Margin="520,15,91,0"  Grid.RowSpan="2" />-->
+
+
+    <!--</Grid>
+</Window>-->
+    <!--<Window.Resources>
+        -->
+    <!--A Style that affects all TextBlocks-->
+    <!--
+        <Style TargetType="GroupBox">
+
+            <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="bold"/>
+            <Setter Property="Foreground" Value="#FF777C66"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+
+
+
+        </Style>
+
+        <Style TargetType="{x:Type DatePickerTextBox}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" />
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DatePickerTextBox">
+                        <Grid>
+                            <Grid.Resources>
+                                <SolidColorBrush x:Key="WatermarkBrush" Color="#FFAAAAAA"/>
+                            </Grid.Resources>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0" />
+                                        <VisualTransition To="MouseOver" GeneratedDuration="0:0:0.1" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState Name="Normal" />
+                                    <VisualState Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="#FF99C1E2" Duration="0"/>
+                                            <ColorAnimation Storyboard.TargetName="watermark_decorator" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="#FF99C1E2" Duration="0"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup Name="WatermarkStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState Name="Unwatermarked" />
+                                    <VisualState Name="Watermarked">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Opacity" To="0" Duration="0" />
+                                            <DoubleAnimation Storyboard.TargetName="PART_Watermark" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup Name="FocusStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState Name="Unfocused" />
+                                    <VisualState Name="Focused">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="FocusVisual" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+
+                            <Border x:Name="Border" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="1" 
+                            Opacity="1">
+                                <Grid x:Name="WatermarkContent"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                    <Border x:Name="ContentElement" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="#FFFFFFFF"/>
+                                        </Border.BorderBrush>
+                                    </Border>
+                                    <Border x:Name="watermark_decorator" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="#FFFFFFFF"/>
+                                        </Border.BorderBrush>
+                                        <ContentControl x:Name="PART_Watermark"
+                                                    Opacity="0"
+                                                    Focusable="False"
+                                                    IsHitTestVisible="False"
+                                                    Padding="2">
+                                            <ContentControl.Template>
+                                                <ControlTemplate>
+                                                    <TextBlock Text="اختر تاريخ"/>
+                                                </ControlTemplate>
+                                            </ContentControl.Template>
+                                        </ContentControl>
+                                    </Border>
+                                    <ScrollViewer x:Name="PART_ContentHost" 
+                                          Margin="0"
+                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    <Border x:Name="FocusVisual" BorderBrush="#FF45D6FA" CornerRadius="1" Opacity="0" IsHitTestVisible="False"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="4,6,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+
+            <Setter Property="Foreground" Value="#FF606453"/>
+
+            -->
+    <!--<Setter Property="Width" Value="auto"/>-->
+    <!--
+
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="4,6,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="23"/>
+            -->
+    <!--<Setter Property="Width" Value="90"/>-->
+    <!--
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+
+
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="4,6,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="25"/>
+            -->
+    <!--<Setter Property="Width" Value="90"/>-->
+    <!--
+            <Setter Property="FlowDirection" Value="LeftToRight"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+
+
+
+
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="BorderBrush" Value="#FF6B9172"/>
+            <Setter Property="Background" Value="#FF92C39D"/>
+            <Setter Property="Foreground" Value="#FF28362B"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+
+                </Style>
+            </Style.Resources>
+
+        </Style>
+
+
+    </Window.Resources>
+
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+
+                <GradientStop Color="#FFC9ECCF" Offset="0"/>
+                <GradientStop Color="GhostWhite" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>-->
+
+
+    <Window.Resources>
+
+        <Style TargetType="GroupBox">
+
+            <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="bold"/>
+            <Setter Property="Foreground" Value="#FF777C66"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+
+
+
+        </Style>
+
+        <Style TargetType="{x:Type DatePickerTextBox}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" />
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DatePickerTextBox">
+                        <Grid>
+                            <Grid.Resources>
+                                <SolidColorBrush x:Key="WatermarkBrush" Color="#FFAAAAAA"/>
+                            </Grid.Resources>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0" />
+                                        <VisualTransition To="MouseOver" GeneratedDuration="0:0:0.1" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState Name="Normal" />
+                                    <VisualState Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="#FF99C1E2" Duration="0"/>
+                                            <ColorAnimation Storyboard.TargetName="watermark_decorator" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="#FF99C1E2" Duration="0"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup Name="WatermarkStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState Name="Unwatermarked" />
+                                    <VisualState Name="Watermarked">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Opacity" To="0" Duration="0" />
+                                            <DoubleAnimation Storyboard.TargetName="PART_Watermark" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup Name="FocusStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState Name="Unfocused" />
+                                    <VisualState Name="Focused">
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="FocusVisual" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+
+                            <Border x:Name="Border" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="1" 
+                            Opacity="1">
+                                <Grid x:Name="WatermarkContent"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                    <Border x:Name="ContentElement" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="#FFFFFFFF"/>
+                                        </Border.BorderBrush>
+                                    </Border>
+                                    <Border x:Name="watermark_decorator" BorderThickness="1">
+                                        <Border.BorderBrush>
+                                            <SolidColorBrush Color="#FFFFFFFF"/>
+                                        </Border.BorderBrush>
+                                        <ContentControl x:Name="PART_Watermark"
+                                                    Opacity="0"
+                                                    Focusable="False"
+                                                    IsHitTestVisible="False"
+                                                    Padding="2">
+                                            <ContentControl.Template>
+                                                <ControlTemplate>
+                                                    <TextBlock Text="اختر تاريخ"/>
+                                                </ControlTemplate>
+                                            </ContentControl.Template>
+                                        </ContentControl>
+                                    </Border>
+                                    <ScrollViewer x:Name="PART_ContentHost" 
+                                          Margin="0"
+                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                    <Border x:Name="FocusVisual" BorderBrush="#FF45D6FA" CornerRadius="1" Opacity="0" IsHitTestVisible="False"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="4,6,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+
+            <Setter Property="Foreground" Value="#FF606453"/>
+
+
+
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="4,6,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="23"/>
+
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+
+
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="4,6,4,4" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="top"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+
+            <Setter Property="FlowDirection" Value="LeftToRight"/>
+
+
+
+
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="BorderBrush" Value="#FFACB6A5"/>
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="Foreground" Value="#FF403C17"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+
+                </Style>
+            </Style.Resources>
+
+        </Style>
+
+
+    </Window.Resources>
+
+    <Grid>
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF3C9F2" Offset="-1"/>
+                <GradientStop Color="#FFD4D3D4" Offset="0"/>
+                <GradientStop Color="GhostWhite" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+
+
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3.5*"/>
+
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.2*"/>
+
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="البيانات الشخصية"    FlowDirection="RightToLeft" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5"   >
+
+            <Grid  VerticalAlignment="Center"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
+
+
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock   Text="الاسم الأول" Grid.Column="1" Grid.Row="0" />
+                <TextBlock Grid.Column="3"     Text="الاسم الأخير" Grid.Row="0" />
+                <TextBlock Grid.Column="5"  Text="اسم الأب" Grid.Row="0" />
+                <TextBlock Grid.Column="7"   Text="اسم الأم ونسبتها" Grid.Row="0" />
+                <TextBlock Grid.Column="9"   Text="الجنس"  Grid.Row="0"/>
+                <TextBlock    Text="تاريخ الولادة"  Grid.Column="1"  Grid.Row="1"/>
+                <TextBlock  Text="العنوان" Grid.Column="1" Grid.Row="3" />
+                <TextBlock   Text="مكان الولادة"  Grid.Column="3"  Grid.Row="1"/>
+                <TextBlock   Text="الهاتف" Grid.Column="3" Grid.Row="3"/>
+                <TextBlock    Text="محل ورقم القيد"  Grid.Column="5" Grid.Row="1" />
+                <TextBlock   Text="الخدمة العسكرية"  Grid.Column="5" Grid.Row="2"/>
+                <TextBlock  Text="الجنسية" Grid.Column="9" Grid.Row="2" />
+                <TextBlock    Text="شعبة التجنيد" Grid.Column="7" Grid.Row="2"/>
+                <TextBlock   Text="الديانة"  Grid.Column="9" Grid.Row="1"/>
+                <TextBlock   Text="الوضع الاجتماعي"  Grid.Column="7" Grid.Row="1"/>
+                <TextBox    Grid.Column="2" Grid.Row="0" Name="firstname" Text="{Binding FirstName }"/>
+                <TextBox    Grid.Column="4" Grid.Row="0" Name="last" Text="{Binding LastName}" />
+                <TextBox     Grid.Column="6" Grid.Row="0" Name="father"  Text="{Binding FatherName}"/>
+                <TextBox     Grid.Column="8" Grid.Row="0" Name="mother"  Text="{Binding MotherName}"/>
+                <ComboBox Grid.Column="10" Grid.Row="0" Name="sex" Text="{Binding Sex}" >
+                    <ComboBoxItem Content="ذكر"/>
+                    <ComboBoxItem Content="أنثى"/>
+                </ComboBox>
+                <DatePicker HorizontalAlignment="Stretch" VerticalAlignment="Top"   Margin="4,6,4,4" Grid.Column="2" Grid.Row="1" Name="birthday" SelectedDate="{Binding Birthday}"/>
+                <TextBox   Grid.Column="4" Grid.Row="1" Name="birth" Text="{Binding BirthPlace}"/>
+                <TextBox    Grid.Column="6" Grid.Row="1"  Name="registered_id"  Text="{Binding RegisteredId}"/>
+                <ComboBox Grid.Column="8" Grid.Row="1" Name="social" Text="{Binding SocialSituation}">
+                    <ComboBoxItem Content="عازب"  />
+                    <ComboBoxItem Content="متأهل "/>
+                </ComboBox>
+                <ComboBox Grid.Column="10" Grid.Row="1" Name="religion" Text ="{Binding Religion}" >
+                    <ComboBoxItem Content="اسلام" />
+                    <ComboBoxItem Content="مسيحية"/>
+                </ComboBox>
+
+
+                <TextBox    Grid.Column="2" Grid.Row="2" Name="address"  Text="{Binding Address}"/>
+                <TextBox   Grid.Column="4" Grid.Row="2" Name="phone" Text="{Binding Phone}"/>
+                <TextBox  Grid.Column="6"  Grid.Row="3" Name="military" Text="{Binding Military}"/>
+                <TextBox     Grid.Column="8"  Grid.Row="3" Name="recruitment" Text="{Binding Recruitment}" />
+
+
+
+
+                <ComboBox Grid.Column="10" Grid.Row="2" Name="nationalty"  Text="{Binding Nationality}">
+                    <ComboBoxItem Content="عربي سوري"/>
+                    <ComboBoxItem Content="لبناني"/>
+                    <ComboBoxItem Content="فلسطيني سوري"/>
+
+
+                </ComboBox>
+
+
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="بيانات العمل"   Grid.Row="2" FlowDirection="RightToLeft"  Grid.Column="1"  Margin="5,5,5,5"  >
+            <Grid VerticalAlignment="Center" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
+
+
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock   Text="الرقم التأميني" Grid.Column="1" Grid.Row="1"/>
+                <TextBlock Text="الفئة"   Grid.Row="2" Grid.Column="1"/>
+                <TextBlock  Text="المؤهل العلمي"  Grid.Column="1" Grid.Row="4"/>
+                <TextBlock  Text="المسمى الوظيفي"  Grid.Column="3" Grid.Row="2"/>
+                <TextBlock Text="الاختصاص"  Grid.Column="3" Grid.Row="4" />
+                <TextBlock  Text="نوع العقد"  Grid.Column="5" Grid.Row="2"/>
+                <TextBlock  Text="مكان العمل"  Grid.Column="7" Grid.Row="2" />
+                <TextBlock  Text="الجهة العاملة" Grid.Column="9" Grid.Row="2" />
+                <TextBlock Text="تاريخ المباشرة" Grid.Column="5" Grid.Row="1"/>
+                <TextBlock Text="الرقم الذاتي" Grid.Column="3" Grid.Row="1"/>
+                <TextBlock Grid.Column="5"   Grid.Row="3" Text="نوع التعيين"/>
+                <TextBlock Grid.Column="5"   Grid.Row="4" Text="المهمة"/>
+                <TextBlock Grid.Column="7"  Grid.Row="3" Text="حالة بطاقة التأمين" />
+                <TextBlock  Grid.Column="9" Text="الحالة" Grid.Row="3"  />
+                <TextBlock  Text="القسم" Grid.Column="1" Grid.Row="3" />
+                <TextBlock  Grid.Column="3" Grid.Row="3" Text="الشعبة"/>
+                <TextBlock  FlowDirection="RightToLeft" Text="الراتب" Grid.Column="9" Grid.Row="4"/>
+                <TextBlock  FlowDirection="RightToLeft" Text="الصورة" Grid.Column="5" Grid.Row="5"/>
+                <TextBlock Grid.Column="7" Grid.Row="4"  Text="ملاحظات"/>
+                <TextBlock Grid.Column="3" Grid.Row="4" />
+                <TextBlock Grid.Column="7"   Grid.Row="1"  Text="رقم الاضبارة"/>
+                <TextBlock Grid.Column="9"   Grid.Row="1"  Text="فئة الاضبارة"/>
+                <TextBlock Grid.Column="7" Grid.Row="5"  Text="اسم المسجل" />
+                <TextBlock Grid.Column="1" Grid.Row="5"  Text="اللغات الأجنبية" />
+                <TextBlock Grid.Column="3" Grid.Row="5"  Text="الدورات العلمية والتدريبية" />
+                <TextBox  Grid.Column="2" Grid.Row="1" Name="insurid" Text="{Binding InsuranceId}"/>
+                <TextBox  Grid.Column="4" Grid.Row="1" Name="empid" Text="{Binding EmployeeId}"/>
+                <DatePicker HorizontalAlignment="Stretch"  VerticalAlignment="Top"  Margin="4,6,4,4" Grid.Column="6" Grid.Row="1"  Name="begindate" Text="{Binding BeginningDate}" FontWeight="Normal" />
+                <TextBox Grid.Column="8" Grid.Row="1" Name="fileid"  Text="{Binding FileId}"/>
+                <ComboBox Grid.Column="10" Grid.Row="1"  Name="fileclass"   Text="{Binding FileClass}"  >
+                    <ComboBoxItem Content="إداري" />
+                    <ComboBoxItem Content="فني"/>
+                    <ComboBoxItem Content="تدريسي"/>
+                    <ComboBoxItem Content="مخبري"/>
+                    <ComboBoxItem Content="عامل"/>
+                    <ComboBoxItem Content="عقد"/>
+                </ComboBox>
+                <ComboBox   Grid.Column="2" Grid.Row="2" Name="grade"  Text="{Binding Category}" SelectionChanged="grade_SelectionChanged" DropDownClosed="grade_DropDownClosed"   >
+
+
+                    <ComboBoxItem Content="3/3"/>
+                    <ComboBoxItem Content="2/3"/>
+                    <ComboBoxItem Content="1/3"/>
+                    <ComboBoxItem Content="3/2"/>
+                    <ComboBoxItem Content="2/2"/>
+                    <ComboBoxItem Content="1/2"/>
+
+                    <ComboBoxItem Content="3/1"/>
+                    <ComboBoxItem Content="2/1"/>
+                    <ComboBoxItem Content="1/1"/>
+                    <ComboBoxItem Content="2/م"/>
+                    <ComboBoxItem Content="1/م"/>
+                    <ComboBoxItem Content="1/5"/>
+                    <ComboBoxItem Content="3/4"/>
+                    <ComboBoxItem Content="2/4"/>
+                    <ComboBoxItem Content="1/4"/>
+                    <ComboBoxItem Content="فنية"/>
+
+                    <!--2/م
+1/م
+1/5
+3/4
+2/4
+1/4
+1/5
+3/4
+2/4
+1/4
+الأولى
+الأولى
+الأولى-->
+
+                </ComboBox>
+                <ComboBox Grid.Column="4" Grid.Row="2" Name="job"    Text="{Binding JobTitle}">
+
+
+                </ComboBox>
+                <ComboBox Grid.Column="6"  Grid.Row="2"  Name="workcontract"  Text="{Binding WorkContracts}" Margin="4,0,4,0" VerticalAlignment="Center">
+                    <ComboBoxItem Content="عقد سنوي" />
+                    <ComboBoxItem Content="عقد موسمي"/>
+                </ComboBox>
+                <ComboBox Grid.Column="8" Grid.Row="2" Name="workplace" SelectedValue="{Binding Workplace}">
+
+
+                </ComboBox>
+                <ComboBox Grid.Column="10" Grid.Row="2" Name="employer"   Text="{Binding Employer}">
+                    <ComboBoxItem Content="جامعة البعث" />
+                    <ComboBoxItem Content="خارج جامعة البعث"/>
+                </ComboBox>
+                <TextBox  Grid.Column="2" Grid.Row="3" Name="dept" Text="{Binding Section }"/>
+
+                <TextBox  Grid.Column="4" Grid.Row="3" Name="div" Text="{Binding Division}"/>
+                <ComboBox Grid.Column="6" Grid.Row="3" Name="type" Text="{Binding NominationType}" >
+                    <ComboBoxItem Content="شاغرة"/>
+                    <ComboBoxItem Content="محدثة"/>
+                    <ComboBoxItem Content="عقد"/>
+                </ComboBox>
+                <ComboBox Grid.Column="8" Grid.Row="3" Name="card" Text="{Binding InsuranceCard}" >
+                    <ComboBoxItem Content="ضمن الخدمة" />
+                    <ComboBoxItem Content="خارج الخدمة"/>
+                </ComboBox>
+                <ComboBox Grid.Column="10" Grid.Row="3" Name="status" Text="{Binding Status}"  >
+                    <ComboBoxItem Content="قائم على رأس عمله"/>
+                    <ComboBoxItem Content="بلا أجر"/>
+                    <ComboBoxItem Content="متوفى"/>
+                    <ComboBoxItem Content="مسرح صحياً"/>
+                    <ComboBoxItem Content="مندوب"/>
+                    <ComboBoxItem Content="معار داخلياً"/>
+                    <ComboBoxItem Content="معار خارجياً"/>
+                    <ComboBoxItem Content="مستقيل"/>
+                    <ComboBoxItem Content="بحكم المستقيل"/>
+                    <ComboBoxItem Content="كف اليد"/>
+                    <ComboBoxItem Content="مصروف من الخدمة"/>
+                    <ComboBoxItem Content="متقاعد"/>
+                    <ComboBoxItem Content="اجازة دراسية"/>
+                    <ComboBoxItem Content="موفد خارجياً"/>
+                    <ComboBoxItem Content="موفد داخلياً"/>
+                    <ComboBoxItem Content="احتياط"/>
+                    <ComboBoxItem Content="خدمة الزامية"/>
+                    <ComboBoxItem Content="منقول خارج الجامعة"/>
+                    <ComboBoxItem Content="مكلف خارج الجامعة"/>
+                    <ComboBoxItem Content="مجمد"/>
+                    <ComboBoxItem Content="مفرغ للحزب"/>
+
+                </ComboBox>
+
+                <TextBox  Grid.Column="2" Grid.Row="4" Name="certificate" Text="{Binding Certificate}"/>
+                <TextBox  Grid.Column="4" Grid.Row="4" Name="specialization" Text="{Binding Specialization}"/>
+
+
+
+
+
+
+
+                <ComboBox Grid.Column="6" Grid.Row="4" Name="mission" Text="{Binding Mission}" >
+                    <ComboBoxItem Content="موظف" IsSelected="true"/>
+                    <ComboBoxItem Content="رئيس جامعة"/>
+                    <ComboBoxItem Content="نائب رئيس جامعة"/>
+                    <ComboBoxItem Content="أمين جامعة"/>
+                    <ComboBoxItem Content="رئيس دائرة"/>
+                    <ComboBoxItem Content="رئيس شعبة"/>
+                    <ComboBoxItem Content="أمين مستودع"/>
+                    <ComboBoxItem Content="أمين مكتبة"/>
+                    <ComboBoxItem Content="مشرف وحدة"/>
+                    <ComboBoxItem Content="مدير معهد"/>
+                    <ComboBoxItem Content="أمين مساعد"/>
+                    <ComboBoxItem Content="معتمد رسوم طلاب"/>
+                    <ComboBoxItem Content="معتمد بيع كتب"/>
+
+
+                </ComboBox>
+
+                <ComboBox Grid.Column="8" Grid.Row="4" Name="note"  Text="{Binding Notes}">
+                    <ComboBoxItem Content="لا يوجد "  />
+                    <ComboBoxItem Content="احتياجات خاصة" />
+                    <ComboBoxItem Content="ذوي شهداء "/>
+                    <ComboBoxItem Content="مسابقة "/>
+                    <ComboBoxItem Content="نقل "/>
+                </ComboBox>
+
+                <TextBox  Grid.Column="10" Grid.Row="4" Name="salary" Text="{Binding Salary}"/>
+
+                <TextBox  Grid.Column="6" Grid.Row="5" Name="photo" Text="{Binding Photo}"/>
+                <TextBox   Grid.Column="8" Grid.Row="5" Name="register" Text="{Binding Register}"/>
+                <TextBox   Grid.Column="2" Grid.Row="5" Name="lang" Text="{Binding Languages }"/>
+                <TextBox   Grid.Column="4" Grid.Row="5" Name="course" Text="{Binding TrainingCourses }"/>
+
+
+
+
+
+
+
+
+
+            </Grid>
+        </GroupBox>
+        <TextBlock HorizontalAlignment="Center"  Text="تعديل ذاتية عضو هيئة فنية / تدريسية" VerticalAlignment="Center"  FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold" />
+        <Button Content="عودة"    Grid.Row="3" VerticalAlignment="Top" Height="35" Width="70" Margin="601,15,10,0" Grid.Column="1" BorderBrush="#FF938A31" Click="Button_Click"/>
+        <Button Content="تعديل" Width="70" Grid.Row="3" Grid.Column="1" Margin="538,15,108,0" Height="35" Grid.RowSpan="2" Click="update_emp" />
+
+    </Grid>
+</Window>
+

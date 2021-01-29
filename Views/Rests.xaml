@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="personnel.Views.rests"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:personnel.Views"
+             xmlns:models="clr-namespace:personnel.Models"
+              xmlns:modelsview="clr-namespace:personnel.ModelView"
+             mc:Ignorable="d" 
+        d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft">
+    <UserControl.DataContext>
+        <modelsview:EmpRest>
+            
+        </modelsview:EmpRest>
+
+    </UserControl.DataContext>
+    
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+
+
+        </Grid.RowDefinitions>
+
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>-->
+       
+
+        <Label Content="الإجازات"   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"  FontFamily="tahoma" Foreground="#FF0B6807" Width="194"/>
+        <DataGrid    Grid.Row="1"   Height="auto"   VerticalAlignment="Top"  MinColumnWidth="100" HorizontalGridLinesBrush="#FFC48DD8" VerticalGridLinesBrush="#FFC48DD8" CanUserReorderColumns="False" CanUserResizeColumns="true" CanUserSortColumns="true" Foreground="#FF0B6807" Name="RS" AutoGenerateColumns="False" FontSize="13" FontFamily="Comic Sans MS" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="200" >
+
+            <DataGrid.Columns>
+                <!--<DataGridTextColumn Binding="{Binding DecisionId}" ClipboardContentBinding="{x:Null}" Header="رقم القرار"/>-->
+                <DataGridTextColumn Binding="{Binding fu}" ClipboardContentBinding="{x:Null}" Header="بيانات القرار" />
+                <DataGridTextColumn Binding="{Binding RestType }" ClipboardContentBinding="{x:Null}" Header="طبيعة الإجازة"/>
+                <DataGridTextColumn Binding="{Binding RestPeriod}" ClipboardContentBinding="{x:Null}" Header="مدة الإجازة"/>
+                <DataGridTextColumn Binding="{Binding Period}" ClipboardContentBinding="{x:Null}" Header="يوم/شهر/سنة"/>
+                <DataGridTextColumn Binding="{Binding RestStart, StringFormat='yyyy/MM/dd' }" ClipboardContentBinding="{x:Null}" Header="تاريخ بداية الإجازة"/>
+                <DataGridTextColumn Binding="{Binding  RestEnd ,StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="تاريخ نهاية الإجازة"/>
+                <DataGridTextColumn Binding="{Binding Attachment}" ClipboardContentBinding="{x:Null}" Header="المرفق"/>
+                <DataGridTextColumn Binding="{Binding Notes}" ClipboardContentBinding="{x:Null}" Header="ملاحظات"/>
+
+
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--<Label  VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" FontFamily="tahoma" Foreground="#FF0B6807"  Width="230" Margin="0,0,0,0" >
+        </Label>-->
+        <TextBlock Name="tb"  VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="2" FontFamily="tahoma" Foreground="#FF0B6807" FontWeight="Bold" Width="auto"/>
+        <!--<Label  Content="من أصل  :" VerticalAlignment="Center" Grid.Row="2" FontFamily="tahoma" Foreground="#FF0B6807" Grid.Column="2" Width="auto" />
+        <TextBlock Name="all"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="3" Grid.Row="2" FontFamily="tahoma" Foreground="#FF0B6807" FontWeight="Bold" />-->
+    </Grid>
+</UserControl>

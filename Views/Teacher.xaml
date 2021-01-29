@@ -1,0 +1,124 @@
+﻿<Window x:Class="personnel.Views.Teacher"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:personnel.Views"
+        mc:Ignorable="d"
+        Title="ذاتية الهيئة التدريسية"   FlowDirection="RightToLeft"  Width="1300" Height="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="GroupBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="AliceBlue"/>
+            <Setter Property="BorderThickness" Value="1.3"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush  EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
+                <GradientStop Color="SkyBlue" Offset="0"/>
+                <GradientStop Color="GhostWhite" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="BorderThickness" Value="1.5"/>
+                <Setter Property="BorderBrush" Value="#FF4C8DDA"/>
+                <Setter Property="Background" Value="#FFA9C7E4"/>
+                <Setter Property="Foreground" Value="#FF0C71AA"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontSize" Value="11"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+
+                    </Style>
+                </Style.Resources>
+
+            </Style>
+        </Grid.Resources>
+
+
+        <GroupBox  Grid.Column="0"  Grid.Row="0"  Header="حقل البحث" FlowDirection="RightToLeft"   Height="auto" >
+
+
+            <Grid VerticalAlignment="top"  Margin="0,7,0,0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33*"/>
+                    <ColumnDefinition Width="106*"/>
+                </Grid.ColumnDefinitions>
+
+                <RadioButton Content="بحث حسب الاسم" GroupName="search"   HorizontalAlignment="Left"  VerticalAlignment="Top" Width="131" Name="sname" Foreground="#FF1D213A" FontSize="12" FontWeight="ExtraBold" Grid.ColumnSpan="2" Checked="sname_Checked"    />
+                <RadioButton Content="بحث حسب مكان العمل" GroupName="search" Name="splace" HorizontalAlignment="Left"  Margin="0,30,0,10" VerticalAlignment="Center"  Foreground="#FF1D213A" FontSize="12" FontWeight="ExtraBold" Grid.ColumnSpan="2" Checked="splace_Checked"  />
+
+            </Grid>
+        </GroupBox>
+        <GroupBox  Grid.Column="0"  Header="البحث" FlowDirection="RightToLeft" Grid.Row="1"  Height="auto" >
+            <Grid VerticalAlignment="Top">
+                <TextBox  TextWrapping="NoWrap" Width="100" Height="22" Name="search" IsEnabled="True" VerticalAlignment="top" Margin="20,28,20,0"  Visibility="Collapsed"  />
+                <ComboBox  VerticalAlignment="top" Margin="20,28,20,0" Height="25" Name="workplace" FontWeight="Bold" FontSize="12" FlowDirection="LeftToRight"  Visibility="Collapsed"/>
+                <Button Content="بحـــث" Margin="33,77,32,15" Width="75" Height="25" Click="Search_Employee" FontWeight="Bold" FontSize="12"  />
+
+            </Grid>
+        </GroupBox>
+
+
+        <Button Content="ادخال بطاقة جديدة" FontWeight="Bold" FontSize="12" Margin="17,10,10,0" Grid.Row="2" Grid.Column="0"  Height="35" VerticalAlignment="Top" Click="Insert_Employee"/>
+
+        <GroupBox  Grid.Row="0"  Header="بيانات الموظف :" FlowDirection="RightToLeft"  Grid.RowSpan="2" Grid.Column="1"   >
+            <Grid  Width="auto" Height="auto" Margin="0,0,0,0">
+                <DataGrid   Margin="10,10,10,0" Height="150" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxHeight="200" MaxWidth="1050" VerticalAlignment="Top"  MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF505A9C"   FontSize="12" Name="search_emp" AutoGenerateColumns="False" >
+
+                    <!--<DataGrid.Resources>
+                            <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#FFC1C7E6" />
+                          
+                        </Style>
+                        </DataGrid.Resources>-->
+
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Binding="{Binding EmployeeId}" ClipboardContentBinding="{x:Null}" Header="الرقم الذاتي"/>
+                        <DataGridTextColumn Binding="{Binding FirstName}" ClipboardContentBinding="{x:Null}" Header="الاسم"/>
+                        <DataGridTextColumn Binding="{Binding LastName}" ClipboardContentBinding="{x:Null}" Header="الكنية"/>
+                        <DataGridTextColumn Binding="{Binding FileId}" ClipboardContentBinding="{x:Null}" Header="رقم الاضبارة"/>
+                        <DataGridTextColumn Binding="{Binding FileClass}" ClipboardContentBinding="{x:Null}" Header="فئة الاضبارة"/>
+                        <DataGridTextColumn Binding="{Binding Category}" ClipboardContentBinding="{x:Null}" Header="الفئة"/>
+                        <DataGridTextColumn Binding="{Binding Workplace}" ClipboardContentBinding="{x:Null}" Header="مكان العمل"/>
+                        <DataGridTextColumn Binding="{Binding JobTitle}" ClipboardContentBinding="{x:Null}" Header="المسمى الوظيفي"/>
+                        <DataGridTextColumn Binding="{Binding Birthday,StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="تاريخ الميلاد"/>
+                        <DataGridTextColumn Binding="{Binding BeginningDate,StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="تاريخ المباشرة"/>
+                        <DataGridTextColumn Binding="{Binding Status}" ClipboardContentBinding="{x:Null}" Header="الحالة"/>
+
+
+                    </DataGrid.Columns>
+                </DataGrid>
+
+
+            </Grid>
+
+        </GroupBox>
+
+
+        <Button Content="عرض البطاقة"  Width="80" Margin="848,10,18,0" Click="View_Employee" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FontSize="12"/>
+        <Button Content="تعديل"  Margin="720,10,278,0"  Click="Edit_Employee" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FontSize="12" Height="35" VerticalAlignment="Top"/>
+        <Button Content="عودة"  Margin="594,10,462,0"  Click="Return" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FontSize="12"/>
+
+
+    </Grid>
+</Window>

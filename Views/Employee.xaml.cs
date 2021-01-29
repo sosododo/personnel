@@ -19,53 +19,135 @@ namespace personnel.Views
     /// </summary>
     public partial class Employee : Window
     {
+
+        
+
+
         PersonelDBContext db = new PersonelDBContext();
        // SelfCard sc = new SelfCard();
         public Employee()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            UpdateEmp up = new UpdateEmp();
-            up.Show();
-            this.Close();
-        }
-
-        private void EmployeeSerch(object sender, RoutedEventArgs e)
-        {
-            //FULL NAME FOR SEARCH????
-            string inputsearch = search.Text;
-          
-            if (sname.IsChecked == true)
-            {
-                int num = db.SelfCards.Where(x => x.FirstName == inputsearch).Count();
-
-                if (num == 1)
-                {
-                    var sc = db.SelfCards.Where(x => x.FirstName == inputsearch).ToList();
-                    search_emp.ItemsSource = sc;
-
-
-
-                }
-            }
-            else
-            {
-                int num = db.SelfCards.Where(x => x.FirstName == inputsearch).Count();
-
-                if (num == 1)
-                {
-                 //   sc = db.SelfCards.Where(x => x.Workplace == inputsearch).FirstOrDefault();
-                }
-            }
-
+            List<string> workplaces = db.Works.Select(w => w.WorkPlace).ToList();
+            workplace.ItemsSource = workplaces;
+            workplace.SelectedIndex = 0;
         }
 
         private void Edit_Employee(object sender, RoutedEventArgs e)
         {
+            SelfCard self = new SelfCard();
+            if (search_emp.SelectedItem != null)
+            {
+                self = (SelfCard)search_emp.SelectedItem;
+                UpdateEmp up = new UpdateEmp(self);
+                up.Show();
+                this.Close();
+            }
+            else {
+                MessageBox.Show(" اختر موظفاً");
+            }
+        }
 
+        private void Search_Employee(object sender, RoutedEventArgs e)
+        {
+            
+          
+            string work = workplace.Text;
+            string inputsearch = search.Text;
+
+            if (sname.IsChecked == true)
+            {
+                int num = db.SelfCards.Where(x => x.IsTeacher==0 && x.FirstName == inputsearch).Count();
+
+                //if (num >= 1)
+   
+
+                List<SelfCard> selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.FirstName == inputsearch).ToList();
+
+                if (selfCards.Count!=0)
+                {
+                    
+                    search_emp.ItemsSource = selfCards;
+
+
+
+                }
+                else
+                { MessageBox.Show("لا يوجد بيانات لهذا البحث"); }
+
+            }
+            else if (splace.IsChecked == true)
+            {
+                int num = db.SelfCards.Where(x => x.IsTeacher == 0 && x.Workplace == work).Count();
+
+                if (num >= 1)
+                {
+                    List<SelfCard> sw = db.SelfCards.Where(x => x.IsTeacher == 0 && x.Workplace == work).ToList();
+                    search_emp.ItemsSource = sw;
+
+                }
+                else
+                { MessageBox.Show("لا يوجد بيانات لهذا البحث"); }
+
+
+
+            }
+            //else
+            //{
+            //    int num = db.SelfCards.Where(x => x.FirstName == inputsearch).Count();
+
+            //    if (num == 1)
+            //    {
+            //        sc = db.SelfCards.Where(x => x.Workplace == inputsearch).FirstOrDefault();
+            //    }
+            //}
+
+        }
+
+        private void View_Employee(object sender, RoutedEventArgs e)
+        {
+            SelfCard self1 = new SelfCard();
+            if (search_emp.SelectedItem != null)
+            {
+                self1 = (SelfCard)search_emp.SelectedItem;
+                ShowEmployee up1 = new ShowEmployee(self1);
+                up1.Show();
+                this.Close();
+            }
+            else { MessageBox.Show("اختر موظفاً"); }
+        }
+        private void Insert_Employee(object sender, RoutedEventArgs e)
+        {
+            AddPersonnel ad = new AddPersonnel();
+            ad.Show();
+            this.Hide();
+        }
+
+
+        private void Return(object sender, RoutedEventArgs e)
+        {
+            MainWindow m = new MainWindow();
+            m.Show();
+            this.Hide();
+        }
+
+        private void splace_Checked(object sender, RoutedEventArgs e)
+        {
+           
+            search.Visibility = Visibility.Hidden;
+            workplace.Visibility = Visibility.Visible;
+            search_emp.ItemsSource = null;
+
+        }
+
+        private void sname_Checked(object sender, RoutedEventArgs e)
+        {
+            search.Text = "";
+            search.Visibility = Visibility.Visible;
+            workplace.Visibility = Visibility.Hidden;
+            search_emp.ItemsSource = null;
         }
     }
 }
+
+

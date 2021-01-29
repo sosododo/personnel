@@ -26,6 +26,8 @@ namespace personnel.Models
         public virtual DbSet<Secondment> Secondments { get; set; }
         public virtual DbSet<SelfCard> SelfCards { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Work> Works { get; set; }
+        public virtual DbSet<Job> Jobs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -59,7 +61,11 @@ namespace personnel.Models
             {
                 entity.HasKey(e => e.DecisionId)
                     .HasName("PK_decision");
+                entity.Property(e => e.Full).HasComputedColumnSql("(concat([decision_number],'  ',[decision_type],'  ',[decision_year]))");
+                //entity.Property(m => m.Is_Excute).HasDefaultValue("N'false'");
+
             });
+
 
             modelBuilder.Entity<Delegating>(entity =>
             {
@@ -153,8 +159,10 @@ namespace personnel.Models
                     .HasName("PK_self_card");
             });
 
+         
             OnModelCreatingPartial(modelBuilder);
         }
+
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }

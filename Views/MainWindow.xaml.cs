@@ -1,4 +1,5 @@
-﻿using System;
+﻿using personnel.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -24,9 +25,26 @@ namespace personnel.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Employee emp = new Employee();
-            emp.Show();
+            if (em.IsChecked==true)
+            {
+                Employee emp = new Employee();
+                emp.Show();
+                this.Close(); }
+            else if(teach.IsChecked==true)
+
+            {
+                Teacher teacher = new Teacher();
+                teacher.Show();
+                this.Close();
+            }
+        }
+
+        private void GoToDecisions (object sender, RoutedEventArgs e)
+        {
+            Decision_View de = new Decision_View();
+            de.Show();
             this.Close();
+
         }
     }
 }

@@ -18,7 +18,8 @@ namespace personnel.Models
             Punishments = new HashSet<Punishment>();
             Rests = new HashSet<Rest>();
             Secondments = new HashSet<Secondment>();
-            Full= DecisionNumber + " " + DecisionType + " " + DecisionYear;
+            Scars = new HashSet<Scar>();
+            Full = DecisionNumber + " " + DecisionType + " " + DecisionYear;
         }
 
         [Key]
@@ -77,6 +78,8 @@ namespace personnel.Models
         public virtual ICollection<Bonuse> Bonuses { get; set; }
         [InverseProperty("Decision")]
         public virtual ICollection<Delegating> Delegatings { get; set; }
+        [InverseProperty("Decision")]
+        public virtual ICollection<Scar> Scars { get; set; }
         [InverseProperty("Decision")]
         public virtual ICollection<FunctionalChange> FunctionalChanges { get; set; }
         [InverseProperty("Decision")]

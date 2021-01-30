@@ -80,16 +80,14 @@
 
 
         </Grid.RowDefinitions>
-        <Label Content="تاريخ طي القرار " Height="34" Grid.Column="1" Margin="44,17,0,0" Width="165" FontSize="20" Grid.RowSpan="8" VerticalAlignment="Top"/>
-        <DatePicker Grid.Column="3" HorizontalAlignment="Center"  SelectedDate="{Binding CollapsDate}" Height="34" Margin="0,17,0,0" VerticalAlignment="Top" Width="157" Grid.Row="7"/>
+        <Label Content="تاريخ طي القرار " Height="34" Grid.Column="5" Margin="55,6,0,0" Width="165" FontSize="20" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Row="7"/>
+        <DatePicker x:Name="date" Grid.Column="7" HorizontalAlignment="Left"   Height="34" Margin="0,6,0,0" VerticalAlignment="Top" Width="157" Grid.Row="7" Grid.ColumnSpan="3"/>
         <Button x:Name="collaps" Content="طي" Grid.Column="3" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top"  Width="98" Grid.Row="7" Click="collaps_Click" Grid.ColumnSpan="3" Margin="158,121,0,0"/>
-        <ComboBox Text="{Binding DecisionStatus}" Grid.Column="8" HorizontalAlignment="Left" Width="88" Grid.ColumnSpan="2" Grid.Row="7" Margin="4,17,0,0">
-            <ComboBoxItem Content="قرار مطوي"></ComboBoxItem>
-        </ComboBox>
-        <Label Content="حالة القرار" Height="34" Grid.Column="5" Margin="101,17,0,0" VerticalAlignment="Top" Width="165" FontSize="20" Grid.ColumnSpan="4" Grid.Row="7"/>
+        <Label Content="أدخل رقم القرار المراد طيه" Height="34" Grid.Column="1" Width="232" FontSize="20" VerticalAlignment="Top" Grid.Row="7" Grid.ColumnSpan="3" Margin="4,6,0,0"/>
+        <TextBox x:Name="num" Grid.Column="3" HorizontalAlignment="Center" Height="34" Text="" Width="120" Grid.Row="7" Margin="0,6,0,0"/>
+        <CheckBox Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}"></CheckBox>
 
-
-
+        <TextBlock Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="dec_id" ></TextBlock>
 
 
     </Grid>

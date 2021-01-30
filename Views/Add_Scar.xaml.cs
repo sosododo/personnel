@@ -18,15 +18,15 @@ using System.Windows.Shapes;
 namespace personnel.Views
 {
     /// <summary>
-    /// Interaction logic for Add_Secondment.xaml
+    /// Interaction logic for Add_Scar.xaml
     /// </summary>
-    public partial class Add_Secondment : UserControl
+    public partial class Add_Scar : UserControl
     {
-
-        PersonelDBContext db;
-        static string sec_per;
         private int _numValue = 0;
-        public Add_Secondment()
+        PersonelDBContext db;
+        long empId;
+        static string del_per;
+        public Add_Scar()
         {
             InitializeComponent();
             db = new PersonelDBContext();
@@ -47,110 +47,99 @@ namespace personnel.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            try {
+            try
+            {
 
                 var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName }).ToList();
 
                 var id = emp_id.Where(d => d.full == emp_name.Text).ToList().ElementAt(0);
 
                 long empId = id.PersonId;
-                int c = db.Secondments.Where(x => x.DecisionId == long.Parse(dec_id.Text) && x.PersonId == empId).Count();
+                // فحص اذا كان القرار مطبق مسبقا على هذا الموظف
+                int c = db.Scars.Where(x => x.DecisionId == long.Parse(dec_id.Text) && x.PersonId == empId).Count();
                 if (c > 0)
                 {
                     MessageBox.Show("تم تطبيق هذا القرار مسبقا على الموظف المحدد");
                 }
-                else {
+                else
+                {
+                    if (del_per1.IsChecked == true)
+                    { del_per = del_per1.Content.ToString(); }
+                    if (del_per2.IsChecked == true)
+                    { del_per = del_per2.Content.ToString(); }
+                    if (del_per3.IsChecked == true)
+                    { del_per = del_per3.Content.ToString(); }
 
-                    if (sec_per1.IsChecked == true)
-                    { sec_per = sec_per1.Content.ToString(); }
-                    if (sec_per2.IsChecked == true)
-                    { sec_per = sec_per2.Content.ToString(); }
-                    if (sec_per3.IsChecked == true)
-                    { sec_per = sec_per3.Content.ToString(); }
-
-
-                    Secondment r = new Secondment
+                    Scar del = new Scar
                     {
-
-                        PersonId = id.PersonId,
+                        PersonId = empId,
                         DecisionId = long.Parse(dec_id.Text),
-                        SecondmentType = sec_type.Text,
-                        PeriodNum = Int32.Parse(perod.Text),
-                        PeriodType = sec_per,
-                        SecondmentPlace= place.Text,
-                        SecondmentStart = sec_start.SelectedDate,
-                        SecondmentEnd=sec_end.SelectedDate,
-                        Notes=note.Text
                       
-
+                        PeriodType = del_per,
+                        PeriodNum = Int32.Parse(perod.Text),
+                        ScarReason = reason.Text,
+                        ScarPlace = country.Text,
+                        ScarStart = del_start.SelectedDate,
+                        ScarEnd = del_end.SelectedDate,
+                        Notes = note.Text
                     };
-                    db.Add(r);
+                    db.Scars.Add(del);
                     db.SaveChanges();
-                    MessageBox.Show("تم تنفيذ قرار الاعارة");
+
+
+
+                    MessageBox.Show("تم إضافة تفصيل قرار الندب بنجاح");
+
 
                     string message = "هل انتهى تنفيذ القرار؟";
                     string caption = "تنبيه";
                     var result = MessageBox.Show(message, caption,
                                                  MessageBoxButton.YesNo,
                                                  MessageBoxImage.Question);
-
-
                     if (result == MessageBoxResult.Yes)
                     {
-                        sec_per1.IsChecked = false;
-                        sec_per2.IsChecked = false;
-                        sec_per3.IsChecked = false;
-                        sec_start.Text = null;
-                        sec_type.Text = null;
-                        sec_end.Text = null;
-                        emp_name.Text = null;
-                        place.Text = null;
-                      
+                        del_per1.IsChecked = false;
+                        del_per2.IsChecked = false;
+                        del_per3.IsChecked = false;
+                        del_start.Text = null;
+                       
+                        del_end.Text = null;
+                        country.Text = "";
+                        reason.Text = null;
+                        
                         note.Text = "";
                         perod.Text = "";
                         this.Visibility = Visibility.Collapsed;
                         var d = db.Decisions.Where(c => c.DecisionId == long.Parse(dec_id.Text)).Single();
                         excute.IsChecked = true;
-                        // d.IsExcute = true;
                         d.IsExcute = true;
-
                         db.Decisions.Update(d);
-
                         db.SaveChanges();
-
                         Decision_View dv = new Decision_View();
                         Window parentWindow = Window.GetWindow(this);
                         parentWindow.Close();
                         dv.Show();
 
-
-
-
                     }
                     else if (result == MessageBoxResult.No)
                     {
-                        sec_per1.IsChecked = false;
-                        sec_per2.IsChecked = false;
-                        sec_per3.IsChecked = false;
-                        sec_start.Text = null;
-                        sec_type.Text = null;
-                        sec_end.Text = null;
-                        emp_name.Text = null;
-                        place.Text = null;
+                        del_per1.IsChecked = false;
+                        del_per2.IsChecked = false;
+                        del_per3.IsChecked = false;
+                        del_start.Text = null;
+                        
+                        del_end.Text = null;
+                        country.Text = "";
+                        reason.Text = null;
+                       
                         note.Text = "";
                         perod.Text = "";
-
-                     
                     }
-
-
-
                 }
 
 
-
             }
+
             catch (Exception ex) { MessageBox.Show("يجب التأكد من ادخال جميع البيانات"); }
         }
 

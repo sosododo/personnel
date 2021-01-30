@@ -168,12 +168,14 @@
                 <local:Bonus_Details Visibility="Collapsed" x:Name="bd"/>
                 <local:Reward_Details Visibility="Collapsed" x:Name="rdd"/>
                 <local:Decision_Collaps Visibility="Collapsed" x:Name="decCollaps"/>
+                <local:Add_Scar Visibility="Collapsed" x:Name="addscar"/>
+                <local:Scar_Details Visibility="Collapsed" x:Name="scardetails"/>
+
 
 
                 <TextBlock Visibility="Hidden" Name="dec_id"/>
             </Grid>
         </GroupBox>
         <Button Content="عودة" Grid.Column="1" HorizontalAlignment="Left" Margin="348,0,0,-4" Grid.Row="2" VerticalAlignment="Bottom" Width="138" Height="24" Click="Button_Click"/>
-        <Button x:Name="collaps" Content="طي القرار" Grid.Column="1" HorizontalAlignment="Left" Margin="105,7,0,0" Grid.Row="2" VerticalAlignment="Top" Height="24" Width="121" Click="collaps_Click"/>
     </Grid>
 </Window>

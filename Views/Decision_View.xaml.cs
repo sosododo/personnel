@@ -246,20 +246,7 @@ namespace personnel.Views
         private void butt(object sender, RoutedEventArgs e)
 
         {
-            ////Decision dec = new Decision();
-            ////dec = (Decision)result.SelectedItem;
-            //result.SelectedItem = null;
-            //result.ItemsSource = null;
-            //tx_id.Text = "";
-            //tx_id.IsEnabled = false;
-            //tx_year.Text = "";
-            //tx_year.IsEnabled = false;
-            //tx_type.Text = "";
-            //tx_type.IsEnabled = false;
-            //ch_id.IsChecked = false;
-            //ch_year.IsChecked = false;
-            //ch_type.IsChecked = false;
-            //result.SelectedItem = null;
+        
        
             Decision_View dv = new Decision_View();
             this.Close();
@@ -336,7 +323,7 @@ namespace personnel.Views
                 MessageBox.Show("تنبيه : تم طي هذا القرار ولم يعد قرار ساري");
                 excute_but.IsEnabled = false;
                 edit_but.IsEnabled = false;
-                collaps.IsEnabled = false;
+              //  collaps.IsEnabled = false;
             }
 
 
@@ -361,15 +348,13 @@ namespace personnel.Views
                
                 fc.DataContext = dec;
             }
-            else if (con == "طي تبدل")
+            else if (con == "قرار طي تبدل")
             {
                 collaps_all();
-                fc.dec_id.Text = m.ToString();
-                fc.dec_id.Visibility = Visibility.Visible;
-
-                fc.Visibility = Visibility.Visible;
-                
-                fc.DataContext = dec;
+                decCollaps.Visibility = Visibility.Visible;
+                decCollaps.DataContext = dec;
+                decCollaps.dec_id.Text = m.ToString();
+        
             }
             else if (con == "قرارإجازة")
             {
@@ -414,10 +399,15 @@ namespace personnel.Views
 
             else if (con == "قرار ندب")
             {
+                collaps_all();
+                addscar.dec_id.Text = m.ToString();
 
-            
-            
-            
+                addscar.Visibility = Visibility.Visible;
+                addscar.DataContext = dec;
+
+
+
+
             }
 
             else if (con == "قرار عقوبة")
@@ -454,11 +444,6 @@ namespace personnel.Views
 
             }
 
-            //int dec_year = Int32.Parse(tx_year.Text);
-            //  decisions = (from x in db.Decisions select x).ToList();
-
-            //  List<Decision> dec = decisions.Where(d => d.DecisionYear == dec_year).ToList();
-            //  result.ItemsSource = dec;
             excute_but.IsEnabled = false;
            
 
@@ -543,9 +528,13 @@ namespace personnel.Views
             }
             else if (dec.DecisionContent == "طي تبدل")
             {
-                
+
+
+           
+
+
             }
-        
+
 
             else if (dec.DecisionContent == "قرار إعارة")
             {
@@ -630,7 +619,37 @@ namespace personnel.Views
             {
 
 
+                collaps_all();
+                ObservableCollection<ScarDetails> all = new ObservableCollection<ScarDetails>();
 
+                List<Scar> Custom_Dec = db.Scars.Where(x => x.DecisionId == dec.DecisionId).ToList();
+
+                foreach (Scar r in Custom_Dec)
+                {
+
+                    collaps_all();
+                    ScarDetails rd = new ScarDetails();
+
+
+                    SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
+                    rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+
+                    rd.PeriodNum = (int)r.PeriodNum;
+                    rd.PeriodType = r.PeriodType;
+                    rd.ScarStart = (DateTime)r.ScarStart;
+                    rd.ScarEnd = (DateTime)r.ScarEnd;
+                    rd.ScarReason = r.ScarReason;
+                    rd.ScarPlace = r.ScarPlace;
+                    rd.Notes = r.Notes;
+
+
+                    all.Add(rd);
+
+
+                }
+
+                scardetails.detailsDataGrid.ItemsSource = all;
+                scardetails.Visibility = Visibility.Visible;
 
             }
 
@@ -771,6 +790,8 @@ namespace personnel.Views
             pd.Visibility = Visibility.Collapsed;
             reward.Visibility = Visibility.Collapsed;
             fcd.Visibility = Visibility.Collapsed;
+            addscar.Visibility = Visibility.Collapsed;
+            scardetails.Visibility = Visibility.Collapsed;
 
         }
 

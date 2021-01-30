@@ -92,6 +92,8 @@ namespace personnel.Views
                     db.Delegatings.Add(del);
                     db.SaveChanges();
 
+          
+
                     MessageBox.Show("تم إضافة تفصيل الايفاد بنجاح");
 
 
@@ -110,7 +112,7 @@ namespace personnel.Views
                         del_end.Text = null;
                         country.Text = "";
                         reson.Text = null;
-                        del_type.Text = null;
+                        
                         note.Text = "";
                         perod.Text = "";
                         this.Visibility = Visibility.Collapsed;
@@ -119,6 +121,16 @@ namespace personnel.Views
                         d.IsExcute = true;
                         db.Decisions.Update(d);
                         db.SaveChanges();
+
+
+                        Decision_View dv = new Decision_View();
+                        Window parentWindow = Window.GetWindow(this);
+                        parentWindow.Close();
+                        dv.Show();
+                        //Window parentWindow = Window.GetWindow(this);
+                        //object obj = parentWindow.FindName("result");
+                        //DataGrid dg = (DataGrid)obj;
+                        //dg.UnselectAll();
 
                     }
                     else if (result == MessageBoxResult.No)
@@ -136,20 +148,11 @@ namespace personnel.Views
                         perod.Text = "";
                     }
                 }
-            
 
-}
+            }
 
             catch (Exception ex) { MessageBox.Show("يجب التأكد من ادخال جميع البيانات"); }
-            //    }
-
-            //    public long getid(Decision dec)
-            //    {
-            //        long dec_id = dec.DecisionId;
-            //        return dec_id;
-            //    }
-            //}
-
+         
         }
 
         private void cmdUp_Copy2_Click(object sender, RoutedEventArgs e)

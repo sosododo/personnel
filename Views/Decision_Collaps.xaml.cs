@@ -36,10 +36,10 @@ namespace personnel.Views
                 Decision des = new Decision();
                 db = new PersonelDBContext();
                 int number = Int32.Parse(num.Text);
-                des = db.Decisions.Where(x => x.DecisionNumber == number).FirstOrDefault();
+                des = db.Decisions.Where(x => x.DecisionNumber == number && x.DecisionYear ==Int32.Parse( num_Copy.Text ) && x.DecisionSource==sorce.Text).FirstOrDefault();
                 if (des == null)
                 {
-                    MessageBox.Show("رقم القرار المدخل غير موجود، تأكد من ادخال رقم صحصح");
+                    MessageBox.Show("هذا القرار غير موجود");
 
                 }
                 else
@@ -80,6 +80,8 @@ namespace personnel.Views
                     {
                         num.Text = null;
                         date.SelectedDate = null;
+                        num_Copy.Text = null;
+                        sorce.SelectedItem = null;
 
                     }
                 }

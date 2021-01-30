@@ -35,13 +35,16 @@ namespace personnel.Views
             {
                 int count = 0; 
                 pdb = new PersonelDBContext();
-              List<int> decNum=  pdb.Decisions.Select(x => x.DecisionNumber).ToList<int>();
-                foreach (int num in decNum) {
-                    if (num ==Int32.Parse( dec_num.Text)) {
-                        count++;
-                    }
+            count=    pdb.Decisions.Where(x => x.DecisionNumber == Int32.Parse(dec_num.Text) && x.DecisionYear == Int32.Parse(dec_year.Text) && x.DecisionSource == dec_source.Text).Count() ;
+            
                 
-                }
+                //List<int> decNum=  pdb.Decisions.Select(x => x.DecisionNumber).ToList<int>();
+              //  foreach (int num in decNum) {
+              //      if (num ==Int32.Parse( dec_num.Text)) {
+              //          count++;
+              //      }
+                
+              //  }
 
 
                 if (dec_con.Text != null && dec_year.Text != null && dec_type.Text != null && dec_start.Text != null && dec_end.Text != null && dec_source.Text != null && dec_effect.Text != null && dec_result.Text != null && dec_num.Text != null)
@@ -70,8 +73,9 @@ namespace personnel.Views
                         MessageBox.Show("تمت الاضافة بنجاح");
                         this.Visibility = Visibility.Collapsed;
                     }
-                    else {
-                        MessageBox.Show("رقم القرار موجود مسبقا");
+                    else
+                    {
+                        MessageBox.Show("لا يمكن إضافة هذا القرار، قد يكون هناك تكرار في رقم القرار أو مصدره أو سنة صدوره");
                     }
                 }
                 else

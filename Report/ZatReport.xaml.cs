@@ -18,12 +18,13 @@ namespace personnel.Report
     /// </summary>
     public partial class ZatReport : Window
     {
-        //long id;
-        public ZatReport( )
+       long id;
+        public ZatReport(long id1 )
         {
             InitializeComponent();
             
             reportViewer1.Load += ReportViewer_Load;
+            id = id1;
             
 
         }
@@ -127,7 +128,7 @@ namespace personnel.Report
                 reportDataSource2.Value = dataset.zat_fun;
                 reportDataSource3.Value = dataset.zat_pun;
                 reportDataSource4.Value = dataset.zat_rest;
-                ReportParameter rp = new ReportParameter("pid", 2.ToString());
+                ReportParameter rp = new ReportParameter("pid", id.ToString());
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
@@ -151,10 +152,10 @@ namespace personnel.Report
                 fun.ClearBeforeFill = true;
                 pun.ClearBeforeFill = true;
                 res.ClearBeforeFill = true;
-                sel.Fill(dataset.al, 2);
-                fun.Fill(dataset.zat_fun, 2);
-                pun.Fill(dataset.zat_pun, 2);
-                res.Fill(dataset.zat_rest, 2);
+                sel.Fill(dataset.al, id);
+                fun.Fill(dataset.zat_fun, id);
+                pun.Fill(dataset.zat_pun, id);
+                res.Fill(dataset.zat_rest, id);
                 reportViewer1.RefreshReport();
                 dataset.EndInit();
                 _isReportViewerLoaded = true;

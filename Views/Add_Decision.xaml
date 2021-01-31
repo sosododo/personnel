@@ -99,7 +99,7 @@
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
         <ComboBox Grid.Column="5" Grid.Row="1"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionContent}" Name="dec_con">
             <ComboBoxItem Content="تبدل وظيفي"/>
-            <ComboBoxItem Content="طي تبدل"/>
+            
             <ComboBoxItem Content="قرار إيفاد"/>
             <ComboBoxItem Content="قرارإجازة"/>
             <ComboBoxItem Content="قرار إعارة"/>
@@ -107,6 +107,7 @@
             <ComboBoxItem Content="قرار عقوبة"/>
             <ComboBoxItem Content="قرار ترفيعة"/>
             <ComboBoxItem Content="قرار مكافأة"/>
+            <ComboBoxItem Content="قرار طي تبدل"/>
 
         </ComboBox>
         <ComboBox Grid.Column="3" Grid.Row="2"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding EffectType}" Name="dec_effect">

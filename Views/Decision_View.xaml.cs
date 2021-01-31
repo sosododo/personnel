@@ -228,22 +228,7 @@ namespace personnel.Views
 
         {
 
-
-
-            secondment.Visibility = Visibility.Collapsed;
-            fc.Visibility = Visibility.Collapsed;
-            mm.Visibility = Visibility.Collapsed;
-            ins.Visibility = Visibility.Collapsed;
-            details.Visibility = Visibility.Collapsed;
-            de.Visibility = Visibility.Collapsed;
-            punish.Visibility = Visibility.Collapsed;
-            sd.Visibility = Visibility.Collapsed;
-            dd.Visibility = Visibility.Collapsed;
-            bd.Visibility = Visibility.Collapsed;
-            rdd.Visibility = Visibility.Collapsed;
-            pd.Visibility = Visibility.Collapsed;
-            reward.Visibility = Visibility.Collapsed;
-            fcd.Visibility = Visibility.Collapsed;
+            collaps_all();
 
             Decision dec = (Decision)result.SelectedItem;
 
@@ -261,20 +246,7 @@ namespace personnel.Views
         private void butt(object sender, RoutedEventArgs e)
 
         {
-            ////Decision dec = new Decision();
-            ////dec = (Decision)result.SelectedItem;
-            //result.SelectedItem = null;
-            //result.ItemsSource = null;
-            //tx_id.Text = "";
-            //tx_id.IsEnabled = false;
-            //tx_year.Text = "";
-            //tx_year.IsEnabled = false;
-            //tx_type.Text = "";
-            //tx_type.IsEnabled = false;
-            //ch_id.IsChecked = false;
-            //ch_year.IsChecked = false;
-            //ch_type.IsChecked = false;
-            //result.SelectedItem = null;
+        
        
             Decision_View dv = new Decision_View();
             this.Close();
@@ -306,21 +278,7 @@ namespace personnel.Views
             ins.dec_type.Text = null;
             ins.dec_year.Text = null;
 
-
-            secondment.Visibility = Visibility.Collapsed;
-            fc.Visibility = Visibility.Collapsed;
-            mm.Visibility = Visibility.Collapsed;
-            ins.Visibility = Visibility.Collapsed;
-            details.Visibility = Visibility.Collapsed;
-            de.Visibility = Visibility.Collapsed;
-            punish.Visibility = Visibility.Collapsed;
-            sd.Visibility = Visibility.Collapsed;
-            dd.Visibility = Visibility.Collapsed;
-            bd.Visibility = Visibility.Collapsed;
-            rdd.Visibility = Visibility.Collapsed;
-            pd.Visibility = Visibility.Collapsed;
-            reward.Visibility = Visibility.Collapsed;
-            fcd.Visibility = Visibility.Collapsed;
+            collaps_all();
             ins.Visibility = Visibility.Visible;
 
 
@@ -331,26 +289,18 @@ namespace personnel.Views
         {
 
 
-            secondment.Visibility = Visibility.Collapsed;
-            fc.Visibility = Visibility.Collapsed;
-            mm.Visibility = Visibility.Collapsed;
-            ins.Visibility = Visibility.Collapsed;
-            details.Visibility = Visibility.Collapsed;
-            de.Visibility = Visibility.Collapsed;
-            punish.Visibility = Visibility.Collapsed;
-            sd.Visibility = Visibility.Collapsed;
-            dd.Visibility = Visibility.Collapsed;
-            bd.Visibility = Visibility.Collapsed;
-            rdd.Visibility = Visibility.Collapsed;
-            pd.Visibility = Visibility.Collapsed;
-            reward.Visibility = Visibility.Collapsed;
-            fcd.Visibility = Visibility.Collapsed;
+            collaps_all();
 
             edit_but.IsEnabled = true;
             Decision dec = (Decision)result.SelectedItem;
-              bool s = dec.IsExcute;
+
+
+
+
+
+            bool s = dec.IsExcute;
           
-            if (s == false)
+            if (s == false )
             {
                 excute_but.IsEnabled = true;
                 show_but.IsEnabled = false;
@@ -365,13 +315,23 @@ namespace personnel.Views
 
             }
 
-         
-            
+
+   
+            if (dec.DecisionStatus == "قرار مطوي")
+            {
+
+                MessageBox.Show("تنبيه : تم طي هذا القرار ولم يعد قرار ساري");
+                excute_but.IsEnabled = false;
+                edit_but.IsEnabled = false;
+              //  collaps.IsEnabled = false;
+            }
+
 
         }
 
         private void excute_but_Click(object sender, RoutedEventArgs e)
         {
+            
             Decision dec = (Decision)result.SelectedItem;
             string con = dec.DecisionContent;
             long m = dec.DecisionId;
@@ -380,73 +340,29 @@ namespace personnel.Views
             if (con == "تبدل وظيفي")
             {
 
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
 
                 fc.dec_id.Text = m.ToString();
                 fc.dec_id.Visibility = Visibility.Visible;
                 fc.Visibility = Visibility.Visible;
-                de.Visibility= Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
+               
                 fc.DataContext = dec;
             }
-            else if (con == "طي تبدل")
+            else if (con == "قرار طي تبدل")
             {
-
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
-                fc.dec_id.Text = m.ToString();
-                fc.dec_id.Visibility = Visibility.Visible;
-
-                fc.Visibility = Visibility.Visible;
-                de.Visibility = Visibility.Collapsed;
-                fc.DataContext = dec;
+                collaps_all();
+                decCollaps.Visibility = Visibility.Visible;
+                decCollaps.DataContext = dec;
+                decCollaps.dec_id.Text = m.ToString();
+        
             }
             else if (con == "قرارإجازة")
             {
-
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
                 res.dec_id.Text = m.ToString();
                // res.dec_id.Visibility = Visibility.Visible;
                 res.Visibility = Visibility.Visible;
-                de.Visibility = Visibility.Collapsed;
+               
                 res.DataContext = dec;
 
 
@@ -456,20 +372,7 @@ namespace personnel.Views
             else if (con == "قرار إعارة")
             {
 
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
                 secondment.dec_id.Text = m.ToString();
                 secondment.Visibility = Visibility.Visible;
                 secondment.DataContext = dec;
@@ -483,23 +386,9 @@ namespace personnel.Views
             else if (con == "قرار إيفاد")
             {
 
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
                 de.dec_id.Text = m.ToString();
-                de.dec_id.Visibility = Visibility.Collapsed;
-                res.Visibility = Visibility.Collapsed;
+               
                 de.Visibility = Visibility.Visible;
                 de.DataContext = dec;
 
@@ -510,50 +399,29 @@ namespace personnel.Views
 
             else if (con == "قرار ندب")
             {
+                collaps_all();
+                addscar.dec_id.Text = m.ToString();
 
-            
-            
-            
+                addscar.Visibility = Visibility.Visible;
+                addscar.DataContext = dec;
+
+
+
+
             }
 
             else if (con == "قرار عقوبة")
             {
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
+                collaps_all();
                 punish.dec_id.Text = m.ToString();
-                secondment.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
+              
                 punish.Visibility = Visibility.Visible;
                 punish.DataContext = dec;
             }
             else if (con == "قرار ترفيعة")
             {
 
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
-
-                punish.Visibility = Visibility.Collapsed;
+                collaps_all();
                 bonus.dec_id.Text = m.ToString();
                
 
@@ -564,25 +432,10 @@ namespace personnel.Views
             }
             else if (con == "قرار مكافأة")
             {
-
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
 
                 reward.dec_id.Text = m.ToString();
-                secondment.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+            
 
                 reward.Visibility = Visibility.Visible;
                 reward.DataContext = dec;
@@ -591,14 +444,10 @@ namespace personnel.Views
 
             }
 
-            //int dec_year = Int32.Parse(tx_year.Text);
-            //  decisions = (from x in db.Decisions select x).ToList();
-
-            //  List<Decision> dec = decisions.Where(d => d.DecisionYear == dec_year).ToList();
-            //  result.ItemsSource = dec;
             excute_but.IsEnabled = false;
-        
-    }
+           
+
+        }
 
         private void show_but_Click(object sender, RoutedEventArgs e)
         {
@@ -608,21 +457,7 @@ namespace personnel.Views
             if (dec.DecisionContent == "قرارإجازة")
             {
 
-
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
                 ObservableCollection<RestDetails> all = new ObservableCollection<RestDetails>();
 
                 List<Rest> Custom_Dec = db.Rests.Where(x => x.DecisionId == dec.DecisionId).ToList();
@@ -659,20 +494,7 @@ namespace personnel.Views
             if (dec.DecisionContent == "تبدل وظيفي")
             {
 
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
                 ObservableCollection<FunctionChangeDetails> all = new ObservableCollection<FunctionChangeDetails>();
 
                 List<FunctionalChange> Custom_Dec = db.FunctionalChanges.Where(x => x.DecisionId == dec.DecisionId).ToList();
@@ -706,27 +528,18 @@ namespace personnel.Views
             }
             else if (dec.DecisionContent == "طي تبدل")
             {
-                
+
+
+           
+
+
             }
-        
+
 
             else if (dec.DecisionContent == "قرار إعارة")
             {
 
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
                 ObservableCollection<SecondmentDetails> all = new ObservableCollection<SecondmentDetails>();
 
                 List<Secondment> Custom_Dec = db.Secondments.Where(x => x.DecisionId == dec.DecisionId).ToList();
@@ -766,20 +579,7 @@ namespace personnel.Views
             else if (dec.DecisionContent == "قرار إيفاد")
             {
 
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
                 ObservableCollection<DelegationDetails> all = new ObservableCollection<DelegationDetails>();
 
                 List<Delegating> Custom_Dec = db.Delegatings.Where(x => x.DecisionId == dec.DecisionId).ToList();
@@ -787,20 +587,7 @@ namespace personnel.Views
                 foreach (Delegating r in Custom_Dec)
                 {
 
-                    secondment.Visibility = Visibility.Collapsed;
-                    fc.Visibility = Visibility.Collapsed;
-                    mm.Visibility = Visibility.Collapsed;
-                    ins.Visibility = Visibility.Collapsed;
-                    details.Visibility = Visibility.Collapsed;
-                    de.Visibility = Visibility.Collapsed;
-                    punish.Visibility = Visibility.Collapsed;
-                    sd.Visibility = Visibility.Collapsed;
-                    dd.Visibility = Visibility.Collapsed;
-                    bd.Visibility = Visibility.Collapsed;
-                    rdd.Visibility = Visibility.Collapsed;
-                    pd.Visibility = Visibility.Collapsed;
-                    reward.Visibility = Visibility.Collapsed;
-                    fcd.Visibility = Visibility.Collapsed;
+                    collaps_all();
                     DelegationDetails rd = new DelegationDetails();
 
 
@@ -832,27 +619,43 @@ namespace personnel.Views
             {
 
 
+                collaps_all();
+                ObservableCollection<ScarDetails> all = new ObservableCollection<ScarDetails>();
 
+                List<Scar> Custom_Dec = db.Scars.Where(x => x.DecisionId == dec.DecisionId).ToList();
+
+                foreach (Scar r in Custom_Dec)
+                {
+
+                    collaps_all();
+                    ScarDetails rd = new ScarDetails();
+
+
+                    SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
+                    rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+
+                    rd.PeriodNum = (int)r.PeriodNum;
+                    rd.PeriodType = r.PeriodType;
+                    rd.ScarStart = (DateTime)r.ScarStart;
+                    rd.ScarEnd = (DateTime)r.ScarEnd;
+                    rd.ScarReason = r.ScarReason;
+                    rd.ScarPlace = r.ScarPlace;
+                    rd.Notes = r.Notes;
+
+
+                    all.Add(rd);
+
+
+                }
+
+                scardetails.detailsDataGrid.ItemsSource = all;
+                scardetails.Visibility = Visibility.Visible;
 
             }
 
             else if (dec.DecisionContent == "قرار عقوبة")
             {
-
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
                 ObservableCollection<PunishmentDetails> all = new ObservableCollection<PunishmentDetails>();
 
                 List<Punishment> Custom_Dec = db.Punishments.Where(x => x.DecisionId == dec.DecisionId).ToList();
@@ -887,21 +690,7 @@ namespace personnel.Views
             else if (dec.DecisionContent == "قرار ترفيعة")
             {
 
-
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
                 ObservableCollection<BonusDetails> all = new ObservableCollection<BonusDetails>();
 
                 List<Bonuse> Custom_Dec = db.Bonuses.Where(x => x.DecisionId == dec.DecisionId).ToList();
@@ -933,20 +722,7 @@ namespace personnel.Views
             else if (dec.DecisionContent == "قرار مكافأة")
             {
 
-                secondment.Visibility = Visibility.Collapsed;
-                fc.Visibility = Visibility.Collapsed;
-                mm.Visibility = Visibility.Collapsed;
-                ins.Visibility = Visibility.Collapsed;
-                details.Visibility = Visibility.Collapsed;
-                de.Visibility = Visibility.Collapsed;
-                punish.Visibility = Visibility.Collapsed;
-                sd.Visibility = Visibility.Collapsed;
-                dd.Visibility = Visibility.Collapsed;
-                bd.Visibility = Visibility.Collapsed;
-                rdd.Visibility = Visibility.Collapsed;
-                pd.Visibility = Visibility.Collapsed;
-                reward.Visibility = Visibility.Collapsed;
-                fcd.Visibility = Visibility.Collapsed;
+                collaps_all();
                 ObservableCollection<RewardDetails> all = new ObservableCollection<RewardDetails>();
 
                 List<Reward> Custom_Dec = db.Rewards.Where(x => x.DecisionId == dec.DecisionId).ToList();
@@ -984,6 +760,41 @@ namespace personnel.Views
             this.Close();
             mw.Show();
         }
+
+    
+
+        private void collaps_Click(object sender, RoutedEventArgs e)
+        {
+            collaps_all();
+        
+            decCollaps.Visibility = Visibility.Visible;
+            Decision dec = (Decision)result.SelectedItem;
+            decCollaps.DataContext = dec;
+      
+        }
+
+        public void collaps_all() {
+
+            secondment.Visibility = Visibility.Collapsed;
+            fc.Visibility = Visibility.Collapsed;
+            mm.Visibility = Visibility.Collapsed;
+            ins.Visibility = Visibility.Collapsed;
+            details.Visibility = Visibility.Collapsed;
+            de.Visibility = Visibility.Collapsed;
+            punish.Visibility = Visibility.Collapsed;
+            sd.Visibility = Visibility.Collapsed;
+            dd.Visibility = Visibility.Collapsed;
+            decCollaps.Visibility = Visibility.Collapsed;
+            bd.Visibility = Visibility.Collapsed;
+            rdd.Visibility = Visibility.Collapsed;
+            pd.Visibility = Visibility.Collapsed;
+            reward.Visibility = Visibility.Collapsed;
+            fcd.Visibility = Visibility.Collapsed;
+            addscar.Visibility = Visibility.Collapsed;
+            scardetails.Visibility = Visibility.Collapsed;
+
+        }
+
     }
 
 }

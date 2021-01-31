@@ -151,7 +151,10 @@ namespace personnel.Views
 
 
             MessageBox.Show("تمت عملية الانتهاء من تنفيذ قرار الترفيعة");
-            
+            Decision_View dv = new Decision_View();
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.Close();
+            dv.Show();
 
         }
 

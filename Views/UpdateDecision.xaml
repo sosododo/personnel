@@ -96,6 +96,7 @@
             <ComboBoxItem Content="جامعة البعث"/>
             <ComboBoxItem Content="وزارة التعليم العالي"/>
             <ComboBoxItem Content="جهة أخرى"/>
+            <ListBox/>
         </ComboBox>
         <TextBox Grid.Column="5" Grid.Row="0" Text="{Binding DecisionYear}"/>
         <DatePicker Grid.Column="1" Grid.Row="1" SelectedDate="{Binding DecisionStart}" Name="dec_start"/>

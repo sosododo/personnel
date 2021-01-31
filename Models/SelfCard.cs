@@ -15,6 +15,7 @@ namespace personnel.Models
             FunctionalChanges = new HashSet<FunctionalChange>();
             Punishments = new HashSet<Punishment>();
             Rests = new HashSet<Rest>();
+            Scars = new HashSet<Scar>();
             Secondments = new HashSet<Secondment>();
         }
 
@@ -164,6 +165,8 @@ namespace personnel.Models
         public virtual ICollection<Punishment> Punishments { get; set; }
         [InverseProperty("Person")]
         public virtual ICollection<Rest> Rests { get; set; }
+        [InverseProperty("Person")]
+        public virtual ICollection<Scar> Scars { get; set; }
         [InverseProperty("Person")]
         public virtual ICollection<Secondment> Secondments { get; set; }
 

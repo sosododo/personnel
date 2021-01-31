@@ -28,6 +28,7 @@ namespace personnel.Models
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Work> Works { get; set; }
         public virtual DbSet<Job> Jobs { get; set; }
+        public virtual DbSet<Scar> Scars { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -82,6 +83,23 @@ namespace personnel.Models
                     .HasForeignKey(d => d.PersonId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_delegatings_selfcards");
+            });
+
+            modelBuilder.Entity<Scar>(entity =>
+            {
+                entity.HasKey(e => new { e.PersonId, e.DecisionId })
+                    .HasName("PK_scar");
+
+                entity.HasOne(d => d.Decision)
+                    .WithMany(p => p.Scars)
+                    .HasForeignKey(d => d.DecisionId)
+                    .HasConstraintName("FK_scars_decisions");
+
+                entity.HasOne(d => d.Person)
+                    .WithMany(p => p.Scars)
+                    .HasForeignKey(d => d.PersonId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_scars_selfcards");
             });
 
             modelBuilder.Entity<FunctionalChange>(entity =>

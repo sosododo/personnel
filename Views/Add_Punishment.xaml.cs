@@ -141,7 +141,10 @@ namespace personnel.Views
 
 
 
-
+                Decision_View dv = new Decision_View();
+                Window parentWindow = Window.GetWindow(this);
+                parentWindow.Close();
+                dv.Show();
 
 
             }

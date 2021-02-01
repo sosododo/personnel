@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -148,6 +149,11 @@ namespace personnel.Report
                 ZATDataSet1TableAdapters.zat_punTableAdapter pun = new ZATDataSet1TableAdapters.zat_punTableAdapter();
                 ZATDataSet1TableAdapters.zat_restTableAdapter res = new ZATDataSet1TableAdapters.zat_restTableAdapter();
 
+                sel.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
+                fun.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
+                pun.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
+                res.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
+
                 sel.ClearBeforeFill = true;
                 fun.ClearBeforeFill = true;
                 pun.ClearBeforeFill = true;
@@ -156,6 +162,10 @@ namespace personnel.Report
                 fun.Fill(dataset.zat_fun, id);
                 pun.Fill(dataset.zat_pun, id);
                 res.Fill(dataset.zat_rest, id);
+
+               
+
+
                 reportViewer1.RefreshReport();
                 dataset.EndInit();
                 _isReportViewerLoaded = true;

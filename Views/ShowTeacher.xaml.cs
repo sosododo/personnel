@@ -131,8 +131,8 @@ namespace personnel.Views
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Window window1 = new Report.Window1();
-            window1.Show();
+            //Window window1 = new Report.Window1();
+            //window1.Show();
             //Window w = new Report.RestReport("لينا");
             //w.Show();
 

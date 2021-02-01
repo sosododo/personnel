@@ -202,7 +202,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>ZATDataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\personnel\ZATDataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\البعث\source\repos\personnel\ZATDataSet1.xsd</rd:SchemaPath>
         <rd:TableName>al</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -542,16 +542,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.06251in</Width>
+                  <Width>1.21094in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.21528in</Width>
+                  <Width>1.36371in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.46528in</Width>
+                  <Width>2.61371in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.6632in</Width>
+                  <Width>1.81163in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -845,7 +845,7 @@
             <Top>0.06944in</Top>
             <Left>0.14458in</Left>
             <Height>0.63541in</Height>
-            <Width>10.40625in</Width>
+            <Width>6.99999in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -856,28 +856,28 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.32581in</Width>
+                  <Width>0.84051in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.15914in</Width>
+                  <Width>0.67384in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.72106in</Width>
+                  <Width>0.56458in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.48206in</Width>
+                  <Width>0.99676in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.48206in</Width>
+                  <Width>1.14408in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.24132in</Width>
+                  <Width>0.75602in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.24132in</Width>
+                  <Width>0.75602in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.75348in</Width>
+                  <Width>1.26818in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1431,7 +1431,7 @@
             <Top>0.73958in</Top>
             <Left>0.14458in</Left>
             <Height>0.62624in</Height>
-            <Width>10.40625in</Width>
+            <Width>6.99999in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1443,13 +1443,13 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.46875in</Width>
+                  <Width>2.33333in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.46875in</Width>
+                  <Width>2.33333in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.46875in</Width>
+                  <Width>2.33333in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1699,7 +1699,7 @@
             <Top>1.40748in</Top>
             <Left>0.14458in</Left>
             <Height>0.57043in</Height>
-            <Width>10.40625in</Width>
+            <Width>6.99999in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -1730,7 +1730,7 @@
             <Top>2.00569in</Top>
             <Left>0.14458in</Left>
             <Height>0.28125in</Height>
-            <Width>10.40625in</Width>
+            <Width>7in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -1746,16 +1746,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.7908in</Width>
+                  <Width>2.93924in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.11719in</Width>
+                  <Width>3.26563in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.83072in</Width>
+                  <Width>0.76388in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.66754in</Width>
+                  <Width>0.03125in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1910,7 +1910,7 @@
             <Top>2.28694in</Top>
             <Left>0.14458in</Left>
             <Height>0.29167in</Height>
-            <Width>10.40625in</Width>
+            <Width>7in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -1919,17 +1919,17 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>4.61458in</Height>
+        <Height>8.05208in</Height>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
         </Style>
       </Body>
-      <Width>11.43625in</Width>
+      <Width>7.25743in</Width>
       <Page>
         <PageHeader>
-          <Height>0.97222in</Height>
+          <Height>0.83334in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1991,9 +1991,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox15</rd:DefaultName>
               <Top>0.1168in</Top>
-              <Left>8.64458in</Left>
-              <Height>0.71654in</Height>
-              <Width>1.90625in</Width>
+              <Left>5.37461in</Left>
+              <Height>0.58112in</Height>
+              <Width>1.76997in</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -2025,9 +2025,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
               <Top>0.1168in</Top>
-              <Left>0.14458in</Left>
-              <Height>0.71654in</Height>
-              <Width>8.48611in</Width>
+              <Left>0.11679in</Left>
+              <Height>0.58112in</Height>
+              <Width>5.20226in</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -2057,10 +2057,14 @@
             </Border>
           </Style>
         </PageFooter>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <PageHeight>13in</PageHeight>
+        <PageWidth>9in</PageWidth>
+        <InteractiveHeight>13in</InteractiveHeight>
+        <InteractiveWidth>9in</InteractiveWidth>
+        <LeftMargin>0.5in</LeftMargin>
+        <RightMargin>0.5in</RightMargin>
+        <TopMargin>0.5in</TopMargin>
+        <BottomMargin>0.5in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>

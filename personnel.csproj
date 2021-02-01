@@ -57,16 +57,6 @@
  
 
   <ItemGroup>
-    <Compile Update="ds.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ds.xsd</DependentUpon>
-    </Compile>
-    <Compile Update="personnelDataSet.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>personnelDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Update="Views\Add_Delegation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -83,14 +73,6 @@
  
 
   <ItemGroup>
-    <None Update="ds.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ds.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="personnelDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>personnelDataSet.Designer.cs</LastGenOutput>
-    </None>
     <None Update="ZATDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ZATDataSet1.Designer.cs</LastGenOutput>

@@ -20,7 +20,7 @@ namespace personnel.ModelView
 
             IEnumerable query = (from p in db.Punishments
                                  join d in db.Decisions on p.DecisionId equals d.DecisionId
-                                 where p.PersonId == id
+                                 where p.PersonId == id && d.DecisionStatus != "قرار مطوي"
                                  select new { p.DecisionId, fu = (d.DecisionNumber + " " + d.DecisionType + " " + d.DecisionYear), p.PunishmentType,p.Reason,p.StartDate,p.EndDate,p.Period,p.Notes,p.Discount}).ToList();
 
 

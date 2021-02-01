@@ -35,9 +35,9 @@ namespace personnel.ModelView
             db = new PersonelDBContext();
 
            IEnumerable query=          (from r in db.Rests join d in db.Decisions on r.DecisionId equals d.DecisionId
-                                                where r.PersonId == id
+                                                where r.PersonId == id && d.DecisionStatus!="قرار مطوي"
                                                 select new { r.DecisionId, fu=( d.DecisionNumber +" " + d.DecisionType + " " + d.DecisionYear), r.RestType,r.RestPeriod,r.RestStart,r.RestEnd,r.Attachment,r.Notes }).ToList();
-
+             
              
 
          
@@ -137,7 +137,8 @@ namespace personnel.ModelView
         
         {
             int sum1=0;
-           List<Rest> rests2 = db.Rests.Where(x => x.RestType == "إجازة بلا أجر" && x.PersonId == id).ToList();
+            db = new PersonelDBContext();
+            List<Rest> rests2 = db.Rests.Where(x => x.RestType == "إجازة بلا أجر" && x.PersonId == id).ToList();
             foreach (Rest r in rests2)
             {
                 if (r.Period == "يوم")

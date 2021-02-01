@@ -93,7 +93,7 @@ namespace personnel.Views
                         int sum = er.calculate(empId);
                         int can = restcount();
 
-                        if (sum + can > (5 * 365))
+                        if ((sum + can) > (5 * 365))
                         {
                             MessageBox.Show("لا يحق لهذا الموظف العدد المطلوب من الاجازات الادارية. عدد الأيام المسموح به  " + ((365 * 5) - sum).ToString());
                         }

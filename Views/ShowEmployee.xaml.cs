@@ -135,5 +135,12 @@ namespace personnel.Views
             this.Close();
             main.Show(); 
         }
+
+        private void print(object sender, RoutedEventArgs e)
+        {
+            Window win = new Report.ZatReport(emp.PersonId);
+            win.Show();
+
+        }
     }
 }

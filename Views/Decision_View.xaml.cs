@@ -792,6 +792,7 @@ namespace personnel.Views
             fcd.Visibility = Visibility.Collapsed;
             addscar.Visibility = Visibility.Collapsed;
             scardetails.Visibility = Visibility.Collapsed;
+            res.Visibility = Visibility.Collapsed;
 
         }
 

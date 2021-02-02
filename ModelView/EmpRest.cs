@@ -151,7 +151,7 @@ namespace personnel.ModelView
                 }
                 else if (r.Period == "سنة")
                 {
-                    sum1+= (r.RestPeriod * 365);
+                    sum1+= (r.RestPeriod * 360);
                 }
            
                    

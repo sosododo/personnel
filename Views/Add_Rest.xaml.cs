@@ -93,9 +93,9 @@ namespace personnel.Views
                         int sum = er.calculate(empId);
                         int can = restcount();
 
-                        if ((sum + can) > (5 * 365))
+                        if ((sum + can) > (5 * 360))
                         {
-                            MessageBox.Show("لا يحق لهذا الموظف العدد المطلوب من الاجازات الادارية. عدد الأيام المسموح به  " + ((365 * 5) - sum).ToString());
+                            MessageBox.Show("لا يحق لهذا الموظف العدد المطلوب من الاجازات الادارية. عدد الأيام المسموح به   " +"  "+ ((360 * 5) - sum).ToString());
                         }
                         else
 
@@ -110,10 +110,52 @@ namespace personnel.Views
                     else if (res_type.Text == "احتياط") { dec_excute(); }
                     else if (res_type.Text == "الزامي") { dec_excute(); }
                     else if (res_type.Text == "دراسية بتمام الأجر") { dec_excute(); }
-                    else if (res_type.Text == "دراسية بلا أجر") { dec_excute(); }
+                    else if (res_type.Text == "دراسية بلا أجر") {
+
+                        int mothetcount = db.Rests.Where(x => x.PersonId == empId && x.RestType == "دراسية بلا أجر").Count();
+                        MessageBox.Show("عدد الاجازات الدراسية السابقة لهذا الموظف"+ "  "+ mothetcount);
+                        if (mothetcount == 2) {
+                            MessageBox.Show("لا يحق لهذا الموظف اجازة دراسية بلا اجر");
+
+                        }
+                        else {
+                            dec_excute();
+                        }
+
+                     }
                     else if (res_type.Text == "حج") { dec_excute(); }
-                    else if (res_type.Text == "أمومة") { dec_excute(); }
-                    else if (res_type.Text == "استكمال أمومة") { dec_excute(); }
+                    else if (res_type.Text == "أمومة") {
+
+                  int mothetcount=      db.Rests.Where(x => x.PersonId == empId && x.RestType == "أمومة").Count();
+
+                        MessageBox.Show("عدد اجازات الامومة السابقة لهذا الموظف:   " + mothetcount);
+                        if (mothetcount == 3)
+                        {
+                            MessageBox.Show("لا يحق لهذا الموظف اجازة أمومة");
+
+                        }
+                        else
+                        {
+
+                            dec_excute();
+                        }
+                    }
+                    else if (res_type.Text == "استكمال أمومة") {
+
+                        int mothetcount = db.Rests.Where(x => x.PersonId == empId && x.RestType == "استكمال أمومة").Count();
+
+                        MessageBox.Show("عدد اجازات استكمال الامومة السابقة لهذا الموظف:   " + mothetcount);
+                        if (mothetcount == 3)
+                        {
+                            MessageBox.Show("لا يحق لهذا الموظف اجازة استكمال أمومة");
+
+                        }
+                        else
+                        {
+
+                            dec_excute();
+                        }
+                      }
                     else if (res_type.Text == "زواج") { dec_excute(); }
                     else if (res_type.Text == "وفاة") { dec_excute(); }
                 }
@@ -225,13 +267,20 @@ namespace personnel.Views
         public int restcount()
              
         {
+
+            if (res_per1.IsChecked == true)
+            { res_per = res_per1.Content.ToString(); }
+            if (res_per2.IsChecked == true)
+            { res_per = res_per2.Content.ToString(); }
+            if (res_per3.IsChecked == true)
+            { res_per = res_per3.Content.ToString(); }
             int c=0;
             if (res_per == "يوم")
             { c = Int32.Parse(perod.Text); }
             else if (res_per == "شهر")
             { c = (Int32.Parse(perod.Text) * 30); }
             else if (res_per == "سنة")
-            { c = (Int32.Parse(perod.Text) * 365); }
+            { c = (Int32.Parse(perod.Text) * 360); }
 
           return c  ;
         }
@@ -244,6 +293,86 @@ namespace personnel.Views
         private void cmdUp_Copy2_Click(object sender, RoutedEventArgs e)
         {
             NumValue++;
+        }
+
+        private void res_type_DropDownClosed(object sender, EventArgs e)
+        {
+
+            var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName }).ToList();
+
+            var id = emp_id.Where(d => d.full == emp_name.Text).ToList().ElementAt(0);
+
+            long empId = id.PersonId;
+            if (res_type.Text == "أمومة")
+            {
+
+                int mothetcount = db.Rests.Where(x => x.PersonId == empId && x.RestType == "أمومة").Count();
+                if (mothetcount == 0)
+                {
+                    perod.Text = "120";
+                    res_per1.IsChecked = true;
+                }
+
+                if (mothetcount == 1)
+                {
+                    perod.Text = "90";
+                    res_per1.IsChecked = true;
+                }
+
+                if (mothetcount == 2)
+                {
+                    perod.Text = "75";
+                    res_per1.IsChecked = true;
+                }
+
+                if (mothetcount == 3)
+                {
+                    MessageBox.Show("لا يحق لهذا الموظف اجازة أمومة");
+
+                }
+            }
+
+            if (res_type.Text == "استكمال أمومة") {
+
+                int mothetcount = db.Rests.Where(x => x.PersonId == empId && x.RestType == "استكمال أمومة").Count();
+                if (mothetcount == 0)
+                {
+                    perod.Text = "1";
+                    res_per2.IsChecked = true;
+                }
+
+                if (mothetcount == 1)
+                {
+                    perod.Text = "1";
+                    res_per2.IsChecked = true;
+                }
+
+                if (mothetcount == 2)
+                {
+                    perod.Text = "1";
+                    res_per2.IsChecked = true;
+                }
+
+                if (mothetcount == 3)
+                {
+                    MessageBox.Show("لا يحق لهذا الموظف اجازة استكمال أمومة");
+
+                }
+
+            }
+            if (res_type.Text == "دراسية بلا أجر") {
+                int mothetcount = db.Rests.Where(x => x.PersonId == empId && x.RestType == "دراسية بلا أجر").Count();
+                if (mothetcount <2)
+                {
+                    perod.Text = "1";
+                    res_per3.IsChecked = true;
+                }
+                if (mothetcount ==2)
+                {
+                    MessageBox.Show(" لا يحق لهذا الموظف اجازة دراسية بلا اجر ");
+                }
+
+            }
         }
     }
 }

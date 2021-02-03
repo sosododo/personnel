@@ -12,7 +12,8 @@ namespace personnel.Models
     {
         public Decision()
         {
-            Bonuses = new HashSet<Bonuse>();
+            SalaryIncrease = new HashSet<SalaryIncrease>();
+              Bonuses = new HashSet<Bonuse>();
             Delegatings = new HashSet<Delegating>();
             FunctionalChanges = new HashSet<FunctionalChange>();
             Punishments = new HashSet<Punishment>();
@@ -76,6 +77,8 @@ namespace personnel.Models
 
         [InverseProperty("Decision")]
         public virtual ICollection<Bonuse> Bonuses { get; set; }
+        [InverseProperty("Decision")]
+        public virtual ICollection<SalaryIncrease> SalaryIncrease { get; set; }
         [InverseProperty("Decision")]
         public virtual ICollection<Delegating> Delegatings { get; set; }
         [InverseProperty("Decision")]

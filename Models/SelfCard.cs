@@ -10,6 +10,7 @@ namespace personnel.Models
     {
         public SelfCard()
         {
+            SalaryIncrease = new HashSet<SalaryIncrease>();
             Bonuses = new HashSet<Bonuse>();
             Delegatings = new HashSet<Delegating>();
             FunctionalChanges = new HashSet<FunctionalChange>();
@@ -157,6 +158,8 @@ namespace personnel.Models
 
         [InverseProperty("Person")]
         public virtual ICollection<Bonuse> Bonuses { get; set; }
+        [InverseProperty("Person")]
+        public virtual ICollection<SalaryIncrease> SalaryIncrease { get; set; }
         [InverseProperty("Person")]
         public virtual ICollection<Delegating> Delegatings { get; set; }
         [InverseProperty("Person")]

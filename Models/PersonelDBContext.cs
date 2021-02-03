@@ -29,7 +29,7 @@ namespace personnel.Models
         public virtual DbSet<Work> Works { get; set; }
         public virtual DbSet<Job> Jobs { get; set; }
         public virtual DbSet<Scar> Scars { get; set; }
-
+        public virtual DbSet<SalaryIncrease> SalaryIncrease { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -42,6 +42,27 @@ namespace personnel.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<SalaryIncrease>(entity =>
+            {
+                entity.HasKey(e => new { e.DecisionId, e.PersonId });
+
+                entity.HasOne(d => d.Decision)
+                    .WithMany(p => p.SalaryIncrease)
+                    .HasForeignKey(d => d.DecisionId)
+                    .HasConstraintName("FK_SalaryIncrease_decisions");
+
+                entity.HasOne(d => d.Person)
+                    .WithMany(p => p.SalaryIncrease)
+                    .HasForeignKey(d => d.PersonId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_SalaryIncrease_selfcards");
+            });
+
+
+
+
+
+
             modelBuilder.Entity<Bonuse>(entity =>
             {
                 entity.HasKey(e => new { e.DecisionId, e.PersonId });

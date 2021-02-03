@@ -33,6 +33,8 @@ namespace personnel.Views
         {
             try
             {
+
+                
                 int count = 0; 
                 pdb = new PersonelDBContext();
             count=    pdb.Decisions.Where(x => x.DecisionNumber == Int32.Parse(dec_num.Text) && x.DecisionYear == Int32.Parse(dec_year.Text) && x.DecisionSource == dec_source.Text).Count() ;

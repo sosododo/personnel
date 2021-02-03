@@ -21,7 +21,7 @@ namespace personnel.ModelView
 
         IEnumerable query = (from c in db.FunctionalChanges
                              join d in db.Decisions on c.DecisionId equals d.DecisionId
-                             where c.PersonId == id
+                             where c.PersonId == id && d.DecisionStatus != "قرار مطوي"
                              select new { c.DecisionId, fu = (d.DecisionNumber + " " + d.DecisionType + " " + d.DecisionYear), c.ChangeReasone,c.ChangeDate,c.Category,c.Status }).ToList();
 
 

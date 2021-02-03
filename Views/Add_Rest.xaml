@@ -90,7 +90,7 @@
         <Label Content="المرفق" Grid.Column="4" Grid.Row="3" />
         <Label Content="ملاحظات" Grid.Column="6" Grid.Row="3"/>
         <ComboBox Grid.Column="1" Grid.Row="1" IsTextSearchEnabled="True" IsEditable="True" Name="emp_name" FlowDirection="LeftToRight" />
-        <ComboBox Grid.Column="3" Grid.Row="1" FlowDirection="LeftToRight"  Name="res_type" >
+        <ComboBox Grid.Column="3" Grid.Row="1" FlowDirection="LeftToRight"  Name="res_type" DropDownClosed="res_type_DropDownClosed" >
             <ComboBoxItem Content="إجازة ادارية"/>
             <ComboBoxItem Content="إجازة بلا أجر"/>
             <ComboBoxItem Content="إجازة صحية"/>

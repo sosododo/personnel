@@ -443,6 +443,19 @@ namespace personnel.Views
 
 
             }
+            else if (con == "قرار زيادة")
+            {
+                collaps_all();
+
+                addinc.dec_id.Text = m.ToString();
+
+
+                addinc.Visibility = Visibility.Visible;
+               addinc.DataContext = dec;
+
+
+
+            }
 
             excute_but.IsEnabled = false;
            

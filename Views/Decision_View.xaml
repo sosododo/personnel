@@ -170,6 +170,7 @@
                 <local:Decision_Collaps Visibility="Collapsed" x:Name="decCollaps"/>
                 <local:Add_Scar Visibility="Collapsed" x:Name="addscar"/>
                 <local:Scar_Details Visibility="Collapsed" x:Name="scardetails"/>
+                <local:Add_Increase Visibility="Collapsed" x:Name="addinc"/>
 
 
 

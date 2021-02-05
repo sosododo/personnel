@@ -40,8 +40,10 @@
                 <DataGridTextColumn  Header="اسم الموظف"  Binding="{Binding PersonName}" />
                 <DataGridTextColumn Header="الراتب" Binding="{Binding Salary }" />
                 <DataGridTextColumn  Header="الترفيعة" Binding="{Binding Bouns}"/>
-                <DataGridTextColumn   Header="أيام الدوام" Binding="{Binding SalaryBouns}"/>
-                <DataGridTextColumn  Header="الراتب بعد الترفيعة" Binding="{Binding NumDays}" />
+                <DataGridTextColumn   Header="أيام الدوام" Binding="{Binding NumDays}"/>
+                <DataGridTextColumn  Header="الراتب بعد الترفيعة" Binding="{Binding SalaryBouns}" />
+                <DataGridTextColumn  Header="من تاريخ" Binding="{Binding FromYear, StringFormat='yyyy/MM/dd' }" />
+                <DataGridTextColumn  Header="حتى تاريخ" Binding="{Binding ToYear, StringFormat='yyyy/MM/dd' }" />
 
 
             </DataGrid.Columns>

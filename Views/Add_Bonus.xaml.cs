@@ -23,10 +23,7 @@ namespace personnel.Views
     /// </summary>
     public partial class Add_Bonus : UserControl
     {
-        private int _numValueSal = 0;
-        private int _numValueBon = 0;
-        private int _numValueDay = 0;
-        private int _numValueSalBon = 0;
+      
         PersonelDBContext db;
         List<string> emp;
         public Add_Bonus()
@@ -44,43 +41,10 @@ namespace personnel.Views
             Decision d = (Decision)DataContext;
         }
 
-        public int NumValueSal
-        {
-            get { return _numValueSal; }
-            set
-            {
-                _numValueSal = value;
-                sal.Text = value.ToString();
-            }
-        }
-        public int NumValueBon
-        {
-            get { return _numValueBon; }
-            set
-            {
-                _numValueBon = value;
-                bon.Text = value.ToString();
-            }
-        }
 
-        public int NumValueDay
-        {
-            get { return _numValueDay; }
-            set
-            {
-                _numValueDay= value;
-                day.Text = value.ToString();
-            }
-        }
-        public int NumValueSalBon
-        {
-            get { return _numValueSalBon; }
-            set
-            {
-                _numValueSalBon = value;
-                sal_bonus.Text = value.ToString();
-            }
-        }
+
+   
+      
         private void insert_rest(object sender, RoutedEventArgs e)
         {
             try {
@@ -91,17 +55,24 @@ namespace personnel.Views
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        public void excutee() { 
+        public void excutee() {
+            DateTime fromDate;
+            DateTime toDate;
+            double bouns = 0.09;
+            int days;
             var emp_id = (from d in db.SelfCards
             where d.Status == "قائم على رأس عمله"
-            select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName }).ToList();
+            select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName,d.Salary ,d.maxsalary }).ToList();
 
 
 
 
             foreach (string ss in emp.ToList())
             {
-
+                int sum1 = 0;
+                double amount = 0;
+            
+                double allDays =0;
                 var id = emp_id.Where(d => d.full == ss).ToList().ElementAt(0);
                 long eid = id.PersonId;
                 int c = db.Bonuses.Where(x => x.DecisionId == long.Parse(dec_id.Text) && x.PersonId == eid).Count();
@@ -111,29 +82,129 @@ namespace personnel.Views
                 }
                 else
                 {
-                    Bonuse r = new Bonuse
+                   // حساب عدد ايام الدوام
+                    fromDate = (DateTime)from.SelectedDate;
+
+                    toDate = (DateTime)to.SelectedDate;
+                    //days in first yaer
+                    List<Rest> rests1=   db.Rests.Where(x => x.PersonId == eid && x.RestType == "إجازة بلا أجر" && x.RestStart >= fromDate && x.RestStart <= toDate).ToList();
+             
+                    foreach (Rest rset in rests1)
                     {
+                        if (rset.Period == "يوم")
+                        {
+                            sum1 += rset.RestPeriod;
+                        }
+                        else if (rset.Period == "شهر")
+                        {
+                            sum1 += (rset.RestPeriod * 30);
+                        }
+                        else if (rset.Period == "سنة")
+                        {
+                            sum1 += (rset.RestPeriod * 360);
+                        }
 
-                        PersonId = id.PersonId,
-                        DecisionId = long.Parse(dec_id.Text),
-                        Salary = Int32.Parse(sal.Text),
-                        Bouns = Int32.Parse(bon.Text),
-                        SalaryBouns = Int32.Parse(sal_bonus.Text),
-                        NumDays = Int32.Parse(day.Text)
+                    }
+
+               
+                    allDays = 720 - sum1;
+                    if (allDays >= 0)
+                    {
+                        amount = (double)((allDays / 720) * (0.09 * id.Salary));
+                        if (id.Salary + amount <= id.maxsalary)
+                        {
+                            Bonuse r = new Bonuse
+                            {
+
+                                PersonId = id.PersonId,
+                                DecisionId = long.Parse(dec_id.Text),
+                                Bouns = 0.09,
+                                FromYear = (DateTime)from.SelectedDate,
+                                ToYear = (DateTime)to.SelectedDate,
+                                Salary = (double)id.Salary,
+                                NumDays = (int)allDays,
+                                SalaryBouns = (double)(id.Salary + ((allDays / 720) * (0.09 * id.Salary)))
 
 
+                            };
+                            db.Bonuses.Add(r);
+                            db.SaveChanges();
+                            var d = db.Decisions.Where(c => c.DecisionId == long.Parse(dec_id.Text)).Single();
+                            excute.IsChecked = true;
+                            // d.IsExcute = true;
+                            d.IsExcute = true;
 
-                    };
-                    db.Bonuses.Add(r);
-                    db.SaveChanges();
-                    var d = db.Decisions.Where(c => c.DecisionId == long.Parse(dec_id.Text)).Single();
-                    excute.IsChecked = true;
-                    // d.IsExcute = true;
-                    d.IsExcute = true;
+                            db.Decisions.Update(d);
 
-                    db.Decisions.Update(d);
+                            db.SaveChanges();
+                            (from p in db.SelfCards
+                             where p.PersonId == eid
+                             select p).ToList()
+                                 .ForEach(x => x.Salary = (double)(id.Salary + ((allDays / 720) * (0.09 * id.Salary))));
+                            db.SaveChanges();
+                        } 
+                        else if (id.Salary+amount>id.maxsalary) {
+                            Bonuse r = new Bonuse
+                            {
 
-                    db.SaveChanges();
+                                PersonId = id.PersonId,
+                                DecisionId = long.Parse(dec_id.Text),
+                                Bouns = 0.09,
+                                FromYear = (DateTime)from.SelectedDate,
+                                ToYear = (DateTime)to.SelectedDate,
+                                Salary = (double)id.Salary,
+                                NumDays = (int)allDays,
+                                SalaryBouns = (double)(id.Salary + (id.maxsalary - id.Salary))
+
+
+                            };
+                            db.Bonuses.Add(r);
+                            db.SaveChanges();
+                            var d = db.Decisions.Where(c => c.DecisionId == long.Parse(dec_id.Text)).Single();
+                            excute.IsChecked = true;
+                            // d.IsExcute = true;
+                            d.IsExcute = true;
+
+                            db.Decisions.Update(d);
+
+                            db.SaveChanges();
+                            (from p in db.SelfCards
+                             where p.PersonId == eid
+                             select p).ToList()
+                                 .ForEach(x => x.Salary = (double)(id.Salary + ((allDays / 720) * (0.09 * id.Salary))));
+                            db.SaveChanges();
+
+                        }
+                    }
+                    else if (allDays < 0)
+                    {
+                        Bonuse r = new Bonuse
+                        {
+
+                            PersonId = id.PersonId,
+                            DecisionId = long.Parse(dec_id.Text),
+                            Bouns = 0.09,
+                            FromYear = (DateTime)from.SelectedDate,
+                            ToYear = (DateTime)to.SelectedDate,
+                            Salary = (double)id.Salary,
+                            NumDays = 0,
+                            SalaryBouns = (double)id.Salary
+
+
+                        };
+                        db.Bonuses.Add(r);
+                        db.SaveChanges();
+                        var d = db.Decisions.Where(c => c.DecisionId == long.Parse(dec_id.Text)).Single();
+                        excute.IsChecked = true;
+                        // d.IsExcute = true;
+                        d.IsExcute = true;
+
+                        db.Decisions.Update(d);
+
+                        db.SaveChanges();
+                    }
+
+
 
 
 
@@ -141,10 +212,8 @@ namespace personnel.Views
 
                 }
             list.SelectedItem = null;
-            sal.Text = null;
-            sal_bonus.Text = null;
-            bon.Text = null;
-            day.Text = null;
+         
+          
 
             this.Visibility = Visibility.Collapsed;
           
@@ -180,45 +249,8 @@ namespace personnel.Views
 
    
 
-        private void cmdUp_Copy_Click(object sender, RoutedEventArgs e)
-        {
-            NumValueSal++;
-        }
 
-        private void cmdDown_Click_1(object sender, RoutedEventArgs e)
-        {
-            NumValueSal--;
-        }
 
-        private void cmdUp_Copy1_Click(object sender, RoutedEventArgs e)
-        {
-            NumValueBon++;
-        }
-
-        private void cmdDown_Copy1_Click(object sender, RoutedEventArgs e)
-        {
-            NumValueBon--;
-        }
-
-        private void cmdDown_Copy_Click(object sender, RoutedEventArgs e)
-        {
-            NumValueDay--;
-        }
-
-        private void cmdUp_Click(object sender, RoutedEventArgs e)
-        {
-            NumValueDay++;
-        }
-
-        private void cmdUp_Copy2_Click(object sender, RoutedEventArgs e)
-        {
-            NumValueSalBon++;
-        }
-
-        private void cmdDown_Copy2_Click(object sender, RoutedEventArgs e)
-        {
-            NumValueSalBon--;
-
-        }
+  
     }
 }

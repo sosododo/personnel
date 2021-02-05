@@ -23,6 +23,12 @@ namespace personnel.Models
         [Column("num_days")]
         public int NumDays { get; set; }
 
+        [Column("from_year", TypeName = "date")]
+        public DateTime? FromYear { get; set; }
+
+        [Column("to_year", TypeName = "date")]
+        public DateTime? ToYear { get; set; }
+
         [ForeignKey(nameof(DecisionId))]
         [InverseProperty(nameof(Models.Decision.Bonuses))]
         public virtual Decision Decision { get; set; }

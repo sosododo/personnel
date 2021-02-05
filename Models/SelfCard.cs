@@ -153,7 +153,8 @@ namespace personnel.Models
        
         public int IsTeacher { get; set; }
 
-
+        [Column("maxsalary")]
+        public double? maxsalary { get; set; }
 
 
         [InverseProperty("Person")]

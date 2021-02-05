@@ -716,10 +716,11 @@ namespace personnel.Views
                     SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
                     rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                     rd.Salary = r.Salary;
-                    rd.Bouns = (int)r.Bouns;
+                    rd.Bouns = r.Bouns;
                     rd.SalaryBouns = r.SalaryBouns;
                     rd.NumDays = r.NumDays;
-
+                    rd.FromYear = (DateTime)r.FromYear;
+                    rd.ToYear = (DateTime)r.ToYear;
 
 
                     all.Add(rd);

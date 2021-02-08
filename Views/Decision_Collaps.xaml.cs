@@ -44,6 +44,94 @@ namespace personnel.Views
                 }
                 else
                 {
+                    string con = des.DecisionContent;
+                    if (con == "تبدل وظيفي")
+                    {
+                        var x = (from y in db.FunctionalChanges
+                                 where y.DecisionId == des.DecisionId
+                                 select y);
+                        foreach (var row in x.ToList())
+                            db.FunctionalChanges.Remove(row);
+                    }
+                    else if (con == "قرار طي تبدل")
+                    {
+
+                    }
+                    else if (con == "قرارإجازة")
+                    {
+                        var x = (from y in db.Rests
+                                 where y.DecisionId == des.DecisionId
+                                 select y);
+                        foreach (var row in x.ToList())
+                            db.Rests.Remove(row);
+                    }
+
+                    else if (con == "قرار إعارة")
+                    {
+                        var x = (from y in db.Secondments
+                                 where y.DecisionId == des.DecisionId
+                                 select y);
+                        foreach (var row in x.ToList())
+                            db.Secondments.Remove(row);
+
+                    }
+
+                    else if (con == "قرار إيفاد")
+                    {
+                        var x = (from y in db.Delegatings
+                                 where y.DecisionId == des.DecisionId
+                                 select y);
+                        foreach (var row in x.ToList())
+                            db.Delegatings.Remove(row);
+
+                    }
+
+                    else if (con == "قرار ندب")
+                    {
+                        var x = (from y in db.Scars
+                                 where y.DecisionId == des.DecisionId
+                                 select y);
+                        foreach (var row in x.ToList())
+                            db.Scars.Remove(row);
+
+                    }
+
+                    else if (con == "قرار عقوبة")
+                    {
+                        var x = (from y in db.Punishments
+                                 where y.DecisionId == des.DecisionId
+                                 select y);
+                        foreach (var row in x.ToList())
+                            db.Punishments.Remove(row);
+
+                    }
+                    else if (con == "قرار ترفيعة")
+                    {
+                        var x = (from y in db.Bonuses
+                                 where y.DecisionId == des.DecisionId
+                                 select y);
+                        foreach (var row in x.ToList())
+                            db.Bonuses.Remove(row);
+
+                    }
+                    else if (con == "قرار مكافأة")
+                    {
+                        var x = (from y in db.Rewards
+                                 where y.DecisionId == des.DecisionId
+                                 select y);
+                        foreach (var row in x.ToList())
+                            db.Rewards.Remove(row);
+                    }
+                    else if (con == "قرار زيادة")
+                    {
+                        //var x = (from y in db.FunctionalChanges
+                        //         where y.DecisionId == des.DecisionId
+                        //         select y).FirstOrDefault();
+                        //db.FunctionalChanges.Remove(x);
+                        //db.SaveChanges();
+
+                    }
+
                     des.DecisionStatus = "قرار مطوي";
                     des.CollapsDate = date.SelectedDate;
                     db.Decisions.Update(des);

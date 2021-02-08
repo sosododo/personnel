@@ -359,6 +359,7 @@ namespace personnel.Views
 
                 }
 
+
             }
             if (res_type.Text == "دراسية بلا أجر") {
                 int mothetcount = db.Rests.Where(x => x.PersonId == empId && x.RestType == "دراسية بلا أجر").Count();

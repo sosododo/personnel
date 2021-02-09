@@ -161,6 +161,9 @@
                 <local:Add_Punishment Visibility="Collapsed" x:Name="punish"/>
                 <local:Add_Reward Visibility="Collapsed" x:Name="reward"/>
                 <local:Add_Bonus Visibility="Collapsed" x:Name="bonus"/>
+                <local:Add_Special_Bonus Visibility="Collapsed" x:Name="sbonus"/>
+                
+
                 <local:FunctionChange_Details Visibility="Collapsed" x:Name="fcd"/>
                 <local:Delegation_Details Visibility="Collapsed" x:Name="dd"/>
                 <local:Punishment_Details Visibility="Collapsed" x:Name="pd"/>

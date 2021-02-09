@@ -106,6 +106,8 @@
             <ComboBoxItem Content="قرار ندب"/>
             <ComboBoxItem Content="قرار عقوبة"/>
             <ComboBoxItem Content="قرار ترفيعة"/>
+            <ComboBoxItem Content="قرار ترفيعة استثنائية"/>
+            <ComboBoxItem Content="قرار ترفيعة تدريسية"/>
             <ComboBoxItem Content="قرار مكافأة"/>
             <ComboBoxItem Content="قرار طي تبدل"/>
             <ComboBoxItem Content="قرار زيادة"/>

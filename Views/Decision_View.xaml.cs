@@ -525,7 +525,7 @@ namespace personnel.Views
                     rd.JobTitle = r.JobTitle;
                     rd.Status = r.Status;
                     rd.Mission = r.Mission;
-                    rd.Salary =(double) r.Salary;
+                    rd.Salary = (double)r.Salary;
 
 
                     all.Add(rd);
@@ -535,7 +535,7 @@ namespace personnel.Views
 
                 fcd.detailsDataGrid.ItemsSource = all;
                 fcd.Visibility = Visibility.Visible;
-                
+
 
 
             }
@@ -543,7 +543,7 @@ namespace personnel.Views
             {
 
 
-           
+
 
 
             }
@@ -570,7 +570,7 @@ namespace personnel.Views
                     rd.SecondmentStart = (DateTime)r.SecondmentStart;
                     rd.SecondmentEnd = (DateTime)r.SecondmentEnd;
                     rd.SecondmentPlace = r.SecondmentPlace;
-                    
+
                     rd.Notes = r.Notes;
 
 
@@ -581,7 +581,7 @@ namespace personnel.Views
 
                 sd.detailsDataGrid.ItemsSource = all;
                 sd.Visibility = Visibility.Visible;
-              
+
 
 
 
@@ -686,7 +686,7 @@ namespace personnel.Views
                     rd.StartDate = (DateTime)r.StartDate;
                     rd.EndDate = (DateTime)r.EndDate;
                     rd.Reason = r.Reason;
-                    rd.Discount =(double) r.Discount;
+                    rd.Discount = (double)r.Discount;
                     rd.Notes = r.Notes;
 
 
@@ -765,7 +765,34 @@ namespace personnel.Views
 
 
             }
+            else if (dec.DecisionContent == "قرار زيادة") {
+                collaps_all();
+                ObservableCollection<IncreaseDetails> all = new ObservableCollection<IncreaseDetails>();
 
+                List<SalaryIncrease> Custom_Dec = db.SalaryIncrease.Where(x => x.DecisionId == dec.DecisionId).ToList();
+
+                foreach (SalaryIncrease r in Custom_Dec)
+                {
+                    IncreaseDetails rd = new IncreaseDetails();
+
+
+                    SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
+                    rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                    rd.SalaryBefore = r.SalaryBefore;
+                    rd.SalaryAfter = r.SalaryAfter;
+                    rd.Increase = r.Increase;
+                   
+
+                    all.Add(rd);
+
+
+                }
+
+                incdet.detailsDataGrid.ItemsSource = all;
+                incdet.Visibility = Visibility.Visible;
+
+
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

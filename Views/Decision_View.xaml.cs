@@ -430,6 +430,19 @@ namespace personnel.Views
 
 
             }
+
+            else if (con == "قرار ترفيعة استثنائية")
+            {
+
+                collaps_all();
+                sbonus.dec_id.Text = m.ToString();
+
+
+                sbonus.Visibility = Visibility.Visible;
+                sbonus.DataContext = dec;
+
+
+            }
             else if (con == "قرار مكافأة")
             {
                 collaps_all();
@@ -730,6 +743,7 @@ namespace personnel.Views
 
 
             }
+           
             else if (dec.DecisionContent == "قرار مكافأة")
             {
 

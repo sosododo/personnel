@@ -221,15 +221,15 @@
 
             </ListBoxItem>
             <ListBoxItem  >
-                <CheckBox Content="الاسم"/>
+                <CheckBox Content="الكنية"/>
 
             </ListBoxItem>
             <ListBoxItem  >
-                <CheckBox Content="الاسم"/>
+                <CheckBox Content="اسم الأب"/>
 
             </ListBoxItem>
             <ListBoxItem  >
-                <CheckBox Content="الاسم" />
+                <CheckBox Content="اسم الأم" />
 
             </ListBoxItem>
             <ListBoxItem  >

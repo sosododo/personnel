@@ -63,6 +63,9 @@
     <Compile Update="Views\ShowTeacher.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Statistics_emp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ZATDataSet1.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -86,6 +89,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ShowTeacher.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Statistics_emp.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

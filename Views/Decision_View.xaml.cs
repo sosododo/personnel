@@ -466,13 +466,10 @@ namespace personnel.Views
                 addinc.Visibility = Visibility.Visible;
                addinc.DataContext = dec;
 
-
-
             }
 
             excute_but.IsEnabled = false;
-           
-
+ 
         }
 
         private void show_but_Click(object sender, RoutedEventArgs e)

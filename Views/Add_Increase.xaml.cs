@@ -55,11 +55,6 @@ namespace personnel.Views
         {
 
 
-
-
-
-
-
             var emp_id = (from Z in db.SelfCards
                           where Z.Status == "قائم على رأس عمله"
                           select new { Z.PersonId, full = Z.FirstName + " " + Z.FatherName + " " + Z.LastName, Z.Salary }).ToList();
@@ -95,16 +90,15 @@ namespace personnel.Views
                 }
 
             }
-            var d = db.Decisions.Where(c => c.DecisionId == long.Parse(dec_id.Text)).Single();
-            excute.IsChecked = true;
-            d.IsExcute = true;
-
-            db.Decisions.Update(d);
-
-            db.SaveChanges();
+           
         
 
         MessageBox.Show("تمت عملية الانتهاء من تنفيذ قرار الزيادة");
+            var d = db.Decisions.Where(c => c.DecisionId == long.Parse(dec_id.Text)).Single();
+            excute.IsChecked = true;
+            d.IsExcute = true;
+            db.Decisions.Update(d);
+            db.SaveChanges();
             Decision_View dv = new Decision_View();
         Window parentWindow = Window.GetWindow(this);
         parentWindow.Close();

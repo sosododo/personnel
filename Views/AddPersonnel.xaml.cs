@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using personnel.Models;
+using personnel.ModelView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,6 +62,11 @@ namespace personnel.Views
 
         private void Add_person(object sender, RoutedEventArgs e)
         {
+            Emp_Maxsalary em = new Emp_Maxsalary();
+            maxsalary.Text = em.getmaxsal(grade.Text).ToString();
+            float mx = float.Parse(maxsalary.Text);
+            salary.Text=em.getbigsal(grade.Text).ToString();
+            float sal= float.Parse(salary.Text);
             try
             {
                 //PersonelDBContext db = new PersonelDBContext();
@@ -83,7 +89,7 @@ namespace personnel.Views
                     Recruitment = recruitment.Text,
                     RegisteredId = registered_id.Text,
                     Nationality = nationalty.Text,
-                   
+
                     Specialization = specialization.Text,
                     Certificate = certificate.Text,
                     FileId = fileid.Text,
@@ -93,7 +99,7 @@ namespace personnel.Views
 
                     Employer = employer.Text,
                     JobTitle = job.Text,
-                    Salary = long.Parse(salary.Text),
+                    Salary = sal,
                     Workplace = workplace.Text,
                     Photo = photo.Text,
                     Section = dept.Text,
@@ -106,10 +112,10 @@ namespace personnel.Views
                     InsuranceCard = card.Text,
                     Register = register.Text,
                     WorkContracts = workcontract.Text,
-                    IsTeacher = 0
-                    
+                    IsTeacher = 0,
+                    maxsalary = mx
 
-                };
+            };
 
 
 

@@ -46,5 +46,11 @@ namespace personnel.Views
             this.Close();
 
         }
+
+        private void b2_Click(object sender, RoutedEventArgs e)
+        {
+            Window win = new Statistics();
+            win.Show();
+        }
     }
 }

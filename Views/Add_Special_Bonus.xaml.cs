@@ -19,7 +19,7 @@ using System.Windows.Shapes;
 namespace personnel.Views
 {
     /// <summary>
-    /// Interaction logic for Add_Bonus.xaml
+    /// Interaction logic for Add_Special_Bonus.xaml
     /// </summary>
     public partial class Add_Special_Bonus : UserControl
     {
@@ -36,10 +36,7 @@ namespace personnel.Views
 
 
 
-
-
-
-            Decision d = (Decision)DataContext;
+                        Decision d = (Decision)DataContext;
         }
 
 

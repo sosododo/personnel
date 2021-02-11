@@ -113,7 +113,7 @@
                 <Button Content="حذف الموظف المحدد" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Height="20" VerticalAlignment="Top" Click="Button_Click"/>
             </Grid>
         </GroupBox>
-        <Image Grid.ColumnSpan="2" Height="100" Grid.RowSpan="2" Width="100"/>
+        
         <Label Content="قرار الزيادة من تاريخ" Grid.Column="3" Margin="10,4,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="حتى تاريخ" Grid.Column="5" Margin="0,4,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <DatePicker x:Name="from" Grid.Column="3" HorizontalAlignment="Left" Margin="139,4,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="100"/>

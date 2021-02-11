@@ -950,7 +950,8 @@
                 <ComboBox   Grid.Column="2" Grid.Row="2" Name="grade"  Text="{Binding Category}" SelectionChanged="grade_SelectionChanged" DropDownClosed="grade_DropDownClosed"   >
 
                     <ComboBoxItem Content="الأولى" />
-                    <ComboBoxItem Content="الثانية"/>
+                    <ComboBoxItem Content="الثانية/اداريين"/>
+                    <ComboBoxItem Content="الثانية/مخبريين"/>
                     <ComboBoxItem Content="الثالثة"/>
                     <ComboBoxItem Content="الرابعة"/>
                     <ComboBoxItem Content="الخامسة"/>

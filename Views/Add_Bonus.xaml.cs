@@ -33,7 +33,7 @@ namespace personnel.Views
 
 
             emp = (from p in db.SelfCards
-                   where p.Status == "قائم على رأس عمله"
+                   where( p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary)
                    select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
    
  
@@ -61,7 +61,7 @@ namespace personnel.Views
             double bouns = 0.09;
             int days;
             var emp_id = (from d in db.SelfCards
-            where d.Status == "قائم على رأس عمله"
+            where d.Status == "قائم على رأس عمله" 
             select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName,d.Salary ,d.maxsalary }).ToList();
 
 

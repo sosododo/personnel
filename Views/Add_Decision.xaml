@@ -99,7 +99,7 @@
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
         <ComboBox Grid.Column="5" Grid.Row="1"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionContent}" Name="dec_con">
             <ComboBoxItem Content="تبدل وظيفي"/>
-            
+            <ComboBoxItem Content="قرار قطع إجازة بلا اجر"/>
             <ComboBoxItem Content="قرار إيفاد"/>
             <ComboBoxItem Content="قرارإجازة"/>
             <ComboBoxItem Content="قرار إعارة"/>

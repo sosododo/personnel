@@ -374,6 +374,26 @@ namespace personnel.Views
                 }
 
             }
+
+            //if (res_type.Text == "قطع بلا أجر") {
+
+        
+            //    //text1.Visibility = Visibility.Collapsed;
+            //    //perod.Visibility = Visibility.Collapsed;
+            //    //cmdDown_Copy2.Visibility = Visibility.Collapsed;
+            //    //cmdUp_Copy2.Visibility = Visibility.Collapsed;
+            //    //res_per1.Visibility = Visibility.Collapsed;
+            //    //res_per2.Visibility = Visibility.Collapsed;
+            //    //res_per3.Visibility = Visibility.Collapsed;
+            //    //sta.Visibility = Visibility.Collapsed;
+            //    //res_start.Visibility = Visibility.Collapsed;
+            //    //en.Visibility = Visibility.Collapsed;
+            //    //res_end.Visibility = Visibility.Collapsed;
+            //    //att.Visibility = Visibility.Collapsed;
+            //    //at.Visibility = Visibility.Collapsed;
+            //    //not.Visibility = Visibility.Collapsed;
+            //    //note.Visibility = Visibility.Collapsed;
+            //}
         }
     }
 }

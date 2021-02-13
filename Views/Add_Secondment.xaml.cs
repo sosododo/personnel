@@ -32,7 +32,7 @@ namespace personnel.Views
             db = new PersonelDBContext();
             List<string> employ = db.SelfCards.Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
             emp_name.ItemsSource = employ;
-            Decision d = (Decision)DataContext;
+        //    Decision d = (Decision)DataContext;
         }
 
         public int NumValue

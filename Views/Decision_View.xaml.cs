@@ -356,6 +356,14 @@ namespace personnel.Views
                 decCollaps.dec_id.Text = m.ToString();
         
             }
+            else if (con == "قرار قطع إجازة بلا اجر")
+            {
+                collaps_all();
+                addreststop.Visibility = Visibility.Visible;
+                addreststop.DataContext = dec;
+                addreststop.dec_id.Text = m.ToString();
+
+            }
             else if (con == "قرارإجازة")
             {
                 collaps_all();
@@ -845,7 +853,7 @@ namespace personnel.Views
             addscar.Visibility = Visibility.Collapsed;
             scardetails.Visibility = Visibility.Collapsed;
             res.Visibility = Visibility.Collapsed;
-
+            addreststop.Visibility = Visibility.Collapsed;
         }
 
     }

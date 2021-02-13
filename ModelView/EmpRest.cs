@@ -36,7 +36,7 @@ namespace personnel.ModelView
 
            IEnumerable query=          (from r in db.Rests join d in db.Decisions on r.DecisionId equals d.DecisionId
                                                 where r.PersonId == id && d.DecisionStatus!="قرار مطوي"
-                                                select new { r.DecisionId, fu=( d.DecisionNumber +" " + d.DecisionType + " " + d.DecisionYear), r.RestType,r.RestPeriod,r.RestStart,r.RestEnd,r.Attachment,r.Notes }).ToList();
+                                                select new { r.DecisionId, fu=( d.DecisionNumber +" " + d.DecisionType + " " + d.DecisionYear), r.RestType,r.RestPeriod,r.Period, r.RestStart,r.RestEnd,r.Attachment,r.Notes }).ToList();
              
              
 

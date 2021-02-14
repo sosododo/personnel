@@ -49,8 +49,9 @@ namespace personnel.Views
 
         private void b2_Click(object sender, RoutedEventArgs e)
         {
-            Window win = new Statistics();
+            Window win = new Statistics_emp();
             win.Show();
+            this.Close();
         }
     }
 }

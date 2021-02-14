@@ -6,15 +6,13 @@
         xmlns:local="clr-namespace:personnel.Views"
          xmlns:model="clr-namespace:personnel.Models"
         mc:Ignorable="d"
-        Title="Statistics" Height="450" Width="800" FlowDirection="RightToLeft" >
+        Title="Statistics" Height="450" Width="800" FlowDirection="RightToLeft"  >
     <Window.DataContext>
-        <model:SelfCard>
-            
-        </model:SelfCard>
+        <model:SelfCard></model:SelfCard>
     </Window.DataContext>
 
     <Window.Resources>
-
+        <!--A Style that affects all TextBlocks-->
         <Style TargetType="GroupBox">
 
             <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
@@ -114,7 +112,7 @@
                                           Margin="0"
                                           HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-                                    <Border x:Name="FocusVisual" BorderBrush="#FF45D6FA" CornerRadius="1" Opacity="0" IsHitTestVisible="False"/>
+                                    <Border x:Name="FocusVisual" BorderBrush="Brown" CornerRadius="1" Opacity="0" IsHitTestVisible="False"/>
                                 </Grid>
                             </Border>
                         </Grid>
@@ -137,7 +135,7 @@
 
             <Setter Property="Foreground" Value="#FF606453"/>
 
-
+            <!--<Setter Property="Width" Value="auto"/>-->
 
         </Style>
         <Style TargetType="TextBox">
@@ -147,7 +145,8 @@
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="Height" Value="23"/>
-
+            <!--<Setter Property="Width" Value="90"/>-->
+            <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="TextWrapping" Value="NoWrap"/>
 
 
@@ -157,11 +156,11 @@
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="FontFamily" Value="Comic Sans MS"/>
             <Setter Property="FontSize" Value="12"/>
-            <Setter Property="VerticalAlignment" Value="top"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="Height" Value="25"/>
-            <Setter Property="FontWeight" Value="Normal"/>
-
+            <!--<Setter Property="Width" Value="90"/>-->
             <Setter Property="FlowDirection" Value="LeftToRight"/>
+            <Setter Property="FontWeight" Value="Normal"/>
 
 
 
@@ -170,9 +169,9 @@
 
         <Style TargetType="Button">
             <Setter Property="BorderThickness" Value="1.5"/>
-            <Setter Property="BorderBrush" Value="#FF938A31"/>
-            <Setter Property="Background" Value="#FFDAD59D"/>
-            <Setter Property="Foreground" Value="#FF403C17"/>
+            <Setter Property="BorderBrush" Value="RosyBrown"/>
+            <Setter Property="Background" Value="RosyBrown"/>
+            <Setter Property="Foreground" Value="SaddleBrown"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="FontSize" Value="11"/>
             <Style.Resources>
@@ -187,67 +186,264 @@
 
     </Window.Resources>
 
-    <Grid>
 
+    <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Beige" Offset="-1"/>
-                <GradientStop Color="#FFECECCF" Offset="0"/>
+
+                <GradientStop Color="BurlyWood" Offset="0"/>
                 <GradientStop Color="GhostWhite" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-
-
-
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="659*"/>
+        </Grid.ColumnDefinitions>-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-        </Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
 
+
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.2*"/>
 
         </Grid.RowDefinitions>
-        <Label Content="إحصائية بيانات الموظفين" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center"/>
-        <Label Content="حقول العرض" Grid.Column="0" Grid.Row="1"/>
-        <ListBox Grid.Column="0" Grid.Row="3" >
-            <ListBoxItem  >
-                <CheckBox Content="الاسم"/>
 
-            </ListBoxItem>
-            <ListBoxItem  >
-                <CheckBox Content="الكنية"/>
+        <GroupBox Header="البيانات الشخصية"    FlowDirection="RightToLeft" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5"   >
 
-            </ListBoxItem>
-            <ListBoxItem  >
-                <CheckBox Content="اسم الأب"/>
+            <Grid  VerticalAlignment="Center"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
 
-            </ListBoxItem>
-            <ListBoxItem  >
-                <CheckBox Content="اسم الأم" />
 
-            </ListBoxItem>
-            <ListBoxItem  >
-                <CheckBox Content="الاسم"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="1"   Text="الجنس"  Grid.Row="0"/>
+                <TextBlock  Text="الجنسية" Grid.Column="3" Grid.Row="0" />
+                <TextBlock   Text="الديانة"  Grid.Column="5" Grid.Row="0"/>
+                <TextBlock   Text="الوضع الاجتماعي"  Grid.Column="7" Grid.Row="0"/>
+                <ComboBox Grid.Column="2" Grid.Row="0" Name="sex"  >
+                    <ComboBoxItem Content="ذكر" IsSelected="True"/>
+                    <ComboBoxItem Content="أنثى"/>
+                </ComboBox>
+                <ComboBox Grid.Column="8" Grid.Row="0" Name="social">
+                    <ComboBoxItem Content="عازب" IsSelected="True"/>
+                    <ComboBoxItem Content="متأهل "/>
+                </ComboBox>
+                <ComboBox Grid.Column="6" Grid.Row="0" Name="religion"  >
+                    <ComboBoxItem Content="اسلام" IsSelected="True"/>
+                    <ComboBoxItem Content="مسيحية"/>
+                </ComboBox>
 
-            </ListBoxItem>
-            <ListBoxItem  >
-                <CheckBox Content="الاسم"/>
 
-            </ListBoxItem>
-            <ListBoxItem  >
-                <CheckBox Content="الاسم"/>
 
-            </ListBoxItem>
-            <ListBoxItem  >
-                <CheckBox Content="الاسم"/>
 
-            </ListBoxItem>
-        </ListBox>
+                <ComboBox Grid.Column="4" Grid.Row="0" Name="nationalty" >
+                    <ComboBoxItem Content="عربي سوري" IsSelected="True"/>
+                    <ComboBoxItem Content="لبناني"/>
+                    <ComboBoxItem Content="فلسطيني سوري"/>
+
+
+                </ComboBox>
+                <TextBlock Text="الفئة"   Grid.Row="1" Grid.Column="1"/>
+                <TextBlock  Text="المسمى الوظيفي"  Grid.Column="3" Grid.Row="1"/>
+                <TextBlock  Text="نوع العقد"  Grid.Column="5" Grid.Row="1"/>
+                <TextBlock  Text="مكان العمل"  Grid.Column="7" Grid.Row="1" />
+                <TextBlock  Text="الجهة العاملة" Grid.Column="9" Grid.Row="0" />
+                <TextBlock Text="  تاريخ المباشرة من" Grid.Column="1" Grid.Row="3"/>
+                <TextBlock Grid.Column="1"   Grid.Row="2" Text="نوع التعيين"/>
+                <TextBlock Grid.Column="3"   Grid.Row="2" Text="المهمة"/>
+                <TextBlock Grid.Column="5"  Grid.Row="2" Text="حالة بطاقة التأمين" />
+                <TextBlock  Grid.Column="7" Text="الحالة" Grid.Row="2"  />
+                <TextBlock Grid.Column="9"   Grid.Row="2" Text="ملاحظات"/>
+
+                <TextBlock Grid.Column="9"   Grid.Row="1"  Text="فئة الاضبارة"/>
+
+                <ComboBox Grid.Column="10" Grid.Row="1"  Name="fileclass"    >
+                    <ComboBoxItem Content="إداري" IsSelected="True"/>
+                    <ComboBoxItem Content="فني"/>
+                    <ComboBoxItem Content="تدريسي"/>
+                    <ComboBoxItem Content="مخبري"/>
+                    <ComboBoxItem Content="عامل"/>
+                    <ComboBoxItem Content="عقد"/>
+                </ComboBox>
+                <ComboBox   Grid.Column="2" Grid.Row="1" Name="grade" DropDownClosed="grade_DropDownClosed" >
+
+                    <ComboBoxItem Content="الأولى" />
+                    <ComboBoxItem Content="الثانية/اداريين"/>
+                    <ComboBoxItem Content="الثانية/مخبريين"/>
+                    <ComboBoxItem Content="الثالثة"/>
+                    <ComboBoxItem Content="الرابعة"/>
+                    <ComboBoxItem Content="الخامسة"/>
+
+
+
+                </ComboBox>
+                <ComboBox Grid.Column="4" Grid.Row="1" Name="job"   >
+
+
+                </ComboBox>
+                <ComboBox Grid.Column="6"  Grid.Row="1"  Name="workcontract" >
+
+                    <ComboBoxItem Content="عقد سنوي" />
+                    <ComboBoxItem Content="عقد موسمي"/>
+                </ComboBox>
+                <ComboBox Grid.Column="8" Grid.Row="1" Name="workplace">
+
+                </ComboBox>
+                <ComboBox Grid.Column="10" Grid.Row="0" Name="employer"  >
+                    <ComboBoxItem Content="جامعة البعث" IsSelected="True"/>
+                    <ComboBoxItem Content="خارج جامعة البعث"/>
+                </ComboBox>
+                <ComboBox Grid.Column="2" Grid.Row="2" Name="type" >
+                    <ComboBoxItem Content="شاغرة" IsSelected="True"/>
+                    <ComboBoxItem Content="محدثة"/>
+                    <ComboBoxItem Content="عقد"/>
+                </ComboBox>
+                <ComboBox Grid.Column="6" Grid.Row="2" Name="card" >
+                    <ComboBoxItem Content="ضمن الخدمة" IsSelected="True"/>
+                    <ComboBoxItem Content="خارج الخدمة "/>
+                </ComboBox>
+                <ComboBox Grid.Column="8" Grid.Row="2" Name="status"  >
+                    <ComboBoxItem Content="قائم على رأس عمله" IsSelected="True"/>
+                    <ComboBoxItem Content="بلا أجر"/>
+                    <ComboBoxItem Content="متوفى"/>
+                    <ComboBoxItem Content="مسرح صحياً"/>
+                    <ComboBoxItem Content="مندوب"/>
+                    <ComboBoxItem Content="معار داخلياً"/>
+                    <ComboBoxItem Content="معار خارجياً"/>
+                    <ComboBoxItem Content="مستقيل"/>
+                    <ComboBoxItem Content="بحكم المستقيل"/>
+                    <ComboBoxItem Content="كف اليد"/>
+                    <ComboBoxItem Content="مصروف من الخدمة"/>
+                    <ComboBoxItem Content="متقاعد"/>
+                    <ComboBoxItem Content="اجازة دراسية"/>
+                    <ComboBoxItem Content="موفد خارجياً"/>
+                    <ComboBoxItem Content="موفد داخلياً"/>
+                    <ComboBoxItem Content="احتياط"/>
+                    <ComboBoxItem Content="خدمة الزامية"/>
+                    <ComboBoxItem Content="منقول خارج الجامعة"/>
+                    <ComboBoxItem Content="مكلف خارج الجامعة"/>
+                    <ComboBoxItem Content="مجمد"/>
+                    <ComboBoxItem Content="مفرغ للحزب"/>
+
+                </ComboBox>
+
+
+
+
+
+
+
+                <ComboBox Grid.Column="4" Grid.Row="2" Name="mission" >
+                    <ComboBoxItem Content="موظف" IsSelected="true"/>
+                    <ComboBoxItem Content="رئيس جامعة"/>
+                    <ComboBoxItem Content="نائب رئيس جامعة"/>
+                    <ComboBoxItem Content="أمين جامعة"/>
+                    <ComboBoxItem Content="رئيس دائرة"/>
+                    <ComboBoxItem Content="رئيس شعبة"/>
+                    <ComboBoxItem Content="أمين مستودع"/>
+                    <ComboBoxItem Content="أمين مكتبة"/>
+                    <ComboBoxItem Content="مشرف وحدة"/>
+                    <ComboBoxItem Content="مدير معهد"/>
+                    <ComboBoxItem Content="أمين مساعد"/>
+                    <ComboBoxItem Content="معتمد رسوم طلاب"/>
+                    <ComboBoxItem Content="معتمد بيع كتب"/>
+
+
+                </ComboBox>
+
+                <ComboBox Grid.Column="10" Grid.Row="2" Name="note" >
+                    <ComboBoxItem Content="لا يوجد " IsSelected="True" />
+                    <ComboBoxItem Content="احتياجات خاصة" />
+                    <ComboBoxItem Content="ذوي شهداء "/>
+                    <ComboBoxItem Content="مسابقة "/>
+                    <ComboBoxItem Content="نقل "/>
+                </ComboBox>
+
+                <DatePicker HorizontalAlignment="Stretch"  VerticalAlignment="Top"  Margin="4,6,4,4" Grid.Column="2" Grid.Row="3"  Name="begindate1" >
+                </DatePicker>
+
+                <TextBlock Text="حتى تاريخ"   Grid.Row="3" Grid.Column="3"/>
+                <DatePicker HorizontalAlignment="Stretch"  VerticalAlignment="Top"  Margin="4,6,4,4" Grid.Column="4" Grid.Row="3"  Name="begindate2" >
+                </DatePicker>
+
+
+
+            </Grid>
+        </GroupBox>
+        <GroupBox  Grid.Row="2"  Header="بيانات الموظفين :" FlowDirection="RightToLeft"   Grid.Column="1"   >
+            <Grid  Width="auto" Height="auto" Margin="0,0,0,0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="34*"/>
+                    <ColumnDefinition Width="73*"/>
+                </Grid.ColumnDefinitions>
+                <DataGrid   Margin="10,0,10,0" Height="113" VerticalAlignment="Center"  ScrollViewer.VerticalScrollBarVisibility="Visible"  VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxWidth="1050" MaxHeight="200" MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF505A9C"   FontSize="12" Name="search_emp" AutoGenerateColumns="False" Grid.ColumnSpan="2" >
+
+                    <!--<DataGrid.Resources>
+                            <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#FFC1C7E6" />
+                          
+                        </Style>
+                        </DataGrid.Resources>-->
+
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Binding="{Binding EmployeeId}" ClipboardContentBinding="{x:Null}" Header="الرقم الذاتي"/>
+                        <DataGridTextColumn Binding="{Binding FirstName}" ClipboardContentBinding="{x:Null}" Header="الاسم"/>
+                        <DataGridTextColumn Binding="{Binding LastName}" ClipboardContentBinding="{x:Null}" Header="الكنية"/>
+
+
+                        <DataGridTextColumn Binding="{Binding FileId}" ClipboardContentBinding="{x:Null}" Header="رقم الاضبارة"/>
+                        <DataGridTextColumn Binding="{Binding FileClass}" ClipboardContentBinding="{x:Null}" Header="فئة الاضبارة"/>
+                        <DataGridTextColumn Binding="{Binding Category}" ClipboardContentBinding="{x:Null}" Header="الفئة"/>
+                        <DataGridTextColumn Binding="{Binding Workplace}" ClipboardContentBinding="{x:Null}" Header="مكان العمل"/>
+                        <DataGridTextColumn Binding="{Binding JobTitle}" ClipboardContentBinding="{x:Null}" Header="المسمى الوظيفي"/>
+                        <DataGridTextColumn Binding="{Binding Birthday,StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="تاريخ الميلاد"/>
+                        <DataGridTextColumn Binding="{Binding BeginningDate,StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="تاريخ المباشرة"/>
+                        <DataGridTextColumn Binding="{Binding Status}" ClipboardContentBinding="{x:Null}" Header="الحالة"/>
+
+
+                    </DataGrid.Columns>
+                </DataGrid>
+
+
+            </Grid>
+
+        </GroupBox>
+
+        <TextBlock HorizontalAlignment="Center"  Text="إحصائيات بيانات الموظفين" VerticalAlignment="Center"  FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold" />
+        <Button Content="عودة"    Grid.Row="3"  Height="35" Width="70" Margin="601,15,10,0" Grid.Column="1" Click="Exit"/>
+        <Button Content="عرض"    Grid.Row="3"  Height="35" Width="70" Margin="495,16,121,1" Grid.Column="1" Click="show"/>
+
     </Grid>
 </Window>
+    
+    
+    
+    
+    
+    
+    

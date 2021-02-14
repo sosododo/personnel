@@ -7,11 +7,7 @@
          xmlns:model="clr-namespace:personnel.Models"
         mc:Ignorable="d"
         Title="Statistics" Height="450" Width="800" FlowDirection="RightToLeft" >
-    <Window.DataContext>
-        <model:SelfCard>
-            
-        </model:SelfCard>
-    </Window.DataContext>
+    
 
     <Window.Resources>
 

@@ -83,7 +83,11 @@
 
         <GroupBox  Grid.Row="0"  Header="بيانات الموظف :" FlowDirection="RightToLeft"  Grid.RowSpan="2" Grid.Column="1"   >
             <Grid  Width="auto" Height="auto" Margin="0,0,0,0">
-                <DataGrid   Margin="10,10,10,0" Height="150" VerticalAlignment="Top"  ScrollViewer.VerticalScrollBarVisibility="Visible"  VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxWidth="1050" MaxHeight="200" MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF505A9C"   FontSize="12" Name="search_emp" AutoGenerateColumns="False" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="34*"/>
+                    <ColumnDefinition Width="73*"/>
+                </Grid.ColumnDefinitions>
+                <DataGrid   Margin="10,10,10,0" Height="150" VerticalAlignment="Top"  ScrollViewer.VerticalScrollBarVisibility="Visible"  VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxWidth="1050" MaxHeight="200" MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF505A9C"   FontSize="12" Name="search_emp" AutoGenerateColumns="False" Grid.ColumnSpan="2" >
 
                     <!--<DataGrid.Resources>
                             <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
@@ -97,7 +101,7 @@
                         <DataGridTextColumn Binding="{Binding FirstName}" ClipboardContentBinding="{x:Null}" Header="الاسم"/>
                         <DataGridTextColumn Binding="{Binding LastName}" ClipboardContentBinding="{x:Null}" Header="الكنية"/>
 
-                        
+
                         <DataGridTextColumn Binding="{Binding FileId}" ClipboardContentBinding="{x:Null}" Header="رقم الاضبارة"/>
                         <DataGridTextColumn Binding="{Binding FileClass}" ClipboardContentBinding="{x:Null}" Header="فئة الاضبارة"/>
                         <DataGridTextColumn Binding="{Binding Category}" ClipboardContentBinding="{x:Null}" Header="الفئة"/>

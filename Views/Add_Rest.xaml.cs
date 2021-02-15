@@ -100,6 +100,11 @@ namespace personnel.Views
                         else
 
                         {
+                            SelfCard person = new SelfCard();
+                            person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                            person.Status = "بلا أجر";
+                            db.SelfCards.Update(person);
+                            db.SaveChanges();
                             dec_excute();
 
 
@@ -107,9 +112,29 @@ namespace personnel.Views
                     }
 
                     else if (res_type.Text == "إجازة صحية") { dec_excute(); }
-                    else if (res_type.Text == "احتياط") { dec_excute(); }
-                    else if (res_type.Text == "الزامي") { dec_excute(); }
-                    else if (res_type.Text == "دراسية بتمام الأجر") { dec_excute(); }
+                    else if (res_type.Text == "احتياط") {
+                        SelfCard person = new SelfCard();
+                        person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                        person.Status = "احتياط";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+
+                        dec_excute(); }
+                    else if (res_type.Text == "الزامي") {
+                        SelfCard person = new SelfCard();
+                        person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                        person.Status = "خدمة الزامية";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                        dec_excute(); }
+                    else if (res_type.Text == "دراسية بتمام الأجر") {
+
+                        SelfCard person = new SelfCard();
+                        person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                        person.Status = "اجازة دراسية";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                        dec_excute(); }
                     else if (res_type.Text == "دراسية بلا أجر") {
 
                         int mothetcount = db.Rests.Where(x => x.PersonId == empId && x.RestType == "دراسية بلا أجر").Count();
@@ -119,6 +144,12 @@ namespace personnel.Views
 
                         }
                         else {
+
+                            SelfCard person = new SelfCard();
+                            person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                            person.Status = "اجازة دراسية";
+                            db.SelfCards.Update(person);
+                            db.SaveChanges();
                             dec_excute();
                         }
 

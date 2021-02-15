@@ -39,6 +39,7 @@ namespace personnel.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            SelfCard person = new SelfCard();
             var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName }).ToList();
 
             var id = emp_id.Where(d => d.full == emp_name.Text).ToList().ElementAt(0);
@@ -79,7 +80,13 @@ namespace personnel.Views
 
                     r.RestEnd = dd.DecisionStart;
                     r.Period = res_per;
+                     
                     db.Rests.Update(r);
+                    db.SaveChanges();
+                    ///////////////////////////////////////////////
+                   person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                    person.Status = "قائم على رأس عمله";
+                    db.SelfCards.Update(person);
                     db.SaveChanges();
 
                     MessageBox.Show("تم تطبيق قرار قطع الإجازة بنجاح");

@@ -87,6 +87,22 @@ namespace personnel.Views
                     };
                     db.Add(r);
                     db.SaveChanges();
+                    if (sec_type.Text == "إعارة داخلية")
+                    {
+                        SelfCard person = new SelfCard();
+                        person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                        person.Status = "معار داخلياً";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+
+                    }
+                    else if (sec_type.Text == "إعارة خارجية") {
+                        SelfCard person = new SelfCard();
+                        person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                        person.Status = "معار خارجياً";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
                     MessageBox.Show("تم تنفيذ قرار الاعارة");
 
                     string message = "هل انتهى تنفيذ القرار؟";

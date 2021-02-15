@@ -91,6 +91,23 @@ namespace personnel.Views
                     };
                     db.Delegatings.Add(del);
                     db.SaveChanges();
+                    if (del_type.Text == "إيفاد داخلي")
+                    {
+                        SelfCard person = new SelfCard();
+                        person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                        person.Status = "موفد داخلياً";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (del_type.Text == "إيفاد خارجي")
+                    {
+                        SelfCard person = new SelfCard();
+                        person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                        person.Status = "موفد خارجياً";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+
+                    }
 
           
 

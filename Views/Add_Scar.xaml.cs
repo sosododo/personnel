@@ -105,7 +105,11 @@ namespace personnel.Views
                         db.Scars.Add(del);
                         db.SaveChanges();
 
-
+                        SelfCard person = new SelfCard();
+                        person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                        person.Status = "مندوب";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
 
                         MessageBox.Show("تم إضافة تفصيل قرار الندب بنجاح");
 

@@ -20,6 +20,7 @@
     <None Remove="Icon\pass.jpg" />
     <None Remove="Report\PersReport.rdlc" />
     <None Remove="Report\Report1.rdlc" />
+    <None Remove="Report\repzat - Copy.rdlc" />
     <None Remove="Report\repzat.rdlc" />
   </ItemGroup>
 
@@ -47,6 +48,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Report\Report1.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report\repzat - Copy.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Report\repzat.rdlc">

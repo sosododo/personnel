@@ -63,6 +63,113 @@ namespace personnel.Views
                 }
                 else
                 {
+                    SelfCard person = new SelfCard();
+                    person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+                    if (mission_Copy.Text == "اعادة إلى العمل") {
+                        status.Text = "قائم على رأس عمله";
+                        person.Status = "قائم على رأس عمله";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                       // status.Text = "قائم على رأس عمله";
+                    }
+                    else if (mission_Copy.Text == "استقالة") {
+                        status.Text = "مستقيل";
+                        person.Status = "مستقيل";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (mission_Copy.Text == "نهاية خدمة") {
+                        status.Text = "متقاعد";
+                        person.Status = "متقاعد";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+
+                    }
+                    else if (mission_Copy.Text == "تجميد") {
+                        status.Text = "مجمد";
+                        person.Status = "مجمد";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    
+                    }
+                    else if (mission_Copy.Text == "تفريغ للحزب") {
+                        status.Text = "مفرغ للحزب";
+                        person.Status = "مفرغ للحزب";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (mission_Copy.Text == "بحكم المستقيل")
+                    {
+                        status.Text = "بحكم المستقيل";
+                        person.Status = "بحكم المستقيل";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (mission_Copy.Text == "صرف من الخدمة")
+                    {
+                       status.Text = "مصروف من الخدمة";
+                        person.Status = "مصروف من الخدمة";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (mission_Copy.Text == "طي اسم")
+                    {
+                      status.Text = "متوفى";
+                        person.Status = "متوفى";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (mission_Copy.Text == "احالة على المعاش")
+                    {
+                        status.Text= "متقاعد";
+                        person.Status = "متقاعد";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (mission_Copy.Text == "تسريح صحي")
+                    {
+                        status.Text = "مسرح صحياً";
+                        person.Status = "مسرح صحياً";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (mission_Copy.Text == "كف يد")
+                    {
+                        status.Text = "كف اليد";
+                        person.Status = "كف اليد";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+               
+                    else if (mission_Copy.Text == "تغيير فئة")
+                    {
+                        grade.Text = "";
+                        person.Category = grade.Text;
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (mission_Copy.Text == "تغيير مسمى وظيفي")
+                    {
+                        job.Text = "";
+                        person.JobTitle = job.Text;
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (mission_Copy.Text == "تغيير مهمة")
+                    {
+                        mission.Text = "";
+                        person.Mission = mission.Text;
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (mission_Copy.Text == "تغيير مكان العمل")
+                    {
+                        pp.Text = "";
+                        person.Workplace = pp.Text;
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+
 
                     FunctionalChange fn = new FunctionalChange
                     {
@@ -70,17 +177,12 @@ namespace personnel.Views
                         DecisionId = int.Parse(dec_id.Text),
                         Category = grade.Text,
                         WorkPlace = pp.Text,
+                        functional_changes_type=mission_Copy.Text,
                         Mission = mission.Text,
                         ChangeDate = (DateTime)chandate1.SelectedDate,
                         Status = status.Text,
                         Salary = Int32.Parse(salary.Text),
                         JobTitle = job.Text
-
-
-
-
-
-
 
                     };
                     db.FunctionalChanges.Add(fn);
@@ -128,6 +230,115 @@ namespace personnel.Views
 
                             }
             catch (Exception ex) {  MessageBox.Show("يجب التأكد من ادخال جميع البيانات"); }
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void emp_name_DropDownClosed(object sender, EventArgs e)
+        {
+            
+            var emp_id = (from m in db.SelfCards select new { m.PersonId, full = m.FirstName + " " + m.FatherName + " " + m.LastName,m.Category,m.JobTitle,m.Mission,m.Status,m.Workplace,m.Salary }).ToList();
+
+            var id = emp_id.Where(d => d.full == emp_name.Text).ToList().ElementAt(0);
+            long empId = id.PersonId;
+            SelfCard person = new SelfCard();
+            person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+          
+            grade.Text = person.Category;
+            job.Text = person.JobTitle;
+            mission.Text = person.Mission;
+            salary.Text = person.Salary.ToString();
+            status.Text = person.Status;
+            pp.Text = person.Workplace;
+        }
+
+        private void mission_Copy_DropDownClosed(object sender, EventArgs e)
+        {
+            if (mission_Copy.Text == "اعادة إلى العمل")
+            {
+                status.Text = "قائم على رأس عمله";
+               
+                // status.Text = "قائم على رأس عمله";
+            }
+            else if (mission_Copy.Text == "استقالة")
+            {
+                status.Text = "مستقيل";
+                
+            }
+            else if (mission_Copy.Text == "نهاية خدمة")
+            {
+                status.Text = "متقاعد";
+              
+
+            }
+            else if (mission_Copy.Text == "تجميد")
+            {
+                status.Text = "مجمد";
+             
+
+            }
+            else if (mission_Copy.Text == "تفريغ للحزب")
+            {
+                status.Text = "مفرغ للحزب";
+              
+            }
+            else if (mission_Copy.Text == "بحكم المستقيل")
+            {
+                status.Text = "بحكم المستقيل";
+             
+            }
+            else if (mission_Copy.Text == "صرف من الخدمة")
+            {
+                status.Text = "مصروف من الخدمة";
+              
+            }
+            else if (mission_Copy.Text == "طي اسم")
+            {
+                status.Text = "متوفى";
+                
+            }
+            else if (mission_Copy.Text == "احالة على المعاش")
+            {
+                status.Text = "متقاعد";
+              
+            }
+            else if (mission_Copy.Text == "تسريح صحي")
+            {
+                status.Text = "مسرح صحياً";
+          
+               
+            }
+            else if (mission_Copy.Text == "كف يد")
+            {
+                status.Text = "كف اليد";
+            
+            }
+
+            else if (mission_Copy.Text == "تغيير فئة")
+            {
+                grade.Text = "";
+               
+            }
+            else if (mission_Copy.Text == "تغيير مسمى وظيفي")
+            {
+                job.Text = "";
+                
+            }
+            else if (mission_Copy.Text == "تغيير مهمة")
+            {
+                mission.Text = "";
+              
+            }
+            else if (mission_Copy.Text == "تغيير مكان العمل")
+            {
+                pp.Text = "";
+             
+            }
+
+
         }
     }
 }

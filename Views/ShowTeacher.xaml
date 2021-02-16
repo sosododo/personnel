@@ -325,7 +325,7 @@
                     <ComboBoxItem Content="مكلف خارج الجامعة"/>
                     <ComboBoxItem Content="مجمد"/>
                     <ComboBoxItem Content="مفرغ للحزب"/>
-
+                  
                 </ComboBox>
 
                 <TextBox  Grid.Column="2" Grid.Row="4" Name="certificate" Text="{Binding Certificate}"/>

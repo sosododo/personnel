@@ -314,6 +314,7 @@
                     <ComboBoxItem Content="مكلف خارج الجامعة"/>
                     <ComboBoxItem Content="مجمد"/>
                     <ComboBoxItem Content="مفرغ للحزب"/>
+                    
 
                 </ComboBox>
 

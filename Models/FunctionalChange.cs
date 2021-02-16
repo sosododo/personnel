@@ -17,6 +17,10 @@ namespace personnel.Models
         [Column("work_place")]
         [StringLength(30)]
         public string WorkPlace { get; set; }
+
+        [Column("functional_changes_type")]
+        [StringLength(30)]
+        public string functional_changes_type { get; set; } 
         [Column("job_title")]
         [StringLength(20)]
         public string JobTitle { get; set; }

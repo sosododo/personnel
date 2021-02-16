@@ -43,14 +43,14 @@
                 </Grid.RowDefinitions>
                 <TextBlock Text="الفئة"   Grid.Row="2" Grid.Column="0"/>
                 <TextBlock  Text="المسمى الوظيفي"  Grid.Column="2" Grid.Row="2"/>
-                <TextBlock  Text="مكان العمل"  Grid.Column="4" Grid.Row="1"/>
+                <TextBlock  Text="نوع التبدل"  Grid.Column="4" Grid.Row="1"/>
                 <TextBlock Text="تاريخ التبدل الوظيفي" Grid.Column="2" Grid.Row="1"/>
                 <TextBlock Text="اسم الموظف" Grid.Column="0" Grid.Row="1"/>
                 <TextBlock Grid.Column="4"   Grid.Row="2" Text="المهمة"/>
                 <TextBlock  Grid.Column="0" Text="الحالة" Grid.Row="3"  />
                 <TextBlock  FlowDirection="RightToLeft" Text="الراتب" Grid.Column="2" Grid.Row="3"/>
                 <DatePicker  VerticalAlignment="Center"  Margin="4,0,0,0" Grid.Column="3" Grid.Row="1"  Name="chandate1" Height="30"  />
-                <ComboBox   Grid.Column="1" Grid.Row="2" Name="grade" DropDownClosed="grade_DropDownClosed" >
+                <ComboBox   Grid.Column="1" Grid.Row="2" Name="grade" DropDownClosed="grade_DropDownClosed" IsEditable="True" >
                     <ComboBoxItem Content="الأولى" />
                     <ComboBoxItem Content="الثانية"/>
                     <ComboBoxItem Content="الثالثة"/>
@@ -60,17 +60,17 @@
 
 
                 </ComboBox>
-                <ComboBox Grid.Column="3" Grid.Row="2" Name="job"   >
+                <ComboBox Grid.Column="3" Grid.Row="2" Name="job" IsEditable="True"   >
                     <!--<ComboBoxItem Content="ii"/>
                     <ComboBoxItem Content="oo"/>-->
 
                 </ComboBox>
-                <ComboBox Grid.Column="5" Grid.Row="1" x:Name="pp">
+                <ComboBox Grid.Column="5" Grid.Row="3" x:Name="pp" Grid.RowSpan="3" IsEditable="True">
                     <!--<ComboBoxItem Content="الادارة المركزية" IsSelected="True"/>-->
                     <!--<ComboBoxItem Content="كلية التربية"/>-->
 
                 </ComboBox>
-                <ComboBox Grid.Column="1" Grid.Row="3" Name="status"  >
+                <ComboBox Grid.Column="1" Grid.Row="3" Name="status" IsEditable="True"  >
                     <ComboBoxItem Content="قائم على رأس عمله" IsSelected="True"/>
                     <ComboBoxItem Content="بلا أجر"/>
                     <ComboBoxItem Content="متوفى"/>
@@ -101,7 +101,7 @@
 
 
 
-                <ComboBox Grid.Column="5" Grid.Row="2" Name="mission" >
+                <ComboBox Grid.Column="5" Grid.Row="2" Name="mission" IsEditable="True" >
                     <ComboBoxItem Content="موظف" IsSelected="true"/>
                     <ComboBoxItem Content="رئيس جامعة"/>
                     <ComboBoxItem Content="نائب رئيس جامعة"/>
@@ -120,10 +120,30 @@
                 </ComboBox>
 
                 <TextBox  Grid.Column="3" Grid.Row="3" Name="salary"/>
-                <ComboBox Grid.Column="1" Grid.Row="1" Name="emp_name" IsTextSearchEnabled="True" IsEditable="True" >
+                <ComboBox Grid.Column="1" Grid.Row="1" Name="emp_name" IsTextSearchEnabled="True" IsEditable="True" DropDownClosed="emp_name_DropDownClosed" >
                     <!--<ComboBoxItem Content="الادارة المركزية" IsSelected="True"/>
                     <ComboBoxItem Content="كلية التربية"/>-->
 
+                </ComboBox>
+                <Label Content="مكان العمل" Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top"/>
+                <ComboBox Grid.Column="5" Grid.Row="1" x:Name="mission_Copy" Margin="0,8,0,0" DropDownClosed="mission_Copy_DropDownClosed" >
+                    <ComboBoxItem Content="اعادة إلى العمل" />
+                    <ComboBoxItem Content="استقالة" />
+                    <ComboBoxItem Content="نهاية خدمة" />
+                    <ComboBoxItem Content="تجميد" />
+                    <ComboBoxItem Content="تفريغ للحزب" />
+                    <ComboBoxItem Content="بحكم المستقيل" />
+                    <ComboBoxItem Content="صرف من الخدمة" />
+                    <ComboBoxItem Content="طي اسم" />
+                    <ComboBoxItem Content="احالة على المعاش" />
+                    <ComboBoxItem Content="تسريح صحي" />
+                    <ComboBoxItem Content="كف يد" />
+                    <ComboBoxItem Content="مصروف من الخدمة" />
+                    <ComboBoxItem Content="تغيير فئة" />
+                    <ComboBoxItem Content="تغيير مسمى وظيفي" />
+                    <ComboBoxItem Content="تغيير مهمة" />
+                    <ComboBoxItem Content=   "تغيير مكان العمل" />
+                 
                 </ComboBox>
 
 

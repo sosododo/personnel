@@ -39,6 +39,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="اسم الموظف"  Binding="{Binding PersonName}" />
                 <DataGridTextColumn Header="تاريخ التبدل الوظيفي" Binding="{Binding ChangeDate, StringFormat='yyyy/MM/dd' }" />
+                <DataGridTextColumn Header="نوع التبدل الوظيفي" Binding="{Binding functional_changes_type}" />
                 <DataGridTextColumn  Header="مكان العمل" Binding="{Binding WorkPlace}"/>
                 <DataGridTextColumn   Header="الفئة" Binding="{Binding Category}"/>
                 <DataGridTextColumn  Header="المسمى الوظيفي" Binding="{Binding JobTitle}"   />

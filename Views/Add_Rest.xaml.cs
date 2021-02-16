@@ -1,5 +1,6 @@
 ﻿using personnel.Models;
 using personnel.ModelView;
+using personnel.Report;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -89,13 +90,13 @@ namespace personnel.Views
 
                     }
                     else if (res_type.Text == "إجازة بلا أجر")
-                    {
+                    {  
                         int sum = er.calculate(empId);
                         int can = restcount();
 
                         if ((sum + can) > (5 * 360))
                         {
-                            MessageBox.Show("لا يحق لهذا الموظف العدد المطلوب من الاجازات الادارية. عدد الأيام المسموح به   " +"  "+ ((360 * 5) - sum).ToString());
+                            MessageBox.Show("لا يحق لهذا الموظف العدد المطلوب من الاجازات بلا أجر. عدد الأيام المسموح به   " +"  "+ ((360 * 5) - sum).ToString());
                         }
                         else
 
@@ -106,6 +107,7 @@ namespace personnel.Views
                             db.SelfCards.Update(person);
                             db.SaveChanges();
                             dec_excute();
+                            RestReport rs = new RestReport(long.Parse(dec_id.Text));
 
 
                         }
@@ -251,6 +253,7 @@ namespace personnel.Views
 
             if (result == MessageBoxResult.Yes)
             {
+
                 res_per1.IsChecked = false;
                 res_per2.IsChecked = false;
                 res_per3.IsChecked = false;

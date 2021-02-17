@@ -103,7 +103,7 @@ namespace personnel.Views
                         {
                             SelfCard person = new SelfCard();
                             person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
-                            person.Status = "بلا أجر";
+                           // person.Status = "بلا أجر";
                             db.SelfCards.Update(person);
                             db.SaveChanges();
                             dec_excute();

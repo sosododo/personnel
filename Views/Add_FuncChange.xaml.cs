@@ -162,14 +162,23 @@ namespace personnel.Views
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
-                    else if (mission_Copy.Text == "تغيير مكان العمل")
+                    else if (mission_Copy.Text == "نقل")
                     {
                         pp.Text = "";
                         person.Workplace = pp.Text;
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
+                    else if (mission_Copy.Text == "اجازة بلا أجر")
+                    {
 
+                        status.Text = "بلا أجر";
+                        person.Status = "بلا أجر";
+                       
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    
 
                     FunctionalChange fn = new FunctionalChange
                     {
@@ -332,10 +341,16 @@ namespace personnel.Views
                 mission.Text = "";
               
             }
-            else if (mission_Copy.Text == "تغيير مكان العمل")
+            else if (mission_Copy.Text == "نقل")
             {
                 pp.Text = "";
              
+            }
+            else if (mission_Copy.Text == "اجازة بلا أجر")
+            {
+
+                status.Text = "بلا أجر";
+          
             }
 
 

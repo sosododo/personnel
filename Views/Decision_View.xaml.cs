@@ -418,6 +418,25 @@ namespace personnel.Views
 
             }
 
+            //else if (con == "قرار نقل")
+            //{
+            //    collaps_all();
+            //    addscar.dec_id.Text = m.ToString();
+            //    //addscar.text_1.Visibility = Visibility.Collapsed;
+            //    //addscar.perod.Visibility = Visibility.Collapsed;
+            //    //addscar.del_per1.Visibility = Visibility.Collapsed;
+            //    //addscar.del_per2.Visibility = Visibility.Collapsed;
+            //    //addscar.del_per3.Visibility = Visibility.Collapsed;
+                
+
+            //    addscar.Visibility = Visibility.Visible;
+            //    addscar.DataContext = dec;
+
+
+
+
+            //}
+
             else if (con == "قرار عقوبة")
             {
                 collaps_all();

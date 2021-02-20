@@ -26,8 +26,27 @@ namespace personnel.Views
 
 
             pp.SelectedIndex = 0;
-            List<string> employ = db.SelfCards.Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
-            emp_name.ItemsSource = employ;
+            if (Login.currentUser.Rule == "teacher") {
+                
+                List<string> employ = db.SelfCards.Where(x=> x.FileClass== "تدريسي").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+            
+                emp_name.ItemsSource = employ;
+            }
+            else if (Login.currentUser.Rule == "employee")
+            {
+
+                List<string> employ = db.SelfCards.Where(x => x.FileClass == "إداري").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
+            else if (Login.currentUser.Rule == "admin")
+            {
+
+                List<string> employ = db.SelfCards.Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
+
             Decision d = (Decision)DataContext;
 
         }
@@ -251,17 +270,20 @@ namespace personnel.Views
             
             var emp_id = (from m in db.SelfCards select new { m.PersonId, full = m.FirstName + " " + m.FatherName + " " + m.LastName,m.Category,m.JobTitle,m.Mission,m.Status,m.Workplace,m.Salary }).ToList();
 
-            var id = emp_id.Where(d => d.full == emp_name.Text).ToList().ElementAt(0);
-            long empId = id.PersonId;
-            SelfCard person = new SelfCard();
-            person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
-          
-            grade.Text = person.Category;
-            job.Text = person.JobTitle;
-            mission.Text = person.Mission;
-            salary.Text = person.Salary.ToString();
-            status.Text = person.Status;
-            pp.Text = person.Workplace;
+            var id = emp_id.Where(d => d.full == emp_name.Text).ToList().FirstOrDefault();
+            if (id != null)
+            {
+                long empId = id.PersonId;
+                SelfCard person = new SelfCard();
+                person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
+
+                grade.Text = person.Category;
+                job.Text = person.JobTitle;
+                mission.Text = person.Mission;
+                salary.Text = person.Salary.ToString();
+                status.Text = person.Status;
+                pp.Text = person.Workplace;
+            }
         }
 
         private void mission_Copy_DropDownClosed(object sender, EventArgs e)

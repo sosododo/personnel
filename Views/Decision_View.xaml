@@ -162,7 +162,7 @@
                 <local:Add_Reward Visibility="Collapsed" x:Name="reward"/>
                 <local:Add_Bonus Visibility="Collapsed" x:Name="bonus"/>
                 <local:Add_Special_Bonus Visibility="Collapsed" x:Name="sbonus"/>
-                
+                <local:Add_Tech_Bonus Visibility="Collapsed" x:Name="addteachbounas"/>
 
                 <local:FunctionChange_Details Visibility="Collapsed" x:Name="fcd"/>
                 <local:Delegation_Details Visibility="Collapsed" x:Name="dd"/>

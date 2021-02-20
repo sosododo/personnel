@@ -86,7 +86,7 @@
         <Label Content="مدة الاعارة" Grid.Column="4" Grid.Row="1"/>
         <Label Content="ملاحظات" Grid.Column="6" Grid.Row="3"/>
         <ComboBox Grid.Column="1" Grid.Row="1"  IsTextSearchEnabled="True" IsEditable="True" Name="emp_name" FlowDirection="LeftToRight" />
-        <ComboBox Grid.Column="3" Grid.Row="1" FlowDirection="LeftToRight"  x:Name="sec_type" >
+        <ComboBox Grid.Column="3" Grid.Row="1" FlowDirection="LeftToRight" IsTextSearchEnabled="True" IsEditable="True" x:Name="sec_type" >
             <ComboBoxItem Content="إعارة داخلية"/>
             <ComboBoxItem Content="إعارة خارجية"/>
 

@@ -483,6 +483,20 @@ namespace personnel.Views
 
 
             }
+
+            else if (con == "قرار ترفيعة تدريسية")
+            {
+                collaps_all();
+
+                addteachbounas.dec_id.Text = m.ToString();
+
+
+                addteachbounas.Visibility = Visibility.Visible;
+                addteachbounas.DataContext = dec;
+
+
+
+            }
             else if (con == "قرار زيادة")
             {
                 collaps_all();
@@ -873,6 +887,9 @@ namespace personnel.Views
             scardetails.Visibility = Visibility.Collapsed;
             res.Visibility = Visibility.Collapsed;
             addreststop.Visibility = Visibility.Collapsed;
+            addteachbounas.Visibility = Visibility.Collapsed;
+            sbonus.Visibility = Visibility.Collapsed;
+            bonus.Visibility = Visibility.Collapsed;
         }
 
     }

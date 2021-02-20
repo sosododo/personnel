@@ -21,6 +21,7 @@ namespace personnel.Views
     public partial class Login : Window
     {
         PersonelDBContext db = new PersonelDBContext();
+        public static User currentUser = new User();
         public static int user_id;
         public Login()
         {
@@ -38,6 +39,7 @@ namespace personnel.Views
             string rule = "";
             string user = username.Text;
             string pass = password.Password;
+            currentUser = db.Users.Where(x => x.UserName == user && x.Password == pass).FirstOrDefault(); 
             List<User> user1 = db.Users.Where(x => x.UserName == user && x.Password == pass).ToList();
             if(user1.Count==1)
                       
@@ -48,17 +50,25 @@ namespace personnel.Views
                 win1.currentu.Text = "أهلا بك"+" " + login_user.UserName;
                 switch (rule)
                 {
-                    case "duser":
-                        //win1.b1.IsEnabled = false;
-                        //win1.Show();
-                        //this.Close();
+                    case "teacher":
+                        win1.teach.IsEnabled = true;
+                        win1.em.IsEnabled = false;
+                        win1.teach.IsChecked = true;
+                        win1.em.IsChecked = false;
+                        win1.Show();
+                       this.Close();
                         break;
-                    case "suser":
-                        //win1.b2.IsEnabled = false;
-                        //win1.Show();
-                        //this.Close();
+                    case "employee":
+                        win1.teach.IsEnabled = false;
+                        win1.em.IsEnabled = true;
+                        win1.teach.IsChecked = false;
+                        win1.em.IsChecked = true;
+                        win1.Show();
+                        this.Close();
                         break;
                     case "admin":
+                        win1.teach.IsEnabled = true;
+                        win1.em.IsEnabled = true;
                         win1.Show();
                         this.Close();
                         break;

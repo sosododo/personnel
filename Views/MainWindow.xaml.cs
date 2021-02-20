@@ -53,5 +53,14 @@ namespace personnel.Views
             win.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Login l = new Login();
+            l.Show();
+            this.Hide();
+        }
+
+   
     }
 }

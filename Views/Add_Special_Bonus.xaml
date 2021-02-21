@@ -95,8 +95,8 @@
         </Button>
         <TextBlock Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="dec_id" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2" ></TextBlock>
         <CheckBox Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2"></CheckBox>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="64,22,0,0" Grid.Row="2" Text="" Width="192" Name="empname"/>
         <Label Content="اسم الموظف" Grid.Column="0" Margin="120,20,0,0" Grid.Row="2"  Width="147" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="35"/>
+        <ComboBox x:Name="emp_list" Grid.Column="1" HorizontalAlignment="Left" Margin="82,21,0,0" Width="120" Grid.Row="2"/>
 
 
     </Grid>

@@ -90,7 +90,7 @@
 
 
         <Label Content="اسم الموظف" Grid.Column="1" Grid.Row="7" VerticalAlignment="Top" FontSize="14" Margin="12,20,0,0"/>
-        <ComboBox x:Name="emp_name" Grid.Column="1" FlowDirection="LeftToRight" HorizontalAlignment="Left" Margin="105,23,0,0" Grid.Row="7" Width="120" Grid.ColumnSpan="3"/>
+        <ComboBox x:Name="emp_name" Grid.Column="1" IsTextSearchEnabled="True" IsEditable="True" FlowDirection="LeftToRight" HorizontalAlignment="Left" Margin="105,23,0,0" Grid.Row="7" Width="120" Grid.ColumnSpan="3"/>
         <GroupBox  Grid.Row="7"   FlowDirection="RightToLeft" Header="بيانات قرار الإجازة بلا أجر "   Margin="98,20,12,-240" Grid.ColumnSpan="7"  MaxHeight="400" Grid.Column="3" FontSize="14"  >
 
 

@@ -142,8 +142,9 @@
                     <ComboBoxItem Content="تغيير فئة" />
                     <ComboBoxItem Content="تغيير مسمى وظيفي" />
                     <ComboBoxItem Content="تغيير مهمة" />
-                    <ComboBoxItem Content=   "تغيير مكان العمل" />
-                 
+                    <ComboBoxItem Content=   "نقل" />
+                    <ComboBoxItem Content=   "اجازة بلا أجر" />
+
                 </ComboBox>
 
 

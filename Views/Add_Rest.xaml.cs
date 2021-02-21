@@ -30,8 +30,27 @@ namespace personnel.Views
         {
             InitializeComponent();
             db = new PersonelDBContext();
-            List<string> employ = db.SelfCards.Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
-            emp_name.ItemsSource = employ;
+            if (Login.currentUser.Rule == "teacher")
+            {
+
+                List<string> employ = db.SelfCards.Where(x => x.FileClass == "تدريسي").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
+            else if (Login.currentUser.Rule == "employee")
+            {
+
+                List<string> employ = db.SelfCards.Where(x => x.FileClass == "إداري").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
+            else if (Login.currentUser.Rule == "admin")
+            {
+
+                List<string> employ = db.SelfCards.Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
             Decision d = (Decision)DataContext;
 
         }
@@ -103,7 +122,7 @@ namespace personnel.Views
                         {
                             SelfCard person = new SelfCard();
                             person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
-                            person.Status = "بلا أجر";
+                           // person.Status = "بلا أجر";
                             db.SelfCards.Update(person);
                             db.SaveChanges();
                             dec_excute();

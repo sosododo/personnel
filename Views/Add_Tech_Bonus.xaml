@@ -102,10 +102,10 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <ListView x:Name="list"  Grid.Row="1" MaxHeight="100" VerticalContentAlignment="Top" ScrollViewer.CanContentScroll="True"  ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Single" Grid.ColumnSpan="2" >
+                <ListView x:Name="list"   Grid.Row="1" MaxHeight="100" VerticalContentAlignment="Top" ScrollViewer.CanContentScroll="True"  ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Single" Grid.ColumnSpan="2" >
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="اسم الموظف" />
+                            <GridViewColumn Header="اسم الموظف"   />
                         </GridView>
                     </ListView.View>
 

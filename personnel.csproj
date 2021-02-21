@@ -13,6 +13,10 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <!--<ItemGroup>
+    <Compile Remove="Report\RestReport.xaml.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Remove="Icon\computer.jpg" />
     <None Remove="Icon\image1.jpg" />
@@ -22,7 +26,12 @@
     <None Remove="Report\Report1.rdlc" />
     <None Remove="Report\repzat - Copy.rdlc" />
     <None Remove="Report\repzat.rdlc" />
+    <None Remove="Report\rest_report.rdlc" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Report\RestReport.xaml" />
+  </ItemGroup>-->
 
  
 
@@ -44,6 +53,14 @@
     <Resource Include="Icon\image1.jpg" />
     <Resource Include="Icon\login.jpg" />
     <Resource Include="Icon\pass.jpg" />
+    <!--<Resource Include="Report\RestReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Report\RestReport.xaml.cs" />-->
+    <Content Include="Report\rest_report.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Report\PersReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -61,6 +78,11 @@
  
 
   <ItemGroup>
+    <Compile Update="personnel_dataset.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>personnel_dataset.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Views\Add_Delegation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -80,6 +102,10 @@
  
 
   <ItemGroup>
+    <None Update="personnel_dataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>personnel_dataset.Designer.cs</LastGenOutput>
+    </None>
     <None Update="ZATDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ZATDataSet1.Designer.cs</LastGenOutput>

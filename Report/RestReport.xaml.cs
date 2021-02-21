@@ -20,12 +20,12 @@ namespace personnel.Report
     public partial class RestReport : Window
     {
        long id;
-        public RestReport(long id1 )
+        public RestReport( )
         {
             InitializeComponent();
             
-            reportViewer1.Load += ReportViewer_Load;
-            id = id1;
+            reportViewer2.Load += ReportViewer_Load;
+          //  id = id1;
             
 
         }
@@ -39,47 +39,48 @@ namespace personnel.Report
 
             if (!_isReportViewerLoaded)
             {
-               
 
 
-           //     Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new
-           //  Microsoft.Reporting.WinForms.ReportDataSource();
-           //     Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2= new
-           // Microsoft.Reporting.WinForms.ReportDataSource();
-           //     Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new
-           //Microsoft.Reporting.WinForms.ReportDataSource();
-           //     Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new
-           //Microsoft.Reporting.WinForms.ReportDataSource();
+
+                Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new
+             Microsoft.Reporting.WinForms.ReportDataSource();
+                //     Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2= new
+                // Microsoft.Reporting.WinForms.ReportDataSource();
+                //     Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new
+                //Microsoft.Reporting.WinForms.ReportDataSource();
+                //     Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new
+                //Microsoft.Reporting.WinForms.ReportDataSource();
 
 
-           //     ZATDataSet1 dataset = new ZATDataSet1();
+                //     ZATDataSet1 dataset = new ZATDataSet1();
+                personnel_dataset ds = new personnel_dataset();
+                //     dataset.BeginInit();
+                ds.BeginInit();
+                //     reportDataSource1.Name = "DataSet1";
+                reportDataSource1.Name = "DataSet1";
+                //     reportDataSource2.Name = "DataSet2";
+                //     reportDataSource3.Name = "DataSet3";
+                //     reportDataSource4.Name = "DataSet4";
+                //     //Name of the report dataset in our .RDLC file
 
-           //     dataset.BeginInit();
-
-           //     reportDataSource1.Name = "DataSet1";
-           //     reportDataSource2.Name = "DataSet2";
-           //     reportDataSource3.Name = "DataSet3";
-           //     reportDataSource4.Name = "DataSet4";
-           //     //Name of the report dataset in our .RDLC file
-
-           //     reportDataSource1.Value = dataset.al;
-           //     reportDataSource2.Value = dataset.zat_fun;
-           //     reportDataSource3.Value = dataset.zat_pun;
-           //     reportDataSource4.Value = dataset.zat_rest;
-           //     ReportParameter rp = new ReportParameter("pid", id.ToString());
-           //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-           //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-           //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-           //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
-
-
-                this.reportViewer1.LocalReport.ReportPath = "./Report/rest_report.rdlc";
-
+                //     
+                reportDataSource1.Value = ds.rest_rep;
+                //     reportDataSource2.Value = dataset.zat_fun;
+                //     reportDataSource3.Value = dataset.zat_pun;
+                //     reportDataSource4.Value = dataset.zat_rest;
+                //     ReportParameter rp = new ReportParameter("pid", id.ToString());
+                //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+                //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+                //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+                //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+                ReportParameter rp = new ReportParameter("pid", 30112.ToString());
+                this.reportViewer2.LocalReport.ReportPath = "./Report/rest_report.rdlc";
+                this.reportViewer2.LocalReport.DataSources.Add(reportDataSource1);
                 //this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp });
 
 
 
-
+                personnel_datasetTableAdapters.rest_repTableAdapter rr = new personnel_datasetTableAdapters.rest_repTableAdapter();
          
                 //ZATDataSet1TableAdapters.alTableAdapter sel = new ZATDataSet1TableAdapters.alTableAdapter();
                 //ZATDataSet1TableAdapters.zat_funTableAdapter fun = new ZATDataSet1TableAdapters.zat_funTableAdapter();
@@ -90,7 +91,9 @@ namespace personnel.Report
                 //fun.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 //pun.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 //res.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
-
+                rr.Connection.ConnectionString= ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
+                rr.ClearBeforeFill = true;
+                //rr.Fill(ds.rest_rep,30112);
                 //sel.ClearBeforeFill = true;
                 //fun.ClearBeforeFill = true;
                 //pun.ClearBeforeFill = true;
@@ -100,10 +103,10 @@ namespace personnel.Report
                 //pun.Fill(dataset.zat_pun, id);
                 //res.Fill(dataset.zat_rest, id);
 
-               
 
 
-                reportViewer1.RefreshReport();
+
+                reportViewer2.RefreshReport();
                 //dataset.EndInit();
                 _isReportViewerLoaded = true;
 

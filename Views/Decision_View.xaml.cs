@@ -1,5 +1,6 @@
 ﻿using personnel.Models;
 using personnel.ModelView;
+using personnel.Report;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -304,6 +305,7 @@ namespace personnel.Views
             {
                 excute_but.IsEnabled = true;
                 show_but.IsEnabled = false;
+                print_but.IsEnabled = false;
 
 
             }
@@ -312,7 +314,7 @@ namespace personnel.Views
 
                 excute_but.IsEnabled = false;
                 show_but.IsEnabled = true;
-
+                print_but.IsEnabled = true;
             }
 
 
@@ -892,6 +894,13 @@ namespace personnel.Views
             bonus.Visibility = Visibility.Collapsed;
         }
 
+        private void print(object sender, RoutedEventArgs e)
+        {
+            Decision de = (Decision)result.SelectedItem;
+            long l = de.DecisionId;
+            Window win = new RestReport(l);
+            win.Show();
+        }
     }
 
 }

@@ -126,8 +126,8 @@ namespace personnel.Views
                             db.SelfCards.Update(person);
                             db.SaveChanges();
                             dec_excute();
-                            RestReport rs = new RestReport();
-                            //RestReport rs = new RestReport(long.Parse(dec_id.Text));
+                            //RestReport rs = new RestReport();
+                            RestReport rs = new RestReport(long.Parse(dec_id.Text));
 
                         }
                     }

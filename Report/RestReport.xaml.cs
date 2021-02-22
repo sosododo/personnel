@@ -20,12 +20,12 @@ namespace personnel.Report
     public partial class RestReport : Window
     {
        long id;
-        public RestReport( )
+        public RestReport(long id1 )
         {
             InitializeComponent();
             
             reportViewer2.Load += ReportViewer_Load;
-          //  id = id1;
+            id = id1;
             
 
         }
@@ -73,7 +73,7 @@ namespace personnel.Report
                 //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
                 //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
                 //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
-                ReportParameter rp = new ReportParameter("pid", 30112.ToString());
+                ReportParameter rp = new ReportParameter("pid",id.ToString());
                 this.reportViewer2.LocalReport.ReportPath = "./Report/rest_report.rdlc";
                 this.reportViewer2.LocalReport.DataSources.Add(reportDataSource1);
                 //this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp });
@@ -93,7 +93,7 @@ namespace personnel.Report
                 //res.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 rr.Connection.ConnectionString= ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 rr.ClearBeforeFill = true;
-                //rr.Fill(ds.rest_rep,30112);
+                rr.Fill(ds.rest_rep,id);
                 //sel.ClearBeforeFill = true;
                 //fun.ClearBeforeFill = true;
                 //pun.ClearBeforeFill = true;

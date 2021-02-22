@@ -13,25 +13,7 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
-  <!--<ItemGroup>
-    <Compile Remove="Report\RestReport.xaml.cs" />
-  </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Icon\computer.jpg" />
-    <None Remove="Icon\image1.jpg" />
-    <None Remove="Icon\login.jpg" />
-    <None Remove="Icon\pass.jpg" />
-    <None Remove="Report\PersReport.rdlc" />
-    <None Remove="Report\Report1.rdlc" />
-    <None Remove="Report\repzat - Copy.rdlc" />
-    <None Remove="Report\repzat.rdlc" />
-    <None Remove="Report\rest_report.rdlc" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Remove="Report\RestReport.xaml" />
-  </ItemGroup>-->
 
  
 
@@ -53,11 +35,7 @@
     <Resource Include="Icon\image1.jpg" />
     <Resource Include="Icon\login.jpg" />
     <Resource Include="Icon\pass.jpg" />
-    <!--<Resource Include="Report\RestReport.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Resource>
-    <Resource Include="Report\RestReport.xaml.cs" />-->
+	
     <Content Include="Report\rest_report.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -89,6 +67,9 @@
     <Compile Update="Views\ShowTeacher.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Statistics_Work.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Statistics_emp.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -115,10 +96,16 @@
  
 
   <ItemGroup>
+    <Page Update="Report\RestReport.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Add_Delegation.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ShowTeacher.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Statistics_Work.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Statistics_emp.xaml">

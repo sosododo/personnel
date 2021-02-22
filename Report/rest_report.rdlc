@@ -44,14 +44,16 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
         <Top>0.56417cm</Top>
-        <Left>8.17245cm</Left>
+        <Left>8.95744cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.61056cm</Width>
+        <Width>1.9314cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -74,14 +76,16 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
         <Top>0.56417cm</Top>
-        <Left>0.84349cm</Left>
+        <Left>1.31981cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.15257cm</Width>
+        <Width>7.64639cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -100,10 +104,10 @@
               <Width>2.72152cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.25132cm</Width>
+              <Width>4.90737cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.26562cm</Width>
+              <Width>1.63039cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>5.11185cm</Width>
@@ -114,7 +118,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.4274cm</Height>
+              <Height>1.05698cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -294,7 +298,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.82427cm</Height>
+              <Height>0.95115cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -375,7 +379,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!rest_period.Value</Value>
+                              <Value>=Fields!rest_period.Value &amp; Fields!period.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -397,8 +401,10 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <WritingMode>Horizontal</WritingMode>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -497,8 +503,8 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>1.53458cm</Top>
         <Left>0.84349cm</Left>
-        <Height>3.25167cm</Height>
-        <Width>15.29609cm</Width>
+        <Height>2.00813cm</Height>
+        <Width>15.31691cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -513,7 +519,13 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>صورة إلى : الديوان العام - مديرية الرقابة الداخلية - مديرية الشؤون المالية - المحاسبة - مديرية الاحصاء والتخطيط - مراقب الدوام</Value>
+                <Value>صورة إلى </Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: الديوان العام - مديرية الرقابة الداخلية - مديرية الشؤون المالية - المحاسبة - مديرية الاحصاء والتخطيط - مراقب الدوام</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -523,7 +535,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>9.01347cm</Top>
+        <Top>9.33097cm</Top>
         <Left>0.84349cm</Left>
         <Height>0.6cm</Height>
         <Width>15.29609cm</Width>
@@ -545,7 +557,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>حمص في /   /   /         هــ الموافق ل /   /      م</Value>
+                <Value>حمص في /   /   /         هــ الموافق لـ     /   /      م</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -555,7 +567,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox20</rd:DefaultName>
-        <Top>5.19438cm</Top>
+        <Top>3.92438cm</Top>
         <Left>9.25724cm</Left>
         <Height>0.6cm</Height>
         <Width>6.88234cm</Width>
@@ -577,8 +589,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
-                <Style />
+                <Value>=Fields!category.Value</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -586,9 +600,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox21</rd:DefaultName>
         <Top>6.25271cm</Top>
-        <Left>12.59099cm</Left>
+        <Left>12.27349cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.54859cm</Width>
+        <Width>0.89958cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -609,7 +623,6 @@
               <TextRun>
                 <Value>مدير التنمية الإدارية</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -621,7 +634,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
         <Top>6.25271cm</Top>
-        <Left>9.25724cm</Left>
+        <Left>8.93974cm</Left>
         <Height>0.6cm</Height>
         <Width>2.89688cm</Width>
         <ZIndex>7</ZIndex>
@@ -644,7 +657,6 @@
               <TextRun>
                 <Value>محاسب الإدارة</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -656,7 +668,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
         <Top>6.25271cm</Top>
-        <Left>6.28987cm</Left>
+        <Left>5.97237cm</Left>
         <Height>0.6cm</Height>
         <Width>2.18251cm</Width>
         <ZIndex>8</ZIndex>
@@ -679,7 +691,6 @@
               <TextRun>
                 <Value>رئيس جامعة البعث</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -691,9 +702,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
         <Top>6.25271cm</Top>
-        <Left>3.08877cm</Left>
+        <Left>2.32148cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.18251cm</Width>
+        <Width>2.6323cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -714,7 +725,6 @@
               <TextRun>
                 <Value>د.باسم ونوس</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -749,7 +759,6 @@
               <TextRun>
                 <Value>الأستاذ الدكتور عبد الباسط الخطيب</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -761,9 +770,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
         <Top>7.68146cm</Top>
-        <Left>1.50127cm</Left>
+        <Left>0.84349cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.77001cm</Width>
+        <Width>4.42779cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -775,11 +784,125 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>شعبة الفئة</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox21</rd:DefaultName>
+        <Top>6.25271cm</Top>
+        <Left>13.34946cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.54766cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Tablix Name="Tablix4">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.99383cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.77917cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="workplace1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!workplace.Value &amp;" - "</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>workplace1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="workplace">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!workplace.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!workplace.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>9.96625cm</Top>
+        <Left>10.49674cm</Left>
+        <Height>0.77917cm</Height>
+        <Width>2.99383cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
     </ReportItems>
-    <Height>4.32095in</Height>
+    <Height>4.9772in</Height>
     <Style />
   </Body>
-  <Width>6.87475in</Width>
+  <Width>6.87884in</Width>
   <Page>
     <PageHeader>
       <Height>4.85661cm</Height>
@@ -795,7 +918,7 @@
                 <TextRun>
                   <Value>الجمهورية العربية السورية</Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>9pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -809,7 +932,7 @@
                 <TextRun>
                   <Value>وزارة التعليم العالي والبحث العلمي</Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>9pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -823,7 +946,7 @@
                 <TextRun>
                   <Value>جامعة البعث</Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>9pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -837,7 +960,7 @@
                 <TextRun>
                   <Value>رئيس جامعة البعث</Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>9pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -871,7 +994,7 @@
                 <TextRun>
                   <Value>بناءً على أحكام القانون الأساسي رقم /50/ لعام 2004</Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -884,7 +1007,7 @@
                 <TextRun>
                   <Value>وعلى المرسوم رقم 90 تاريخ 2019/3/10</Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -897,7 +1020,7 @@
                 <TextRun>
                   <Value>وعلى طلبات أصحاب العلاقة</Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -910,7 +1033,7 @@
                 <TextRun>
                   <Value xml:space="preserve"> </Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1049,6 +1172,75 @@
       <Height>2.54cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox10">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>أمين جامعة البعث</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox10</rd:DefaultName>
+          <Top>0.17639cm</Top>
+          <Left>1.31981cm</Left>
+          <Height>0.57827cm</Height>
+          <Width>2.44708cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox12">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>الأستاذ الدكتور محمود حديد</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox10</rd:DefaultName>
+          <Top>1.35128cm</Top>
+          <Left>0.84349cm</Left>
+          <Height>0.57827cm</Height>
+          <Width>3.64749cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>

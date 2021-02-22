@@ -751,7 +751,7 @@ namespace personnel.Views
 
 
             }
-            else if (dec.DecisionContent == "قرار ترفيعة")
+            else if (dec.DecisionContent == "قرار ترفيعة" )
             {
 
                 collaps_all();
@@ -784,7 +784,72 @@ namespace personnel.Views
 
 
             }
-           
+            else if ( dec.DecisionContent == "قرار ترفيعة استثنائية" )
+            {
+
+                collaps_all();
+                ObservableCollection<BonusDetails> all = new ObservableCollection<BonusDetails>();
+
+                List<Bonuse> Custom_Dec = db.Bonuses.Where(x => x.DecisionId == dec.DecisionId).ToList();
+
+                foreach (Bonuse r in Custom_Dec)
+                {
+                    BonusDetails rd = new BonusDetails();
+
+
+                    SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
+                    rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                    rd.Salary = r.Salary;
+                    rd.Bouns = r.Bouns;
+                    rd.SalaryBouns = r.SalaryBouns;
+                    rd.NumDays = r.NumDays;
+                    rd.FromYear = null;
+                    rd.ToYear = null;
+
+
+                    all.Add(rd);
+
+
+                }
+
+                bd.detailsDataGrid.ItemsSource = all;
+                bd.Visibility = Visibility.Visible;
+
+
+            }
+            else if (dec.DecisionContent == "قرار ترفيعة تدريسية")
+            {
+
+                collaps_all();
+                ObservableCollection<BonusDetails> all = new ObservableCollection<BonusDetails>();
+
+                List<Bonuse> Custom_Dec = db.Bonuses.Where(x => x.DecisionId == dec.DecisionId).ToList();
+
+                foreach (Bonuse r in Custom_Dec)
+                {
+                    BonusDetails rd = new BonusDetails();
+
+
+                    SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
+                    rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                    rd.Salary = r.Salary;
+                    rd.Bouns = r.Bouns;
+                    rd.SalaryBouns = r.SalaryBouns;
+                    rd.NumDays = r.NumDays;
+                    rd.FromYear = null;
+                    rd.ToYear = null;
+
+
+                    all.Add(rd);
+
+
+                }
+
+                bd.detailsDataGrid.ItemsSource = all;
+                bd.Visibility = Visibility.Visible;
+
+
+            }
             else if (dec.DecisionContent == "قرار مكافأة")
             {
 

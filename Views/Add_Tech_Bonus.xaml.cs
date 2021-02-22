@@ -40,7 +40,7 @@ namespace personnel.Views
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
-                list.ItemsSource = emp;
+                emplist.ItemsSource = emp;
             }
 
 
@@ -62,7 +62,7 @@ namespace personnel.Views
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
-                list.ItemsSource = emp;
+                emplist.ItemsSource = emp;
             }
             Decision d = (Decision)DataContext;
         }
@@ -93,13 +93,11 @@ namespace personnel.Views
 
 
 
-            foreach (string ss in emp.ToList())
-            {
                 int sum1 = 0;
                 double amount = 0;
             
                 double allDays =0;
-                var id = emp_id.Where(d => d.full == ss).ToList().ElementAt(0);
+                var id = emp_id.Where(d => d.full == emplist.Text).FirstOrDefault();
                 long eid = id.PersonId;
                 int c = db.Bonuses.Where(x => x.DecisionId == long.Parse(dec_id.Text) && x.PersonId == eid).Count();
                 if (c > 0)
@@ -236,8 +234,8 @@ namespace personnel.Views
 
                 }
 
-                }
-            list.SelectedItem = null;
+                
+            emplist.SelectedItem = null;
          
           
 
@@ -255,7 +253,7 @@ namespace personnel.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           string l= list.SelectedItem as string ;
+           string l= emplist.SelectedItem as string ;
             
                 foreach (string ss in emp.ToList()) {
 
@@ -267,8 +265,8 @@ namespace personnel.Views
                 
             
             }
-            list.ClearValue(ItemsControl.ItemsSourceProperty);
-            list.ItemsSource = emp;
+            emplist.ClearValue(ItemsControl.ItemsSourceProperty);
+            emplist.ItemsSource = emp;
 
 
         }

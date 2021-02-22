@@ -13,8 +13,8 @@ namespace personnel.ModelView
         public double SalaryBouns { get; set; }
     
         public int NumDays { get; set; }
-        public DateTime FromYear { get; set; }
-        public DateTime ToYear { get; set; }
+        public DateTime?  FromYear { get; set; }
+        public DateTime? ToYear { get; set; }
 
     }
 }

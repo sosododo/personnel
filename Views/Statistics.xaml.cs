@@ -25,6 +25,8 @@ namespace personnel.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Window work_stat = new Statistics_Work();
+            work_stat.Show();
 
         }
     }

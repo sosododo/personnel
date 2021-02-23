@@ -26,7 +26,7 @@ namespace personnel.Views
         public Login()
         {
             InitializeComponent();
-            db.Users.Load();
+               db.Users.Load();
 
         }
 

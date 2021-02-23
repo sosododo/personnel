@@ -241,93 +241,12 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Column="1"   Text="الجنس"  Grid.Row="0"/>
-                <TextBlock  Text="الجنسية" Grid.Column="3" Grid.Row="0" />
-                <TextBlock   Text="الديانة"  Grid.Column="5" Grid.Row="0"/>
-                <TextBlock   Text="الوضع الاجتماعي"  Grid.Column="7" Grid.Row="0"/>
-                <ComboBox Grid.Column="2" Grid.Row="0" Name="sex"  >
-                    <ComboBoxItem Content="ذكر" IsSelected="True"/>
-                    <ComboBoxItem Content="أنثى"/>
-                </ComboBox>
-                <ComboBox Grid.Column="8" Grid.Row="0" Name="social">
-                    <ComboBoxItem Content="عازب" IsSelected="True"/>
-                    <ComboBoxItem Content="متأهل "/>
-                </ComboBox>
-                <ComboBox Grid.Column="6" Grid.Row="0" Name="religion"  >
-                    <ComboBoxItem Content="اسلام" IsSelected="True"/>
-                    <ComboBoxItem Content="مسيحية"/>
-                </ComboBox>
-
-
-
-
-                <ComboBox Grid.Column="4" Grid.Row="0" Name="nationalty" >
-                    <ComboBoxItem Content="عربي سوري" IsSelected="True"/>
-                    <ComboBoxItem Content="لبناني"/>
-                    <ComboBoxItem Content="فلسطيني سوري"/>
-
+                <TextBlock Grid.Column="1"   Text="الشهادة"  Grid.Row="0"/>
+                <ComboBox Grid.Column="2" Grid.Row="0" Name="certificate" Margin="4,6,4,31" Grid.RowSpan="2" VerticalAlignment="Stretch"  >
 
                 </ComboBox>
-                <TextBlock Text="الفئة"   Grid.Row="1" Grid.Column="1"/>
-                <TextBlock  Text="المسمى الوظيفي"  Grid.Column="3" Grid.Row="1"/>
-                <TextBlock  Text="نوع العقد"  Grid.Column="5" Grid.Row="1"/>
-                <TextBlock  Text="مكان العمل"  Grid.Column="7" Grid.Row="1" />
-                <TextBlock  Text="الجهة العاملة" Grid.Column="9" Grid.Row="0" />
-                <TextBlock Text="  تاريخ المباشرة من" Grid.Column="1" Grid.Row="3"/>
-                <TextBlock Grid.Column="1"   Grid.Row="2" Text="نوع التعيين"/>
-                <TextBlock Grid.Column="3"   Grid.Row="2" Text="المهمة"/>
-                <TextBlock Grid.Column="5"  Grid.Row="2" Text="حالة بطاقة التأمين" />
-                <TextBlock  Grid.Column="7" Text="الحالة" Grid.Row="2"  />
-                <TextBlock Grid.Column="9"   Grid.Row="2" Text="ملاحظات"/>
-
-                <TextBlock Grid.Column="9"   Grid.Row="1"  Text="فئة الاضبارة"/>
-
-                <ComboBox Grid.Column="10" Grid.Row="1"  Name="fileclass"    >
-                    <ComboBoxItem Content="إداري" IsSelected="True"/>
-                    <ComboBoxItem Content="فني"/>
-                    <ComboBoxItem Content="تدريسي"/>
-                    <ComboBoxItem Content="مخبري"/>
-                    <ComboBoxItem Content="عامل"/>
-                    <ComboBoxItem Content="عقد"/>
-                </ComboBox>
-                <ComboBox   Grid.Column="2" Grid.Row="1" Name="grade" DropDownClosed="grade_DropDownClosed" >
-
-                    <ComboBoxItem Content="الأولى" />
-                    <ComboBoxItem Content="الثانية/اداريين"/>
-                    <ComboBoxItem Content="الثانية/مخبريين"/>
-                    <ComboBoxItem Content="الثالثة"/>
-                    <ComboBoxItem Content="الرابعة"/>
-                    <ComboBoxItem Content="الخامسة"/>
-
-
-
-                </ComboBox>
-                <ComboBox Grid.Column="4" Grid.Row="1" Name="job"   >
-
-
-                </ComboBox>
-                <ComboBox Grid.Column="6"  Grid.Row="1"  Name="workcontract" >
-
-                    <ComboBoxItem Content="عقد سنوي" />
-                    <ComboBoxItem Content="عقد موسمي"/>
-                </ComboBox>
-                <ComboBox Grid.Column="8" Grid.Row="1" Name="workplace">
-
-                </ComboBox>
-                <ComboBox Grid.Column="10" Grid.Row="0" Name="employer"  >
-                    <ComboBoxItem Content="جامعة البعث" IsSelected="True"/>
-                    <ComboBoxItem Content="خارج جامعة البعث"/>
-                </ComboBox>
-                <ComboBox Grid.Column="2" Grid.Row="2" Name="type" >
-                    <ComboBoxItem Content="شاغرة" IsSelected="True"/>
-                    <ComboBoxItem Content="محدثة"/>
-                    <ComboBoxItem Content="عقد"/>
-                </ComboBox>
-                <ComboBox Grid.Column="6" Grid.Row="2" Name="card" >
-                    <ComboBoxItem Content="ضمن الخدمة" IsSelected="True"/>
-                    <ComboBoxItem Content="خارج الخدمة "/>
-                </ComboBox>
-                <ComboBox Grid.Column="8" Grid.Row="2" Name="status"  >
+                <TextBlock  Grid.Column="7" Text="الحالة" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                <ComboBox Grid.Column="8" Name="status" Margin="4,6,4,0" Grid.RowSpan="2"  >
                     <ComboBoxItem Content="قائم على رأس عمله" IsSelected="True"/>
                     <ComboBoxItem Content="بلا أجر"/>
                     <ComboBoxItem Content="متوفى"/>
@@ -351,45 +270,6 @@
                     <ComboBoxItem Content="مفرغ للحزب"/>
 
                 </ComboBox>
-
-
-
-
-
-
-
-                <ComboBox Grid.Column="4" Grid.Row="2" Name="mission" >
-                    <ComboBoxItem Content="موظف" IsSelected="true"/>
-                    <ComboBoxItem Content="رئيس جامعة"/>
-                    <ComboBoxItem Content="نائب رئيس جامعة"/>
-                    <ComboBoxItem Content="أمين جامعة"/>
-                    <ComboBoxItem Content="رئيس دائرة"/>
-                    <ComboBoxItem Content="رئيس شعبة"/>
-                    <ComboBoxItem Content="أمين مستودع"/>
-                    <ComboBoxItem Content="أمين مكتبة"/>
-                    <ComboBoxItem Content="مشرف وحدة"/>
-                    <ComboBoxItem Content="مدير معهد"/>
-                    <ComboBoxItem Content="أمين مساعد"/>
-                    <ComboBoxItem Content="معتمد رسوم طلاب"/>
-                    <ComboBoxItem Content="معتمد بيع كتب"/>
-
-
-                </ComboBox>
-
-                <ComboBox Grid.Column="10" Grid.Row="2" Name="note" >
-                    <ComboBoxItem Content="لا يوجد " IsSelected="True" />
-                    <ComboBoxItem Content="احتياجات خاصة" />
-                    <ComboBoxItem Content="ذوي شهداء "/>
-                    <ComboBoxItem Content="مسابقة "/>
-                    <ComboBoxItem Content="نقل "/>
-                </ComboBox>
-
-                <DatePicker HorizontalAlignment="Stretch"  VerticalAlignment="Top"  Margin="4,6,4,4" Grid.Column="2" Grid.Row="3"  Name="begindate1" >
-                </DatePicker>
-
-                <TextBlock Text="حتى تاريخ"   Grid.Row="3" Grid.Column="3"/>
-                <DatePicker HorizontalAlignment="Stretch"  VerticalAlignment="Top"  Margin="4,6,4,4" Grid.Column="4" Grid.Row="3"  Name="begindate2" >
-                </DatePicker>
 
 
 
@@ -417,7 +297,7 @@
 
 
                         <DataGridTextColumn Binding="{Binding mission}" ClipboardContentBinding="{x:Null}" Header="المهمة"/>
-                        <DataGridTextColumn Binding="{Binding FileClass}" ClipboardContentBinding="{x:Null}" Header="فئة الاضبارة"/>
+
                         <DataGridTextColumn Binding="{Binding Category}" ClipboardContentBinding="{x:Null}" Header="الفئة"/>
                         <DataGridTextColumn Binding="{Binding Workplace}" ClipboardContentBinding="{x:Null}" Header="مكان العمل"/>
                         <DataGridTextColumn Binding="{Binding JobTitle}" ClipboardContentBinding="{x:Null}" Header="المسمى الوظيفي"/>
@@ -425,6 +305,7 @@
                         <DataGridTextColumn Binding="{Binding BeginningDate,StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="تاريخ المباشرة"/>
                         <DataGridTextColumn Binding="{Binding Status}" ClipboardContentBinding="{x:Null}" Header="الحالة"/>
                         <DataGridTextColumn Binding="{Binding military }" ClipboardContentBinding="{x:Null}" Header="الوضع التجنيدي"/>
+                        <DataGridTextColumn Binding="{Binding sex}" ClipboardContentBinding="{x:Null}" Header="الجنس"/>
 
                     </DataGrid.Columns>
                 </DataGrid>
@@ -434,9 +315,10 @@
 
         </GroupBox>
 
-        <TextBlock HorizontalAlignment="Center"  Text="إحصائيات بيانات الموظفين" VerticalAlignment="Center"  FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold" />
-        <Button Content="عودة"    Grid.Row="3"  Height="35" Width="70" Margin="601,15,10,0" Grid.Column="1" Click="Exit"/>
-        <Button Content="عرض"    Grid.Row="3"  Height="35" Width="70" Margin="495,16,121,1" Grid.Column="1" Click="show"/>
+        <TextBlock HorizontalAlignment="Center"  Text="توزع الاختصاصات في الجامعة" VerticalAlignment="Center"  FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold" />
+        <Button Content="عودة"    Grid.Row="3"   Click="Exit" Grid.Column="1" Margin="255,0,334,10" />
+        <Button Content="عرض"    Grid.Row="3"   Click="show" Grid.Column="1" Margin="402,0,195,10"/>
+        <Button Content="طباعة"    Grid.Row="3" Click="print" Grid.Column="1" Margin="534,0,31,10" />
 
     </Grid>
 </Window>

@@ -26,9 +26,9 @@ namespace personnel.Views
             PersonelDBContext db = new PersonelDBContext();
           
 
-            List<string> workplaces = db.Works.Select(w => w.WorkPlace).ToList();
-            workplace.ItemsSource = workplaces;
-            workplace.SelectedIndex = 0;
+            List<string> certs = db.Certificates.Select(c => c.CertName).ToList();
+            certificate.ItemsSource = certs;
+            certificate.SelectedIndex = 0;
         }
         private void grade_DropDownClosed(object sender, EventArgs e)
         {
@@ -36,10 +36,7 @@ namespace personnel.Views
 
             db.Jobs.Load();
 
-            string cat = grade.Text;
-            List<Job> job_titles = db.Jobs.Where(x => x.Category.Contains(cat)).ToList();
-            job.ItemsSource = job_titles.Select(x => x.JobTitle);
-            job.SelectedIndex = 0;
+            
         }
         private void Exit(object sender, RoutedEventArgs e)
         {
@@ -62,7 +59,7 @@ namespace personnel.Views
 
 
 
-                List<SelfCard> selves = dbc.SelfCards.Where(x => x.Sex == sex.Text && x.Religion == religion.Text).ToList();
+                List<SelfCard> selves = dbc.SelfCards.Where(x => x.Certificate == certificate.Text && x.Status==status.Text ).ToList();
 
                 search_emp.ItemsSource = selves;
 
@@ -72,6 +69,11 @@ namespace personnel.Views
                
                 MessageBox.Show( " خطأ اتصال بقاعدة البيانات"); }
             
+        }
+
+        private void print(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

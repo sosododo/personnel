@@ -188,6 +188,14 @@ namespace personnel.Views
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
+
+                    else if (mission_Copy.Text == "نقل خارج الجامعة")
+                    {
+                        pp.Text = "";
+                        person.Status = "منقول خارج الجامعة";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
                     else if (mission_Copy.Text == "اجازة بلا أجر")
                     {
 
@@ -367,6 +375,12 @@ namespace personnel.Views
             {
                 pp.Text = "";
              
+            }
+
+            else if (mission_Copy.Text == "نقل خارج الجامعة")
+            {
+                status.Text = "منقول خارج الجامعة";
+
             }
             else if (mission_Copy.Text == "اجازة بلا أجر")
             {

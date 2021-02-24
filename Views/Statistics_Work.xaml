@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:personnel.Views"
          xmlns:model="clr-namespace:personnel.Models"
         mc:Ignorable="d"
-        Title="Statistics" Height="450" Width="800" FlowDirection="RightToLeft"  >
+        Title="Statistics" Height="450" Width="1200" FlowDirection="RightToLeft" ResizeMode="NoResize" >
     <Window.DataContext>
         <model:SelfCard></model:SelfCard>
     </Window.DataContext>
@@ -275,13 +275,13 @@
 
             </Grid>
         </GroupBox>
-        <GroupBox  Grid.Row="2"  Header="بيانات الموظفين :" FlowDirection="RightToLeft"   Grid.Column="1"   >
+        <GroupBox  Grid.Row="2"  Header="بيانات الموظفين :" FlowDirection="RightToLeft"   Grid.Column="1"  Margin="5,5,5,5" >
             <Grid  Width="auto" Height="auto" Margin="0,0,0,0" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="34*"/>
                     <ColumnDefinition Width="73*"/>
                 </Grid.ColumnDefinitions>
-                <DataGrid   Margin="10,0,10,0" Height="113" VerticalAlignment="Center"  ScrollViewer.VerticalScrollBarVisibility="Visible"  VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxWidth="1050" MaxHeight="200" MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF505A9C"   FontSize="12" Name="search_emp" AutoGenerateColumns="False" Grid.ColumnSpan="2" >
+                <DataGrid   Height="113" VerticalAlignment="center"   HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible"  VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxWidth="1050" MaxHeight="200" MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF505A9C"   FontSize="12" Name="search_emp" AutoGenerateColumns="False" Grid.ColumnSpan="2">
 
                     <!--<DataGrid.Resources>
                             <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
@@ -296,11 +296,12 @@
                         <DataGridTextColumn Binding="{Binding LastName}" ClipboardContentBinding="{x:Null}" Header="الكنية"/>
 
 
-                        <DataGridTextColumn Binding="{Binding mission}" ClipboardContentBinding="{x:Null}" Header="المهمة"/>
+                        <DataGridTextColumn Binding="{Binding Workplace}" ClipboardContentBinding="{x:Null}" Header="مكان العمل"/>
 
                         <DataGridTextColumn Binding="{Binding Category}" ClipboardContentBinding="{x:Null}" Header="الفئة"/>
-                        <DataGridTextColumn Binding="{Binding Workplace}" ClipboardContentBinding="{x:Null}" Header="مكان العمل"/>
+                       
                         <DataGridTextColumn Binding="{Binding JobTitle}" ClipboardContentBinding="{x:Null}" Header="المسمى الوظيفي"/>
+                        <DataGridTextColumn Binding="{Binding mission}" ClipboardContentBinding="{x:Null}" Header="المهمة"/>
                         <DataGridTextColumn Binding="{Binding Birthday,StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="تاريخ الميلاد"/>
                         <DataGridTextColumn Binding="{Binding BeginningDate,StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="تاريخ المباشرة"/>
                         <DataGridTextColumn Binding="{Binding Status}" ClipboardContentBinding="{x:Null}" Header="الحالة"/>
@@ -315,11 +316,12 @@
 
         </GroupBox>
 
-        <TextBlock HorizontalAlignment="Center"  Text="توزع الاختصاصات في الجامعة" VerticalAlignment="Center"  FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold" />
-        <Button Content="عودة"    Grid.Row="3"   Click="Exit" Grid.Column="1" Margin="255,0,334,10" />
-        <Button Content="عرض"    Grid.Row="3"   Click="show" Grid.Column="1" Margin="402,0,195,10"/>
-        <Button Content="طباعة"    Grid.Row="3" Click="print" Grid.Column="1" Margin="534,0,31,10" />
-
+        <TextBlock HorizontalAlignment="Center"  Text="توزع الاختصاصات في الجامعة" VerticalAlignment="Center"  FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold"  />
+        <StackPanel Grid.Row="3" FlowDirection="LeftToRight" Orientation="Horizontal" Margin="19,0,124,10" Grid.Column="1">
+            <Button Content="عودة"    Grid.Row="3"   Click="Exit" Margin="5,5,5,5" Width="50" />
+            <Button Content="عرض"    Grid.Row="3"   Click="show" Margin="5,5,5,5" Width="50" />
+            <Button Content="طباعة"    Grid.Row="3" Click="print"  Margin="5,5,5,5" Width="50"/>
+        </StackPanel>
     </Grid>
 </Window>
     

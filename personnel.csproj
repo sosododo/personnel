@@ -13,6 +13,10 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Statistics\workstatis.rdlc" />
+  </ItemGroup>
+
 
 
  
@@ -51,11 +55,19 @@
     <Content Include="Report\repzat.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Statistics\workstatis.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
  
 
   <ItemGroup>
+    <Compile Update="personnelDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>personnelDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Update="personnel_dataset.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -73,6 +85,11 @@
     <Compile Update="Views\Statistics_emp.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WorkDataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WorkDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Update="ZATDataSet1.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -83,9 +100,17 @@
  
 
   <ItemGroup>
+    <None Update="personnelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>personnelDataSet.Designer.cs</LastGenOutput>
+    </None>
     <None Update="personnel_dataset.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>personnel_dataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="WorkDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Update="ZATDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -97,6 +122,9 @@
 
   <ItemGroup>
     <Page Update="Report\RestReport.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Statistics\WorkStatis.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Add_Delegation.xaml">

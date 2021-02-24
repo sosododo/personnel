@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using personnel.Models;
+using personnel.Statistics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,6 +74,9 @@ namespace personnel.Views
 
         private void print(object sender, RoutedEventArgs e)
         {
+
+            Window win = new WorkStatis(certificate.Text, status.Text);
+            win.Show();
 
         }
     }

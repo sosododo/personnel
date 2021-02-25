@@ -534,7 +534,7 @@ namespace personnel.Views
 
 
                     SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
-                    if (user.Category == "تدريسي" && Login.currentUser.Rule=="teacher") {
+                    if (user.FileClass == "تدريسي" && Login.currentUser.Rule== "تدريسي") {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.restType = r.RestType;
                         rd.restPeriod = r.RestPeriod;
@@ -546,7 +546,7 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
-                    if (user.Category == "إداري" && Login.currentUser.Rule=="employee") {
+                    if (user.FileClass == "فني" && Login.currentUser.Rule== "فني") {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.restType = r.RestType;
                         rd.restPeriod = r.RestPeriod;
@@ -558,6 +558,86 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
+
+                    if (user.FileClass == "معيد" && Login.currentUser.Rule == "معيد")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.restType = r.RestType;
+                        rd.restPeriod = r.RestPeriod;
+                        rd.period = r.Period;
+                        rd.startDate = (DateTime)r.RestStart;
+                        rd.endDate = (DateTime)r.RestEnd;
+                        rd.note = r.Notes;
+                        rd.attachment = r.Attachment;
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الأولى" && Login.currentUser.Rule == "الأولى")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.restType = r.RestType;
+                        rd.restPeriod = r.RestPeriod;
+                        rd.period = r.Period;
+                        rd.startDate = (DateTime)r.RestStart;
+                        rd.endDate = (DateTime)r.RestEnd;
+                        rd.note = r.Notes;
+                        rd.attachment = r.Attachment;
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.restType = r.RestType;
+                        rd.restPeriod = r.RestPeriod;
+                        rd.period = r.Period;
+                        rd.startDate = (DateTime)r.RestStart;
+                        rd.endDate = (DateTime)r.RestEnd;
+                        rd.note = r.Notes;
+                        rd.attachment = r.Attachment;
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.restType = r.RestType;
+                        rd.restPeriod = r.RestPeriod;
+                        rd.period = r.Period;
+                        rd.startDate = (DateTime)r.RestStart;
+                        rd.endDate = (DateTime)r.RestEnd;
+                        rd.note = r.Notes;
+                        rd.attachment = r.Attachment;
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.restType = r.RestType;
+                        rd.restPeriod = r.RestPeriod;
+                        rd.period = r.Period;
+                        rd.startDate = (DateTime)r.RestStart;
+                        rd.endDate = (DateTime)r.RestEnd;
+                        rd.note = r.Notes;
+                        rd.attachment = r.Attachment;
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.restType = r.RestType;
+                        rd.restPeriod = r.RestPeriod;
+                        rd.period = r.Period;
+                        rd.startDate = (DateTime)r.RestStart;
+                        rd.endDate = (DateTime)r.RestEnd;
+                        rd.note = r.Notes;
+                        rd.attachment = r.Attachment;
+
+                        all.Add(rd);
+                    }
+
                     if ( Login.currentUser.Rule == "admin")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
@@ -599,8 +679,8 @@ namespace personnel.Views
 
 
                     SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
-                    if (user.Category == "تدريسي" && Login.currentUser.Rule == "teacher") {
-
+                    if (user.FileClass == "تدريسي" && Login.currentUser.Rule == "تدريسي")
+                    {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.Category = r.Category;
                         rd.ChangeDate = r.ChangeDate;
@@ -613,9 +693,93 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
-                    if (user.Category == "إداري" && Login.currentUser.Rule == "employee")
+                    if (user.FileClass == "فني" && Login.currentUser.Rule == "فني")
                     {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Category = r.Category;
+                        rd.ChangeDate = r.ChangeDate;
+                        rd.WorkPlace = r.WorkPlace;
+                        rd.JobTitle = r.JobTitle;
+                        rd.Status = r.Status;
+                        rd.Mission = r.Mission;
+                        rd.Salary = (double)r.Salary;
 
+
+                        all.Add(rd);
+                    }
+
+                    if (user.FileClass == "معيد" && Login.currentUser.Rule == "معيد")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Category = r.Category;
+                        rd.ChangeDate = r.ChangeDate;
+                        rd.WorkPlace = r.WorkPlace;
+                        rd.JobTitle = r.JobTitle;
+                        rd.Status = r.Status;
+                        rd.Mission = r.Mission;
+                        rd.Salary = (double)r.Salary;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الأولى" && Login.currentUser.Rule == "الأولى")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Category = r.Category;
+                        rd.ChangeDate = r.ChangeDate;
+                        rd.WorkPlace = r.WorkPlace;
+                        rd.JobTitle = r.JobTitle;
+                        rd.Status = r.Status;
+                        rd.Mission = r.Mission;
+                        rd.Salary = (double)r.Salary;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Category = r.Category;
+                        rd.ChangeDate = r.ChangeDate;
+                        rd.WorkPlace = r.WorkPlace;
+                        rd.JobTitle = r.JobTitle;
+                        rd.Status = r.Status;
+                        rd.Mission = r.Mission;
+                        rd.Salary = (double)r.Salary;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Category = r.Category;
+                        rd.ChangeDate = r.ChangeDate;
+                        rd.WorkPlace = r.WorkPlace;
+                        rd.JobTitle = r.JobTitle;
+                        rd.Status = r.Status;
+                        rd.Mission = r.Mission;
+                        rd.Salary = (double)r.Salary;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Category = r.Category;
+                        rd.ChangeDate = r.ChangeDate;
+                        rd.WorkPlace = r.WorkPlace;
+                        rd.JobTitle = r.JobTitle;
+                        rd.Status = r.Status;
+                        rd.Mission = r.Mission;
+                        rd.Salary = (double)r.Salary;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
+                    {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.Category = r.Category;
                         rd.ChangeDate = r.ChangeDate;
@@ -631,7 +795,6 @@ namespace personnel.Views
 
                     if (Login.currentUser.Rule == "admin")
                     {
-
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.Category = r.Category;
                         rd.ChangeDate = r.ChangeDate;
@@ -644,6 +807,10 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
+                  
+
+                      
+
 
 
                 }
@@ -678,7 +845,10 @@ namespace personnel.Views
 
 
                     SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
-                    if (user.Category == "إداري" && Login.currentUser.Rule == "employee") {
+
+
+                    if (user.FileClass == "تدريسي" && Login.currentUser.Rule == "تدريسي")
+                    {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.SecondmentType = r.SecondmentType;
                         rd.PeriodNum = (int)r.PeriodNum;
@@ -692,8 +862,7 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
-
-                    if (user.Category == "تدريسي" && Login.currentUser.Rule == "teacher")
+                    if (user.FileClass == "فني" && Login.currentUser.Rule == "فني")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.SecondmentType = r.SecondmentType;
@@ -709,7 +878,7 @@ namespace personnel.Views
                         all.Add(rd);
                     }
 
-                    if ( Login.currentUser.Rule == "admin")
+                    if (user.FileClass == "معيد" && Login.currentUser.Rule == "معيد")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.SecondmentType = r.SecondmentType;
@@ -724,6 +893,100 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
+                    if (user.Category == "الأولى" && Login.currentUser.Rule == "الأولى")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SecondmentType = r.SecondmentType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.SecondmentStart = (DateTime)r.SecondmentStart;
+                        rd.SecondmentEnd = (DateTime)r.SecondmentEnd;
+                        rd.SecondmentPlace = r.SecondmentPlace;
+
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SecondmentType = r.SecondmentType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.SecondmentStart = (DateTime)r.SecondmentStart;
+                        rd.SecondmentEnd = (DateTime)r.SecondmentEnd;
+                        rd.SecondmentPlace = r.SecondmentPlace;
+
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SecondmentType = r.SecondmentType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.SecondmentStart = (DateTime)r.SecondmentStart;
+                        rd.SecondmentEnd = (DateTime)r.SecondmentEnd;
+                        rd.SecondmentPlace = r.SecondmentPlace;
+
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SecondmentType = r.SecondmentType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.SecondmentStart = (DateTime)r.SecondmentStart;
+                        rd.SecondmentEnd = (DateTime)r.SecondmentEnd;
+                        rd.SecondmentPlace = r.SecondmentPlace;
+
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SecondmentType = r.SecondmentType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.SecondmentStart = (DateTime)r.SecondmentStart;
+                        rd.SecondmentEnd = (DateTime)r.SecondmentEnd;
+                        rd.SecondmentPlace = r.SecondmentPlace;
+
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+
+                    if (Login.currentUser.Rule == "admin")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SecondmentType = r.SecondmentType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.SecondmentStart = (DateTime)r.SecondmentStart;
+                        rd.SecondmentEnd = (DateTime)r.SecondmentEnd;
+                        rd.SecondmentPlace = r.SecondmentPlace;
+
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+             
+
+             
 
 
 
@@ -757,7 +1020,10 @@ namespace personnel.Views
 
                     SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
 
-                    if (user.Category == "إداري" && Login.currentUser.Rule == "employee") {
+
+
+                    if (user.FileClass == "تدريسي" && Login.currentUser.Rule == "تدريسي")
+                    {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.DelegatingType = r.DelegatingType;
                         rd.PeriodNum = (int)r.PeriodNum;
@@ -771,8 +1037,7 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
-
-                    if (user.Category == "تدريسي" && Login.currentUser.Rule == "teacher")
+                    if (user.FileClass == "فني" && Login.currentUser.Rule == "فني")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.DelegatingType = r.DelegatingType;
@@ -788,7 +1053,7 @@ namespace personnel.Views
                         all.Add(rd);
                     }
 
-                    if ( Login.currentUser.Rule == "admin")
+                    if (user.FileClass == "معيد" && Login.currentUser.Rule == "معيد")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.DelegatingType = r.DelegatingType;
@@ -803,6 +1068,98 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
+                    if (user.Category == "الأولى" && Login.currentUser.Rule == "الأولى")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.DelegatingType = r.DelegatingType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.DelegatingStart = (DateTime)r.DelegatingStart;
+                        rd.DelegatingEnd = (DateTime)r.DelegatingEnd;
+                        rd.DelegatingReason = r.DelegatingReason;
+                        rd.DelegatingCountry = r.DelegatingCountry;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.DelegatingType = r.DelegatingType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.DelegatingStart = (DateTime)r.DelegatingStart;
+                        rd.DelegatingEnd = (DateTime)r.DelegatingEnd;
+                        rd.DelegatingReason = r.DelegatingReason;
+                        rd.DelegatingCountry = r.DelegatingCountry;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.DelegatingType = r.DelegatingType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.DelegatingStart = (DateTime)r.DelegatingStart;
+                        rd.DelegatingEnd = (DateTime)r.DelegatingEnd;
+                        rd.DelegatingReason = r.DelegatingReason;
+                        rd.DelegatingCountry = r.DelegatingCountry;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.DelegatingType = r.DelegatingType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.DelegatingStart = (DateTime)r.DelegatingStart;
+                        rd.DelegatingEnd = (DateTime)r.DelegatingEnd;
+                        rd.DelegatingReason = r.DelegatingReason;
+                        rd.DelegatingCountry = r.DelegatingCountry;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.DelegatingType = r.DelegatingType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.DelegatingStart = (DateTime)r.DelegatingStart;
+                        rd.DelegatingEnd = (DateTime)r.DelegatingEnd;
+                        rd.DelegatingReason = r.DelegatingReason;
+                        rd.DelegatingCountry = r.DelegatingCountry;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+
+                    if (Login.currentUser.Rule == "admin")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.DelegatingType = r.DelegatingType;
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.DelegatingStart = (DateTime)r.DelegatingStart;
+                        rd.DelegatingEnd = (DateTime)r.DelegatingEnd;
+                        rd.DelegatingReason = r.DelegatingReason;
+                        rd.DelegatingCountry = r.DelegatingCountry;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                 
 
                 }
 
@@ -830,23 +1187,9 @@ namespace personnel.Views
 
                 
                         SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
-                    if (user.Category == "تدريسي" && Login.currentUser.Rule == "teacher") {
-                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
-
-                        rd.PeriodNum = (int)r.PeriodNum;
-                        rd.PeriodType = r.PeriodType;
-                        rd.ScarStart = (DateTime)r.ScarStart;
-                        rd.ScarEnd = (DateTime)r.ScarEnd;
-                        rd.ScarReason = r.ScarReason;
-                        rd.ScarPlace = r.ScarPlace;
-                        rd.Notes = r.Notes;
 
 
-                        all.Add(rd);
-
-                    }
-
-                    if (user.Category == "إداري" && Login.currentUser.Rule == "employee")
+                    if (user.FileClass == "تدريسي" && Login.currentUser.Rule == "تدريسي")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
 
@@ -860,10 +1203,8 @@ namespace personnel.Views
 
 
                         all.Add(rd);
-
                     }
-
-                    if ( Login.currentUser.Rule == "admin")
+                    if (user.FileClass == "فني" && Login.currentUser.Rule == "فني")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
 
@@ -877,9 +1218,115 @@ namespace personnel.Views
 
 
                         all.Add(rd);
-
                     }
 
+                    if (user.FileClass == "معيد" && Login.currentUser.Rule == "معيد")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.ScarStart = (DateTime)r.ScarStart;
+                        rd.ScarEnd = (DateTime)r.ScarEnd;
+                        rd.ScarReason = r.ScarReason;
+                        rd.ScarPlace = r.ScarPlace;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الأولى" && Login.currentUser.Rule == "الأولى")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.ScarStart = (DateTime)r.ScarStart;
+                        rd.ScarEnd = (DateTime)r.ScarEnd;
+                        rd.ScarReason = r.ScarReason;
+                        rd.ScarPlace = r.ScarPlace;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.ScarStart = (DateTime)r.ScarStart;
+                        rd.ScarEnd = (DateTime)r.ScarEnd;
+                        rd.ScarReason = r.ScarReason;
+                        rd.ScarPlace = r.ScarPlace;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.ScarStart = (DateTime)r.ScarStart;
+                        rd.ScarEnd = (DateTime)r.ScarEnd;
+                        rd.ScarReason = r.ScarReason;
+                        rd.ScarPlace = r.ScarPlace;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.ScarStart = (DateTime)r.ScarStart;
+                        rd.ScarEnd = (DateTime)r.ScarEnd;
+                        rd.ScarReason = r.ScarReason;
+                        rd.ScarPlace = r.ScarPlace;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.ScarStart = (DateTime)r.ScarStart;
+                        rd.ScarEnd = (DateTime)r.ScarEnd;
+                        rd.ScarReason = r.ScarReason;
+                        rd.ScarPlace = r.ScarPlace;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+
+                    if (Login.currentUser.Rule == "admin")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+
+                        rd.PeriodNum = (int)r.PeriodNum;
+                        rd.PeriodType = r.PeriodType;
+                        rd.ScarStart = (DateTime)r.ScarStart;
+                        rd.ScarEnd = (DateTime)r.ScarEnd;
+                        rd.ScarReason = r.ScarReason;
+                        rd.ScarPlace = r.ScarPlace;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                
 
 
                 }
@@ -902,8 +1349,8 @@ namespace personnel.Views
 
 
                     SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
-
-                    if (user.Category == "إداري" && Login.currentUser.Rule == "employee") {
+                    if (user.FileClass == "تدريسي" && Login.currentUser.Rule == "تدريسي")
+                    {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.PunishmentType = r.PunishmentType;
                         rd.Period = (int)r.Period;
@@ -917,9 +1364,7 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
-
-
-                    if (user.Category == "تدريسي" && Login.currentUser.Rule == "teacher")
+                    if (user.FileClass == "فني" && Login.currentUser.Rule == "فني")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.PunishmentType = r.PunishmentType;
@@ -935,7 +1380,7 @@ namespace personnel.Views
                         all.Add(rd);
                     }
 
-                    if ( Login.currentUser.Rule == "admin")
+                    if (user.FileClass == "معيد" && Login.currentUser.Rule == "معيد")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.PunishmentType = r.PunishmentType;
@@ -950,6 +1395,102 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
+                    if (user.Category == "الأولى" && Login.currentUser.Rule == "الأولى")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.PunishmentType = r.PunishmentType;
+                        rd.Period = (int)r.Period;
+                        rd.periodType = r.periodType;
+                        rd.StartDate = (DateTime)r.StartDate;
+                        rd.EndDate = (DateTime)r.EndDate;
+                        rd.Reason = r.Reason;
+                        rd.Discount = (double)r.Discount;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.PunishmentType = r.PunishmentType;
+                        rd.Period = (int)r.Period;
+                        rd.periodType = r.periodType;
+                        rd.StartDate = (DateTime)r.StartDate;
+                        rd.EndDate = (DateTime)r.EndDate;
+                        rd.Reason = r.Reason;
+                        rd.Discount = (double)r.Discount;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.PunishmentType = r.PunishmentType;
+                        rd.Period = (int)r.Period;
+                        rd.periodType = r.periodType;
+                        rd.StartDate = (DateTime)r.StartDate;
+                        rd.EndDate = (DateTime)r.EndDate;
+                        rd.Reason = r.Reason;
+                        rd.Discount = (double)r.Discount;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.PunishmentType = r.PunishmentType;
+                        rd.Period = (int)r.Period;
+                        rd.periodType = r.periodType;
+                        rd.StartDate = (DateTime)r.StartDate;
+                        rd.EndDate = (DateTime)r.EndDate;
+                        rd.Reason = r.Reason;
+                        rd.Discount = (double)r.Discount;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.PunishmentType = r.PunishmentType;
+                        rd.Period = (int)r.Period;
+                        rd.periodType = r.periodType;
+                        rd.StartDate = (DateTime)r.StartDate;
+                        rd.EndDate = (DateTime)r.EndDate;
+                        rd.Reason = r.Reason;
+                        rd.Discount = (double)r.Discount;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+
+                    if (Login.currentUser.Rule == "admin")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.PunishmentType = r.PunishmentType;
+                        rd.Period = (int)r.Period;
+                        rd.periodType = r.periodType;
+                        rd.StartDate = (DateTime)r.StartDate;
+                        rd.EndDate = (DateTime)r.EndDate;
+                        rd.Reason = r.Reason;
+                        rd.Discount = (double)r.Discount;
+                        rd.Notes = r.Notes;
+
+
+                        all.Add(rd);
+                    }
+
+
 
 
                 }
@@ -974,7 +1515,20 @@ namespace personnel.Views
 
                     SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
 
-                    if (user.Category == "إداري" && Login.currentUser.Rule == "employee")
+                    if (user.FileClass == "تدريسي" && Login.currentUser.Rule == "تدريسي")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "فني" && Login.currentUser.Rule == "فني")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.Salary = r.Salary;
@@ -988,7 +1542,7 @@ namespace personnel.Views
                         all.Add(rd);
                     }
 
-                    if (user.Category == "تدريسي" && Login.currentUser.Rule == "teacher")
+                    if (user.FileClass == "معيد" && Login.currentUser.Rule == "معيد")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.Salary = r.Salary;
@@ -1001,6 +1555,72 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
+                    if (user.Category == "الأولى" && Login.currentUser.Rule == "الأولى")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+
                     if (Login.currentUser.Rule == "admin")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
@@ -1014,6 +1634,8 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
+
+
 
 
                 }
@@ -1037,45 +1659,128 @@ namespace personnel.Views
 
 
                     SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
-                    if (user.Category == "تدريسي" && Login.currentUser.Rule == "teacher") {
-                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
-                        rd.Salary = r.Salary;
-                        rd.Bouns = r.Bouns;
-                        rd.SalaryBouns = r.SalaryBouns;
-                        rd.NumDays = r.NumDays;
-                        rd.FromYear = null;
-                        rd.ToYear = null;
 
-
-                        all.Add(rd);
-                    }
-                    if (user.Category == "إداري" && Login.currentUser.Rule == "employee")
+                    if (user.FileClass == "تدريسي" && Login.currentUser.Rule == "تدريسي")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.Salary = r.Salary;
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = null;
-                        rd.ToYear = null;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
 
 
                         all.Add(rd);
                     }
-
-                    if ( Login.currentUser.Rule == "admin")
+                    if (user.FileClass == "فني" && Login.currentUser.Rule == "فني")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.Salary = r.Salary;
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = null;
-                        rd.ToYear = null;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
 
 
                         all.Add(rd);
                     }
+
+                    if (user.FileClass == "معيد" && Login.currentUser.Rule == "معيد")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الأولى" && Login.currentUser.Rule == "الأولى")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+
+                    if (Login.currentUser.Rule == "admin")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+
+                   
 
                 }
 
@@ -1098,46 +1803,130 @@ namespace personnel.Views
 
 
                     SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
-                    if (user.Category == "إداري" && Login.currentUser.Rule == "employee") {
-                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
-                        rd.Salary = r.Salary;
-                        rd.Bouns = r.Bouns;
-                        rd.SalaryBouns = r.SalaryBouns;
-                        rd.NumDays = r.NumDays;
-                        rd.FromYear = null;
-                        rd.ToYear = null;
 
-
-                        all.Add(rd);
-                    }
-
-                    if (user.Category == "تدريسي" && Login.currentUser.Rule == "teacher")
+                    if (user.FileClass == "تدريسي" && Login.currentUser.Rule == "تدريسي")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.Salary = r.Salary;
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = null;
-                        rd.ToYear = null;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
 
 
                         all.Add(rd);
                     }
-
-                    if ( Login.currentUser.Rule == "admin")
+                    if (user.FileClass == "فني" && Login.currentUser.Rule == "فني")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.Salary = r.Salary;
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = null;
-                        rd.ToYear = null;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
 
 
                         all.Add(rd);
                     }
+
+                    if (user.FileClass == "معيد" && Login.currentUser.Rule == "معيد")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الأولى" && Login.currentUser.Rule == "الأولى")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+
+                    if (Login.currentUser.Rule == "admin")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.Salary = r.Salary;
+                        rd.Bouns = r.Bouns;
+                        rd.SalaryBouns = r.SalaryBouns;
+                        rd.NumDays = r.NumDays;
+                        rd.FromYear = (DateTime)r.FromYear;
+                        rd.ToYear = (DateTime)r.ToYear;
+
+
+                        all.Add(rd);
+                    }
+
+
+
+                 
 
 
 
@@ -1162,8 +1951,7 @@ namespace personnel.Views
 
 
                     SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
-
-                    if (user.Category == "إداري" && Login.currentUser.Rule == "employee")
+                    if (user.FileClass == "تدريسي" && Login.currentUser.Rule == "تدريسي")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.RewardType = r.RewardType;
@@ -1174,18 +1962,7 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
-                    if (user.Category == "تدريسي" && Login.currentUser.Rule == "teacher")
-                    {
-                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
-                        rd.RewardType = r.RewardType;
-                        rd.Reason = r.Reason;
-                        rd.Amount = r.Amount;
-                        rd.RewardDate = (DateTime)r.RewardDate;
-                        rd.Notes = r.Notes;
-
-                        all.Add(rd);
-                    }
-                    if ( Login.currentUser.Rule == "admin")
+                    if (user.FileClass == "فني" && Login.currentUser.Rule == "فني")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.RewardType = r.RewardType;
@@ -1197,6 +1974,87 @@ namespace personnel.Views
                         all.Add(rd);
                     }
 
+                    if (user.FileClass == "معيد" && Login.currentUser.Rule == "معيد")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.RewardType = r.RewardType;
+                        rd.Reason = r.Reason;
+                        rd.Amount = r.Amount;
+                        rd.RewardDate = (DateTime)r.RewardDate;
+                        rd.Notes = r.Notes;
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الأولى" && Login.currentUser.Rule == "الأولى")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.RewardType = r.RewardType;
+                        rd.Reason = r.Reason;
+                        rd.Amount = r.Amount;
+                        rd.RewardDate = (DateTime)r.RewardDate;
+                        rd.Notes = r.Notes;
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.RewardType = r.RewardType;
+                        rd.Reason = r.Reason;
+                        rd.Amount = r.Amount;
+                        rd.RewardDate = (DateTime)r.RewardDate;
+                        rd.Notes = r.Notes;
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.RewardType = r.RewardType;
+                        rd.Reason = r.Reason;
+                        rd.Amount = r.Amount;
+                        rd.RewardDate = (DateTime)r.RewardDate;
+                        rd.Notes = r.Notes;
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
+                    {
+                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.RewardType = r.RewardType;
+                        rd.Reason = r.Reason;
+                        rd.Amount = r.Amount;
+                        rd.RewardDate = (DateTime)r.RewardDate;
+                        rd.Notes = r.Notes;
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.RewardType = r.RewardType;
+                        rd.Reason = r.Reason;
+                        rd.Amount = r.Amount;
+                        rd.RewardDate = (DateTime)r.RewardDate;
+                        rd.Notes = r.Notes;
+
+                        all.Add(rd);
+                    }
+
+                    if (Login.currentUser.Rule == "admin")
+                    {
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.RewardType = r.RewardType;
+                        rd.Reason = r.Reason;
+                        rd.Amount = r.Amount;
+                        rd.RewardDate = (DateTime)r.RewardDate;
+                        rd.Notes = r.Notes;
+
+                        all.Add(rd);
+                    }
+
+
+               
                 }
 
                 rdd.detailsDataGrid.ItemsSource = all;
@@ -1217,7 +2075,64 @@ namespace personnel.Views
 
 
                     SelfCard user = db.SelfCards.Where(x => x.PersonId == r.PersonId).FirstOrDefault();
-                    if (user.Category == "تدريسي" && Login.currentUser.Rule == "teacher")
+
+                    if (user.FileClass == "تدريسي" && Login.currentUser.Rule == "تدريسي")
+                    {
+
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SalaryBefore = r.SalaryBefore;
+                        rd.SalaryAfter = r.SalaryAfter;
+                        rd.Increase = r.Increase;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.FileClass == "فني" && Login.currentUser.Rule == "فني")
+                    {
+
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SalaryBefore = r.SalaryBefore;
+                        rd.SalaryAfter = r.SalaryAfter;
+                        rd.Increase = r.Increase;
+
+
+                        all.Add(rd);
+                    }
+
+                    if (user.FileClass == "معيد" && Login.currentUser.Rule == "معيد")
+                    {
+
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SalaryBefore = r.SalaryBefore;
+                        rd.SalaryAfter = r.SalaryAfter;
+                        rd.Increase = r.Increase;
+
+
+                        all.Add(rd);
+                    }
+                    if (user.Category == "الأولى" && Login.currentUser.Rule == "الأولى")
+                    {
+
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SalaryBefore = r.SalaryBefore;
+                        rd.SalaryAfter = r.SalaryAfter;
+                        rd.Increase = r.Increase;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
+                    {
+
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SalaryBefore = r.SalaryBefore;
+                        rd.SalaryAfter = r.SalaryAfter;
+                        rd.Increase = r.Increase;
+
+
+                        all.Add(rd);
+                    }
+                    if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
                     {
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.SalaryBefore = r.SalaryBefore;
@@ -1227,8 +2142,9 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
-                    if (user.Category == "إداري" && Login.currentUser.Rule == "employee")
+                    if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
                     {
+
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.SalaryBefore = r.SalaryBefore;
                         rd.SalaryAfter = r.SalaryAfter;
@@ -1237,8 +2153,9 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
-                    if ( Login.currentUser.Rule == "admin")
+                    if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
                     {
+
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.SalaryBefore = r.SalaryBefore;
                         rd.SalaryAfter = r.SalaryAfter;
@@ -1247,6 +2164,19 @@ namespace personnel.Views
 
                         all.Add(rd);
                     }
+
+                    if (Login.currentUser.Rule == "admin")
+                    {
+
+                        rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
+                        rd.SalaryBefore = r.SalaryBefore;
+                        rd.SalaryAfter = r.SalaryAfter;
+                        rd.Increase = r.Increase;
+
+
+                        all.Add(rd);
+                    }
+      
 
 
 

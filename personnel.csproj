@@ -79,6 +79,9 @@
     <Compile Update="Views\ShowTeacher.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Statistics_Job.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Statistics_Work.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -124,6 +127,9 @@
     <Page Update="Report\RestReport.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Statistics\JobStatis.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Statistics\WorkStatis.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -131,6 +137,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ShowTeacher.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Statistics_Job.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Statistics_Work.xaml">

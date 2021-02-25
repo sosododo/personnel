@@ -30,6 +30,7 @@ namespace personnel.Models
         public virtual DbSet<Job> Jobs { get; set; }
         public virtual DbSet<Scar> Scars { get; set; }
         public virtual DbSet<SalaryIncrease> SalaryIncrease { get; set; }
+        public virtual DbSet<Certificate> Certificates { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

@@ -49,7 +49,7 @@ namespace personnel.Views
 
         private void b2_Click(object sender, RoutedEventArgs e)
         {
-            Window win = new Statistics_emp();
+            Window win = new Statistics();
             win.Show();
             this.Close();
         }

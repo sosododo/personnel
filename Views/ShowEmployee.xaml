@@ -247,6 +247,7 @@
                     <ComboBoxItem Content="إداري" />
                     <ComboBoxItem Content="فني"/>
                     <ComboBoxItem Content="تدريسي"/>
+                    <ComboBoxItem Content="معيد"/>
                     <ComboBoxItem Content="مخبري"/>
                     <ComboBoxItem Content="عامل"/>
                     <ComboBoxItem Content="عقد"/>

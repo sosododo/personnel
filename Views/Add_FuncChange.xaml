@@ -143,6 +143,7 @@
                     <ComboBoxItem Content="تغيير مسمى وظيفي" />
                     <ComboBoxItem Content="تغيير مهمة" />
                     <ComboBoxItem Content=   "نقل" />
+                    <ComboBoxItem Content=   "نقل خارج الجامعة" />
                     <ComboBoxItem Content=   "اجازة بلا أجر" />
 
                 </ComboBox>

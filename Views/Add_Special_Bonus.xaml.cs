@@ -31,8 +31,11 @@ namespace personnel.Views
         {
             InitializeComponent();
             db = new PersonelDBContext();
-            List<string> employ = db.SelfCards.Where(x=>x.Salary == x.maxsalary && x.Status == "قائم على رأس عمله" && (x.Category== "الأولى" || x.Category== "الثانية")).Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
-            emp_list.ItemsSource = employ;
+          
+            
+                List<string> employ = db.SelfCards.Where(x => x.Salary == x.maxsalary && x.Status == "قائم على رأس عمله" && (x.Category == "الأولى" || x.Category == "الثانية")).Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+                emp_list.ItemsSource = employ;
+            
 
             Decision d = (Decision)DataContext;
         }

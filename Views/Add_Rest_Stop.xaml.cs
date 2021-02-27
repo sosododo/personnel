@@ -32,17 +32,60 @@ namespace personnel.Views
             InitializeComponent();
           
             db = new PersonelDBContext();
-            if (Login.currentUser.Rule == "teacher")
+            if (Login.currentUser.Rule == "تدريسي")
             {
 
                 List<string> employ = db.SelfCards.Where(x => x.FileClass == "تدريسي").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
 
                 emp_name.ItemsSource = employ;
             }
-            else if (Login.currentUser.Rule == "employee")
+            else if (Login.currentUser.Rule == "فني")
             {
 
-                List<string> employ = db.SelfCards.Where(x => x.FileClass == "إداري").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+                List<string> employ = db.SelfCards.Where(x => x.FileClass == "فني").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
+            else if (Login.currentUser.Rule == "معيد")
+            {
+
+                List<string> employ = db.SelfCards.Where(x => x.FileClass == "معيد").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
+
+            else if (Login.currentUser.Rule == "الأولى")
+            {
+
+                List<string> employ = db.SelfCards.Where(x => x.Category == "الأولى").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
+            else if (Login.currentUser.Rule == "الثانية")
+            {
+
+                List<string> employ = db.SelfCards.Where(x => x.Category == "الثانية/اداريين" || x.Category == "الثانية/مخبريين").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
+            else if (Login.currentUser.Rule == "الثالثة")
+            {
+
+                List<string> employ = db.SelfCards.Where(x => x.Category == "الثالثة" || x.Category == "الرابعة").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
+            else if (Login.currentUser.Rule == "الخامسة")
+            {
+
+                List<string> employ = db.SelfCards.Where(x => x.Category == "الخامسة").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
+            else if (Login.currentUser.Rule == "عقود")
+            {
+
+                List<string> employ = db.SelfCards.Where(x => x.FileClass == "عقود").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
 
                 emp_name.ItemsSource = employ;
             }

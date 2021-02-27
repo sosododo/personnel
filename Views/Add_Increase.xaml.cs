@@ -33,6 +33,92 @@ namespace personnel.Views
 
 
 
+            if (Login.currentUser.Rule == "تدريسي")
+            {
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.FileClass == "تدريسي")
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+            }
+            else if (Login.currentUser.Rule == "فني")
+            {
+
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.FileClass == "فني")
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+            }
+            else if (Login.currentUser.Rule == "معيد")
+            {
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.FileClass == "معيد")
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+            }
+
+            else if (Login.currentUser.Rule == "الأولى")
+            {
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.Category == "الأولى")
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+            }
+            else if (Login.currentUser.Rule == "الثانية")
+            {
+
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && (p.Category == "الثانية/مخبريين" || p.Category== "الثانية/اداريين"))
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+            }
+            else if (Login.currentUser.Rule == "الثالثة")
+            {
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && (p.Category == "الثالثة" || p.Category == "الرابعة"))
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+
+            }
+            else if (Login.currentUser.Rule == "الخامسة")
+            {
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.Category == "الخامسة")
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+            }
+            else if (Login.currentUser.Rule == "عقود")
+            {
+
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.FileClass == "عقد")
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+            }
+            else if (Login.currentUser.Rule == "admin")
+            {
+
+                List<string> employ = db.SelfCards.Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+
+                emp_name.ItemsSource = employ;
+            }
+            /////////////////////////////////////////////////////
+
             if (Login.currentUser.Rule == "teacher")
             {
 

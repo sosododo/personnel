@@ -44,15 +44,59 @@ namespace personnel.Views
             }
 
 
-            else if (Login.currentUser.Rule == "employee")
+            else if (Login.currentUser.Rule == "الأولى")
             {
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && p.FileClass == "إداري")
+                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && p.Category == "الأولى")
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
                 list.ItemsSource = emp;
                
+            }
+
+            else if (Login.currentUser.Rule == "الثانية")
+            {
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && (p.Category == "الثانية/اداريين" || p.Category == "الثانية/مخبريين"))
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+
+            }
+
+            else if (Login.currentUser.Rule == "الثالثة")
+            {
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && (p.Category == "الثالثة" || p.Category== "الرابعة"))
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+
+            }
+
+            else if (Login.currentUser.Rule == "الخامسة")
+            {
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && p.Category == "الخامسة")
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+
+            }
+
+            else if (Login.currentUser.Rule == "عقود")
+            {
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && p.FileClass == "عقد")
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                list.ItemsSource = emp;
+
             }
             else if (Login.currentUser.Rule == "admin")
             {

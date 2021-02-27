@@ -26,7 +26,7 @@ namespace personnel.Views
         public Login()
         {
             InitializeComponent();
-            db.Users.Load();
+               db.Users.Load();
 
         }
 
@@ -50,7 +50,7 @@ namespace personnel.Views
                 win1.currentu.Text = "أهلا بك"+" " + login_user.UserName;
                 switch (rule)
                 {
-                    case "teacher":
+                    case "تدريسي"  :
                         win1.teach.IsEnabled = true;
                         win1.em.IsEnabled = false;
                         win1.teach.IsChecked = true;
@@ -58,7 +58,38 @@ namespace personnel.Views
                         win1.Show();
                        this.Close();
                         break;
-                    case "employee":
+                    case "فني":
+                        win1.teach.IsEnabled = true;
+                        win1.em.IsEnabled = false;
+                        win1.teach.IsChecked = true;
+                        win1.em.IsChecked = false;
+                        win1.Show();
+                        this.Close();
+                        break;
+                    case "معيد":
+                        win1.teach.IsEnabled = true;
+                        win1.em.IsEnabled = false;
+                        win1.teach.IsChecked = true;
+                        win1.em.IsChecked = false;
+                        win1.Show();
+                        this.Close();
+                        break;
+                    //case "employee":
+                    //    win1.teach.IsEnabled = false;
+                    //    win1.em.IsEnabled = true;
+                    //    win1.teach.IsChecked = false;
+                    //    win1.em.IsChecked = true;
+                    //    win1.Show();
+                    //    this.Close();
+                    //    break;
+                    case "admin":
+                        win1.teach.IsEnabled = true;
+                        win1.em.IsEnabled = true;
+                        win1.Show();
+                        this.Close();
+                        break;
+
+                    default:
                         win1.teach.IsEnabled = false;
                         win1.em.IsEnabled = true;
                         win1.teach.IsChecked = false;
@@ -66,12 +97,7 @@ namespace personnel.Views
                         win1.Show();
                         this.Close();
                         break;
-                    case "admin":
-                        win1.teach.IsEnabled = true;
-                        win1.em.IsEnabled = true;
-                        win1.Show();
-                        this.Close();
-                        break;
+                   
                 }
               
             }

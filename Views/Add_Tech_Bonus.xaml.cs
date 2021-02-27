@@ -31,7 +31,7 @@ namespace personnel.Views
             InitializeComponent();
             db = new PersonelDBContext();
 
-            if (Login.currentUser.Rule == "teacher")
+            if (Login.currentUser.Rule == "تدريسي" || Login.currentUser.Rule == "فني" || Login.currentUser.Rule == "معيد")
             {
 
 

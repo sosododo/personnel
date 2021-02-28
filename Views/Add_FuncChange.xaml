@@ -44,7 +44,7 @@
                 <TextBlock Text="الفئة"   Grid.Row="2" Grid.Column="0"/>
                 <TextBlock  Text="المسمى الوظيفي"  Grid.Column="2" Grid.Row="2"/>
                 <TextBlock  Text="نوع التبدل"  Grid.Column="4" Grid.Row="1"/>
-                <TextBlock Text="تاريخ التبدل الوظيفي" Grid.Column="2" Grid.Row="1"/>
+                <TextBlock Text="تاريخ التبدل الوظيفي" Grid.Column="2" Grid.Row="1" Height="30" VerticalAlignment="Top"/>
                 <TextBlock Text="اسم الموظف" Grid.Column="0" Grid.Row="1"/>
                 <TextBlock Grid.Column="4"   Grid.Row="2" Text="المهمة"/>
                 <TextBlock  Grid.Column="0" Text="الحالة" Grid.Row="3"  />

@@ -9,6 +9,7 @@ namespace personnel.ModelView
 
         public string PersonName { get; set; }
         public string WorkPlace { get; set; }
+        public string functional_changes_type { get; set; }
         public string JobTitle { get; set; }
         public string Mission { get; set; }
         public string Category { get; set; }

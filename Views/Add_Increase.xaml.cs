@@ -112,39 +112,6 @@ namespace personnel.Views
             }
             else if (Login.currentUser.Rule == "admin")
             {
-
-                List<string> employ = db.SelfCards.Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
-
-                emp_name.ItemsSource = employ;
-            }
-            /////////////////////////////////////////////////////
-
-            if (Login.currentUser.Rule == "teacher")
-            {
-
-
-                emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && p.FileClass == "تدريسي")
-                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
-
-
-                list.ItemsSource = emp;
-            }
-
-
-            else if (Login.currentUser.Rule == "employee")
-            {
-                emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله"  && p.FileClass == "إداري")
-                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
-
-
-                list.ItemsSource = emp;
-
-            }
-            else if (Login.currentUser.Rule == "admin")
-            {
-
                 emp = (from p in db.SelfCards
                        where (p.Status == "قائم على رأس عمله")
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
@@ -152,6 +119,8 @@ namespace personnel.Views
 
                 list.ItemsSource = emp;
             }
+            /////////////////////////////////////////////////////
+
 
             Decision d = (Decision)DataContext;
         }

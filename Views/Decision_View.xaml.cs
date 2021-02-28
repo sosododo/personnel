@@ -684,6 +684,7 @@ namespace personnel.Views
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.Category = r.Category;
                         rd.ChangeDate = r.ChangeDate;
+                        rd.functional_changes_type = r.functional_changes_type;
                         rd.WorkPlace = r.WorkPlace;
                         rd.JobTitle = r.JobTitle;
                         rd.Status = r.Status;
@@ -698,6 +699,7 @@ namespace personnel.Views
                         rd.PersonName = user.FirstName + " " + user.FatherName + " " + user.LastName;
                         rd.Category = r.Category;
                         rd.ChangeDate = r.ChangeDate;
+                        rd.functional_changes_type = r.functional_changes_type;
                         rd.WorkPlace = r.WorkPlace;
                         rd.JobTitle = r.JobTitle;
                         rd.Status = r.Status;
@@ -718,7 +720,7 @@ namespace personnel.Views
                         rd.Status = r.Status;
                         rd.Mission = r.Mission;
                         rd.Salary = (double)r.Salary;
-
+                        rd.functional_changes_type = r.functional_changes_type;
 
                         all.Add(rd);
                     }
@@ -733,7 +735,7 @@ namespace personnel.Views
                         rd.Mission = r.Mission;
                         rd.Salary = (double)r.Salary;
 
-
+                        rd.functional_changes_type = r.functional_changes_type;
                         all.Add(rd);
                     }
                     if ((user.Category == "الثانية/اداريين" || user.Category == "الثانية/مخبريين") && Login.currentUser.Rule == "الثانية")
@@ -747,7 +749,7 @@ namespace personnel.Views
                         rd.Mission = r.Mission;
                         rd.Salary = (double)r.Salary;
 
-
+                        rd.functional_changes_type = r.functional_changes_type;
                         all.Add(rd);
                     }
                     if ((user.Category == "الثالثة" || user.Category == "الرابعة") && Login.currentUser.Rule == "الثالثة")
@@ -761,7 +763,7 @@ namespace personnel.Views
                         rd.Mission = r.Mission;
                         rd.Salary = (double)r.Salary;
 
-
+                        rd.functional_changes_type = r.functional_changes_type;
                         all.Add(rd);
                     }
                     if (user.Category == "الخامسة" && Login.currentUser.Rule == "الخامسة")
@@ -775,7 +777,7 @@ namespace personnel.Views
                         rd.Mission = r.Mission;
                         rd.Salary = (double)r.Salary;
 
-
+                        rd.functional_changes_type = r.functional_changes_type;
                         all.Add(rd);
                     }
                     if (user.FileClass == "عقد" && Login.currentUser.Rule == "عقود")
@@ -789,7 +791,7 @@ namespace personnel.Views
                         rd.Mission = r.Mission;
                         rd.Salary = (double)r.Salary;
 
-
+                        rd.functional_changes_type = r.functional_changes_type;
                         all.Add(rd);
                     }
 
@@ -804,7 +806,7 @@ namespace personnel.Views
                         rd.Mission = r.Mission;
                         rd.Salary = (double)r.Salary;
 
-
+                        rd.functional_changes_type = r.functional_changes_type;
                         all.Add(rd);
                     }
                   
@@ -2232,6 +2234,7 @@ namespace personnel.Views
             addteachbounas.Visibility = Visibility.Collapsed;
             sbonus.Visibility = Visibility.Collapsed;
             bonus.Visibility = Visibility.Collapsed;
+            addinc.Visibility = Visibility.Collapsed;
         }
 
         private void print(object sender, RoutedEventArgs e)

@@ -31,34 +31,45 @@ namespace personnel.Views
             InitializeComponent();
             db = new PersonelDBContext();
 
-            if (Login.currentUser.Rule == "تدريسي" || Login.currentUser.Rule == "فني" || Login.currentUser.Rule == "معيد")
+            if ( Login.currentUser.Rule == "معيد")
             {
 
 
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && p.FileClass == "تدريسي")
+                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && (p.FileClass== "معيد"))
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                emplist.ItemsSource = emp;
+            }
+            if (Login.currentUser.Rule == "تدريسي" )
+            {
+
+
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && (p.FileClass == "تدريسي"))
+                       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
+
+
+                emplist.ItemsSource = emp;
+            }
+            if (Login.currentUser.Rule == "فني" )
+            {
+
+
+                emp = (from p in db.SelfCards
+                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && ( p.FileClass == "فني" ))
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
                 emplist.ItemsSource = emp;
             }
 
-
-            else if (Login.currentUser.Rule == "employee")
-            {
-                //emp = (from p in db.SelfCards
-                //       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && p.FileClass == "إداري")
-                //       select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
-
-
-                //list.ItemsSource = emp;
-
-            }
             else if (Login.currentUser.Rule == "admin")
             {
 
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && p.FileClass == "تدريسي")
+                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && (p.FileClass == "تدريسي" || p.FileClass == "فني" || p.FileClass == "معيد"))
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 

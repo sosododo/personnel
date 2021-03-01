@@ -7,12 +7,12 @@
          xmlns:model="clr-namespace:personnel.Models"
         mc:Ignorable="d"
         Title="Statistics" Height="450" Width="1200" FlowDirection="RightToLeft" ResizeMode="NoResize" >
-    <Window.DataContext>
+    <!--<Window.DataContext>
         <model:SelfCard></model:SelfCard>
     </Window.DataContext>
 
     <Window.Resources>
-        <!--A Style that affects all TextBlocks-->
+        --><!--A Style that affects all TextBlocks--><!--
         <Style TargetType="GroupBox">
 
             <Setter Property="FontFamily" Value="Segoe UI Semibold"/>
@@ -135,7 +135,7 @@
 
             <Setter Property="Foreground" Value="#FF606453"/>
 
-            <!--<Setter Property="Width" Value="auto"/>-->
+            --><!--<Setter Property="Width" Value="auto"/>--><!--
 
         </Style>
         <Style TargetType="TextBox">
@@ -145,7 +145,7 @@
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="Height" Value="23"/>
-            <!--<Setter Property="Width" Value="90"/>-->
+            --><!--<Setter Property="Width" Value="90"/>--><!--
             <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="TextWrapping" Value="NoWrap"/>
 
@@ -158,7 +158,7 @@
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="Height" Value="25"/>
-            <!--<Setter Property="Width" Value="90"/>-->
+            --><!--<Setter Property="Width" Value="90"/>--><!--
             <Setter Property="FlowDirection" Value="LeftToRight"/>
             <Setter Property="FontWeight" Value="Normal"/>
 
@@ -195,10 +195,10 @@
                 <GradientStop Color="GhostWhite" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <!--<Grid.ColumnDefinitions>
+        --><!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="107*"/>
             <ColumnDefinition Width="659*"/>
-        </Grid.ColumnDefinitions>-->
+        </Grid.ColumnDefinitions>--><!--
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>
 
@@ -287,12 +287,12 @@
                 </Grid.ColumnDefinitions>
                 <DataGrid   Height="113" VerticalAlignment="center"   HorizontalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible"  VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxWidth="1050" MaxHeight="200" MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF505A9C"   FontSize="12" Name="search_emp" AutoGenerateColumns="False" Grid.ColumnSpan="2">
 
-                    <!--<DataGrid.Resources>
+                    --><!--<DataGrid.Resources>
                             <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="Background" Value="#FFC1C7E6" />
                           
                         </Style>
-                        </DataGrid.Resources>-->
+                        </DataGrid.Resources>--><!--
 
                     <DataGrid.Columns >
                         <DataGridTextColumn Binding="{Binding EmployeeId}" ClipboardContentBinding="{x:Null}" Header="الرقم الذاتي"/>
@@ -325,8 +325,8 @@
             <Button Content="عودة"    Grid.Row="3"   Click="Exit" Margin="5,5,5,5" Width="50" />
             <Button Content="عرض"    Grid.Row="3"   Click="show" Margin="5,5,5,5" Width="50" />
             <Button Content="طباعة"    Grid.Row="3" Click="print"  Margin="5,5,5,5" Width="50"/>
-        </StackPanel>
-    </Grid>
+        </StackPanel>-->
+    <!--</Grid>-->
 </Window>
     
     

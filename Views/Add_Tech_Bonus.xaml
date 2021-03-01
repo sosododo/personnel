@@ -84,7 +84,7 @@
         </RadioButton>-->
 
         <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="5" Visibility="Hidden" Height="25" Width="28" Margin="0,6,0,0" Grid.RowSpan="2" />
-        <Button Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="5" Grid.Column="3"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Center" Margin="60,0,10,0" Click="insert_rest"/>
+        <Button Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="2" Grid.Column="3"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Center" Margin="60,0,10,0" Click="insert_rest"/>
         <TextBlock Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="dec_id" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2" ></TextBlock>
         <CheckBox Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2"></CheckBox>
         <GroupBox  Grid.Row="1"  Header="" FlowDirection="RightToLeft"   Margin="10,0,10,40" Grid.RowSpan="2" Grid.ColumnSpan="2"  MaxHeight="400"  >

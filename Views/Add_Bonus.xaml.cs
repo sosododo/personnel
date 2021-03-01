@@ -102,7 +102,7 @@ namespace personnel.Views
             {
 
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && p.FileClass == "إداري")
+                       where (p.Status == "قائم على رأس عمله" && p.Salary < p.maxsalary && p.FileClass != "تدريسي")
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 

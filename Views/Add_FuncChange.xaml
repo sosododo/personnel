@@ -138,7 +138,7 @@
                     <ComboBoxItem Content="احالة على المعاش" />
                     <ComboBoxItem Content="تسريح صحي" />
                     <ComboBoxItem Content="كف يد" />
-                    <ComboBoxItem Content="مصروف من الخدمة" />
+                   
                     <ComboBoxItem Content="تغيير فئة" />
                     <ComboBoxItem Content="تغيير مسمى وظيفي" />
                     <ComboBoxItem Content="تغيير مهمة" />

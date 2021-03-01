@@ -1669,8 +1669,8 @@ namespace personnel.Views
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = (DateTime)r.FromYear;
-                        rd.ToYear = (DateTime)r.ToYear;
+                        rd.FromYear = null;
+                        rd.ToYear = null;
 
 
                         all.Add(rd);

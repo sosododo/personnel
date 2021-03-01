@@ -115,7 +115,7 @@ namespace personnel.Views
 
                 List<string> employ = db.SelfCards.Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
 
-                emp_name.ItemsSource = employ;
+                list.ItemsSource = employ;
             }
             /////////////////////////////////////////////////////
 

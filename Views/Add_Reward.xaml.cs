@@ -80,7 +80,7 @@ namespace personnel.Views
             else if (Login.currentUser.Rule == "عقود")
             {
 
-                List<string> employ = db.SelfCards.Where(x => x.FileClass == "عقود").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+                List<string> employ = db.SelfCards.Where(x => x.FileClass == "عقد").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
 
                 emp_name.ItemsSource = employ;
             }
@@ -96,7 +96,7 @@ namespace personnel.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try {
+            
 
 
                 var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName }).ToList();
@@ -113,10 +113,7 @@ namespace personnel.Views
                     excute();
                 
                 }
-            }
-
-            catch (Exception ex) { MessageBox.Show("يجب التأكد من ادخال جميع البيانات"); }
-
+            
 
         }
 
@@ -145,7 +142,7 @@ namespace personnel.Views
             db.Rewards.Add(r);
             db.SaveChanges();
 
-            MessageBox.Show("تم إضافة الاجازة بنجاح");
+            MessageBox.Show("تم إضافة المكافئة بنجاح");
 
 
             string message = "هل انتهى تنفيذ القرار؟";

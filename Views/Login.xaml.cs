@@ -39,7 +39,7 @@ namespace personnel.Views
             string rule = "";
             string user = username.Text;
             string pass = password.Password;
-            currentUser = db.Users.Where(x => x.UserName == user && x.Password == pass).FirstOrDefault(); 
+          //  currentUser = db.Users.Where(x => x.UserName == user && x.Password == pass).FirstOrDefault(); 
             List<User> user1 = db.Users.Where(x => x.UserName == user && x.Password == pass).ToList();
             if(user1.Count==1)
                       

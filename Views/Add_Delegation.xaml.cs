@@ -84,7 +84,7 @@ namespace personnel.Views
             else if (Login.currentUser.Rule == "عقود")
             {
 
-                List<string> employ = db.SelfCards.Where(x => x.FileClass == "عقود").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
+                List<string> employ = db.SelfCards.Where(x => x.FileClass == "عقد").Select(x => x.FirstName + " " + x.FatherName + " " + x.LastName).ToList();
 
                 emp_name.ItemsSource = employ;
             }

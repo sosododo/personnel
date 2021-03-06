@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:personnel.Views"
         xmlns:modell="clr-namespace:personnel.Models"
         mc:Ignorable="d"
-        Title="التبدلات الطارئة"   FlowDirection="RightToLeft"  Width="1250" Height="500" ResizeMode="CanResize" >
+        Title="التبدلات الطارئة"   FlowDirection="RightToLeft"  Width="1250" Height="500" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
     <Window.DataContext>
         <modell:Decision>
         </modell:Decision>

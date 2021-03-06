@@ -114,7 +114,7 @@ namespace personnel.Views
                 this.Close();
             }
             else {
-                MessageBox.Show(" اخر موظفاً");
+                MessageBox.Show(" اختر موظفاً");
             }
         }
         private void Insert_Employee(object sender, RoutedEventArgs e)

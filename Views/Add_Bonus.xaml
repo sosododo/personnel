@@ -51,7 +51,7 @@
         </Style>
 
     </UserControl.Resources>
-    <Grid VerticalAlignment="Center">
+    <Grid VerticalAlignment="Center" Height="342" Margin="0,0,10,0">
 
 
 
@@ -87,7 +87,7 @@
         <Button Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="2" Grid.Column="7"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="17,2,75,0" Click="insert_rest"/>
         <TextBlock Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="dec_id" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2" ></TextBlock>
         <CheckBox Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2"></CheckBox>
-        <GroupBox  Grid.Row="1"  Header="" FlowDirection="RightToLeft"   Margin="10,0,10,40" Grid.RowSpan="2" Grid.ColumnSpan="2"  MaxHeight="400"  >
+        <GroupBox  Grid.Row="1"  Header="" FlowDirection="RightToLeft"   Margin="10,51,10,211" Grid.RowSpan="5" Grid.ColumnSpan="2"  MaxHeight="400"  >
 
 
             <Grid VerticalAlignment="Center" Height="auto"  >

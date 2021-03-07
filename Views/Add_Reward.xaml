@@ -90,10 +90,10 @@
         <TextBlock Grid.Column="3" Grid.Row="1" FlowDirection="LeftToRight"  Name="res_type" />
 
 
-        <TextBox Grid.Column="5" Grid.Row="3" Name="note" Margin="4,6,4,0"/>
+        <TextBox Grid.Column="5" Grid.Row="3" Name="note" Margin="4,6,4,0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
         <DatePicker Grid.Row="3"  Name="res_start"  Grid.Column="1" Margin="1,4,4,21"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
-        <TextBox Grid.Column="5" Grid.Row="1"    x:Name="reason"/>
+        <TextBox Grid.Column="5" Grid.Row="1"    x:Name="reason" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
         <!--<RadioButton Grid.Column="1" Grid.Row="2"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionSource}" Name="dec_source">
             
         </RadioButton>-->

@@ -150,7 +150,7 @@
         <GroupBox   Header="********" FlowDirection="RightToLeft"   Grid.Column="1" Grid.Row="1" Margin="20,0,20,10"   >
             <Grid >
 
-                <local:UpdateDecision   Visibility="Collapsed"  x:Name="mm"/>
+                <local:UpdateDecision   Visibility="Collapsed"  x:Name="mm" HorizontalAlignment="Stretch"/>
 
                 <local:Add_Decision Visibility="Collapsed" x:Name="ins" />
                 <local:Add_Rest Visibility="Collapsed" x:Name="res"/>
@@ -161,7 +161,7 @@
                 <local:Add_Punishment Visibility="Collapsed" x:Name="punish" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
                 <local:Add_Reward Visibility="Collapsed" x:Name="reward" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
                 <local:Add_Bonus Visibility="Collapsed" x:Name="bonus" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
-                <local:Add_Special_Bonus Visibility="Collapsed" x:Name="sbonus" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Add_Special_Bonus Visibility="Collapsed" x:Name="sbonus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="182" Width="808"/>
                 <local:Add_Tech_Bonus Visibility="Collapsed" x:Name="addteachbounas" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
 
                 <local:FunctionChange_Details Visibility="Collapsed" x:Name="fcd" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>

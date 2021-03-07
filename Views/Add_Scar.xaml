@@ -91,14 +91,14 @@
         <Label Content="ملاحظات" Grid.Column="0" Grid.Row="4"/>
         <ComboBox Grid.Column="1" Grid.Row="1"  IsTextSearchEnabled="True" IsEditable="True" Name="emp_name" FlowDirection="LeftToRight" />
 
-        <TextBox Grid.Column="1" Grid.Row="4" Name="note" Margin="4,2,4,0"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Name="note" Margin="4,2,4,0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
         <DatePicker Grid.Row="3"  Name="del_start"  Grid.Column="1" Margin="1,4,4,21"/>
         <DatePicker Grid.Column="3" Grid.Row="3"  Name="del_end"  Margin="0,3,4,21"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
         <TextBox Grid.Column="3" Grid.Row="1"    Name="perod" Margin="19,3,57,0"/>
         <Button x:Name="cmdUp_Copy2" x:FieldModifier="private" Content="🔺" Width="20" Height="15" Grid.Column="3" Grid.Row="1" FontSize="4" Padding="0" Margin="58,0,36,0" RenderTransformOrigin="0.875,2.467" VerticalAlignment="Top" Click="cmdUp_Copy2_Click" />
         <Button x:Name="cmdDown_Copy2" x:FieldModifier="private"  Content="🔻" Width="20" Height="15" Grid.Column="3"  FontSize="4" Padding="0" Margin="58,16,36,19" Grid.Row="1" RenderTransformOrigin="-1.436,0.61" Click="cmdDown_Copy2_Click"   />
-        <TextBox x:Name="reason" Grid.ColumnSpan="2" Grid.Column="4" Margin="74,0,25,0" Grid.Row="3" ></TextBox>
+        <TextBox x:Name="reason" Grid.ColumnSpan="2" Grid.Column="4" Margin="74,0,25,0" Grid.Row="3" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" ></TextBox>
         <TextBox Grid.Column="7" Grid.Row="3"    Name="country" Margin="4,0,4,0"/>
 
         <!--<TextBox Grid.Column="1" Grid.Row="4"  FlowDirection="LeftToRight" Margin="4,2,4,0"  Name="att"/>-->

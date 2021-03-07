@@ -2,18 +2,18 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="WorkDataSet1">
+    <DataSource Name="JobDataSet1">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>db1d115d-868f-4ae5-a937-ce79b1951aa2</rd:DataSourceID>
+      <rd:DataSourceID>bfa7c79a-40cd-4196-b40c-f3cf89b5c5cb</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>WorkDataSet1</DataSourceName>
+        <DataSourceName>JobDataSet1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -195,12 +195,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>WorkDataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\البعث\source\repos\personnel\WorkDataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>work_rep</rd:TableName>
+        <rd:DataSetName>JobDataSet1</rd:DataSetName>
+        <rd:SchemaPath>H:\person\JobDataSet1.xsd</rd:SchemaPath>
+        <rd:TableName>job_rep</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>work_repTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>job_repTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -227,19 +227,13 @@
                   <Width>2.00507cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.2845cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.20258cm</Width>
-                </TablixColumn>
-                <TablixColumn>
                   <Width>2.28737cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.91696cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.67467cm</Width>
+                  <Width>1.38905cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -408,76 +402,6 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox18</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox20">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>المسمى الوظيفي</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox20</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox22">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>الفئة </Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox22</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -715,7 +639,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!birthday.Value</Value>
+                                  <Value>=FormatDateTime(Fields!birthday.Value, DateFormat.ShortDate)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -739,6 +663,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -763,76 +688,6 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>mission</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="job_title">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!job_title.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>job_title</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="category">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!category.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>category</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -965,8 +820,6 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -983,7 +836,7 @@
             <Top>2.56328cm</Top>
             <Left>0.74301cm</Left>
             <Height>2.30187cm</Height>
-            <Width>16.34061cm</Width>
+            <Width>14.56791cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -997,8 +850,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>يعرض الجدول التالي بيانات الموظفين حاملي </Value>
-                    <Style />
+                    <Value>يعرض الجدول التالي بيانات موظفي الفئة </Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1008,9 +863,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
             <Top>0.7112cm</Top>
-            <Left>11.4427cm</Left>
+            <Left>11.06347cm</Left>
             <Height>0.74083cm</Height>
-            <Width>5.29167cm</Width>
+            <Width>4.40091cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1029,8 +884,9 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!certificate.Value</Value>
+                    <Value>=Fields!category.Value</Value>
                     <Style>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1042,9 +898,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
             <Top>0.7112cm</Top>
-            <Left>7.04572cm</Left>
+            <Left>8.3951cm</Left>
             <Height>0.74083cm</Height>
-            <Width>4.25587cm</Width>
+            <Width>2.56254cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -1063,8 +919,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>والذين حالتهم الوظيفية</Value>
-                    <Style />
+                    <Value>العاملين تحت المسمى الوظيفي </Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -1074,9 +932,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
             <Top>0.73766cm</Top>
-            <Left>3.92387cm</Left>
+            <Left>4.16729cm</Left>
             <Height>0.74083cm</Height>
-            <Width>2.92333cm</Width>
+            <Width>3.88914cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -1095,8 +953,9 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!status.Value</Value>
+                    <Value>=Fields!job_title.Value</Value>
                     <Style>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1108,9 +967,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox11</rd:DefaultName>
             <Top>0.73766cm</Top>
-            <Left>0.74301cm</Left>
+            <Left>1.87543cm</Left>
             <Height>0.74083cm</Height>
-            <Width>3.03975cm</Width>
+            <Width>2.22131cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -1126,7 +985,7 @@
         <Height>3.25in</Height>
         <Style />
       </Body>
-      <Width>14.03943in</Width>
+      <Width>6.57068in</Width>
       <Page>
         <PageHeader>
           <Height>2.03729cm</Height>
@@ -1140,7 +999,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>احصائية بتوزع الشهادات على الكليات والمديريات في جامعة البعث</Value>
+                      <Value>احصائية بتوزع المسميات الوظيفية على الكليات والمديريات في جامعة البعث</Value>
                       <Style>
                         <FontSize>11pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1154,7 +1013,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.63182cm</Top>
-              <Left>4.10845cm</Left>
+              <Left>2.83845cm</Left>
               <Height>0.76729cm</Height>
               <Width>10.42458cm</Width>
               <Style>
@@ -1174,6 +1033,47 @@
             </Border>
           </Style>
         </PageHeader>
+        <PageFooter>
+          <Height>2.54cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="PageNumber">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!PageNumber</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>PageNumber</rd:DefaultName>
+              <Top>0.60537cm</Top>
+              <Left>6.29391cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.5cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
@@ -1186,13 +1086,19 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="certname">
+    <ReportParameter Name="category">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="status">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="job">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
@@ -1205,14 +1111,19 @@
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>certname</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
+          <ParameterName>category</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
           <ParameterName>status</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>job</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

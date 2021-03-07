@@ -667,8 +667,10 @@
 
                 </ComboBox>
 
-                <TextBox  Grid.Column="2" Grid.Row="4" Name="certificate"/>
-                <TextBox  Grid.Column="4" Grid.Row="4" Name="specialization"/>
+                <ComboBox  Grid.Column="2" Grid.Row="4" Name="certificate">
+                    
+                    </ComboBox>
+                        <TextBox  Grid.Column="4" Grid.Row="4" Name="specialization"/>
 
 
 

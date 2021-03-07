@@ -19,31 +19,22 @@ namespace personnel.Views
     /// <summary>
     /// Interaction logic for Statistics.xaml
     /// </summary>
-    public partial class Statistics_Work : Window
+    public partial class Statistics_Special : Window
     {
-        public Statistics_Work()
+        public Statistics_Special()
         {
             InitializeComponent();
-            PersonelDBContext db = new PersonelDBContext();
+           
 
 
-            List<string> certs = db.Certificates.Select(c => c.CertName).ToList();
-            certificate.ItemsSource = certs;
-            certificate.SelectedIndex = 0;
+           
         }
-        private void grade_DropDownClosed(object sender, EventArgs e)
-        {
-            PersonelDBContext db = new PersonelDBContext();
-
-            db.Jobs.Load();
-
-
-        }
+       
         private void Exit(object sender, RoutedEventArgs e)
         {
 
             MainWindow v = new MainWindow();
-            this.Close();
+     
             v.Show();
 
         }
@@ -60,7 +51,7 @@ namespace personnel.Views
 
 
 
-                List<SelfCard> selves = dbc.SelfCards.Where(x => x.Certificate == certificate.Text && x.Status == status.Text).ToList();
+                List<SelfCard> selves = dbc.SelfCards.Where(x => x.Notes == note.Text && x.Status == status.Text).ToList();
 
                 search_emp.ItemsSource = selves;
 
@@ -76,7 +67,8 @@ namespace personnel.Views
         private void print(object sender, RoutedEventArgs e)
         {
 
-            Window win = new WorkStatis(certificate.Text, status.Text);
+            Window win = new SpecStatis(note.Text, status.Text);
+            this.Close();
             win.Show();
 
         }

@@ -29,5 +29,18 @@ namespace personnel.Views
             work_stat.Show();
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window sj  = new Statistics_Job();
+            sj.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Window ss = new Statistics_Special();
+            ss.Show();
+
+        }
     }
 }

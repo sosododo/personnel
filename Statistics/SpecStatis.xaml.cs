@@ -17,18 +17,17 @@ namespace personnel.Statistics
     /// <summary>
     ///
     /// </summary>
-    public partial class JobStatis : Window
+    public partial class SpecStatis : Window
     {
-        string category; string status; string job;
-        public JobStatis(string category1,string status1 ,string job1)
+        string note; string status; 
+        public SpecStatis(string note1,string status1 )
         {
             InitializeComponent();
             
             reportViewer2.Load += ReportViewer_Load;
-            this.category = category1;
+            this.note = note1;
             this.status = status1;
-            this.job = job1;
-            
+           
 
         }
         private bool _isReportViewerLoaded;
@@ -55,7 +54,7 @@ namespace personnel.Statistics
 
 
                 //     ZATDataSet1 dataset = new ZATDataSet1();
-                JobDataSet1 ds1 = new JobDataSet1();
+                SpecDataSet1 ds1 = new SpecDataSet1();
                 //     dataset.BeginInit();
                 ds1.BeginInit();
                 //     reportDataSource1.Name = "DataSet1";
@@ -66,7 +65,7 @@ namespace personnel.Statistics
                 //     //Name of the report dataset in our .RDLC file
 
                 //     
-                reportDataSource1.Value = ds1.job_rep;
+                reportDataSource1.Value = ds1.special_rep;
                 //     reportDataSource2.Value = dataset.zat_fun;
                 //     reportDataSource3.Value = dataset.zat_pun;
                 //     reportDataSource4.Value = dataset.zat_rest;
@@ -75,16 +74,16 @@ namespace personnel.Statistics
                 //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
                 //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
                 //     this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
-               ReportParameter rp = new ReportParameter("category",category);
+               ReportParameter rp = new ReportParameter("note",note);
                 ReportParameter rp2 = new ReportParameter("status", status);
-                ReportParameter rp3 = new ReportParameter("job", job);
-                this.reportViewer2.LocalReport.ReportPath = "./Statistics/jobstatis.rdlc";
+               
+                this.reportViewer2.LocalReport.ReportPath = "./Statistics/specstatis.rdlc";
                 this.reportViewer2.LocalReport.DataSources.Add(reportDataSource1);
                 /*this.reportViewer2.LocalReport.SetParameters(new ReportParameter[] { rp , rp2});*/
 
 
 
-                JobDataSet1TableAdapters.job_repTableAdapter rr = new JobDataSet1TableAdapters.job_repTableAdapter();
+                SpecDataSet1TableAdapters.special_repTableAdapter rr = new SpecDataSet1TableAdapters.special_repTableAdapter();
 
                 //ZATDataSet1TableAdapters.alTableAdapter sel = new ZATDataSet1TableAdapters.alTableAdapter();
                 //ZATDataSet1TableAdapters.zat_funTableAdapter fun = new ZATDataSet1TableAdapters.zat_funTableAdapter();
@@ -97,7 +96,7 @@ namespace personnel.Statistics
                 //res.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 rr.Connection.ConnectionString= ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 rr.ClearBeforeFill = true;
-                rr.Fill(ds1.job_rep,category,status,job);
+                rr.Fill(ds1.special_rep,note,status);
                 
                 //sel.ClearBeforeFill = true;
                 //fun.ClearBeforeFill = true;

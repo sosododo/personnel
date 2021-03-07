@@ -152,6 +152,8 @@ namespace personnel.Views
             List<Job> job_titles = db.Jobs.Where(x => x.Category.Contains(cat)).ToList();
             job.ItemsSource = job_titles.Select(x => x.JobTitle);
             job.SelectedIndex = 0;
+           // List<Certificate> cert = db.Certificates.Select(x => x.CertName).ToList();
+
         }
     }
 

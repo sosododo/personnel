@@ -32,6 +32,9 @@ namespace personnel.Views
             List<string> workplaces = db.Works.Select(w => w.WorkPlace).ToList();
             workplace.ItemsSource = workplaces;
             emp = s;
+            List<string> cert = db.Certificates.Select(x => x.CertName).ToList();
+            certificate.ItemsSource = cert;
+            certificate.SelectedItem = s.Certificate;
 
             //firstname.Text = s.FirstName;
             //last.Text = s.LastName;

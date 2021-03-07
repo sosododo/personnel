@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:personnel.Views"
         mc:Ignorable="d"
-        Title="إضافة ذاتية جديدة" FlowDirection="RightToLeft">
+        Title="إضافة ذاتية جديدة" FlowDirection="RightToLeft" WindowState="Maximized">
     <!--<Window.Resources>
         -->
     <!--A Style that affects all TextBlocks-->
@@ -720,10 +720,13 @@
             </Grid>
         </GroupBox>
         <TextBlock HorizontalAlignment="Center"  Text="إضافة ذاتية موظف" VerticalAlignment="Center"  FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold" />
-        <Button Content="عودة"    Grid.Row="3"  Height="35" Width="70" Margin="601,15,10,0" Grid.Column="1" Click="Exit"/>
-        <Button Content="تفريغ الخلابا"   Height="35" Width="70" Grid.Row="3" Grid.Column="1" Margin="520,15,91,0" Click="Clear_Form"  />
-        <Button Content="إضافة" Width="70" Grid.Row="3" Grid.Column="1" Height="35" Margin="513,15,255,0" Click="Add_person"  />
-
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+           
+           
+            <Button Content="إضافة" Width="70" Grid.Row="3" Grid.Column="1" Height="35" Margin="5,5,5,5" Click="Add_person"  />
+            <Button Content="تفريغ الخلابا"   Height="35" Width="70" Margin="5,5,5,5" Click="Clear_Form"  />
+            <Button Content="عودة"     Height="35" Width="70" Margin="5,5,5,5" Grid.Column="1" Click="Exit"/>
+        </StackPanel>
     </Grid>
 </Window>
 

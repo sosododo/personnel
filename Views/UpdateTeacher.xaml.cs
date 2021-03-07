@@ -41,7 +41,9 @@ namespace personnel.Views
             //sex.SelectedItem = s.Sex;
             //grade.ItemsSource = ca;
 
-
+            List<string> cert = db.Certificates.Select(x => x.CertName).ToList();
+            certificate.ItemsSource = cert;
+            certificate.SelectedItem= s.Certificate;
 
 
         }

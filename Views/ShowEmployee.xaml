@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:personnel.Views"
         xmlns:models="clr-namespace:personnel.Models"
         mc:Ignorable="d"
-        Title="عرض البطاقة الذاتية لموظف" Height="auto" Width="auto" FlowDirection="RightToLeft">
+        Title="عرض البطاقة الذاتية لموظف"  FlowDirection="RightToLeft" WindowState="Maximized">
     <Window.DataContext>
         <models:SelfCard></models:SelfCard>
     </Window.DataContext>
@@ -189,12 +189,10 @@
 
             </Grid>
         </GroupBox>-->
-        <GroupBox Header="بيانات العمل"   Grid.Row="1" FlowDirection="RightToLeft"  Grid.Column="1"  Margin="5,5,5,5"  >
-            <Grid VerticalAlignment="Center" >
+        <GroupBox Header="بيانات العمل"   Grid.Row="1" FlowDirection="RightToLeft"  Grid.Column="1"  Margin="5,5,5,5" HorizontalAlignment="Stretch"  >
+            <Grid VerticalAlignment="Stretch" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.1*"/>
-
-
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="auto"/>
@@ -205,7 +203,7 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="0.1*"/>
+                   
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.5*"/>
@@ -394,8 +392,9 @@
                 <Button Content="خروج"  Height="30"   FontWeight="Bold" VerticalAlignment="Top"  FontSize="12"     HorizontalAlignment="Stretch"  Margin="5,7,5,0" />
             </StackPanel>
         </GroupBox>
-        <Button Content="عودة" Grid.Column="1"   Grid.Row="3" Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="15,20,15,20" Click="Button_Click"  />
-        <Button Content="طباعة" Grid.Column="1"   Grid.Row="3" Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="250,20,15,20" Click="print"  />
-         
+        <StackPanel  Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="عودة"  Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  Margin="5,5,5,5" Click="Button_Click"  />
+        <Button Content="طباعة" Grid.Column="1"   Grid.Row="3" Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  Margin="5,5,5,5" Click="print"  />
+        </StackPanel>
     </Grid>
 </Window>

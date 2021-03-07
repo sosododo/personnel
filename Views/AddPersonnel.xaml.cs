@@ -31,7 +31,9 @@ namespace personnel.Views
             List<string> workplaces = db.Works.Select(w => w.WorkPlace).ToList();
             workplace.ItemsSource = workplaces;
             workplace.SelectedIndex = 0;
-
+            List<string> cert = db.Certificates.Select(x => x.CertName).ToList();
+            certificate.ItemsSource = cert;
+            certificate.SelectedIndex = 0;
         }
 
         private void Clear_Form(object sender, RoutedEventArgs e)
@@ -152,7 +154,7 @@ namespace personnel.Views
             List<Job> job_titles = db.Jobs.Where(x => x.Category.Contains(cat)).ToList();
             job.ItemsSource = job_titles.Select(x => x.JobTitle);
             job.SelectedIndex = 0;
-           // List<Certificate> cert = db.Certificates.Select(x => x.CertName).ToList();
+            
 
         }
     }

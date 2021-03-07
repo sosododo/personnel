@@ -34,6 +34,9 @@ namespace personnel.Views
 
           
             grade.ItemsSource = ca;
+            List<string> cert = db.Certificates.Select(x => x.CertName).ToList();
+            certificate.ItemsSource = cert;
+            certificate.SelectedIndex = 0;  
 
 
         }

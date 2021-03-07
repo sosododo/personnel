@@ -120,11 +120,11 @@
 
         </GroupBox>
 
-
-        <Button Content="عرض البطاقة"  Width="80" Height="35"  VerticalAlignment="Top" Margin="848,10,18,0" Click="View_Employee" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FontSize="12"/>
-        <Button Content="تعديل"  Margin="720,10,302,0"  Click="Edit_Employee" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FontSize="12"/>
-        <Button Content="عودة"  Margin="594,10,453,0"  Click="Return" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FontSize="12"/>
-
+        <StackPanel  Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right"  Margin="5,5,5,5">
+            <Button Content="عرض البطاقة"   Height="35"   Width="75"  Margin="5,5,5,5" Click="View_Employee" Grid.Column="1" Grid.Row="2" FontWeight="Bold" FontSize="12"/>
+            <Button Content="تعديل"  Margin="5,5,5,5"  Click="Edit_Employee" Grid.Column="1"  Width="75"  FontWeight="Bold" FontSize="12"/>
+            <Button Content="عودة"   Margin="5,5,5,5"  Click="Return"  FontWeight="Bold" FontSize="12" Width="75"/>
+        </StackPanel>
 
     </Grid>
 </Window>

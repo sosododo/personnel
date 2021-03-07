@@ -94,7 +94,7 @@
 
 
         </ComboBox>
-        <TextBox Grid.Row="5" x:Name="p_reason" Margin="105,5,5,0" Height="21" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Row="5" x:Name="p_reason" Margin="105,5,5,0" Height="21" Grid.ColumnSpan="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
         <DatePicker Grid.Row="3"  x:Name="p_start"  Grid.Column="3" Margin="49,3,31,0" Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <DatePicker Grid.Column="7" Grid.Row="3"  x:Name="p_end"  Margin="10,5,10,31" RenderTransformOrigin="1.42,1.292"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
@@ -116,7 +116,7 @@
         <TextBox Grid.Row="3"  Visibility="Hidden"  x:Name="p_dis" Margin="4,4,4,0" Text="0" Grid.Column="1"/>
         <Label Content="ملاحظات" Grid.Row="5" VerticalAlignment="Top" Grid.Column="2"/>
         <Label Content="سبب العقوبة" Grid.Row="5" VerticalAlignment="Top"/>
-        <TextBox x:Name="note" HorizontalAlignment="Left" Margin="5,4,0,0" Grid.Row="4" Text="" Width="115" Grid.Column="3" Height="23" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBox x:Name="note" HorizontalAlignment="Left" Margin="5,4,0,0" Grid.Row="4" Text="" Width="115" Grid.Column="3" Height="23" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
 
     </Grid>
 </UserControl>

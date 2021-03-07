@@ -105,7 +105,7 @@
             <ComboBoxItem Content="زواج"/>
             <ComboBoxItem Content="وفاة"/>
         </ComboBox>
-        <TextBox Grid.Column="7" Grid.Row="3" Name="note" Margin="4,2,4,0"/>
+        <TextBox Grid.Column="7" Grid.Row="3" Name="note" Margin="4,2,4,0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
         <DatePicker Grid.Row="3"  Name="res_start"  Grid.Column="1" Margin="1,4,4,21"/>
         <DatePicker Grid.Column="3" Grid.Row="3"  Name="res_end"  Margin="0,3,4,21"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
@@ -117,7 +117,7 @@
 
 
 
-        <TextBox Grid.Column="5" Grid.Row="3"  FlowDirection="LeftToRight" Margin="4,2,4,0"  Name="att"/>
+        <TextBox Grid.Column="5" Grid.Row="3"  FlowDirection="LeftToRight" Margin="4,2,4,0"  Name="att" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
         <RadioButton Content="يوم" Grid.Column="6" Grid.Row="1" Height="24" Margin="59,5,75,0" VerticalAlignment="Top" Grid.ColumnSpan="2" GroupName="perd" Name="res_per1"/>
         <RadioButton Content="شهر" Grid.Column="7" Grid.Row="1" Height="24" Margin="35,7,37,0" VerticalAlignment="Top" GroupName="perd" Name="res_per2"/>
         <RadioButton Content="سنة" Grid.Column="7" Grid.Row="1" Height="24" Margin="77,7,-5,0" VerticalAlignment="Top" GroupName="perd" Name="res_per3"/>

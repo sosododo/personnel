@@ -38,7 +38,7 @@
         <!--<TextBox  Grid.Column="0" Grid.Row="1"  TextWrapping="Wrap" VerticalAlignment="Top" FrameworkElement.FlowDirection="RightToLeft" Margin="10,45,163,0" Height="36" Name="username" KeyDown="username_KeyDown"/>-->
         <TextBox  Grid.Column="0" Grid.Row="1"  Width="200"  Height="25" HorizontalAlignment="Left"  Margin="58,34,0,156" BorderBrush="Gray" Opacity="20" Name="username" KeyDown="username_KeyDown" />
         <PasswordBox  Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="200"  HorizontalAlignment="Left" FrameworkElement.FlowDirection="RightToLeft"  Margin="58,74,0,0" BorderBrush="Gray" Opacity="20" Name="password"/>
-        <Button  Grid.Column="0" Grid.Row="1"  VerticalAlignment="Bottom" Height="34" Width="150" FontSize="15" Foreground="#FF851313"   FontWeight="ExtraBold" Click="Button_Click"  Content="دخول" BorderThickness="2" BorderBrush="#FF895151" Margin="78,0,30,42" KeyDown="Window_KeyDown" >
+        <Button IsDefault="True"  Grid.Column="0" Grid.Row="1"  VerticalAlignment="Bottom" Height="34" Width="150" FontSize="15" Foreground="#FF851313"   FontWeight="ExtraBold" Click="Button_Click"  Content="دخول" BorderThickness="2" BorderBrush="#FF895151" Margin="78,0,30,42" KeyDown="Window_KeyDown" >
 
             <Button.Resources>
                 <Style TargetType="Border">

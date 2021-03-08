@@ -34,8 +34,8 @@
 
 
         </Grid.RowDefinitions>
-        <Label Content="تفاصيل القرار" Grid.Column="3" FontWeight="Bold" FontSize="20" Margin="89,31,183,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Row="6"/>
-        <DataGrid x:Name="detailsDataGrid" MaxHeight="200" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"  AutoGenerateColumns="False"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="7" Margin="68,69,57,-69" CanUserAddRows="False" >
+        <Label Content="تفاصيل القرار" Grid.Column="3" FontWeight="Bold" FontSize="20" Margin="89,21,183,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Row="6"/>
+        <DataGrid x:Name="detailsDataGrid" MaxHeight="150" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"  AutoGenerateColumns="False"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="7" Margin="68,61,57,-61" CanUserAddRows="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="اسم الموظف"  Binding="{Binding PersonName}" />
                 <DataGridTextColumn Header="الراتب" Binding="{Binding Salary }" />

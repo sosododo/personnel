@@ -148,7 +148,7 @@
             </StackPanel>
         </GroupBox>
         <GroupBox   Header="********" FlowDirection="RightToLeft"   Grid.Column="1" Grid.Row="1" Margin="20,0,20,10"   >
-            <Grid >
+            <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" >
 
                 <local:UpdateDecision   Visibility="Collapsed"  x:Name="mm" HorizontalAlignment="Stretch"/>
 

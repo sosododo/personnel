@@ -15,7 +15,7 @@
 
             <Setter Property="FontFamily" Value="Tahoma"/>
             <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Foreground" Value="#FF0B6807"/>
+            <Setter Property="Foreground" Value="#FFAAAAAA"/>
 
 
 
@@ -65,16 +65,16 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush  EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
-                <GradientStop Color="#FFBAE0B8" Offset="0"/>
+                <GradientStop Color="#FFECE7E7" Offset="0"/>
                 <GradientStop Color="GhostWhite" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.Resources>
             <Style TargetType="Button">
                 <Setter Property="BorderThickness" Value="2"/>
-                <Setter Property="BorderBrush" Value="#FFE3F5E2"/>
-                <Setter Property="Background" Value="#FF8FA68E"/>
-                <Setter Property="Foreground" Value="#FF0B6807"/>
+                <Setter Property="BorderBrush" Value="#FFCBADAD"/>
+                <Setter Property="Background" Value="#FFCDC7C7"/>
+                <Setter Property="Foreground" Value="#FF851313"/>
                 <Setter Property="FontWeight" Value="SemiBold"/>
                 <Setter Property="FontSize" Value="10"/>
                 <Style.Resources>
@@ -101,7 +101,7 @@
 
 
         </Grid.RowDefinitions>
-        <GroupBox  Grid.Column="0" Grid.Row="1"    Margin="5,5,5,5"  Header="البيانات الاضافية" FlowDirection="RightToLeft" Height="auto" Width="AUTO"  >
+        <GroupBox  Grid.Column="0" Grid.Row="1"    Margin="5,5,5,5"  Header="البيانات الاضافية" FlowDirection="RightToLeft" Height="auto" Width="AUTO" Foreground="Gray" >
 
             <StackPanel  Grid.Column="0" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" Height="auto" >
 
@@ -113,84 +113,8 @@
 
         </GroupBox>
 
-        <!--<GroupBox Header="بيانات العمل"   Grid.Row="1" FlowDirection="RightToLeft"  Grid.Column="1"  Margin="5,5,5,5" >
-            <Grid VerticalAlignment="Center" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.1*"/>
-
-
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="0.1*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0.5*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-
-
-                <TextBlock   Text="الرقم الذاتي" Grid.Column="1" Grid.Row="1"/>
-                <TextBlock Text="الفئة"   Grid.Row="2" Grid.Column="1"/>
-                <TextBlock  Text="المؤهل العلمي"  Grid.Column="3" Grid.Row="1"/>
-                <TextBlock  Text="المسمى الوظيفي"  Grid.Column="3" Grid.Row="2"/>
-                <TextBlock Text="الاختصاص"  Grid.Column="5" Grid.Row="1" />
-                <TextBlock  Text="المهمة"  Grid.Column="5" Grid.Row="2"/>
-                <TextBlock  Text="مكان العمل"  Grid.Column="7" Grid.Row="2" />
-                <TextBlock  Text="الجهة العاملة" Grid.Column="9" Grid.Row="2" />
-                <TextBlock Text="تاريخ المباشرة" Grid.Column="1" Grid.Row="4"/>
-                <TextBlock Grid.Column="5"   Grid.Row="3" Text="نوع التعيين"/>
-                <TextBlock Grid.Column="7"  Grid.Row="3" Text="حالة بطاقة التأمين" />
-                <TextBlock  Grid.Column="9" Text="الحالة" Grid.Row="3"  />
-                <TextBlock  Text="القسم" Grid.Column="1" Grid.Row="3" />
-                <TextBlock  Grid.Column="3" Grid.Row="3" Text="الشعبة"/>
-                <TextBlock  FlowDirection="RightToLeft" Text="الراتب" Grid.Column="3" Grid.Row="4"/>
-                
-                <TextBlock Grid.Column="3" Grid.Row="4" />
-                <TextBlock Grid.Column="7"   Grid.Row="1"  Text="رقم الاضبارة"/>
-                <TextBlock Grid.Column="9"   Grid.Row="1"  Text="فئة الاضبارة"/>
-               
-                <TextBox Grid.Column="8" Grid.Row="1" />
-                <TextBox  Grid.Column="2" Grid.Row="1"/>
-                <TextBox  Grid.Column="4" Grid.Row="1"/>
-                <TextBox  Grid.Column="6" Grid.Row="1"/>
-                <ComboBox   Grid.Column="2" Grid.Row="2"  />
-                <ComboBox Grid.Column="4" Grid.Row="2"    />
-                <ComboBox Grid.Column="6"  Grid.Row="2"  />
-                <ComboBox Grid.Column="10" Grid.Row="1"    />
-                <ComboBox Grid.Column="8" Grid.Row="2" />
-                <ComboBox Grid.Column="10" Grid.Row="2" />
-                <ComboBox Grid.Column="6" Grid.Row="3" />
-                <ComboBox Grid.Column="8" Grid.Row="3" />
-                <ComboBox Grid.Column="10" Grid.Row="3"   />
-               
-
-
-                
-                <TextBox  Grid.Column="4" Grid.Row="4"/>
-                <TextBox  Grid.Column="2" Grid.Row="3"/>
-                <TextBox  Grid.Column="4" Grid.Row="3"/>
-
-                <DatePicker HorizontalAlignment="Stretch"  VerticalAlignment="Top"  Margin="4,6,4,4" Grid.Column="2" Grid.Row="4"  />
-
-
-
-            </Grid>
-        </GroupBox>-->
-        <GroupBox Header="بيانات العمل"   Grid.Row="1" FlowDirection="RightToLeft"  Grid.Column="1"  Margin="5,5,5,5" HorizontalAlignment="Stretch"  >
-            <Grid VerticalAlignment="Stretch" >
+        <GroupBox Header="بيانات العمل"   Grid.Row="1" FlowDirection="RightToLeft"  Grid.Column="1"  Margin="5,5,5,5" HorizontalAlignment="Stretch" Foreground="Gray" >
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.1*"/>
                     <ColumnDefinition Width="auto"/>
@@ -203,7 +127,7 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="1*"/>
-                   
+
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.5*"/>
@@ -313,7 +237,7 @@
                     <ComboBoxItem Content="مكلف خارج الجامعة"/>
                     <ComboBoxItem Content="مجمد"/>
                     <ComboBoxItem Content="مفرغ للحزب"/>
-                    
+
 
                 </ComboBox>
 
@@ -367,23 +291,23 @@
 
             </Grid>
         </GroupBox>
-        
-        
-        
-        <GroupBox Header="بيان"   Grid.Row="2" Grid.Column="1" FlowDirection="RightToLeft"  Margin="5,5,5,5">
-            <Grid>
+
+
+
+        <GroupBox Header="بيان"   Grid.Row="2" Grid.Column="1" FlowDirection="RightToLeft"  Margin="5,5,5,5"  HorizontalAlignment="Stretch" Foreground="Gray" >
+            <Grid HorizontalAlignment="Stretch">
                 <local:rests Visibility="Collapsed" x:Name="ss" ></local:rests>
                 <local:Punishments Visibility="Collapsed" x:Name="pp"></local:Punishments>
 
                 <local:FunctionalChanges  Visibility="Collapsed" x:Name="cc">
                 </local:FunctionalChanges>
-                
 
-               
+
+
             </Grid>
         </GroupBox>
-        <TextBlock Text="الاسم:" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="20,10,0,0" FontWeight="Bold"  FontSize="13" Foreground="#FF0B6807"/>
-        <TextBlock  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="66,10,0,0" Name="emname"  Text="{Binding Username}" FontWeight="Bold"  FontSize="13" Foreground="#FF0B6807" />
+        <TextBlock Text="الاسم:" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="20,10,0,0" FontWeight="Bold"  FontSize="13" Foreground="#FF851313"/>
+        <TextBlock  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="66,10,0,0" Name="emname"  Text="{Binding Username}" FontWeight="Bold"  FontSize="13" Foreground="#FF851313" />
         <GroupBox  Grid.Column="0" Grid.Row="2"    Margin="5,5,5,5"  Header="" FlowDirection="RightToLeft" Height="auto"   >
             <StackPanel  Grid.Column="0" Grid.Row="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="auto" >
 
@@ -394,7 +318,7 @@
         </GroupBox>
         <StackPanel  Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="عودة"  Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  Margin="5,5,5,5" Click="Button_Click"  />
-        <Button Content="طباعة" Grid.Column="1"   Grid.Row="3" Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  Margin="5,5,5,5" Click="print"  />
+            <Button Content="طباعة" Grid.Column="1"   Grid.Row="3" Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  Margin="5,5,5,5" Click="print"  />
         </StackPanel>
     </Grid>
 </Window>

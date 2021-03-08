@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:personnel.Views"
         mc:Ignorable="d"
-        Title="ذاتية العقود والاداريين"   FlowDirection="RightToLeft"  Width="1300" Height="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="ذاتية العقود والاداريين"   FlowDirection="RightToLeft"  Width="1400" Height="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="GroupBox">
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="AliceBlue"/>
+            <Setter Property="Foreground" Value="#FFAAAAAA"/>
             <Setter Property="BorderThickness" Value="1.3"/>
             <Setter Property="Margin" Value="10,0,0,0"/>
         </Style>
@@ -18,7 +18,7 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush  EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
-                <GradientStop Color="#FFA2A8CF" Offset="0"/>
+                <GradientStop Color="#FFECE7E7" Offset="0"/>
                 <GradientStop Color="GhostWhite" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
@@ -39,9 +39,9 @@
         <Grid.Resources>
             <Style TargetType="Button">
                 <Setter Property="BorderThickness" Value="1.5"/>
-                <Setter Property="BorderBrush" Value="#FF707CC9"/>
-                <Setter Property="Background" Value="#FFA2A8CF"/>
-                <Setter Property="Foreground" Value="#FF1D213A"/>
+                <Setter Property="BorderBrush" Value="#FFCBADAD"/>
+                <Setter Property="Background" Value="#FFCDC7C7"/>
+                <Setter Property="Foreground" Value="#FF851313"/>
                 <Setter Property="FontWeight" Value="SemiBold"/>
                 <Setter Property="FontSize" Value="11"/>
                 <Style.Resources>
@@ -64,14 +64,14 @@
                     <ColumnDefinition Width="106*"/>
                 </Grid.ColumnDefinitions>
 
-                <RadioButton Content="بحث حسب الاسم" GroupName="search"   HorizontalAlignment="Left"  VerticalAlignment="Top" Width="131" Name="sname" Foreground="#FF1D213A" FontSize="12" FontWeight="ExtraBold" Grid.ColumnSpan="2" Checked="sname_Checked"    />
-                <RadioButton Content="بحث حسب مكان العمل" GroupName="search" Name="splace" HorizontalAlignment="Left"  Margin="0,30,0,10" VerticalAlignment="Center"  Foreground="#FF1D213A" FontSize="12" FontWeight="ExtraBold" Grid.ColumnSpan="2" Checked="splace_Checked"  />
+                <RadioButton Content="بحث حسب الاسم" GroupName="search"   HorizontalAlignment="Left"  VerticalAlignment="Top" Width="131" Name="sname" Foreground="#FFCAADAD" FontSize="12" FontWeight="ExtraBold" Grid.ColumnSpan="2" Checked="sname_Checked"    />
+                <RadioButton Content="بحث حسب مكان العمل" GroupName="search" Name="splace" HorizontalAlignment="Left"  Margin="0,30,0,10" VerticalAlignment="Center"  Foreground="#FFCAADAD" FontSize="12" FontWeight="ExtraBold" Grid.ColumnSpan="2" Checked="splace_Checked"  />
 
             </Grid>
         </GroupBox>
         <GroupBox  Grid.Column="0"  Header="البحث" FlowDirection="RightToLeft" Grid.Row="1"  Height="auto" >
             <Grid VerticalAlignment="Top">
-                <TextBox  TextWrapping="NoWrap" Width="100" Height="22" Name="search" IsEnabled="True" VerticalAlignment="top" Margin="20,28,20,0"  Visibility="Collapsed"  />
+                <TextBox  TextWrapping="NoWrap" Width="100" Height="22" Name="search" IsEnabled="True" VerticalAlignment="top" Margin="20,28,20,0"  Visibility="Collapsed"  Foreground="#FFAAAAAA" />
                 <ComboBox  VerticalAlignment="top" Margin="20,28,20,0" Height="25" Name="workplace" FontWeight="Bold" FontSize="12" FlowDirection="LeftToRight"  Visibility="Collapsed"/>
                 <Button Content="بحـــث" Margin="33,77,32,15" Width="75" Height="25" Click="Search_Employee" FontWeight="Bold" FontSize="12"  />
 
@@ -87,7 +87,7 @@
                     <ColumnDefinition Width="34*"/>
                     <ColumnDefinition Width="73*"/>
                 </Grid.ColumnDefinitions>
-                <DataGrid   Margin="10,10,10,0" Height="150" VerticalAlignment="Top"  ScrollViewer.VerticalScrollBarVisibility="Visible"  VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxWidth="1050" MaxHeight="200" MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF505A9C"   FontSize="12" Name="search_emp" AutoGenerateColumns="False" Grid.ColumnSpan="2" >
+                <DataGrid   Margin="10,10,10,0" Height="150" VerticalAlignment="Top"  ScrollViewer.VerticalScrollBarVisibility="Visible"  VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible"  MaxHeight="200" MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF851313"   FontSize="12" Name="search_emp" AutoGenerateColumns="False" Grid.ColumnSpan="2" >
 
                     <!--<DataGrid.Resources>
                             <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">

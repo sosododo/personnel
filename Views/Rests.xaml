@@ -32,10 +32,10 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>-->
-       
 
-        <Label Content="الإجازات"   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"  FontFamily="tahoma" Foreground="#FF0B6807" Width="194"/>
-        <DataGrid    Grid.Row="1"   Height="auto"   VerticalAlignment="Top"  MinColumnWidth="100" HorizontalGridLinesBrush="#FFC48DD8" VerticalGridLinesBrush="#FFC48DD8" CanUserReorderColumns="False" CanUserResizeColumns="true" CanUserSortColumns="true" Foreground="#FF0B6807" Name="RS" AutoGenerateColumns="False" FontSize="13" FontFamily="Comic Sans MS" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="200" >
+
+        <Label Content="الإجازات"   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"  FontFamily="tahoma"  Width="194" Foreground="#FF851313"/>
+        <DataGrid    Grid.Row="1"   Height="auto"   VerticalAlignment="Top"  MinColumnWidth="100" HorizontalGridLinesBrush="#FFC48DD8" VerticalGridLinesBrush="#FFC48DD8" CanUserReorderColumns="False" CanUserResizeColumns="true" CanUserSortColumns="true" Foreground="#FFAAAAAA" Name="RS" AutoGenerateColumns="False" FontSize="13" FontFamily="Comic Sans MS" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="200" >
 
             <DataGrid.Columns>
                 <!--<DataGridTextColumn Binding="{Binding DecisionId}" ClipboardContentBinding="{x:Null}" Header="رقم القرار"/>-->

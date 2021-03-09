@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:personnel.Views"
         xmlns:models="clr-namespace:personnel.Models"
         mc:Ignorable="d"
-        Title="عرض البطاقة الذاتية لعضو هيئة تدريسية" Height="auto" Width="auto" FlowDirection="RightToLeft">
+        Title="عرض البطاقة الذاتية لعضو هيئة تدريسية" Height="auto" Width="auto" FlowDirection="RightToLeft" WindowState="Maximized">
     <Window.DataContext>
         <models:SelfCard></models:SelfCard>
     </Window.DataContext>
@@ -15,8 +15,7 @@
 
             <Setter Property="FontFamily" Value="Tahoma"/>
             <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Foreground" Value="#FF242E23"/>
-
+           
 
 
 
@@ -65,16 +64,16 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush  EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad">
-                <GradientStop Color="#FFD7D7DC" Offset="0"/>
+                <GradientStop Color="#FFECE7E7" Offset="0"/>
                 <GradientStop Color="GhostWhite" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.Resources>
             <Style TargetType="Button">
                 <Setter Property="BorderThickness" Value="2"/>
-                <Setter Property="BorderBrush" Value="#FFC6CBC6"/>
-                <Setter Property="Background" Value="#FFD1C7D0"/>
-                <Setter Property="Foreground" Value="#FF333633"/>
+                <Setter Property="BorderBrush" Value="#FFCBADAD"/>
+                <Setter Property="Background" Value="#FFCDC7C7"/>
+                <Setter Property="Foreground" Value="#FF851313"/>
                 <Setter Property="FontWeight" Value="SemiBold"/>
                 <Setter Property="FontSize" Value="10"/>
                 <Style.Resources>
@@ -101,7 +100,7 @@
 
 
         </Grid.RowDefinitions>
-        <GroupBox  Grid.Column="0" Grid.Row="1"    Margin="5,5,5,5"  Header="البيانات الاضافية" FlowDirection="RightToLeft" Height="auto" Width="AUTO"  >
+        <GroupBox  Grid.Column="0" Grid.Row="1"    Margin="5,5,5,5"  Header="البيانات الاضافية" FlowDirection="RightToLeft" Height="auto" Width="AUTO" Foreground="Gray" >
 
             <StackPanel  Grid.Column="0" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" Height="auto" >
 
@@ -191,7 +190,7 @@
 
             </Grid>
         </GroupBox>-->
-        <GroupBox Header="بيانات العمل"   Grid.Row="1" FlowDirection="RightToLeft"  Grid.Column="1"  Margin="5,5,5,5"  >
+        <GroupBox Header="بيانات العمل"   Grid.Row="1" FlowDirection="RightToLeft"  Grid.Column="1"  Margin="5,5,5,5"  Foreground="Gray">
             <Grid VerticalAlignment="Center" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.1*"/>
@@ -379,10 +378,10 @@
 
             </Grid>
         </GroupBox>
-        
-        
-        
-        <GroupBox Header="بيان"   Grid.Row="2" Grid.Column="1" FlowDirection="RightToLeft"  Margin="5,5,5,5">
+
+
+
+        <GroupBox Header="بيان"   Grid.Row="2" Grid.Column="1" FlowDirection="RightToLeft"  Margin="5,5,5,5" Foreground="Gray">
             <Grid>
                 <local:rests Visibility="Collapsed" x:Name="ss" ></local:rests>
                 <local:Punishments Visibility="Collapsed" x:Name="pp"></local:Punishments>
@@ -398,8 +397,8 @@
                 <local:FunctionalChanges  Visibility="Collapsed"/>-->
             </Grid>
         </GroupBox>
-        <TextBlock Text="الاسم:" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="20,10,0,0" FontWeight="Bold"  FontSize="13" Foreground="#FF0B6807"/>
-        <TextBlock  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="66,10,0,0" Name="emname"  Text="{Binding Username}" FontWeight="Bold"  FontSize="13" Foreground="#FF0B6807" />
+        <TextBlock Text="الاسم:" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="20,10,0,0" FontWeight="Bold"  FontSize="13" Foreground="#FF851313"/>
+        <TextBlock  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="66,10,0,0" Name="emname"  Text="{Binding Username}" FontWeight="Bold"  FontSize="13" Foreground="#FF851313" />
         <GroupBox  Grid.Column="0" Grid.Row="2"    Margin="5,5,5,5"  Header="" FlowDirection="RightToLeft" Height="auto"   >
             <StackPanel  Grid.Column="0" Grid.Row="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="auto" >
 

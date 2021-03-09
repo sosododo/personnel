@@ -171,9 +171,9 @@
 
         <Style TargetType="Button">
             <Setter Property="BorderThickness" Value="1.5"/>
-            <Setter Property="BorderBrush" Value="#FFACB6A5"/>
-            <Setter Property="Background" Value="LightGray"/>
-            <Setter Property="Foreground" Value="#FF403C17"/>
+            <Setter Property="BorderBrush" Value="#FFCBADAD"/>
+            <Setter Property="Background" Value="#FFCDC7C7"/>
+            <Setter Property="Foreground" Value="#FF851313"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="FontSize" Value="11"/>
             <Style.Resources>
@@ -192,8 +192,8 @@
 
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFF3C9F2" Offset="-1"/>
-                <GradientStop Color="#FFD4D3D4" Offset="0"/>
+               
+                <GradientStop Color="#FFECE7E7" Offset="0"/>
                 <GradientStop Color="GhostWhite" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>

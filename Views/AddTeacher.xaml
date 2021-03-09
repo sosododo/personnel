@@ -165,9 +165,9 @@
 
         <Style TargetType="Button">
             <Setter Property="BorderThickness" Value="1.5"/>
-            <Setter Property="BorderBrush" Value="#FF859588"/>
-            <Setter Property="Background" Value="#FFBBC0DA"/>
-            <Setter Property="Foreground" Value="#FF28362B"/>
+            <Setter Property="BorderBrush" Value="#FFCBADAD"/>
+            <Setter Property="Background" Value="#FFCDC7C7"/>
+            <Setter Property="Foreground" Value="#FF851313"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="FontSize" Value="11"/>
             <Style.Resources>
@@ -187,7 +187,7 @@
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 
-                <GradientStop Color="#FFCED8EA" Offset="0"/>
+                <GradientStop Color="#FFECE7E7" Offset="0"/>
                 <GradientStop Color="GhostWhite" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
@@ -485,7 +485,7 @@
            
             
             <Button Content="إضافة" Width="70"   Height="35" Margin="5,5,5,5" Click="Add_person"  />
-            <Button Content="تفريغ الخلابا"   VerticalAlignment="Top" Height="35" Width="70"  Margin="5,5,5,5" Click="Clear_Form" Grid.RowSpan="2"  />
+            <Button Content="تفريغ الخلايا"   VerticalAlignment="Top" Height="35" Width="70"  Margin="5,5,5,5" Click="Clear_Form" Grid.RowSpan="2"  />
             <Button Content="عودة"   Width="70" Margin="5,5,5,5" Click="Exit" />
         </StackPanel>
     </Grid>

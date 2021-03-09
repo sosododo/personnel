@@ -79,7 +79,7 @@
 
 
         </Grid.RowDefinitions>
-        <Label Content="منح إجازة" Grid.Column="3" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="2" Margin="72,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="منح إجازة" Grid.Column="3" FontWeight="Bold" FontSize="20" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <Label Content="اسم الموظف" Grid.Column="0" Grid.Row="1"/>
         <Label Content="طبيعة الاجازة" Grid.Column="2" Grid.Row="1"/>
 

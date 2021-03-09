@@ -77,7 +77,7 @@
 
 
         </Grid.RowDefinitions>
-        <Label Content="قرار ترفيعة" Grid.Column="3" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="3" Margin="72,10,0,0" VerticalAlignment="Top" Height="40" Width="112"/>
+        <Label Content="قرار ترفيعة" Grid.Column="3" FontWeight="Bold" FontSize="20" Margin="134,10,0,0" VerticalAlignment="Top" Height="40" Width="112" Grid.ColumnSpan="3"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
         <!--<RadioButton Grid.Column="1" Grid.Row="2"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionSource}" Name="dec_source">
             

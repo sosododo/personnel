@@ -21,7 +21,7 @@
 
         </Grid.RowDefinitions>
         <Label Content="التبدلات الوظيفية"  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" FontWeight="Bold" Margin="10,10,10,10"/>
-        <DataGrid    Grid.Row="1" Height="auto"   VerticalAlignment="Top"  MinColumnWidth="100" HorizontalGridLinesBrush="#FFC48DD8" VerticalGridLinesBrush="#FFC48DD8" CanUserReorderColumns="False" CanUserResizeColumns="true" CanUserSortColumns="true" Foreground="Black"  AutoGenerateColumns="False" FontSize="13" FontFamily="Comic Sans MS" Name="ch" CanUserAddRows="False" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="200" >
+        <DataGrid    Grid.Row="1" Height="auto"   VerticalAlignment="Center"  MinColumnWidth="100" HorizontalGridLinesBrush="#FFC48DD8" VerticalGridLinesBrush="#FFC48DD8" CanUserReorderColumns="False" CanUserResizeColumns="true" CanUserSortColumns="true" Foreground="Black"  AutoGenerateColumns="False" FontSize="13" FontFamily="Comic Sans MS" Name="ch" CanUserAddRows="False" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="200" Margin="10,0,10,0" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding fu}" ClipboardContentBinding="{x:Null}" Header="بيانات القرار"/>
                 <DataGridTextColumn Binding="{Binding ChangeReasone}" ClipboardContentBinding="{x:Null}" Header="السبب"/>
@@ -32,7 +32,7 @@
                 <DataGridTextColumn Binding="{Binding Status}" ClipboardContentBinding="{x:Null}" Header="الحالة"/>
 
                 <DataGridTextColumn Binding="{Binding ChangeDate,StringFormat='yyyy/MM/dd'}" ClipboardContentBinding="{x:Null}" Header="التاريخ"/>
-                
+
 
 
 

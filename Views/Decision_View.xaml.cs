@@ -352,6 +352,7 @@ namespace personnel.Views
             }
             else if (con == "قرار طي تبدل")
             {
+                MessageBox.Show("mmmmm");
                 collaps_all();
                 decCollaps.Visibility = Visibility.Visible;
                 decCollaps.DataContext = dec;

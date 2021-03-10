@@ -22,7 +22,7 @@
 
 
         </Grid.RowDefinitions>
-        <Label Content="العقوبات"  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" FontWeight="Bold" Margin="10,10,10,10"/>
+        <Label Content="العقوبات"  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" FontWeight="Bold" Margin="10,10,10,10" Foreground="#FF851313"/>
         <DataGrid    Grid.Row="1" Height="auto"   VerticalAlignment="Top"  MinColumnWidth="100" HorizontalGridLinesBrush="#FFC48DD8" VerticalGridLinesBrush="#FFC48DD8" CanUserReorderColumns="False" CanUserResizeColumns="true" CanUserSortColumns="true" Foreground="Black" Name="ps" AutoGenerateColumns="False" FontSize="13" FontFamily="Comic Sans MS"  ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="200" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding fu}" ClipboardContentBinding="{x:Null}" Header="بيانات القرار"/>

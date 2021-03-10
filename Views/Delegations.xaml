@@ -14,7 +14,7 @@
 
     </UserControl.DataContext>
     <Grid x:Name="delGrid">
-        <DataGrid x:Name="secGrid" MaxHeight="200" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"  AutoGenerateColumns="False"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="7" Margin="68,1,57,-1" CanUserAddRows="False"  >
+        <DataGrid x:Name="secGrid" MaxHeight="200" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"  AutoGenerateColumns="False"  CanUserAddRows="False" Margin="0,47,0,174"  >
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="بيانات القرار"  Binding="{Binding fu}" />
                 <DataGridTextColumn Header="نوع الافادة" Binding="{Binding DelegatingType }" />
@@ -31,5 +31,6 @@
             </DataGrid.Columns>
 
         </DataGrid>
+        <Label Content="الإيفادات" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF851313" FontWeight="Bold" FontSize="25"/>
     </Grid>
 </UserControl>

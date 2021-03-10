@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Xml.XPath;
 using personnel.Models;
 using personnel.Views;
@@ -73,6 +74,7 @@ namespace personnel.ModelView
           
             public int AllRest(int service)
         {
+           
             int count1 = 0;
             if (service <= 5)
             {
@@ -101,15 +103,8 @@ namespace personnel.ModelView
             int minrest = 0;
             int days=0;
             int now = DateTime.Now.Year;
-            List<Rest> rests = db.Rests.Where(x => x.RestType == "إجازة ادارية" && x.RestStart.Value.Year == now && x.PersonId==id).ToList();
-            //var query = (from s in db.Rests where s.PersonId == id && s.RestType == "إجازة إدارية" && s.RestStart.Value.Year == now select new { s.RestPeriod });
-            //int c= query.Count();
-       
-            //for (int i = 0; i < c; c++)
-            //{
-            //  min=days+q
-
-            //}
+            List<Rest> rests = db.Rests.Where(x => x.RestType == "إجازة ادارية" && x.RestStart.Value.Year == now && x.PersonId==id && ).ToList();
+         
 
             foreach (Rest r in rests)
             {

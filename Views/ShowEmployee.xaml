@@ -108,6 +108,7 @@
                 <Button Content="الإجازات"     Height="30"   FontWeight="Bold" VerticalAlignment="Top"  FontSize="12"     HorizontalAlignment="Stretch"  Margin="5,7,5,0" Click="rest"  />
                 <Button Content="العقوبات"  Height="30"  Width="auto"  FontWeight="Bold"  FontSize="12"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="5,7,5,0" Click="punish" />
                 <Button Content="التبدلات الوظيفية"  Height="30"  Width="auto"  FontWeight="Bold"  FontSize="12"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="5,7,5,0" Click="changfun" />
+                <Button Content="سنين الخدمة "  Height="30"  Width="auto"  FontWeight="Bold"  FontSize="12"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="5,7,5,0" Click="count_services" />
                 <!--<Button Content="سنين الخدمة"     Height="30"   FontWeight="Bold" VerticalAlignment="Top"  FontSize="12"     HorizontalAlignment="Stretch"  Margin="5,7,5,0"  />-->
             </StackPanel>
 
@@ -301,6 +302,7 @@
 
                 <local:FunctionalChanges  Visibility="Collapsed" x:Name="cc">
                 </local:FunctionalChanges>
+                <local:Show_Service Visibility="Collapsed" x:Name="cs"></local:Show_Service>
 
 
 
@@ -308,17 +310,18 @@
         </GroupBox>
         <TextBlock Text="الاسم:" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="20,10,0,0" FontWeight="Bold"  FontSize="13" Foreground="#FF851313"/>
         <TextBlock  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="66,10,0,0" Name="emname"  Text="{Binding Username}" FontWeight="Bold"  FontSize="13" Foreground="#FF851313" />
-        <GroupBox  Grid.Column="0" Grid.Row="2"    Margin="5,5,5,5"  Header="" FlowDirection="RightToLeft" Height="auto"   >
+        <!--<GroupBox  Grid.Column="0" Grid.Row="2"    Margin="5,5,5,5"  Header="" FlowDirection="RightToLeft" Height="auto"   >
             <StackPanel  Grid.Column="0" Grid.Row="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="auto" >
 
 
-                <Button Content="طباعة"  Height="30"   FontWeight="Bold" VerticalAlignment="Top"  FontSize="12"  Width="100"   HorizontalAlignment="Stretch"  Margin="5,7,5,0" />
-                <Button Content="خروج"  Height="30"   FontWeight="Bold" VerticalAlignment="Top"  FontSize="12"     HorizontalAlignment="Stretch"  Margin="5,7,5,0" />
+                <Button Content="طباعة"  Height="30"   FontWeight="Bold" VerticalAlignment="Top"  FontSize="12"  Width="100"   HorizontalAlignment="Stretch"  Margin="5,7,5,0" Click="Button_Click_2" />
+                <Button Content="خروج"  Height="30"   FontWeight="Bold" VerticalAlignment="Top"  FontSize="12"     HorizontalAlignment="Stretch"  Margin="5,7,5,0" Click="Button_Click_2" />
             </StackPanel>
-        </GroupBox>
+        </GroupBox>-->
         <StackPanel  Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="عودة"  Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  Margin="5,5,5,5" Click="Button_Click"  />
+           
             <Button Content="طباعة" Grid.Column="1"   Grid.Row="3" Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  Margin="5,5,5,5" Click="print"  />
+            <Button Content="عودة"  Height="30"  Width="100"  FontWeight="Bold"  FontSize="12"  Margin="5,5,5,5" Click="Button_Click"  />
         </StackPanel>
     </Grid>
 </Window>

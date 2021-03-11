@@ -54,6 +54,7 @@ namespace personnel.Views
 
         private void rest(object sender, RoutedEventArgs e)
         {
+            cs.Visibility = Visibility.Collapsed;
             cc.Visibility = Visibility.Collapsed;
             pp.Visibility = Visibility.Collapsed;
             sec.Visibility = Visibility.Collapsed;
@@ -83,6 +84,7 @@ namespace personnel.Views
         }
         private void punish(object sender, RoutedEventArgs e)
         {
+            cs.Visibility = Visibility.Collapsed;
             ss.Visibility = Visibility.Collapsed;
             cc.Visibility = Visibility.Collapsed;
             sec.Visibility = Visibility.Collapsed;
@@ -100,6 +102,7 @@ namespace personnel.Views
         }
         private void changfun(object sender, RoutedEventArgs e)
         {
+            cs.Visibility = Visibility.Collapsed;
             ss.Visibility = Visibility.Collapsed;
             pp.Visibility = Visibility.Collapsed;
             sec.Visibility = Visibility.Collapsed;
@@ -118,6 +121,7 @@ namespace personnel.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            cs.Visibility = Visibility.Collapsed;
             ss.Visibility = Visibility.Collapsed;
             pp.Visibility = Visibility.Collapsed;
             cc.Visibility = Visibility.Collapsed;
@@ -162,6 +166,7 @@ namespace personnel.Views
 
         private void sec_but(object sender, RoutedEventArgs e)
         {
+            cs.Visibility = Visibility.Collapsed;
             ss.Visibility = Visibility.Collapsed;
             pp.Visibility = Visibility.Collapsed;
             delegation.Visibility = Visibility.Collapsed;
@@ -175,13 +180,35 @@ namespace personnel.Views
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            cs.Visibility = Visibility.Collapsed;
             ss.Visibility = Visibility.Collapsed;
             pp.Visibility = Visibility.Collapsed;
             sec.Visibility = Visibility.Collapsed;
             cc.Visibility = Visibility.Collapsed;
             EmpDelegation ed = new EmpDelegation();
-        delegation.secGrid.ItemsSource=ed.GetDele(emp.PersonId);
+            delegation.secGrid.ItemsSource=ed.GetDele(emp.PersonId);
             delegation.Visibility = Visibility.Visible;
+        }
+        private void count_services(object sender, RoutedEventArgs e)
+        {
+            ss.Visibility = Visibility.Collapsed;
+            cc.Visibility = Visibility.Collapsed;
+            pp.Visibility = Visibility.Collapsed;
+            delegation.Visibility = Visibility.Collapsed;
+            sec.Visibility = Visibility.Collapsed;
+            EmpRest es = new EmpRest();
+            DateTime date1 = (emp.BeginningDate).Value;
+            int service = es.service_count(emp.BeginningDate.Value);
+            cs.count.Text = "  عدد سنوات الخدمة للموظف هي : " + service.ToString() + "";
+            cs.begin.Text = "تاريخ المباشرة :  " + date1.ToShortDateString() + " سنة ";
+            cs.Visibility = Visibility.Visible;
+          
+
+        }
+
+        private void print(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

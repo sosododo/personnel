@@ -55,6 +55,7 @@ namespace personnel.Views
         {
             cc.Visibility = Visibility.Collapsed;
             pp.Visibility = Visibility.Collapsed;
+            cs.Visibility = Visibility.Collapsed;
             EmpRest es = new EmpRest();
            
              //es.GetRests(emp.PersonId);
@@ -82,6 +83,7 @@ namespace personnel.Views
         {
             ss.Visibility = Visibility.Collapsed;
             cc.Visibility = Visibility.Collapsed;
+            cs.Visibility = Visibility.Collapsed;
             EmpPunish ep = new EmpPunish();
 
             pp.ps.ItemsSource = ep.Getpun(emp.PersonId);
@@ -97,6 +99,7 @@ namespace personnel.Views
         {
             ss.Visibility = Visibility.Collapsed;
             pp.Visibility = Visibility.Collapsed;
+            cs.Visibility = Visibility.Collapsed;
             EmpChan ec = new EmpChan();
             //es.GetRests(emp.PersonId);
 
@@ -113,6 +116,7 @@ namespace personnel.Views
             ss.Visibility = Visibility.Collapsed;
             pp.Visibility = Visibility.Collapsed;
             cc.Visibility = Visibility.Collapsed;
+            cs.Visibility = Visibility.Collapsed;
             Employee el = new Employee();
             this.Close();
             el.Show();
@@ -141,6 +145,20 @@ namespace personnel.Views
             Window win = new Report.ZatReport(emp.PersonId);
             win.Show();
 
+        }
+
+        private void count_services(object sender, RoutedEventArgs e)
+        {
+            ss.Visibility = Visibility.Collapsed;
+            cc.Visibility = Visibility.Collapsed;
+            pp.Visibility = Visibility.Collapsed;
+            EmpRest es = new EmpRest();
+            DateTime date1 = (emp.BeginningDate).Value;
+            int service = es.service_count(emp.BeginningDate.Value);
+            cs.count.Text = "  عدد سنوات الخدمة للموظف هي : "+service.ToString()+" سنة ";
+            cs.begin.Text = "تاريخ المباشرة :  " + date1.ToShortDateString() + "";
+            cs.Visibility = Visibility.Visible;
+            
         }
     }
 }

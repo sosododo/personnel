@@ -57,7 +57,7 @@
 
         <!--<Label  VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" FontFamily="tahoma" Foreground="#FF0B6807"  Width="230" Margin="0,0,0,0" >
         </Label>-->
-        <TextBlock Name="tb"  VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="2" FontFamily="tahoma" Foreground="#FF0B6807" FontWeight="Bold" Width="auto"/>
+        <TextBlock Name="tb"  VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="2" FontFamily="tahoma" Foreground="Gray" FontWeight="Bold" Width="auto"/>
         <!--<Label  Content="من أصل  :" VerticalAlignment="Center" Grid.Row="2" FontFamily="tahoma" Foreground="#FF0B6807" Grid.Column="2" Width="auto" />
         <TextBlock Name="all"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="3" Grid.Row="2" FontFamily="tahoma" Foreground="#FF0B6807" FontWeight="Bold" />-->
     </Grid>

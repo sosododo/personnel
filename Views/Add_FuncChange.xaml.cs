@@ -134,6 +134,11 @@ namespace personnel.Views
                         db.SaveChanges();
                        // status.Text = "قائم على رأس عمله";
                     }
+
+                    if (mission_Copy.SelectedItem == null)
+                    {
+                        MessageBox.Show("ادخل نوع التبدل الوظيفي من فضلك");
+                    }
                     else if (mission_Copy.Text == "استقالة") {
                         status.Text = "مستقيل";
                         person.Status = "مستقيل";

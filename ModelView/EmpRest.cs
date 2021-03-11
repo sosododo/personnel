@@ -103,7 +103,7 @@ namespace personnel.ModelView
             int minrest = 0;
             int days=0;
             int now = DateTime.Now.Year;
-            List<Rest> rests = db.Rests.Where(x => x.RestType == "إجازة ادارية" && x.RestStart.Value.Year == now && x.PersonId==id && ).ToList();
+            List<Rest> rests = db.Rests.Where(x => x.RestType == "إجازة ادارية" && x.RestStart.Value.Year == now && x.PersonId==id ).ToList();
          
 
             foreach (Rest r in rests)

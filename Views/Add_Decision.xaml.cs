@@ -92,7 +92,7 @@ namespace personnel.Views
 
 
             }
-            catch (Exception ex) { MessageBox.Show(ex.StackTrace); }
+            catch (Exception ex) { MessageBox.Show("تأكد من ادخال كافة البيانات"); }
 
         }
     }

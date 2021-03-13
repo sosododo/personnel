@@ -77,25 +77,25 @@
 
 
         </Grid.RowDefinitions>
-        <Label Content="قرار ترفيعة" Grid.Column="3" FontWeight="Bold" FontSize="20" Margin="134,10,0,0" VerticalAlignment="Top" Height="40" Width="112" Grid.ColumnSpan="3"/>
+        <Label Foreground="#FF633656" Content="قرار ترفيعة" Grid.Column="3" FontWeight="Bold" FontSize="20" Margin="134,10,0,0" VerticalAlignment="Top" Height="40" Width="112" Grid.ColumnSpan="3"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
         <!--<RadioButton Grid.Column="1" Grid.Row="2"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionSource}" Name="dec_source">
             
         </RadioButton>-->
 
         <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="5" Visibility="Hidden" Height="25" Width="28" Margin="0,6,0,0" Grid.RowSpan="2" />
-        <Button Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="2" Grid.Column="3"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Center" Margin="60,0,10,0" Click="insert_rest"/>
+        <Button Foreground="#FF633656" Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="2" Grid.Column="3"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="127,8,136,0" Click="insert_rest" Grid.ColumnSpan="3"/>
         <TextBlock Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="dec_id" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2" ></TextBlock>
         <CheckBox Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2"></CheckBox>
         <GroupBox  Grid.Row="1"  Header="" FlowDirection="RightToLeft"   Margin="10,0,10,40" Grid.RowSpan="2" Grid.ColumnSpan="2"  MaxHeight="400"  >
 
 
-            <ComboBox x:Name="emplist" HorizontalAlignment="Left" Margin="24,0,0,0" Width="120"/>
+            <ComboBox Foreground="#FF633656" x:Name="emplist" HorizontalAlignment="Left" Margin="24,0,0,0" Width="120"/>
         </GroupBox>
-        <Label Content="قرار الزيادة من تاريخ" Grid.Column="3" Margin="10,4,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label Content="حتى تاريخ" Grid.Column="5" Margin="0,4,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <DatePicker x:Name="from" Grid.Column="3" HorizontalAlignment="Left" Margin="139,4,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="100"/>
-        <DatePicker x:Name="to" Grid.Column="7" HorizontalAlignment="Left" Margin="17,4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101"/>
+        <Label Foreground="#FF633656" Content="قرار الزيادة من تاريخ" Grid.Column="3" Margin="10,4,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Foreground="#FF633656" Content="حتى تاريخ" Grid.Column="5" Margin="0,4,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <DatePicker Foreground="#FF633656" x:Name="from" Grid.Column="3" HorizontalAlignment="Left" Margin="139,4,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="100"/>
+        <DatePicker Foreground="#FF633656" x:Name="to" Grid.Column="7" HorizontalAlignment="Left" Margin="17,4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101"/>
 
 
     </Grid>

@@ -352,7 +352,7 @@ namespace personnel.Views
             }
             else if (con == "قرار طي تبدل")
             {
-                MessageBox.Show("mmmmm");
+                
                 collaps_all();
                 decCollaps.Visibility = Visibility.Visible;
                 decCollaps.DataContext = dec;
@@ -665,8 +665,11 @@ namespace personnel.Views
             }
 
             //----------------------------------------
-
-            if (dec.DecisionContent == "تبدل وظيفي")
+            if (dec.DecisionContent == "قرار طي تبدل")
+            {
+                MessageBox.Show("قرار يطوي قرار واحد او أكثر");
+            }
+                if (dec.DecisionContent == "تبدل وظيفي")
             {
 
                 collaps_all();

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:personnel.Views"
       mc:Ignorable="d" 
       xmlns:model="clr-namespace:personnel.Models"
-      d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft"
+      d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft" Height="200"
       >
     <UserControl.DataContext>
         <model:Decision>
@@ -51,7 +51,7 @@
         </Style>
 
     </UserControl.Resources>
-    <Grid VerticalAlignment="Top" Height="286" Margin="-1,16,1,0">
+    <Grid VerticalAlignment="Top" Height="200" Margin="9,16,-9,0">
 
 
 
@@ -68,32 +68,32 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto" MinHeight="119.96"/>
-            <RowDefinition Height="auto" MinHeight="88"/>
+            <RowDefinition Height="auto" MinHeight="267.96"/>
+            <RowDefinition Height="auto" MinHeight="0"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto" MinHeight="24"/>
-            <RowDefinition/>
+            <RowDefinition Height="0*"/>
             <RowDefinition Height="auto"/>
 
 
         </Grid.RowDefinitions>
-        <Label Content="قرار ترفيعة" Grid.Column="3" FontWeight="Bold" FontSize="20" Margin="97,0,0,0" Height="40" Width="112" Grid.ColumnSpan="3"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
         <!--<RadioButton Grid.Column="1" Grid.Row="2"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionSource}" Name="dec_source">
             
         </RadioButton>-->
 
-        <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="5" Visibility="Hidden" Height="25" Width="28" Margin="0,6,0,0" />
-        <Button Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="1" Grid.Column="3"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="128,97,157,0" Click="insert_rest" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
-        <TextBlock Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="dec_id" Margin="149,0,0,0" />
-        <CheckBox Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Margin="149,0,0,0"/>
-        <GroupBox  Grid.Row="1"  Header="" FlowDirection="RightToLeft"   Margin="10,0,10,44" Grid.ColumnSpan="2"  MaxHeight="400" Grid.RowSpan="2"  >
+        <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="5" Visibility="Hidden" Height="25" Width="28" Margin="0,6,0,0" Grid.RowSpan="2" />
+        <Button Foreground="#FF633656" Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="1" Grid.Column="5"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="56,139,7,0" Click="insert_rest"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="dec_id" Margin="149,0,0,0" Grid.RowSpan="2" />
+        <CheckBox Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Margin="149,0,0,0" Grid.RowSpan="2"/>
+        <GroupBox  Grid.Row="1"  Header="" FlowDirection="RightToLeft"   Margin="0,-8,10,45" Grid.ColumnSpan="2"  MaxHeight="200"  >
 
 
-            <Grid VerticalAlignment="Center" Height="201" Margin="0,0,-26,0"  >
+            <Grid VerticalAlignment="Center" Height="200" Margin="0,0,17,0"  >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="110.773"/>
+                    <ColumnDefinition Width="0"/>
 
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -102,7 +102,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <ListView x:Name="list" IsTextSearchEnabled="True"  Grid.Row="1" MaxHeight="70" VerticalContentAlignment="Top" ScrollViewer.CanContentScroll="True"  ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Single" Grid.ColumnSpan="2" Margin="0,18,-61,136" Grid.RowSpan="3" >
+                <ListView x:Name="list" IsTextSearchEnabled="True"  Grid.Row="1" MaxHeight="150" VerticalContentAlignment="Top" ScrollViewer.CanContentScroll="True"  ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Single" Grid.ColumnSpan="3" Margin="0,10,-61,81" Grid.RowSpan="3" >
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="اسم الموظف" />
@@ -110,14 +110,14 @@
                     </ListView.View>
 
                 </ListView>
-                <Button Content="حذف الموظف المحدد" Grid.Row="3" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" Click="Button_Click" Margin="6,70,-6,0"/>
+                <Button Foreground="#FF633656" Content="حذف الموظف المحدد" Grid.Row="3" Grid.ColumnSpan="3" Height="26" VerticalAlignment="Top" Click="Button_Click" FontSize="12" Margin="0,124,-61,0"/>
             </Grid>
         </GroupBox>
 
-        <Label Content="قرار الزيادة من تاريخ" Grid.Column="3" Margin="12,51,0,0" Grid.Row="1" VerticalAlignment="Top" Height="40" Width="106"/>
-        <Label Content="حتى تاريخ" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center" Margin="0,55,0,0" VerticalAlignment="Top" Height="40" Width="61"/>
-        <DatePicker x:Name="from" Grid.Column="3" HorizontalAlignment="Left" Margin="139,56,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="100" Height="24"/>
-        <DatePicker x:Name="to" Grid.Column="7" HorizontalAlignment="Left" Margin="17,55,0,0" Grid.Row="1" VerticalAlignment="Top" Width="101" Height="24"/>
+        <Label Foreground="#FF633656" Content="قرار الترفية من تاريخ" Grid.Column="3" Margin="12,11,0,0" Grid.Row="1" VerticalAlignment="Top" Height="40" Width="114"/>
+        <Label Foreground="#FF633656" Content="حتى تاريخ" Grid.Column="3" Grid.Row="1" Margin="13,46,0,0" Height="40" Width="60" VerticalAlignment="Top"/>
+        <DatePicker Foreground="#FF633656"  x:Name="from" Grid.Column="3" HorizontalAlignment="Left" Margin="131,16,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="245" Height="24"/>
+        <DatePicker Foreground="#FF633656"  x:Name="to" Grid.Column="3" HorizontalAlignment="Left" Margin="131,47,0,0" Grid.Row="1" VerticalAlignment="Top" Width="245" Height="24" Grid.ColumnSpan="3"/>
 
 
     </Grid>

@@ -51,7 +51,7 @@
         </Style>
 
     </UserControl.Resources>
-    <Grid VerticalAlignment="Center">
+    <Grid VerticalAlignment="Center" Margin="-11,0,11,0">
 
 
 
@@ -76,14 +76,14 @@
 
 
         </Grid.RowDefinitions>
-        <Label Content="قرار ترفيعة استثنائية" Grid.Row="0" FontWeight="Bold" FontSize="20" Margin="0,10,0,0" VerticalAlignment="Top" Grid.Column="1" Height="40" Width="246" HorizontalAlignment="Center"/>
+        <Label Foreground="#FF633656" Content="قرار ترفيعة استثنائية" Grid.Row="0" FontWeight="Bold" FontSize="20" Margin="0,10,0,0" VerticalAlignment="Top" Grid.Column="1" Height="40" Width="246" HorizontalAlignment="Center"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
         <!--<RadioButton Grid.Column="1" Grid.Row="2"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionSource}" Name="dec_source">
             
         </RadioButton>-->
 
         <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="5" Visibility="Hidden" Height="25" Width="28" Margin="0,6,0,0" Grid.RowSpan="2" />
-        <Button Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="3" Grid.Column="1"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="73,10,60,0" Click="insert_rest" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+        <Button Foreground="#FF633656" Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="3" Grid.Column="1"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="43,10,90,0" Click="insert_rest" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -95,8 +95,8 @@
         </Button>
         <TextBlock Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="dec_id" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2" ></TextBlock>
         <CheckBox Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Grid.ColumnSpan="2" Margin="149,0,0,0" Grid.RowSpan="2"></CheckBox>
-        <Label Content="اسم الموظف" Grid.Column="0" Margin="120,20,0,0" Grid.Row="2"  Width="147" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="35"/>
-        <ComboBox x:Name="emp_list" Grid.Column="1" HorizontalAlignment="Left" Margin="82,21,0,0" Width="120" Grid.Row="2"/>
+        <Label Foreground="#FF633656" Content="اسم الموظف" Grid.Column="0" Margin="120,20,0,0" Grid.Row="2"  Width="147" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="35"/>
+        <ComboBox Foreground="#FF633656" x:Name="emp_list" Grid.Column="1" HorizontalAlignment="Left" Margin="51,21,0,0" Width="120" Grid.Row="2"/>
 
 
     </Grid>

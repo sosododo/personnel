@@ -14,14 +14,14 @@
     </UserControl.DataContext>
     <UserControl.Resources>
         <Style TargetType="Label">
-        
+
             <Setter Property="HorizontalAlignment" Value="Left" />
             <Setter Property="FontFamily" Value="tahoma"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Height" Value="40"/>
 
-        
+
 
         </Style>
         <Style TargetType="TextBox">
@@ -29,41 +29,42 @@
             <Setter Property="Width" Value="100"/>
             <Setter Property="FontFamily" Value="Comic Sans MS"/>
             <Setter Property="FontSize" Value="12"/>
-            
-      
-           
+
+
+
             <Setter Property="TextWrapping" Value="NoWrap"/>
 
 
         </Style>
         <Style TargetType="ComboBox">
-           
-           
+
+
             <Setter Property="FontFamily" Value="Comic Sans MS"/>
             <Setter Property="FontSize" Value="12"/>
-            
-           
-            
+
+
+
             <Setter Property="FlowDirection" Value="RightToLeft"/>
 
 
         </Style>
 
     </UserControl.Resources>
-    <Grid VerticalAlignment="Center"  Margin="0,0,0,0">
+    <Grid VerticalAlignment="Top" Height="212" Margin="24,2,132,0">
 
 
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" MinWidth="637" />
 
-            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" MinWidth="83.975" />
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="50.847"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="auto" MinHeight="184.393"/>
+            <RowDefinition Height="auto" MinHeight="0"/>
 
 
 
@@ -71,17 +72,17 @@
 
 
 
-        <CheckBox Grid.Row="2" Grid.Column="1" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}"></CheckBox>
+        <CheckBox Grid.Row="2" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Margin="68,156,0,0" Grid.Column="1"/>
 
-        <TextBlock Grid.Row="2" Grid.Column="1" Visibility="Hidden" Name="dec_id" ></TextBlock>
-
-
-        <Label Content="اسم الموظف" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Height="40" Margin="4,6,0,0" Width="85"/>
-        <ComboBox x:Name="emp_name" Grid.Column="1" IsTextSearchEnabled="True" IsEditable="True" FlowDirection="LeftToRight"  Grid.Row="1" Margin="10,6,500,0"   />
-        <GroupBox  Grid.Row="2"   FlowDirection="RightToLeft" Header="بيانات قرار الإجازة بلا أجر "     FontSize="14"  Grid.Column="0" Grid.ColumnSpan="2" >
+        <TextBlock Grid.Row="2" Visibility="Hidden" Name="dec_id" Margin="68,156,0,0" Grid.Column="1" />
 
 
-            <Grid  >
+        <Label Foreground="#FF633656"  Content="اسم الموظف" Grid.Column="0" FontSize="14" Height="40" Margin="4,11,0,0" Width="85" VerticalAlignment="Top" Grid.RowSpan="3"/>
+        <ComboBox x:Name="emp_name" IsTextSearchEnabled="True" IsEditable="True" FlowDirection="LeftToRight" Margin="96,12,412,16"   />
+        <GroupBox Foreground="#FF633656"   FlowDirection="RightToLeft" Header="بيانات قرار الإجازة بلا أجر "     FontSize="14"  Grid.Column="0" Grid.ColumnSpan="2" Margin="8,47,-135,56" Grid.RowSpan="3" >
+
+
+            <Grid HorizontalAlignment="Center" Width="728"  >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
@@ -95,29 +96,28 @@
 
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Label Content="رقم القرار"  Grid.Row="0"   Grid.Column="0"/>
-                <TextBox x:Name="year"     Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" />
-                <Label Content="سنة القرار"  Grid.Row="0"  Grid.Column="2"  Width="auto"/>
-                <TextBox x:Name="num_Copy" Text=""   Grid.Column="1"  VerticalAlignment="Center"/>
+                <Label Foreground="#FF633656"  FontSize="14" Content="رقم القرار" Grid.Column="2" Margin="15,0,0,0"/>
+                <TextBox x:Name="year"     Grid.Column="4" Grid.Row="0" VerticalAlignment="Top" Margin="20,5,35,0" />
+                <Label Foreground="#FF633656"  FontSize="14" Content="سنة القرار"  Grid.Column="3"  Width="auto" Margin="27,0,0,0"/>
+                <TextBox x:Name="num_Copy" Text=""  VerticalAlignment="Top" Margin="87,5,1,0" Grid.Column="2"/>
 
-                <ComboBox x:Name="sorce" FlowDirection="LeftToRight"  Grid.Row="1"  Grid.Column="1" VerticalAlignment="Center" >
+                <ComboBox x:Name="sorce" FlowDirection="LeftToRight"  Grid.Row="1" VerticalAlignment="Center" Margin="94,0,96,0" Grid.Column="2" Grid.ColumnSpan="2" >
                     <ComboBoxItem Content="جامعة البعث"/>
                     <ComboBoxItem Content="وزارة التعليم العالي"/>
                     <ComboBoxItem Content="جهة أخرى"/>
                 </ComboBox>
-                <Label Content="مصدر القرار" Height="34" Width="94" FontSize="14" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0"/>
+                <Label Foreground="#FF633656"  Content="مصدر القرار" Height="34" Width="94" FontSize="14" Margin="10,38,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
 
-                <Label Content="تعديل مدة الإجازة" Height="34" Width="110" FontSize="14" VerticalAlignment="Top" Grid.Row="1"  Grid.Column="2"/>
-                <StackPanel Grid.Column="4" Grid.Row="1" Orientation="Horizontal">
-                    <RadioButton Content="يوم" Grid.Column="4" Grid.Row="1" Margin="5,10,5,5"  GroupName="perd" Name="res_per1" Grid.RowSpan="2"/>
-                    <RadioButton Content="شهر" Grid.Column="4" Grid.Row="1" Margin="5,10,5,5"   GroupName="perd" Name="res_per2"/>
-                    <RadioButton Content="سنة" Grid.Column="4" Grid.Row="1"  Margin="5,10,5,5" GroupName="perd" Name="res_per3"/>
+                <Label Foreground="#FF633656"  Content="تعديل مدة الإجازة" Height="34" Width="110" FontSize="14" Grid.Row="1"  Grid.Column="3" Grid.ColumnSpan="2" Margin="14,0,0,0"/>
+                <StackPanel Grid.Column="4" Grid.Row="1" Orientation="Horizontal" Margin="128,0,-128,0">
+                    <RadioButton  Foreground="#FF633656" Content="يوم" Grid.Column="4" Grid.Row="1" Margin="5,10,5,5"  GroupName="perd" Name="res_per1" Grid.RowSpan="2"/>
+                    <RadioButton  Foreground="#FF633656" Content="شهر" Grid.Column="4" Grid.Row="1" Margin="5,10,5,5"   GroupName="perd" Name="res_per2"/>
+                    <RadioButton  Foreground="#FF633656" Content="سنة" Grid.Column="4" Grid.Row="1"  Margin="5,10,5,5" GroupName="perd" Name="res_per3"/>
                 </StackPanel>
-                <TextBox x:Name="period" Grid.Column="3"  Grid.Row="1"  VerticalAlignment="Center" />
-                <Button Content="تنفيذ" Grid.Column="2"   Grid.Row="2" Margin="5,5,5,5"  Click="Button_Click"/>
+                <TextBox x:Name="period" Grid.Column="4"  Grid.Row="1"  VerticalAlignment="Center" Margin="22,0,35,0" />
+                <Button Foreground="#FF633656"  Content="تنفيذ" Grid.Column="4"   Grid.Row="2" Margin="140,5,-121,5"  Click="Button_Click"/>
             </Grid>
         </GroupBox>
-        <Label Content="قرار قطع إجازة بلا أجر" Grid.Column="1" FontSize="20" Height="40" Width="184" Margin="172,0,0,0"/>
 
     </Grid>
 </UserControl>

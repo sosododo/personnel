@@ -70,29 +70,29 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto" MinHeight="50"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto" MinHeight="0"/>
-            <RowDefinition Height="auto" MinHeight="0"/>
+            <RowDefinition Height="auto" MinHeight="0.591"/>
+            <RowDefinition Height="auto" MinHeight="154.596"/>
 
 
         </Grid.RowDefinitions>
-        <Label Content="طي قرار" FontSize="20" Grid.Column="3" Margin="126,0,0,0" Grid.ColumnSpan="3" FontWeight="Bold" />
-        <Label Content="تاريخ طي القرار " Height="34" Grid.Column="5" Width="165" FontSize="14" Grid.Row="7" Margin="56,0,0,0" Grid.ColumnSpan="4"/>
-        <DatePicker x:Name="date" Grid.Column="7" HorizontalAlignment="Left"   Height="34" VerticalAlignment="Center" Width="157" Grid.Row="7" Grid.ColumnSpan="3" Margin="2,0,0,0"/>
-        <Button x:Name="collaps" Content="طي" Grid.Column="3" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top"  Width="98" Grid.Row="7" Click="collaps_Click" Grid.ColumnSpan="3" Margin="158,121,0,0"/>
-        <Label Content="رقم القرار" Height="34" Grid.Column="1" Width="142" FontSize="14" VerticalAlignment="Top" Grid.Row="7" Margin="4,4,0,0"/>
-        <TextBox x:Name="num" Grid.Column="2" HorizontalAlignment="Left" Height="34" Text="" Width="154" Grid.Row="7" Margin="3,4,0,0" Grid.ColumnSpan="2"/>
-        <CheckBox Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}"></CheckBox>
+        <Label Foreground="#FF633656"  Content="طي قرار" FontSize="20" Grid.Column="3" Grid.ColumnSpan="3" FontWeight="Bold" HorizontalAlignment="Center" Height="40" Width="91" Margin="0,14,0,0" VerticalAlignment="Top" Grid.RowSpan="8" />
+        <Label Foreground="#FF633656"  Content="تاريخ طي القرار " Height="34" Grid.Column="5" Width="165" FontSize="14" Grid.Row="7" Margin="56,0,0,0" Grid.ColumnSpan="4"/>
+        <DatePicker Foreground="#FF633656"  x:Name="date" Grid.Column="7" HorizontalAlignment="Left"   Height="25" VerticalAlignment="Center" Width="157" Grid.Row="7" Grid.ColumnSpan="3" Margin="2,0,0,0"/>
+        <Button Foreground="#FF633656"  x:Name="collaps" Content="طي" Grid.Column="3" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"  Width="98" Grid.Row="7" Click="collaps_Click" Grid.ColumnSpan="3" Margin="119,107,0,0"/>
+        <Label Foreground="#FF633656"  Content="رقم القرار" Height="34" Grid.Column="1" Width="142" FontSize="14" VerticalAlignment="Top" Grid.Row="7" Margin="4,13,0,0"/>
+        <TextBox x:Name="num" Grid.Column="2" HorizontalAlignment="Left" Height="25" Text="" Width="154" Grid.Row="7" Margin="3,13,0,0" Grid.ColumnSpan="2"/>
+        <CheckBox Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Grid.ColumnSpan="3" Margin="205,0,171,141" Grid.RowSpan="3"></CheckBox>
 
-        <TextBlock Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="dec_id" ></TextBlock>
-        <Label Content="سنة القرار" Height="34" Grid.Column="5" Width="232" FontSize="14" VerticalAlignment="Top" Grid.Row="7" Margin="56,11,0,0" Grid.ColumnSpan="4"/>
-        <TextBox x:Name="num_Copy" Grid.Column="7" HorizontalAlignment="Left" Height="34" Text="" Width="158" Grid.Row="7" Margin="1,3,0,0" Grid.ColumnSpan="3"/>
-        <Label Content="المصدر" Height="34" Grid.Column="1" Width="116" FontSize="14" Grid.Row="7" Margin="10,0,0,0"/>
-        <ComboBox x:Name="sorce" Grid.Column="2" HorizontalAlignment="Left" Margin="4,0,0,0" Grid.Row="7" Width="153" Grid.ColumnSpan="2" VerticalAlignment="Center">
+        <TextBlock Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="dec_id" Grid.ColumnSpan="3" Margin="205,0,171,141" Grid.RowSpan="3" ></TextBlock>
+        <Label Foreground="#FF633656"  Content="سنة القرار" Height="34" Grid.Column="5" Width="232" FontSize="14" VerticalAlignment="Top" Grid.Row="7" Margin="56,13,0,0" Grid.ColumnSpan="4"/>
+        <TextBox x:Name="num_Copy" Grid.Column="7" HorizontalAlignment="Left" Height="25" Text="" Width="158" Grid.Row="7" Margin="1,13,0,0" Grid.ColumnSpan="3"/>
+        <Label Foreground="#FF633656"  Content="المصدر" Height="34" Grid.Column="1" Width="116" FontSize="14" Grid.Row="7" Margin="10,0,0,0"/>
+        <ComboBox x:Name="sorce" Grid.Column="2" HorizontalAlignment="Left" Margin="4,0,0,0" Grid.Row="7" Width="153" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="25">
             <ComboBoxItem Content="جامعة البعث"/>
             <ComboBoxItem Content="وزارة التعليم العالي"/>
             <ComboBoxItem Content="جهة أخرى"/>

@@ -79,19 +79,19 @@
 
 
         </Grid.RowDefinitions>
-        <Label Content="مكافأة" Grid.Column="3" FontWeight="Bold" FontSize="20" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <Label Content="اسم الموظف" Grid.Column="0" Grid.Row="1"/>
-        <Label Content="طبيعة المكافأة" Grid.Column="2" Grid.Row="1"/>
+        <Label  Foreground="#FF633656" Content="مكافأة" Grid.Column="3" FontWeight="Bold" FontSize="20" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Label  Foreground="#FF633656" Content="اسم الموظف" Grid.Column="0" Grid.Row="1"/>
+        <Label  Foreground="#FF633656" Content="طبيعة المكافأة" Grid.Column="2" Grid.Row="1"/>
 
-        <Label Content="تاريخ منح المكافأة" Grid.Column="0" Grid.Row="3"/>
-        <Label Content="سبب منح المكافأة" Grid.Column="4" Grid.Row="1"/>
-        <Label Content="ملاحظات" Grid.Column="4" Grid.Row="1" Margin="45,46,0,0" VerticalAlignment="Top" Grid.RowSpan="3"/>
-        <ComboBox Grid.Column="1" Grid.Row="1"  IsTextSearchEnabled="True" IsEditable="True" Name="emp_name" FlowDirection="LeftToRight" />
+        <Label  Foreground="#FF633656" Content="تاريخ منح المكافأة" Grid.Column="0" Grid.Row="3"/>
+        <Label Foreground="#FF633656"  Content="سبب منح المكافأة" Grid.Column="4" Grid.Row="1"/>
+        <Label  Foreground="#FF633656" Content="ملاحظات" Grid.Column="4" Grid.Row="3" Margin="45,0,0,0"/>
+        <ComboBox  Foreground="#FF633656"  Grid.Column="1" Grid.Row="1"  IsTextSearchEnabled="True" IsEditable="True" Name="emp_name" FlowDirection="LeftToRight" />
         <TextBlock Grid.Column="3" Grid.Row="1" FlowDirection="LeftToRight"  Name="res_type" />
 
 
         <TextBox Grid.Column="5" Grid.Row="3" Name="note" Margin="4,6,4,0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
-        <DatePicker Grid.Row="3"  Name="res_start"  Grid.Column="1" Margin="1,4,4,21"/>
+        <DatePicker  Foreground="#FF633656" Grid.Row="3"  Name="res_start"  Grid.Column="1" Margin="1,4,4,21"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
         <TextBox Grid.Column="5" Grid.Row="1"    x:Name="reason" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
         <!--<RadioButton Grid.Column="1" Grid.Row="2"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionSource}" Name="dec_source">
@@ -99,12 +99,12 @@
         </RadioButton>-->
 
         <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Visibility="Hidden" />
-        <Button Content="تنفيذ قرار المكافأة"  Height="26"  Grid.Row="5" Grid.Column="2"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="76,3,84,0" Grid.ColumnSpan="3" Click="Button_Click" />
+        <Button  Foreground="#FF633656" Content="تنفيذ قرار المكافأة"  Height="26"  Grid.Row="5" Grid.Column="2"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="76,3,84,0" Grid.ColumnSpan="3" Click="Button_Click" />
         <TextBlock Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="dec_id" ></TextBlock>
         <CheckBox Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="excutee" IsChecked="{Binding IsExcute}"></CheckBox>
-        <Label Content="مقدار المكافأة" Grid.Column="2" Grid.Row="3" VerticalAlignment="Top"/>
+        <Label  Foreground="#FF633656" Content="مقدار المكافأة" Grid.Column="2" Grid.Row="3" VerticalAlignment="Top"/>
         <TextBox x:Name="amount" Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Margin="88,6,0,0" Grid.Row="3" Text="" Width="98"/>
-        <ComboBox x:Name="rew_type" Grid.Column="3" HorizontalAlignment="Left" Margin="1,6,0,0" Grid.Row="1" Width="115">
+        <ComboBox  Foreground="#FF633656" x:Name="rew_type" Grid.Column="3" HorizontalAlignment="Left" Margin="1,6,0,0" Grid.Row="1" Width="115">
 
             <ComboBoxItem>مكافئة نهاية العام</ComboBoxItem>
             <ComboBoxItem>مكافئة مفاضلة</ComboBoxItem>

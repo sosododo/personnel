@@ -9,7 +9,7 @@
       >
 
     <Grid>
-        <DataGrid x:Name="detailsDataGrid" MaxHeight="200" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"   AutoGenerateColumns="False"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="7" Margin="68,1,57,-1" CanUserAddRows="False" CanUserDeleteRows="False" >
+        <DataGrid Foreground="#FF633656" x:Name="detailsDataGrid" MaxHeight="200" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"   AutoGenerateColumns="False"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="7" Margin="68,1,57,-1" CanUserAddRows="False" CanUserDeleteRows="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn  ClipboardContentBinding="{x:Null}"  Header="بيانات القرار"  Binding="{Binding fu}" />
                 <DataGridTextColumn  ClipboardContentBinding="{x:Null}" Header="نوع الإيفاد" Binding="{Binding DelegatingType }" />

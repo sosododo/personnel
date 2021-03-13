@@ -31,6 +31,6 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Label Content="الإيفادات" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF851313" FontWeight="Bold" FontSize="25"/>
+        <Label Content="الإيفادات" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF633656" FontWeight="Bold" FontSize="25"/>
     </Grid>
 </UserControl>

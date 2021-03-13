@@ -14,8 +14,8 @@
     </UserControl.DataContext>
 
     <Grid>
-        <Label Content="الإعارة" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF851313" FontWeight="Bold" FontSize="22"/>
-        <DataGrid x:Name="secGrid" MaxHeight="200" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"  AutoGenerateColumns="False" Margin="68,48,57,165" CanUserAddRows="False"  >
+        <Label Foreground="#FF633656" Content="الإعارة" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="22"/>
+        <DataGrid Foreground="#FF633656" x:Name="secGrid" MaxHeight="200" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"  AutoGenerateColumns="False" Margin="68,48,57,165" CanUserAddRows="False"  >
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="بيانات القرار"  Binding="{Binding fu}" />
                 <DataGridTextColumn Header="نوع الاعارة" Binding="{Binding SecondmentType }" />

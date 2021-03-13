@@ -57,13 +57,14 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="29*"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="29*"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="auto" MinWidth="59"/>
+            <ColumnDefinition Width="29*"/>
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -77,40 +78,40 @@
 
 
         </Grid.RowDefinitions>
-        <Label Content="إعارة" Grid.Column="3" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="2" Margin="72,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="اسم الموظف" Grid.Column="0" Grid.Row="1"/>
-        <Label Content="نوع الاعارة" Grid.Column="2" Grid.Row="1"/>
+        <Label  Foreground="#FF633656" Content="إعارة" Grid.Column="3" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="2" Margin="72,10,0,0" VerticalAlignment="Top" Height="40" Width="57"/>
+        <Label  Foreground="#FF633656" Content="اسم الموظف" Grid.Column="0" Grid.Row="1" Margin="4,0,0,0" Height="40" Width="74"/>
+        <Label  Foreground="#FF633656" Content="نوع الاعارة" Grid.Column="2" Grid.Row="1" Margin="4,0,0,0" Height="40" Width="61"/>
 
-        <Label Content="تاريخ بداية الاعارة" Grid.Column="0" Grid.Row="3"/>
-        <Label Content="تاريخ نهاية الاعارة" Grid.Column="2" Grid.Row="3"/>
-        <Label Content="مدة الاعارة" Grid.Column="4" Grid.Row="1"/>
-        <Label Content="ملاحظات" Grid.Column="6" Grid.Row="3"/>
-        <ComboBox Grid.Column="1" Grid.Row="1"  IsTextSearchEnabled="True" IsEditable="True" Name="emp_name" FlowDirection="LeftToRight" />
-        <ComboBox Grid.Column="3" Grid.Row="1" FlowDirection="LeftToRight" IsTextSearchEnabled="True" IsEditable="True" x:Name="sec_type" >
+        <Label Foreground="#FF633656"  Content="تاريخ بداية الاعارة" Grid.Row="3" HorizontalAlignment="Center" Height="40" Width="94"/>
+        <Label Foreground="#FF633656" Content="تاريخ نهاية الاعارة" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" Height="40" Width="95"/>
+        <Label Foreground="#FF633656" Content="مدة الاعارة" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" Height="40" Width="62"/>
+        <Label Foreground="#FF633656" Content="ملاحظات" Grid.Column="7" Grid.Row="3" Margin="5,0,0,0" Height="40" Width="54"/>
+        <ComboBox Foreground="#FF633656" Grid.Column="1" Grid.Row="1"  IsTextSearchEnabled="True" IsEditable="True" Name="emp_name" FlowDirection="LeftToRight" Margin="4,4,4,0" Height="25" />
+        <ComboBox Foreground="#FF633656" Grid.Column="3" Grid.Row="1" FlowDirection="LeftToRight" IsTextSearchEnabled="True" IsEditable="True" x:Name="sec_type" Margin="3,5,5,0" Height="25" >
             <ComboBoxItem Content="إعارة داخلية"/>
             <ComboBoxItem Content="إعارة خارجية"/>
 
         </ComboBox>
-        <TextBox Grid.Column="7" Grid.Row="3" Name="note" Margin="4,2,4,0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
-        <DatePicker Grid.Row="3"  x:Name="sec_start"  Grid.Column="1" Margin="1,4,4,21"/>
-        <DatePicker Grid.Column="3" Grid.Row="3"  x:Name="sec_end"  Margin="0,3,4,21"/>
+        <TextBox Grid.Column="8" Grid.Row="3" Name="note" Margin="4,2,4,0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Height="40"/>
+        <DatePicker Foreground="#FF633656" Grid.Row="3"  x:Name="sec_start"  Grid.Column="1" Margin="1,4,4,21"/>
+        <DatePicker Foreground="#FF633656" Grid.Column="3" Grid.Row="3"  x:Name="sec_end"  Margin="0,3,4,21"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
-        <TextBox Grid.Column="5" Grid.Row="1"    Name="perod" Margin="4,6,60,0"/>
-        <Button x:Name="cmdUp_Copy2" x:FieldModifier="private" Content="🔺" Width="20" Height="15" Grid.Column="5" Grid.Row="1" FontSize="4" Padding="0" Margin="86,1,3,0" RenderTransformOrigin="0.875,2.467" VerticalAlignment="Top" Click="cmdUp_Copy2_Click"/>
-        <Button x:Name="cmdDown_Copy2" x:FieldModifier="private"  Content="🔻" Width="20" Height="15" Grid.Column="5"  FontSize="4" Padding="0" Margin="86,16,3,19" Grid.Row="1" RenderTransformOrigin="-1.436,0.61" Click="cmdDown_Copy2_Click"/>
-        <RadioButton Content="يوم" Grid.Column="6" Grid.Row="1" Height="24" Margin="59,5,75,0" VerticalAlignment="Top" Grid.ColumnSpan="2" GroupName="perd" x:Name="sec_per1"/>
-        <RadioButton Content="شهر" Grid.Column="7" Grid.Row="1" Height="24" Margin="35,7,37,0" VerticalAlignment="Top" GroupName="perd" x:Name="sec_per2"/>
-        <RadioButton Content="سنة" Grid.Column="7" Grid.Row="1" Height="24" Margin="77,7,-5,0" VerticalAlignment="Top" GroupName="perd" x:Name="sec_per3"/>
+        <TextBox Grid.Column="5" Grid.Row="1"    Name="perod" Margin="4,5,13,0" Grid.ColumnSpan="2" Height="25"/>
+        <Button Foreground="#FF633656" x:Name="cmdUp_Copy2" x:FieldModifier="private" Content="🔺" Height="15" Grid.Column="6" Grid.Row="1" FontSize="4" Padding="0" Margin="60,0,51,34" RenderTransformOrigin="0.875,2.467" VerticalAlignment="Bottom" Click="cmdUp_Copy2_Click" Grid.ColumnSpan="2"/>
+        <Button Foreground="#FF633656" x:Name="cmdDown_Copy2" x:FieldModifier="private"  Content="🔻" Width="20" Grid.Column="6"  FontSize="4" Padding="0" Margin="60,16,0,19" Grid.Row="1" RenderTransformOrigin="-1.436,0.61" Click="cmdDown_Copy2_Click" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+        <RadioButton Foreground="#FF633656" Content="يوم" Grid.Column="7" Grid.Row="1" Height="24" Margin="44,5,90,0" VerticalAlignment="Top" Grid.ColumnSpan="2" GroupName="perd" x:Name="sec_per1"/>
+        <RadioButton Foreground="#FF633656" Content="شهر" Grid.Column="8" Grid.Row="1" Height="24" Margin="20,7,52,0" VerticalAlignment="Top" GroupName="perd" x:Name="sec_per2"/>
+        <RadioButton Foreground="#FF633656" Content="سنة" Grid.Column="8" Grid.Row="1" Height="24" Margin="62,7,10,0" VerticalAlignment="Top" GroupName="perd" x:Name="sec_per3"/>
         <!--<RadioButton Grid.Column="1" Grid.Row="2"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionSource}" Name="dec_source">
             
         </RadioButton>-->
 
-        <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Visibility="Hidden" />
-        <Button Content="تنفيذ قرار الإعارة"  Height="26"  Grid.Row="5" Grid.Column="3"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="61,3,10,0" Grid.ColumnSpan="2" Click="Button_Click" />
-        <TextBlock Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="dec_id" ></TextBlock>
-        <CheckBox Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}"></CheckBox>
-        <Label Content="مكان الإعارة" Grid.Column="4" Margin="29,3,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <TextBox x:Name="place" Grid.ColumnSpan="2" Grid.Column="4" HorizontalAlignment="Left" Margin="97,3,0,0" Grid.Row="3" Text="" Width="99"/>
+        <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Visibility="Hidden" Height="25" Width="28" />
+        <Button Foreground="#FF633656" Content="تنفيذ قرار الإعارة"  Height="26"  Grid.Row="5" Grid.Column="3"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="40,3,31,0" Grid.ColumnSpan="2" Click="Button_Click" />
+        <TextBlock Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="dec_id" />
+        <CheckBox Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}"/>
+        <Label Foreground="#FF633656" Content="مكان الإعارة" Grid.Column="4" Margin="4,3,0,0" Grid.Row="3" VerticalAlignment="Top" Height="40" Width="68"/>
+        <TextBox x:Name="place" Grid.Column="5" HorizontalAlignment="Left" Margin="4,3,0,0" Grid.Row="3" Text="" Width="99" Grid.ColumnSpan="2" Height="40"/>
 
     </Grid>
 </UserControl>

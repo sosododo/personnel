@@ -140,8 +140,15 @@ namespace personnel.Views
                         MessageBox.Show("ادخل نوع التبدل الوظيفي من فضلك");
                     }
                     else if (mission_Copy.Text == "استقالة") {
-                        status.Text = "مستقيل";
-                        person.Status = "مستقيل";
+                        status.Text = "قائم على رأس عمله";
+                        person.Status = "قائم على رأس عمله";
+                        db.SelfCards.Update(person);
+                        db.SaveChanges();
+                    }
+                    else if (mission_Copy.Text == "مباشرة")
+                    {
+                        status.Text = "قائم على رأس عمله";
+                        person.Status = "قائم على رأس عمله";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
@@ -348,6 +355,12 @@ namespace personnel.Views
             {
                 status.Text = "قائم على رأس عمله";
                
+                // status.Text = "قائم على رأس عمله";
+            }
+            if (mission_Copy.Text == "مباشرة")
+            {
+                status.Text = "قائم على رأس عمله";
+
                 // status.Text = "قائم على رأس عمله";
             }
             else if (mission_Copy.Text == "استقالة")

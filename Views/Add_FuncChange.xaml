@@ -127,6 +127,7 @@
                 </ComboBox>
                 <Label Foreground="#FF633656" Content="مكان العمل" Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" />
                 <ComboBox Grid.Column="5" Grid.Row="1" x:Name="mission_Copy" Margin="0,8,0,0" DropDownClosed="mission_Copy_DropDownClosed" >
+                    <ComboBoxItem Content="مباشرة" />
                     <ComboBoxItem Content="اعادة إلى العمل" />
                     <ComboBoxItem Content="استقالة" />
                     <ComboBoxItem Content="نهاية خدمة" />
@@ -161,7 +162,7 @@
         <TextBlock HorizontalAlignment="Center"  Text="إضافة تبدل وظيفي" VerticalAlignment="Center"  FontWeight="Bold"  FontSize="20" Height="27" Foreground="#FF633656" FontFamily="Segoe UI Semibold" />
         <!--<Button Content="خروج"    Grid.Row="2" VerticalAlignment="Top" Height="35" Width="70" Margin="159,17,571,0"   Click="Exit"/>
         <Button Content="تفريغ الخلابا"   VerticalAlignment="Top" Height="35" Width="70" Grid.Row="2"  Margin="365,17,365,0" Click="Clear_Form" RenderTransformOrigin="0.473,0.467"  />-->
-        <Button Content="إضافة" Width="70" Grid.Row="2" Margin="324,17,406,0"  Click="Add_Change"  />
+        <Button Content="إضافة" Width="70" Grid.Row="2" Margin="324,17,406,0"  Click="Add_Change" Height="20" VerticalAlignment="Top"  />
         <TextBlock Grid.Row="2" Visibility="Hidden" Name="dec_id" Margin="587,0,0,0" />
         <CheckBox Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}"></CheckBox>
 

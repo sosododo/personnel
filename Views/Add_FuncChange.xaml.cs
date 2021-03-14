@@ -140,8 +140,8 @@ namespace personnel.Views
                         MessageBox.Show("ادخل نوع التبدل الوظيفي من فضلك");
                     }
                     else if (mission_Copy.Text == "استقالة") {
-                        status.Text = "قائم على رأس عمله";
-                        person.Status = "قائم على رأس عمله";
+                        status.Text = "مستقيل";
+                        person.Status = "مستقيل";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
@@ -272,7 +272,7 @@ namespace personnel.Views
                         Mission = mission.Text,
                         ChangeDate = (DateTime)chandate1.SelectedDate,
                         Status = status.Text,
-                        Salary = Int32.Parse(salary.Text),
+                        Salary = double.Parse(salary.Text),
                         JobTitle = job.Text
 
                     };
@@ -280,37 +280,58 @@ namespace personnel.Views
                     db.SaveChanges();
                     MessageBox.Show("تم إجراءالتبدل الوظيفي بنجاح...");
 
-                    this.Visibility = Visibility.Collapsed;
 
-                    var d = db.Decisions.Where(c => c.DecisionId == long.Parse(dec_id.Text)).Single();
+                    string message = "هل انتهى تنفيذ القرار؟";
+                    string caption = "تنبيه";
+                    var result = MessageBox.Show(message, caption,
+                                                 MessageBoxButton.YesNo,
+                                                 MessageBoxImage.Question);
 
-                    d.IsExcute = true;
-                    db.Decisions.Update(d);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        var d = db.Decisions.Where(c => c.DecisionId == long.Parse(dec_id.Text)).Single();
 
-                    db.SaveChanges();
-                    emp_name.SelectedItem = null;
-                    chandate1.SelectedDate = null;
-                    pp.SelectedItem = null;
-                    grade.SelectedItem = null;
-                    job.SelectedItem = null;
-                    mission.SelectedItem = null;
-                    status.SelectedItem = null;
-                    salary.Text = null;
-                    this.Visibility = Visibility.Collapsed;
-                    var dd = db.Decisions.Where(c => c.DecisionId == long.Parse(dec_id.Text)).Single();
-                    excute.IsChecked = true;
-                    // d.IsExcute = true;
-                    dd.IsExcute = true;
+                        d.IsExcute = true;
+                        db.Decisions.Update(d);
 
-                    db.Decisions.Update(dd);
+                        db.SaveChanges();
+                        emp_name.SelectedItem = null;
+                        chandate1.SelectedDate = null;
+                        pp.SelectedItem = null;
+                        grade.SelectedItem = null;
+                        job.SelectedItem = null;
+                        mission.SelectedItem = null;
+                        status.SelectedItem = null;
+                        salary.Text = null;
+                        mission_Copy.SelectedItem = null;
+                        this.Visibility = Visibility.Collapsed;
+                        var dd = db.Decisions.Where(c => c.DecisionId == long.Parse(dec_id.Text)).Single();
+                        excute.IsChecked = true;
+                        // d.IsExcute = true;
+                        dd.IsExcute = true;
 
-                    db.SaveChanges();
+                        db.Decisions.Update(dd);
 
-                    Decision_View dv = new Decision_View();
-                    Window parentWindow = Window.GetWindow(this);
-                    parentWindow.Close();
-                    dv.Show();
+                        db.SaveChanges();
 
+                        Decision_View dv = new Decision_View();
+                        Window parentWindow = Window.GetWindow(this);
+                        parentWindow.Close();
+                        dv.Show();
+                    }
+                    else if (result == MessageBoxResult.No)
+                    {
+                        emp_name.SelectedItem = null;
+                        chandate1.SelectedDate = null;
+                        pp.SelectedItem = null;
+                        grade.SelectedItem = null;
+                        job.SelectedItem = null;
+                        mission.SelectedItem = null;
+                        status.SelectedItem = null;
+                        salary.Text = null;
+                        mission_Copy.SelectedItem = null;
+                        
+                    }
 
 
 
@@ -320,7 +341,10 @@ namespace personnel.Views
 
 
                             }
-            catch (Exception ex) {  MessageBox.Show("يجب التأكد من ادخال جميع البيانات"); }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+                // MessageBox.Show("يجب التأكد من ادخال جميع البيانات");
+            }
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

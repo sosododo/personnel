@@ -50,7 +50,7 @@
                 <TextBlock  Grid.Column="0" Text="الحالة" Grid.Row="3" Foreground="#FF633656"  />
                 <TextBlock  FlowDirection="RightToLeft" Text="الراتب" Grid.Column="2" Grid.Row="3" Foreground="#FF633656"/>
                 <DatePicker Foreground="#FF633656"  VerticalAlignment="Center"  Margin="4,0,0,0" Grid.Column="3" Grid.Row="1"  Name="chandate1" Height="30"  />
-                <ComboBox   Grid.Column="1" Grid.Row="2" Name="grade" DropDownClosed="grade_DropDownClosed" IsEditable="True" >
+                <ComboBox Foreground="#FF633656"  Grid.Column="1" Grid.Row="2" Name="grade" DropDownClosed="grade_DropDownClosed" IsEditable="True" >
                     <ComboBoxItem Content="الأولى" />
                     <ComboBoxItem Content="الثانية"/>
                     <ComboBoxItem Content="الثالثة"/>
@@ -60,12 +60,12 @@
 
 
                 </ComboBox>
-                <ComboBox Grid.Column="3" Grid.Row="2" Name="job" IsEditable="True"   >
+                <ComboBox Foreground="#FF633656" Grid.Column="3" Grid.Row="2" Name="job" IsEditable="True"   >
                     <!--<ComboBoxItem Content="ii"/>
                     <ComboBoxItem Content="oo"/>-->
 
                 </ComboBox>
-                <ComboBox Grid.Column="5" Grid.Row="3" x:Name="pp" Grid.RowSpan="3" IsEditable="True">
+                <ComboBox Foreground="#FF633656" Grid.Column="5" Grid.Row="3" x:Name="pp" Grid.RowSpan="3" IsEditable="True">
                     <!--<ComboBoxItem Content="الادارة المركزية" IsSelected="True"/>-->
                     <!--<ComboBoxItem Content="كلية التربية"/>-->
 
@@ -101,7 +101,7 @@
 
 
 
-                <ComboBox Grid.Column="5" Grid.Row="2" Name="mission" IsEditable="True" Foreground="#FF633656" >
+                <ComboBox  Grid.Column="5" Grid.Row="2" Name="mission" IsEditable="True" Foreground="#FF633656" >
                     <ComboBoxItem Content="موظف" IsSelected="true"/>
                     <ComboBoxItem Content="رئيس جامعة"/>
                     <ComboBoxItem Content="نائب رئيس جامعة"/>
@@ -119,14 +119,14 @@
 
                 </ComboBox>
 
-                <TextBox  Grid.Column="3" Grid.Row="3" Name="salary"/>
-                <ComboBox Grid.Column="1" Grid.Row="1" Name="emp_name" IsTextSearchEnabled="True" IsEditable="True" DropDownClosed="emp_name_DropDownClosed" >
+                <TextBox Foreground="#FF633656" Grid.Column="3" Grid.Row="3" Name="salary"/>
+                <ComboBox Foreground="#FF633656" Grid.Column="1" Grid.Row="1" Name="emp_name" IsTextSearchEnabled="True" IsEditable="True" DropDownClosed="emp_name_DropDownClosed" >
                     <!--<ComboBoxItem Content="الادارة المركزية" IsSelected="True"/>
                     <ComboBoxItem Content="كلية التربية"/>-->
 
                 </ComboBox>
                 <Label Foreground="#FF633656" Content="مكان العمل" Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" />
-                <ComboBox Grid.Column="5" Grid.Row="1" x:Name="mission_Copy" Margin="0,8,0,0" DropDownClosed="mission_Copy_DropDownClosed" >
+                <ComboBox Foreground="#FF633656" Grid.Column="5" Grid.Row="1" x:Name="mission_Copy" Margin="0,8,0,0" DropDownClosed="mission_Copy_DropDownClosed" >
                     <ComboBoxItem Content="مباشرة" />
                     <ComboBoxItem Content="اعادة إلى العمل" />
                     <ComboBoxItem Content="استقالة" />
@@ -162,7 +162,7 @@
         <TextBlock HorizontalAlignment="Center"  Text="إضافة تبدل وظيفي" VerticalAlignment="Center"  FontWeight="Bold"  FontSize="20" Height="27" Foreground="#FF633656" FontFamily="Segoe UI Semibold" />
         <!--<Button Content="خروج"    Grid.Row="2" VerticalAlignment="Top" Height="35" Width="70" Margin="159,17,571,0"   Click="Exit"/>
         <Button Content="تفريغ الخلابا"   VerticalAlignment="Top" Height="35" Width="70" Grid.Row="2"  Margin="365,17,365,0" Click="Clear_Form" RenderTransformOrigin="0.473,0.467"  />-->
-        <Button Content="إضافة" Width="70" Grid.Row="2" Margin="324,17,406,0"  Click="Add_Change" Height="20" VerticalAlignment="Top"  />
+        <Button Foreground="#FF633656" Content="إضافة" Width="70" Grid.Row="2" Margin="324,17,406,0"  Click="Add_Change" Height="20" VerticalAlignment="Top"  />
         <TextBlock Grid.Row="2" Visibility="Hidden" Name="dec_id" Margin="587,0,0,0" />
         <CheckBox Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}"></CheckBox>
 

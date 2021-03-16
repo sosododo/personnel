@@ -53,27 +53,57 @@ namespace personnel.Views
                 {
                     if (count == 0)
                     {
-                        Decision dec = new Decision
+                        if (dec_source.Text== "جهة أخرى")
                         {
-                            DecisionNumber = Int32.Parse(dec_num.Text),
-                            DecisionYear = Int32.Parse(dec_year.Text),
-                            DecisionType = dec_type.Text,
-                            DecisionContent = dec_con.Text,
-                            DecisionStart = dec_start.SelectedDate,
-                            DecisionEnd = dec_end.SelectedDate,
-                            DecisionSource = dec_source.Text,
-                            EffectType = dec_effect.Text,
-                            Result = dec_result.Text,
-                            DecisionStatus="قرار ساري",
-                            CollapsDate=null
+                            Decision dec = new Decision
+                            {
+                                DecisionNumber = Int32.Parse(dec_num.Text),
+                                DecisionYear = Int32.Parse(dec_year.Text),
+                                DecisionType = dec_type.Text,
+                                DecisionContent = dec_con.Text,
+                                DecisionStart = dec_start.SelectedDate,
+                                DecisionEnd = dec_end.SelectedDate,
+                                DecisionSource = others.Text,
+                                EffectType = dec_effect.Text,
+                                Result = dec_result.Text,
+                                DecisionStatus = "قرار ساري",
+                                CollapsDate = null
 
 
 
-                        };
-                        pdb.Decisions.Add(dec);
-                        pdb.SaveChanges();
-                        MessageBox.Show("تمت الاضافة بنجاح");
-                        this.Visibility = Visibility.Collapsed;
+                            };
+
+                            pdb.Decisions.Add(dec);
+                            pdb.SaveChanges();
+                            MessageBox.Show("تمت الاضافة بنجاح");
+                            this.Visibility = Visibility.Collapsed;
+
+                        }
+                        else {
+                            Decision dec = new Decision
+                            {
+                                DecisionNumber = Int32.Parse(dec_num.Text),
+                                DecisionYear = Int32.Parse(dec_year.Text),
+                                DecisionType = dec_type.Text,
+                                DecisionContent = dec_con.Text,
+                                DecisionStart = dec_start.SelectedDate,
+                                DecisionEnd = dec_end.SelectedDate,
+                                DecisionSource = dec_source.Text,
+                                EffectType = dec_effect.Text,
+                                Result = dec_result.Text,
+                                DecisionStatus = "قرار ساري",
+                                CollapsDate = null
+
+
+
+                            };
+
+                            pdb.Decisions.Add(dec);
+                            pdb.SaveChanges();
+                            MessageBox.Show("تمت الاضافة بنجاح");
+                            this.Visibility = Visibility.Collapsed;
+                        }
+
                     }
                     else
                     {
@@ -94,6 +124,14 @@ namespace personnel.Views
             }
             catch (Exception ex) { MessageBox.Show("تأكد من ادخال كافة البيانات"); }
 
+        }
+
+        private void dec_source_DropDownClosed(object sender, EventArgs e)
+        {
+            if (dec_source.Text == "جهة أخرى") {
+                dec_source.Visibility = Visibility.Collapsed;
+                others.Visibility = Visibility.Visible;
+            }
         }
     }
 }

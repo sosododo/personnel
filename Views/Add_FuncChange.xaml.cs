@@ -130,6 +130,7 @@ namespace personnel.Views
                     if (mission_Copy.Text == "اعادة إلى العمل") {
                         status.Text = "قائم على رأس عمله";
                         person.Status = "قائم على رأس عمله";
+                        person.InsuranceCard = "ضمن الخدمة";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                        // status.Text = "قائم على رأس عمله";
@@ -142,10 +143,11 @@ namespace personnel.Views
                     else if (mission_Copy.Text == "استقالة") {
                         status.Text = "مستقيل";
                         person.Status = "مستقيل";
+                        person.InsuranceCard = "خارج الخدمة";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
-                    else if (mission_Copy.Text == "مباشرة")
+                    else if (mission_Copy.Text == "تعيين")
                     {
                         status.Text = "قائم على رأس عمله";
                         person.Status = "قائم على رأس عمله";
@@ -155,6 +157,7 @@ namespace personnel.Views
                     else if (mission_Copy.Text == "نهاية خدمة") {
                         status.Text = "متقاعد";
                         person.Status = "متقاعد";
+                        person.InsuranceCard = "خارج الخدمة";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
 
@@ -162,6 +165,7 @@ namespace personnel.Views
                     else if (mission_Copy.Text == "تجميد") {
                         status.Text = "مجمد";
                         person.Status = "مجمد";
+                        person.InsuranceCard = "خارج الخدمة";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     
@@ -176,6 +180,7 @@ namespace personnel.Views
                     {
                         status.Text = "بحكم المستقيل";
                         person.Status = "بحكم المستقيل";
+                        person.InsuranceCard = "خارج الخدمة";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
@@ -183,6 +188,7 @@ namespace personnel.Views
                     {
                        status.Text = "مصروف من الخدمة";
                         person.Status = "مصروف من الخدمة";
+                        person.InsuranceCard = "خارج الخدمة";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
@@ -190,6 +196,7 @@ namespace personnel.Views
                     {
                       status.Text = "متوفى";
                         person.Status = "متوفى";
+                        person.InsuranceCard = "خارج الخدمة";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
@@ -197,6 +204,7 @@ namespace personnel.Views
                     {
                         status.Text= "متقاعد";
                         person.Status = "متقاعد";
+                        person.InsuranceCard = "خارج الخدمة";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
@@ -204,6 +212,7 @@ namespace personnel.Views
                     {
                         status.Text = "مسرح صحياً";
                         person.Status = "مسرح صحياً";
+                        person.InsuranceCard = "خارج الخدمة";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
@@ -248,6 +257,7 @@ namespace personnel.Views
                     {
                         pp.Text = "";
                         person.Status = "منقول خارج الجامعة";
+                        person.InsuranceCard = "خارج الخدمة";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
@@ -256,7 +266,8 @@ namespace personnel.Views
 
                         status.Text = "بلا أجر";
                         person.Status = "بلا أجر";
-                       
+                        person.InsuranceCard = "خارج الخدمة";
+
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }
@@ -381,7 +392,7 @@ namespace personnel.Views
                
                 // status.Text = "قائم على رأس عمله";
             }
-            if (mission_Copy.Text == "مباشرة")
+            if (mission_Copy.Text == "تعيين")
             {
                 status.Text = "قائم على رأس عمله";
 

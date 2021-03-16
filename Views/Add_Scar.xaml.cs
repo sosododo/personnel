@@ -170,6 +170,7 @@ namespace personnel.Views
                         SelfCard person = new SelfCard();
                         person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
                         person.Status = "مندوب";
+                        person.InsuranceCard = "خارج الخدمة";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
 

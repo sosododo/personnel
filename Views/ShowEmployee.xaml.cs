@@ -154,8 +154,13 @@ namespace personnel.Views
             pp.Visibility = Visibility.Collapsed;
             EmpRest es = new EmpRest();
             DateTime date1 = (emp.BeginningDate).Value;
-            int service = es.service_count(emp.BeginningDate.Value);
-            cs.count.Text = "  عدد سنوات الخدمة للموظف هي : "+service.ToString()+" سنة ";
+            int all_service = es.service_count(emp.BeginningDate.Value);
+            int serviceday = (all_service * 360) - (es.calculate(emp.PersonId));
+            int service = serviceday / 360;
+            int reminder = serviceday % 360;
+         
+            cs.count.Text = "  عدد سنوات الخدمة للموظف هي : "+service.ToString()+" سنة " +" و  "+reminder+ "  "+"يوم";
+
             cs.begin.Text = "تاريخ المباشرة :  " + date1.ToShortDateString() + "";
             cs.Visibility = Visibility.Visible;
             

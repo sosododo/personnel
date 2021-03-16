@@ -17,9 +17,9 @@
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
-              
+
             </Setter>
-            
+
 
 
         </Style>
@@ -49,10 +49,7 @@
 
 
         </Grid.ColumnDefinitions>
-        <TextBlock   HorizontalAlignment="Center" TextWrapping="NoWrap" Text="ادارة شؤون العاملين في جامعة البعث" VerticalAlignment="Top" FlowDirection="RightToLeft" Height="30" FontSize="20" Foreground="#FF851313" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="1" Width="306" Margin="0,26,0,0" FontFamily="Segoe UI">
-
-
-        </TextBlock>
+        <TextBlock   HorizontalAlignment="Center" TextWrapping="NoWrap" Text="برنامج أتمتة مديرية التنمية الإدارية في جامعة البعث" VerticalAlignment="Center" FlowDirection="RightToLeft" Height="46" Width="auto" FontSize="18" Foreground="#FF851313" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Segoe UI"/>
         <Button x:Name="zat" Grid.Row="1"  Grid.Column="0" Content="ذاتية العاملين" Width="100" Height="50" Click="Button_Click" Foreground="#FF9B2525" FontWeight="Bold" />
         <Button x:Name="changes" Grid.Row="1"   Grid.Column="1" Content="تبدلات طارئة"  Height="50"  Width="100" Foreground="#FF9B2525" FontWeight="Bold" Click="GoToDecisions"/>
         <Button  Grid.Row="1"  Grid.Column="2" Content="احصائيات"  Width="100" Height="50" Name="b2" Foreground="#FF9B2525" FontWeight="Bold" Click="b2_Click"/>

@@ -43,13 +43,13 @@
     <Resource Include="Icon\pass.jpg" />
 	
     <Content Include="Report\rest_report.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Report\repzat - Copy.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Report\repzat.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Statistics\specstatis.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

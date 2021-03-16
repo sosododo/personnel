@@ -57,12 +57,12 @@ namespace personnel.Views
 
             if (sname.IsChecked == true)
             {
-                int num = db.SelfCards.Where(x => x.IsTeacher==0 && x.FirstName == inputsearch).Count();
+                int num = db.SelfCards.Where(x => x.IsTeacher==0 && x.FirstName +' '+ x.LastName == inputsearch).Count();
 
                 //if (num >= 1)
    
 
-                List<SelfCard> selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.FirstName == inputsearch).ToList();
+                List<SelfCard> selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.FirstName + ' ' + x.LastName == inputsearch).ToList();
 
                 if (selfCards.Count!=0)
                 {

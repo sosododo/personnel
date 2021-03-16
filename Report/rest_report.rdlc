@@ -404,7 +404,6 @@
                         <WritingMode>Horizontal</WritingMode>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>

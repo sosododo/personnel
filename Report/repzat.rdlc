@@ -2010,10 +2010,10 @@
                   <Width>0.42743in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.54982in</Width>
+                  <Width>0.64459in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.73282in</Width>
+                  <Width>0.63805in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.57067in</Width>
@@ -3327,7 +3327,9 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>category</rd:DefaultName>
@@ -3771,7 +3773,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.43723in</Width>
+                  <Width>0.53192in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.65471in</Width>
@@ -3780,13 +3782,13 @@
                   <Width>0.55001in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.63384in</Width>
+                  <Width>0.53914in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.49296in</Width>
+                  <Width>0.39817in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.49993in</Width>
+                  <Width>0.5947in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.50632in</Width>
@@ -4266,14 +4268,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox141">
+                        <Textbox Name="decision_start">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=FormatDateTime(Fields!decision_start.Value, DateFormat.ShortDate)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -4282,7 +4284,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox141</rd:DefaultName>
+                          <rd:DefaultName>decision_start</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -4297,14 +4299,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox131">
+                        <Textbox Name="decision_number">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!decision_number.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -4313,7 +4315,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox131</rd:DefaultName>
+                          <rd:DefaultName>decision_number</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -4328,14 +4330,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox129">
+                        <Textbox Name="decision_type1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!decision_type.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -4344,7 +4346,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox129</rd:DefaultName>
+                          <rd:DefaultName>decision_type1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -4390,14 +4392,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox67">
+                        <Textbox Name="rest_type">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!rest_type.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -4406,7 +4408,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox67</rd:DefaultName>
+                          <rd:DefaultName>rest_type</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -4421,14 +4423,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox7">
+                        <Textbox Name="rest_end">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=FormatDateTime(Fields!rest_end.Value, DateFormat.ShortDate)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -4437,7 +4439,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <rd:DefaultName>rest_end</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -4452,14 +4454,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox11">
+                        <Textbox Name="rest_start">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=FormatDateTime(Fields!rest_start.Value, DateFormat.ShortDate)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -4468,7 +4470,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <rd:DefaultName>rest_start</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -4490,13 +4492,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!rest_period.Value.ToString +"  "+Fields!period.Value.ToString</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -4541,11 +4545,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet3</DataSetName>
+            <DataSetName>DataSet4</DataSetName>
             <Top>3.90848in</Top>
             <Left>2.89369in</Left>
             <Height>0.75in</Height>
-            <Width>4.2509in</Width>
+            <Width>4.25087in</Width>
             <ZIndex>11</ZIndex>
             <Style>
               <Border>
@@ -4628,19 +4632,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.4333in</Width>
+                  <Width>0.63302in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.65078in</Width>
+                  <Width>0.77766in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.54608in</Width>
+                  <Width>0.52191in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.62991in</Width>
+                  <Width>0.40074in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.48903in</Width>
+                  <Width>0.40372in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -4929,7 +4933,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=FormatDateTime(Fields!decision_start.Value, DateFormat.ShortDate)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -4960,7 +4964,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!decision_number.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -4991,7 +4995,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!decision_number.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -5022,7 +5026,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!reason.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -5053,7 +5057,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!punishment_type.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -5101,11 +5105,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet4</DataSetName>
+            <DataSetName>DataSet3</DataSetName>
             <Top>3.90848in</Top>
             <Left>0.14458in</Left>
             <Height>0.75in</Height>
-            <Width>2.7491in</Width>
+            <Width>2.73705in</Width>
             <ZIndex>14</ZIndex>
             <Style>
               <Border>

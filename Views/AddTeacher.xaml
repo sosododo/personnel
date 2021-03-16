@@ -480,13 +480,13 @@
 
             </Grid>
         </GroupBox>
-        <TextBlock HorizontalAlignment="Center"  Text="إضافة ذاتية عضو هيئة فنية/ تدريسية "  FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold"  />
-        <StackPanel  Grid.Row="3" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
-           
-            
-            <Button Content="إضافة" Width="70"   Height="35" Margin="5,5,5,5" Click="Add_person"  />
-            <Button Content="تفريغ الخلايا"   VerticalAlignment="Top" Height="35" Width="70"  Margin="5,5,5,5" Click="Clear_Form" Grid.RowSpan="2"  />
-            <Button Content="عودة"   Width="70" Margin="5,5,5,5" Click="Exit" />
+        <TextBlock HorizontalAlignment="Right"  Text="إضافة ذاتية عضو هيئة فنية/ تدريسية"  VerticalAlignment="Center" FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold"  />
+        <StackPanel  Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+
+
+            <Button Content="إضافة" Width="70"    Height="35" Grid.Row="3" Grid.Column="1" Margin="5,5,5,5" Click="Add_person"  />
+            <Button Content="تفريغ الخلايا"   Height="35" Width="70"  Margin="5,5,5,5" Click="Clear_Form"  />
+            <Button Content="عودة"   Width="70"   Height="35" Margin="5,5,5,5" Click="Exit" Grid.Row="3" Grid.Column="1" />
         </StackPanel>
     </Grid>
 </Window>

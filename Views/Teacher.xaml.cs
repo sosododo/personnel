@@ -54,14 +54,29 @@ namespace personnel.Views
         {
             string work = workplace.Text;
             string inputsearch = search.Text;
-
+            string lastname = last.Text;
+            List<SelfCard> selfCards = new List<SelfCard>();
             if (sname.IsChecked == true)
             {
-                int num = db.SelfCards.Where(x =>x.IsTeacher==1 && x.FirstName == inputsearch).Count();
 
-                //if (num >= 1)
+                if (inputsearch == "" || inputsearch == "الاسم الأول")
+                {
 
-                List<SelfCard> selfCards = db.SelfCards.Where(x =>x.IsTeacher==1 && x.FirstName == inputsearch).ToList();
+                    selfCards = db.SelfCards.Where(x => x.IsTeacher == 1 && x.LastName == lastname).ToList();
+                }
+                else if (lastname == "" || lastname == "الكنية")
+                {
+                    selfCards = db.SelfCards.Where(x => x.IsTeacher == 1 && x.FirstName == inputsearch).ToList();
+                }
+                else
+                {
+
+
+                    selfCards = db.SelfCards.Where(x => x.IsTeacher == 1 && x.FirstName == inputsearch && x.LastName == lastname).ToList();
+                }
+               
+
+       
 
                 if (selfCards.Count!=0)
                 {
@@ -136,6 +151,7 @@ namespace personnel.Views
         {
            
             search.Visibility = Visibility.Hidden;
+            last.Visibility = Visibility.Hidden;
             workplace.Visibility = Visibility.Visible;
             search_emp.ItemsSource = null;
 
@@ -143,8 +159,10 @@ namespace personnel.Views
 
         private void sname_Checked(object sender, RoutedEventArgs e)
         {
-            search.Text = "";
+            search.Text = "الاسم الأول";
+            last.Text = "الكنية";
             search.Visibility = Visibility.Visible;
+            last.Visibility = Visibility.Visible;
             workplace.Visibility = Visibility.Hidden;
             search_emp.ItemsSource = null;
         }

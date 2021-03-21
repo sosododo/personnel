@@ -54,25 +54,35 @@ namespace personnel.Views
           
             string work = workplace.Text;
             string inputsearch = search.Text;
-
+            string lastname = last.Text;
+            List<SelfCard> selfCards=new List<SelfCard>();
             if (sname.IsChecked == true)
             {
-                int num = db.SelfCards.Where(x => x.IsTeacher==0 && x.FirstName +' '+ x.LastName == inputsearch).Count();
 
-                //if (num >= 1)
-   
+                if (inputsearch == "" || inputsearch == "الاسم الأول") {
 
-                List<SelfCard> selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.FirstName + ' ' + x.LastName == inputsearch).ToList();
+                    selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.LastName == lastname).ToList();
+                                 }
+               else if (lastname == "" || lastname == "الكنية") {
+                    selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.FirstName == inputsearch ).ToList();
+                }
+                else
+                {
+                   
+
+                   selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.FirstName == inputsearch && x.LastName == lastname).ToList();
+                }
+         
 
                 if (selfCards.Count!=0)
                 {
                     
                     search_emp.ItemsSource = selfCards;
 
-
+                  
 
                 }
-                else
+                else if(selfCards.Count==0)
                 { MessageBox.Show("لا يوجد بيانات لهذا البحث"); }
 
             }
@@ -92,16 +102,7 @@ namespace personnel.Views
 
 
             }
-            //else
-            //{
-            //    int num = db.SelfCards.Where(x => x.FirstName == inputsearch).Count();
-
-            //    if (num == 1)
-            //    {
-            //        sc = db.SelfCards.Where(x => x.Workplace == inputsearch).FirstOrDefault();
-            //    }
-            //}
-
+       
         }
 
         private void View_Employee(object sender, RoutedEventArgs e)
@@ -135,6 +136,7 @@ namespace personnel.Views
         {
            
             search.Visibility = Visibility.Hidden;
+            last.Visibility = Visibility.Hidden;
             workplace.Visibility = Visibility.Visible;
             search_emp.ItemsSource = null;
 
@@ -142,8 +144,10 @@ namespace personnel.Views
 
         private void sname_Checked(object sender, RoutedEventArgs e)
         {
-            search.Text = "";
+            search.Text = "الاسم الأول";
+            last.Text = "الكنية";
             search.Visibility = Visibility.Visible;
+            last.Visibility = Visibility.Visible;
             workplace.Visibility = Visibility.Hidden;
             search_emp.ItemsSource = null;
         }

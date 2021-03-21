@@ -42,7 +42,7 @@ namespace personnel.Views
         private void Exit(object sender, RoutedEventArgs e)
         {
 
-            MainWindow v = new MainWindow();
+            Statistics v = new Statistics();
             this.Close();
             v.Show();
 

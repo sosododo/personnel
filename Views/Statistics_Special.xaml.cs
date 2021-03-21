@@ -32,8 +32,8 @@ namespace personnel.Views
        
         private void Exit(object sender, RoutedEventArgs e)
         {
-
-            MainWindow v = new MainWindow();
+            this.Close();
+            Statistics v = new Statistics();
      
             v.Show();
 

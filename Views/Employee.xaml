@@ -71,7 +71,9 @@
         </GroupBox>
         <GroupBox  Grid.Column="0"  Header="البحث" FlowDirection="RightToLeft" Grid.Row="1"  Height="auto" >
             <Grid VerticalAlignment="Top">
-                <TextBox  TextWrapping="NoWrap" Width="100" Height="22" Name="search" IsEnabled="True" VerticalAlignment="top" Margin="20,28,20,0"  Visibility="Collapsed"  Foreground="#FFAAAAAA" />
+                <TextBox Text="الاسم الأول" TextWrapping="NoWrap" Width="100" Height="22" Name="search" IsEnabled="True" VerticalAlignment="Top" Margin="20,20,20,0"  Visibility="Collapsed"  Foreground="#FFBBB5B5" />
+                <TextBox Text="الكنية" TextWrapping="NoWrap" Width="100" Height="22" Name="last" IsEnabled="True" VerticalAlignment="Center" Margin="20,0,20,0"  Visibility="Collapsed"  Foreground="#FFBBB5B5" />
+
                 <ComboBox  VerticalAlignment="top" Margin="20,28,20,0" Height="25" Name="workplace" FontWeight="Bold" FontSize="12" FlowDirection="LeftToRight"  Visibility="Collapsed"/>
                 <Button Content="بحـــث" Margin="33,77,32,15" Width="75" Height="25" Click="Search_Employee" FontWeight="Bold" FontSize="12"  />
 

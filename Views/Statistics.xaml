@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:personnel.Views"
          xmlns:model="clr-namespace:personnel.Models"
         mc:Ignorable="d"
-        Title="Statistics" Height="300" Width="500" FlowDirection="RightToLeft" >
+        Title="Statistics" Height="300" Width="500" FlowDirection="RightToLeft" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" >
 
 
     <Window.Resources>
@@ -198,7 +198,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="184.964" />
+            <ColumnDefinition Width="0"/>
 
         </Grid.ColumnDefinitions>
 
@@ -208,12 +209,11 @@
             <RowDefinition Height="auto"/>
 
         </Grid.RowDefinitions>
-        <Label Content="إحصائية بيانات الموظفين" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Foreground="#FFCBADAD"/>
+        <Label Content="إحصائية بيانات الموظفين" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Foreground="#FFCBADAD" Grid.ColumnSpan="2" Margin="0,8,0,25" Width="133"/>
 
-        <Button Content="توزع الاختصاصات" Grid.Column="0" Height="30" Grid.Row="2" Click="Button_Click" Margin="0,40,0,-20"  />
-        <Button Content="توزع المسميات الوظيفية" Grid.Column="1" Height="30" Grid.Row="2"  Margin="10,40,2,-20" Click="Button_Click_1" />
-        <Button Content="توزع الموظفين ذوي الحالات الخاصة" Grid.Column="2" Height="30" Grid.Row="2" Margin="10,40,10,-20" Click="Button_Click_2"  />
-
-
+        <Button Content="توزع الاختصاصات" Grid.Column="0" Grid.Row="2" Click="Button_Click" Margin="0,84,0,-55"  />
+        <Button Content="توزع المسميات الوظيفية" Grid.Column="1" Grid.Row="2"  Margin="10,84,2,-55" Click="Button_Click_1" />
+        <Button Content="توزع الموظفين ذوي الحالات الخاصة" Grid.Column="2" Grid.Row="2" Margin="10,84,10,-55" Click="Button_Click_2"  />
+        <Button Content="عودة" Grid.Column="3" Grid.Row="2" Margin="10,222,-92,-193" Click="Button_Click_3"   />
     </Grid>
 </Window>

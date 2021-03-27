@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:personnel.Views"
          xmlns:model="clr-namespace:personnel.Models"
         mc:Ignorable="d"
-        Title="إحصائيات" Height="450" Width="1200" FlowDirection="RightToLeft" ResizeMode="NoResize" >
+        Title="إحصائيات" Height="450" Width="1200" FlowDirection="RightToLeft" ResizeMode="CanResize" >
     <Window.DataContext>
         <model:SelfCard></model:SelfCard>
     </Window.DataContext>

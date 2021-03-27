@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:personnel.Views"
         xmlns:modell="clr-namespace:personnel.Models"
         mc:Ignorable="d"
-        Title="التبدلات الطارئة"   FlowDirection="RightToLeft"  Width="1250" Height="500" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
+        Title="التبدلات الطارئة"   FlowDirection="RightToLeft"  Width="1250" Height="700" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
     <Window.DataContext>
         <modell:Decision>
         </modell:Decision>
@@ -102,12 +102,12 @@
         </GroupBox>
 
 
-        <Button Content="ادخال قرار جديد"  FontWeight="Bold" FontSize="12"  Grid.Row="2" Grid.Column="0"  Width="auto" Margin="30,5,25,0" Click="add"/>
+        <Button Content="ادخال قرار جديد"  FontWeight="Bold" FontSize="12"  Grid.Row="2" Grid.Column="0"  Width="auto" Margin="30,17,25,-12" Click="add"/>
 
 
         <GroupBox  Grid.Row="0"  Header="بيانات الموظف :" FlowDirection="RightToLeft"   Grid.Column="1" Margin="20,10,20,10"   >
             <Grid x:Name="decesionGrid"  Width="auto" Height="auto" >
-                <DataGrid   Margin="10,10,10,0" Height="auto" VerticalAlignment="Top"  MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF633656"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF633656"   FontSize="12" AutoGenerateColumns="False" Name="result"  SelectionChanged="select_item" CanUserAddRows="False"   ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxHeight="300">
+                <DataGrid   Margin="10,10,10,0" Height="auto" VerticalAlignment="Top"  MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF633656"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF633656"   FontSize="12" AutoGenerateColumns="False" Name="result"  SelectionChanged="select_item" CanUserAddRows="False"   ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxHeight="200">
 
                     <!--<DataGrid.Resources>
                             <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
@@ -148,7 +148,7 @@
             </StackPanel>
         </GroupBox>
         <GroupBox   Header="********" FlowDirection="RightToLeft"   Grid.Column="1" Grid.Row="1" Margin="20,0,20,10"   >
-            <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" >
+            <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Height="300" >
 
                 <local:UpdateDecision   Visibility="Collapsed"  x:Name="mm" HorizontalAlignment="Stretch"/>
 
@@ -182,6 +182,6 @@
                 <TextBlock Visibility="Hidden" Name="dec_id"/>
             </Grid>
         </GroupBox>
-        <Button Content="عودة" Grid.Column="1" HorizontalAlignment="Left" Margin="348,0,0,-4" Grid.Row="2" VerticalAlignment="Bottom" Width="138" Height="24" Click="Button_Click"/>
+        <Button Content="عودة" Grid.Column="1" HorizontalAlignment="Left" Margin="348,0,0,-16" Grid.Row="2" VerticalAlignment="Bottom" Width="138" Height="24" Click="Button_Click"/>
     </Grid>
 </Window>

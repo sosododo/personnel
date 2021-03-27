@@ -45,9 +45,9 @@ namespace personnel.Views
         {
             
             Statistics v = new Statistics();
-            this.Close();
+        
             v.Show();
-          
+            this.Close();
         }
         private void grade_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

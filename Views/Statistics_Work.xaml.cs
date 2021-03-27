@@ -43,9 +43,9 @@ namespace personnel.Views
         {
 
             Statistics v = new Statistics();
-            this.Close();
+        
             v.Show();
-
+            this.Close();
         }
 
         private void show(object sender, RoutedEventArgs e)

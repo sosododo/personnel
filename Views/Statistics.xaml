@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:personnel.Views"
          xmlns:model="clr-namespace:personnel.Models"
         mc:Ignorable="d"
-        Title="Statistics" Height="300" Width="500" FlowDirection="RightToLeft" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" >
+        Title="Statistics" Height="700" Width="1200" FlowDirection="RightToLeft" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" >
 
 
     <Window.Resources>
@@ -183,7 +183,7 @@
 
     </Window.Resources>
 
-    <Grid >
+    <Grid Margin="1,0,-1,0" >
 
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -199,7 +199,9 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="184.964" />
-            <ColumnDefinition Width="0"/>
+            <ColumnDefinition Width="209"/>
+            <ColumnDefinition Width="157*"/>
+            <ColumnDefinition Width="236*"/>
 
         </Grid.ColumnDefinitions>
 
@@ -209,11 +211,11 @@
             <RowDefinition Height="auto"/>
 
         </Grid.RowDefinitions>
-        <Label Content="إحصائية بيانات الموظفين" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Foreground="#FFCBADAD" Grid.ColumnSpan="2" Margin="0,8,0,25" Width="133"/>
+        <Label Content="إحصائية بيانات الموظفين" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" Foreground="#FFA68989" Margin="0,8,0,25" Width="245" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2"/>
 
         <Button Content="توزع الاختصاصات" Grid.Column="0" Grid.Row="2" Click="Button_Click" Margin="0,84,0,-55"  />
         <Button Content="توزع المسميات الوظيفية" Grid.Column="1" Grid.Row="2"  Margin="10,84,2,-55" Click="Button_Click_1" />
         <Button Content="توزع الموظفين ذوي الحالات الخاصة" Grid.Column="2" Grid.Row="2" Margin="10,84,10,-55" Click="Button_Click_2"  />
-        <Button Content="عودة" Grid.Column="3" Grid.Row="2" Margin="10,222,-92,-193" Click="Button_Click_3"   />
+        <Button Content="عودة" Grid.Column="3" Grid.Row="2" Margin="155,453,0,-424" Click="Button_Click_3" HorizontalAlignment="Left" Width="82" Grid.ColumnSpan="2"   />
     </Grid>
 </Window>

@@ -32,11 +32,11 @@ namespace personnel.Views
        
         private void Exit(object sender, RoutedEventArgs e)
         {
-            this.Close();
+          
             Statistics v = new Statistics();
      
             v.Show();
-
+            this.Close();
         }
 
         private void show(object sender, RoutedEventArgs e)

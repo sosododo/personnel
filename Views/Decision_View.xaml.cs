@@ -1686,8 +1686,8 @@ namespace personnel.Views
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = (DateTime)r.FromYear;
-                        rd.ToYear = (DateTime)r.ToYear;
+                        rd.FromYear = (DateTime?)r.FromYear;
+                        rd.ToYear = (DateTime?)r.ToYear;
 
 
                         all.Add(rd);
@@ -1700,8 +1700,8 @@ namespace personnel.Views
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = (DateTime)r.FromYear;
-                        rd.ToYear = (DateTime)r.ToYear;
+                        rd.FromYear = (DateTime?)r.FromYear;
+                        rd.ToYear = (DateTime?)r.ToYear;
 
 
                         all.Add(rd);
@@ -1713,8 +1713,8 @@ namespace personnel.Views
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = (DateTime)r.FromYear;
-                        rd.ToYear = (DateTime)r.ToYear;
+                        rd.FromYear = (DateTime?)r.FromYear;
+                        rd.ToYear = (DateTime?)r.ToYear;
 
 
                         all.Add(rd);
@@ -1726,8 +1726,8 @@ namespace personnel.Views
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = (DateTime)r.FromYear;
-                        rd.ToYear = (DateTime)r.ToYear;
+                        rd.FromYear = (DateTime?)r.FromYear;
+                        rd.ToYear = (DateTime?)r.ToYear;
 
 
                         all.Add(rd);
@@ -1739,8 +1739,8 @@ namespace personnel.Views
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = (DateTime)r.FromYear;
-                        rd.ToYear = (DateTime)r.ToYear;
+                        rd.FromYear = (DateTime?)r.FromYear;
+                        rd.ToYear = (DateTime?)r.ToYear;
 
 
                         all.Add(rd);
@@ -1752,8 +1752,8 @@ namespace personnel.Views
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = (DateTime)r.FromYear;
-                        rd.ToYear = (DateTime)r.ToYear;
+                        rd.FromYear = (DateTime?)r.FromYear;
+                        rd.ToYear = (DateTime?)r.ToYear;
 
 
                         all.Add(rd);
@@ -1765,8 +1765,8 @@ namespace personnel.Views
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = (DateTime)r.FromYear;
-                        rd.ToYear = (DateTime)r.ToYear;
+                        rd.FromYear = (DateTime?)r.FromYear;
+                        rd.ToYear = (DateTime?)r.ToYear;
 
 
                         all.Add(rd);
@@ -1779,8 +1779,8 @@ namespace personnel.Views
                         rd.Bouns = r.Bouns;
                         rd.SalaryBouns = r.SalaryBouns;
                         rd.NumDays = r.NumDays;
-                        rd.FromYear = (DateTime)r.FromYear;
-                        rd.ToYear = (DateTime)r.ToYear;
+                        rd.FromYear = (DateTime?)r.FromYear;
+                        rd.ToYear = (DateTime?)r.ToYear;
 
 
                         all.Add(rd);
@@ -2215,6 +2215,7 @@ namespace personnel.Views
         }
 
         public void collaps_all() {
+            incdet.Visibility = Visibility.Collapsed;
 
             secondment.Visibility = Visibility.Collapsed;
             fc.Visibility = Visibility.Collapsed;

@@ -25,23 +25,27 @@ namespace personnel.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+        
             
           Window work_stat = new Statistics_Work();
             work_stat.Show();
-            
+            this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+         
             Window sj  = new Statistics_Job();
             sj.Show();
+            this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+           
             Window ss = new Statistics_Special();
             ss.Show();
-
+            this.Close();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

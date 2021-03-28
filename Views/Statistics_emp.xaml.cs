@@ -45,9 +45,9 @@ namespace personnel.Views
         {
             
             MainWindow v = new MainWindow();
-            this.Close();
-            v.Show();
           
+            v.Show();
+            this.Close();
         }
 
         private void show(object sender, RoutedEventArgs e)

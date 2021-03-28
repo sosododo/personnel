@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:personnel.Views"
         xmlns:modell="clr-namespace:personnel.Models"
         mc:Ignorable="d"
-        Title="التبدلات الطارئة"   FlowDirection="RightToLeft"  Width="1250" Height="500" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
+        Title="التبدلات الطارئة"   FlowDirection="RightToLeft"  Width="1250" Height="700" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
     <Window.DataContext>
         <modell:Decision>
         </modell:Decision>
@@ -102,12 +102,12 @@
         </GroupBox>
 
 
-        <Button Content="ادخال قرار جديد"  FontWeight="Bold" FontSize="12"  Grid.Row="2" Grid.Column="0"  Width="auto" Margin="30,5,25,0" Click="add"/>
+        <Button Content="ادخال قرار جديد"  FontWeight="Bold" FontSize="12"  Grid.Row="2" Grid.Column="0"  Width="auto" Margin="30,17,25,-12" Click="add"/>
 
 
         <GroupBox  Grid.Row="0"  Header="بيانات الموظف :" FlowDirection="RightToLeft"   Grid.Column="1" Margin="20,10,20,10"   >
             <Grid x:Name="decesionGrid"  Width="auto" Height="auto" >
-                <DataGrid   Margin="10,10,10,0" Height="auto" VerticalAlignment="Top"  MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF633656"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF633656"   FontSize="12" AutoGenerateColumns="False" Name="result"  SelectionChanged="select_item" CanUserAddRows="False"   ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxHeight="300">
+                <DataGrid   Margin="10,10,10,0" Height="auto" VerticalAlignment="Top"  MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF633656"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF633656"   FontSize="12" AutoGenerateColumns="False" Name="result"  SelectionChanged="select_item" CanUserAddRows="False"   ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible" MaxHeight="200">
 
                     <!--<DataGrid.Resources>
                             <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
@@ -147,8 +147,8 @@
                 <Button Content="طباعة التفاصيل"  Height="25"  Grid.Row="2" Margin="10,10,10,10" FontWeight="Bold" FontSize="12" Name="print_but" Click="print" IsEnabled="False"/>
             </StackPanel>
         </GroupBox>
-        <GroupBox   Header="********" FlowDirection="RightToLeft"   Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Stretch" Margin="20,-5,20,10" >
-            <Grid HorizontalAlignment="Stretch" >
+        <GroupBox   Header="********" FlowDirection="RightToLeft"   Grid.Column="1" Grid.Row="1" Margin="20,0,20,10"   >
+            <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Height="300" >
 
                 <local:UpdateDecision   Visibility="Collapsed"  x:Name="mm" HorizontalAlignment="Stretch"/>
 
@@ -156,32 +156,32 @@
                 <local:Add_Rest Visibility="Collapsed" x:Name="res"/>
                 <local:Add_FuncChange Visibility="Collapsed" x:Name="fc"/>
                 <local:Add_Delegation Visibility="Collapsed" x:Name="de"/>
-                <local:Rest_Details Visibility="Collapsed" x:Name="details" />
-                <local:Add_Secondment Visibility="Collapsed" x:Name="secondment" />
-                <local:Add_Punishment Visibility="Collapsed" x:Name="punish" />
-                <local:Add_Reward Visibility="Collapsed" x:Name="reward"  />
-                <local:Add_Bonus Visibility="Collapsed" x:Name="bonus" />
-                <local:Add_Special_Bonus Visibility="Collapsed" x:Name="sbonus" />
-                <local:Add_Tech_Bonus Visibility="Collapsed" x:Name="addteachbounas" />
+                <local:Rest_Details Visibility="Collapsed" x:Name="details" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Add_Secondment Visibility="Collapsed" x:Name="secondment" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Add_Punishment Visibility="Collapsed" x:Name="punish" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Add_Reward Visibility="Collapsed" x:Name="reward" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Add_Bonus Visibility="Collapsed" x:Name="bonus" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Add_Special_Bonus Visibility="Collapsed" x:Name="sbonus" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="182" Width="808"/>
+                <local:Add_Tech_Bonus Visibility="Collapsed" x:Name="addteachbounas" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
 
-                <local:FunctionChange_Details Visibility="Collapsed" x:Name="fcd" />
-                <local:Delegation_Details Visibility="Collapsed" x:Name="dd" />
-                <local:Punishment_Details Visibility="Collapsed" x:Name="pd" />
-                <local:Secondment_Details Visibility="Collapsed" x:Name="sd" />
-                <local:Bonus_Details Visibility="Collapsed" x:Name="bd" HorizontalAlignment="Stretch"/>
-                <local:Reward_Details Visibility="Collapsed" x:Name="rdd" />
-                <local:Decision_Collaps Visibility="Collapsed" x:Name="decCollaps" />
-                <local:Add_Scar Visibility="Collapsed" x:Name="addscar" />
-                <local:Scar_Details Visibility="Collapsed" x:Name="scardetails" />
-                <local:Add_Increase Visibility="Collapsed" x:Name="addinc" />
-                <local:Increase_Details Visibility="Collapsed" x:Name="incdet" />
-                <local:Add_Rest_Stop Visibility="Collapsed" x:Name="addreststop" />
+                <local:FunctionChange_Details Visibility="Collapsed" x:Name="fcd" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Delegation_Details Visibility="Collapsed" x:Name="dd" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Punishment_Details Visibility="Collapsed" x:Name="pd" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Secondment_Details Visibility="Collapsed" x:Name="sd" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Bonus_Details Visibility="Collapsed" x:Name="bd" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Reward_Details Visibility="Collapsed" x:Name="rdd" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Decision_Collaps Visibility="Collapsed" x:Name="decCollaps" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Add_Scar Visibility="Collapsed" x:Name="addscar" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Scar_Details Visibility="Collapsed" x:Name="scardetails" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Add_Increase Visibility="Collapsed" x:Name="addinc" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Increase_Details Visibility="Collapsed" x:Name="incdet" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
+                <local:Add_Rest_Stop Visibility="Collapsed" x:Name="addreststop" HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="808"/>
 
 
 
                 <TextBlock Visibility="Hidden" Name="dec_id"/>
             </Grid>
         </GroupBox>
-        <Button Content="عودة" Grid.Column="1" HorizontalAlignment="Left" Margin="348,0,0,-4" Grid.Row="2" VerticalAlignment="Bottom" Width="138" Height="24" Click="Button_Click"/>
+        <Button Content="عودة" Grid.Column="1" HorizontalAlignment="Left" Margin="348,0,0,-16" Grid.Row="2" VerticalAlignment="Bottom" Width="138" Height="24" Click="Button_Click"/>
     </Grid>
 </Window>

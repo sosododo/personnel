@@ -30,6 +30,17 @@ namespace personnel.Views
         public Add_Punishment()
         {
             InitializeComponent();
+            per.IsEnabled = false;
+            res_per1.IsEnabled = false;
+            res_per2.IsEnabled = false;
+            res_per3.IsEnabled = false;
+            per.IsEnabled = false;
+            perod.IsEnabled = false;
+            des.IsEnabled = false;
+            p_dis.IsEnabled = false;
+
+            cmdDown_Copy2.IsEnabled = false;
+            cmdUp_Copy2.IsEnabled = false;
             db = new PersonelDBContext();
             if (Login.currentUser.Rule == "تدريسي")
             {
@@ -241,32 +252,35 @@ namespace personnel.Views
         {
             if (p_type.Text == "حسم اجر")
             {
-                per.Visibility = Visibility.Visible;
-                res_per1.Visibility = Visibility.Visible;
-                res_per2.Visibility = Visibility.Visible;
-                res_per3.Visibility = Visibility.Visible;
-                perod.Visibility = Visibility.Visible;
-                des.Visibility = Visibility.Visible;
-                p_dis.Visibility = Visibility.Visible;
-                cmdDown_Copy2.Visibility = Visibility.Visible;
-                cmdUp_Copy2.Visibility = Visibility.Visible;
+                per.IsEnabled = true;
+                res_per1.IsEnabled = true;
+                res_per2.IsEnabled = true;
+                res_per3.IsEnabled = true;
+                per.IsEnabled = true;
+                perod.IsEnabled = true;
+                des.IsEnabled = true;
+                p_dis.IsEnabled = true;
+             
+                cmdDown_Copy2.IsEnabled = true;
+                cmdUp_Copy2.IsEnabled = true;
 
 
             }
             else
             {
 
-                per.Visibility = Visibility.Collapsed;
-                res_per1.Visibility = Visibility.Collapsed;
-                res_per2.Visibility = Visibility.Collapsed;
-                res_per3.Visibility = Visibility.Collapsed;
-                perod.Visibility = Visibility.Collapsed;
-                des.Visibility = Visibility.Collapsed;
-                p_dis.Visibility = Visibility.Collapsed;
-                cmdDown_Copy2.Visibility = Visibility.Collapsed;
-                cmdUp_Copy2.Visibility = Visibility.Collapsed;
-                perod.Text = "0";
-                p_dis.Text = "0";
+                per.IsEnabled = false;
+                res_per1.IsEnabled = false;
+                res_per2.IsEnabled = false;
+                res_per3.IsEnabled = false;
+                per.IsEnabled = false;
+                perod.IsEnabled = false;
+                des.IsEnabled = false;
+                p_dis.IsEnabled = false;
+
+                cmdDown_Copy2.IsEnabled = false;
+                cmdUp_Copy2.IsEnabled = false;
+                
 
 
             }

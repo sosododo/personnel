@@ -76,15 +76,15 @@
 
 
         </Grid.RowDefinitions>
-        <Label Foreground="#FF633656" Content="تطبيق عقوبة" Grid.Column="3" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="2" Margin="53,10,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#FF633656" Content="تطبيق عقوبة" Grid.Column="3" FontWeight="Bold" FontSize="20" Margin="19,10,0,0" VerticalAlignment="Stretch"/>
         <Label Foreground="#FF633656"  Content="اسم الموظف" Grid.Column="0" Grid.Row="1"/>
-        <Label Foreground="#FF633656" Content="نوع العقوبة" Grid.Column="2" Grid.Row="1"/>
+        <Label Foreground="#FF633656" Content="نوع العقوبة" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" Margin="0,2,0,0" VerticalAlignment="Top" Width="87"/>
 
-        <Label Foreground="#FF633656" Content="تاريخ بداية العقوبة" Grid.Column="2" Grid.Row="3" RenderTransformOrigin="2.736,0.475" VerticalAlignment="Top" Margin="8,6,0,0" Grid.ColumnSpan="2"/>
-        <Label  Foreground="#FF633656" Content="تاريخ نهاية العقوبة" Grid.Column="5" Grid.Row="3" VerticalAlignment="Top" Margin="29,5,0,0"/>
-        <Label Foreground="#FF633656"   x:Name="per" Content="فترة العقوبة" Grid.Column="4" Grid.Row="1" Visibility="Hidden"/>
-        <ComboBox Foreground="#FF633656"  Grid.Column="1" Grid.Row="1"  IsTextSearchEnabled="True" IsEditable="True" Name="emp_name" FlowDirection="LeftToRight" />
-        <ComboBox Foreground="#FF633656"  Grid.Column="3" Grid.Row="1" FlowDirection="LeftToRight"  x:Name="p_type" SelectionChanged="p_type_SelectionChanged" DropDownClosed="p_type_DropDownClosed" >
+        <Label Foreground="#FF633656" Content="تاريخ بداية العقوبة" Grid.Column="1" Grid.Row="3" RenderTransformOrigin="2.736,0.475" VerticalAlignment="Top" Margin="158,6,0,0" Grid.ColumnSpan="3"/>
+        <Label  Foreground="#FF633656" Content="تاريخ نهاية العقوبة" Grid.Column="3" Grid.Row="3" VerticalAlignment="Top" Margin="153,6,0,0" Grid.ColumnSpan="3"/>
+        <Label Foreground="#FF633656"   x:Name="per" Content="فترة العقوبة" Grid.Column="3" Grid.Row="1" Visibility="Visible" Grid.ColumnSpan="3" Margin="153,0,0,0" Width="91"/>
+        <ComboBox Foreground="#FF633656"  Grid.Column="1" Grid.Row="1"  IsTextSearchEnabled="True" IsEditable="True" Name="emp_name" FlowDirection="LeftToRight" Width="130" Height="25" />
+        <ComboBox Foreground="#FF633656"  Grid.Column="3" Grid.Row="1" FlowDirection="LeftToRight"  x:Name="p_type" SelectionChanged="p_type_SelectionChanged" DropDownClosed="p_type_DropDownClosed" Margin="18,4,11,21" VerticalAlignment="Stretch" Height="25" >
             <ComboBoxItem Content="تنبيه"/>
             <ComboBoxItem Content="انذار"/>
             <ComboBoxItem Content="حسم اجر"/>
@@ -94,29 +94,29 @@
 
 
         </ComboBox>
-        <TextBox Grid.Row="5" x:Name="p_reason" Margin="105,5,5,0" Height="21" Grid.ColumnSpan="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
-        <DatePicker Foreground="#FF633656"  Grid.Row="3"  x:Name="p_start"  Grid.Column="3" Margin="49,3,31,0" Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <DatePicker Foreground="#FF633656"  Grid.Column="7" Grid.Row="3"  x:Name="p_end"  Margin="10,5,10,31" RenderTransformOrigin="1.42,1.292"/>
+        <TextBox Grid.Row="3" x:Name="p_reason" Margin="15,42,14,0" Height="25" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Grid.Column="1"/>
+        <DatePicker Foreground="#FF633656"  Grid.Row="3"  x:Name="p_start"  Grid.Column="3" Margin="18,3,11,0" Height="25" VerticalAlignment="Top"/>
+        <DatePicker Foreground="#FF633656"  Grid.Column="7" Grid.Row="3"  x:Name="p_end"  Margin="2,3,22,50" RenderTransformOrigin="1.42,1.292" Width="134" Height="25"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
-        <TextBox Grid.Column="5" Grid.Row="1"    Name="perod" Margin="4,6,95,0" Visibility="Hidden"/>
-        <Button Foreground="#FF633656"  x:Name="cmdUp_Copy2" x:FieldModifier="private" Content="🔺" Width="20"  Visibility="Hidden" Height="15" Grid.Column="5" Grid.Row="1" FontSize="4" Padding="0" Margin="95,0,64,0" RenderTransformOrigin="0.875,2.467" VerticalAlignment="Top"  Grid.ColumnSpan="2" Click="cmdUp_Copy2_Click"  />
-        <Button Foreground="#FF633656"  x:Name="cmdDown_Copy2" x:FieldModifier="private"  Content="🔻" Width="20" Visibility="Hidden" Height="15" Grid.Column="5"  FontSize="4" Padding="0" Margin="94,16,0,19" Grid.Row="1" RenderTransformOrigin="-1.436,0.61" Click="cmdDown_Copy2_Click"  />
-        <RadioButton Foreground="#FF633656"  Content="يوم" Grid.Column="6" Visibility="Hidden" Grid.Row="1" Height="24" Margin="8,7,99,0" VerticalAlignment="Top" Grid.ColumnSpan="2" GroupName="perd" Name="res_per1"/>
-        <RadioButton Foreground="#FF633656"  Content="شهر" Grid.Column="7" Grid.Row="1" Visibility="Hidden" Height="24" Margin="47,7,-37,0" VerticalAlignment="Top" GroupName="perd" Name="res_per2" Checked="res_per2_Checked"/>
-        <RadioButton Foreground="#FF633656"  Content="سنة" Grid.Column="7" Grid.Row="1" Height="24" Visibility="Hidden" Margin="93,8,-6,0" VerticalAlignment="Top" GroupName="perd" Name="res_per3"/>
+        <TextBox Grid.Column="5" Grid.Row="1"    Name="perod" Margin="93,6,29,0" Visibility="Visible" Height="25"/>
+        <Button Foreground="#FF633656"  x:Name="cmdUp_Copy2" x:FieldModifier="private" Content="🔺" Width="15"  Visibility="Visible" Height="15" Grid.Column="5" Grid.Row="1" FontSize="4" Padding="0" Margin="127,2,10,0" RenderTransformOrigin="0.875,2.467" VerticalAlignment="Top" Click="cmdUp_Copy2_Click"  />
+        <Button Foreground="#FF633656"  x:Name="cmdDown_Copy2" x:FieldModifier="private"  Content="🔻" Width="15" Visibility="Visible" Height="15" Grid.Column="5"  FontSize="4" Padding="0" Margin="127,17,10,18" Grid.Row="1" RenderTransformOrigin="-1.436,0.61" Click="cmdDown_Copy2_Click"  />
+        <RadioButton Foreground="#FF633656"  Content="يوم" Grid.Column="6" Visibility="Visible" Grid.Row="1" Height="24" Margin="4,7,103,0" VerticalAlignment="Top" Grid.ColumnSpan="2" GroupName="perd" Name="res_per1"/>
+        <RadioButton Foreground="#FF633656"  Content="شهر" Grid.Column="7" Grid.Row="1" Visibility="Visible" Height="24" Margin="47,7,-37,0" VerticalAlignment="Top" GroupName="perd" Name="res_per2" Checked="res_per2_Checked"/>
+        <RadioButton Foreground="#FF633656"  Content="سنة" Grid.Column="7" Grid.Row="1" Height="24" Visibility="Visible" Margin="95,8,-8,0" VerticalAlignment="Top" GroupName="perd" Name="res_per3"/>
         <!--<RadioButton Grid.Column="1" Grid.Row="2"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionSource}" Name="dec_source">
             
         </RadioButton>-->
 
         <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Visibility="Hidden" />
-        <Button Foreground="#FF633656"  Content="تنفيذ قرار العقوبة"  Height="26"  Grid.Row="5" Grid.Column="3"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="61,38,10,0" Grid.ColumnSpan="2" Grid.RowSpan="2" Click="Button_Click" />
+        <Button Foreground="#FF633656"  Content="تنفيذ قرار العقوبة"  Grid.Row="3" Grid.Column="3"  FontWeight="Bold"  FontSize="12" Margin="31,76,26,17" Click="Button_Click" Grid.RowSpan="3" />
         <TextBlock Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="dec_id" ></TextBlock>
         <CheckBox Grid.Row="5" Grid.Column="2" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}"></CheckBox>
-        <Label x:Name="des" Content="الخصم" Visibility="Hidden"  Grid.Row="3" Margin="4,7,0,0" VerticalAlignment="Top"/>
-        <TextBox Grid.Row="3"  Visibility="Hidden"  x:Name="p_dis" Margin="4,4,4,0" Text="0" Grid.Column="1"/>
-        <Label Foreground="#FF633656"  Content="ملاحظات" Grid.Row="5" VerticalAlignment="Top" Grid.Column="2"/>
-        <Label Foreground="#FF633656"  Content="سبب العقوبة" Grid.Row="5" VerticalAlignment="Top"/>
-        <TextBox x:Name="note" HorizontalAlignment="Left" Margin="5,4,0,0" Grid.Row="4" Text="" Width="115" Grid.Column="3" Height="23" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
+        <Label x:Name="des" Content="الخصم" Visibility="Visible"  Grid.Row="3" Margin="4,7,0,0" VerticalAlignment="Top"/>
+        <TextBox Grid.Row="3"  Visibility="Visible"  x:Name="p_dis" Margin="4,4,4,0" Text="0" Grid.Column="1" Width="130"/>
+        <Label Foreground="#FF633656"  Content="ملاحظات" Grid.Row="3" Grid.Column="1" Margin="158,42,0,0" Grid.RowSpan="3" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Foreground="#FF633656"  Content="سبب العقوبة" Grid.Row="3" HorizontalAlignment="Center" Margin="0,46,0,0" Grid.RowSpan="3" VerticalAlignment="Top"/>
+        <TextBox x:Name="note" HorizontalAlignment="Left" Margin="18,44,0,0" Grid.Row="3" Text="" Width="129" Grid.Column="3" Height="25" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
 
     </Grid>
 </UserControl>

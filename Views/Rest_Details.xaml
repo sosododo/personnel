@@ -6,9 +6,9 @@
              xmlns:model="clr-namespace:personnel.Models"
         xmlns:local="clr-namespace:personnel.Views"
         mc:Ignorable="d"
-         Height="450" Width="800" FlowDirection="RightToLeft" >
+         Height="450" Width="800" FlowDirection="RightToLeft" Loaded="UserControl_Loaded">
 
-    <Grid VerticalAlignment="Center">
+    <Grid VerticalAlignment="Top" Height="220" Margin="0,51,0,0">
 
 
 
@@ -34,8 +34,8 @@
 
 
         </Grid.RowDefinitions>
-        <Label Foreground="#FF633656" Content="تفاصيل القرار" Grid.Column="3" FontWeight="Bold" FontSize="20" Margin="140,0,135,0" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
-        <DataGrid Foreground="#FF633656"  x:Name="detailsDataGrid"  VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" AutoGenerateColumns="False"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="7"  CanUserAddRows="False"  VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Label Foreground="#FF633656" Content="تفاصيل القرار" Grid.Column="3" FontWeight="Bold" FontSize="20"  HorizontalAlignment="Left" Margin="140,-13,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+        <DataGrid Foreground="#FF633656"  x:Name="detailsDataGrid"  MaxHeight="150" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" AutoGenerateColumns="False"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="7"  CanUserAddRows="False"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="800">
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="اسم الموظف"  Binding="{Binding PersonName}" />
                 <DataGridTextColumn Header="طبيعة الإجازة" Binding="{Binding restType }" />

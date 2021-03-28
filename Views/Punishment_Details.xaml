@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft">
 
-    <Grid VerticalAlignment="Center">
+    <Grid VerticalAlignment="Top" Height="239">
 
 
 
@@ -34,7 +34,7 @@
 
         </Grid.RowDefinitions>
         <Label Foreground="#FF633656" Content="تفاصيل القرار" Grid.Column="3" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="3" Margin="125,0,125,0" VerticalAlignment="Center"/>
-        <DataGrid Foreground="#FF633656" x:Name="detailsDataGrid" MaxHeight="200" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"  AutoGenerateColumns="False"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="7" Margin="10,1,0,-1" CanUserAddRows="False" >
+        <DataGrid Foreground="#FF633656" x:Name="detailsDataGrid" MaxHeight="150" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"  AutoGenerateColumns="False"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="7" Margin="10,1,0,-1" CanUserAddRows="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="اسم الموظف"  Binding="{Binding PersonName}" />
                 <DataGridTextColumn Header="نوع العقوبة" Binding="{Binding PunishmentType }" />

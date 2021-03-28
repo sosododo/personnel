@@ -474,9 +474,9 @@ namespace personnel.Views
             if (res_type.Text == "إجازة ادارية")
             {
 
-                res_per1.Visibility = Visibility.Hidden;
                 res_per2.Visibility = Visibility.Hidden;
-                res_per2.Visibility = Visibility.Hidden;
+                res_per3.Visibility = Visibility.Hidden;
+                
             
             
             }

@@ -94,8 +94,8 @@
             <ComboBoxItem Content="كتاب"/>
         </ComboBox>
         <TextBox Grid.Column="5" Grid.Row="0" Text="{Binding DecisionYear}" Name="dec_year"/>
-        <DatePicker Grid.Column="1" Grid.Row="1" Text="{Binding DecisionStart,StringFormat='yyyy/MM/dd'}" Name="dec_start"/>
-        <DatePicker Grid.Column="3" Grid.Row="1" Text="{Binding DecisionEnd,StringFormat='yyyy/MM/dd'}" Name="dec_end"/>
+        <DatePicker Grid.Row="1" Text="{Binding DecisionStart,StringFormat='yyyy/MM/dd'}" Name="dec_start" Margin="4,8,4,8" Grid.Column="1"/>
+        <DatePicker Grid.Column="3" Grid.Row="1" Text="{Binding DecisionEnd,StringFormat='yyyy/MM/dd'}" Name="dec_end" Margin="4,8,4,8"/>
         <!--<TextBox Grid.Column="5" Grid.Row="1" Text="{Binding DecisionContent}"/>-->
         <ComboBox Grid.Column="5" Grid.Row="1"  FlowDirection="LeftToRight" Margin="4,0,4,0" VerticalAlignment="Center" Text="{Binding DecisionContent}" Name="dec_con">
             <ComboBoxItem Content="تبدل وظيفي"/>

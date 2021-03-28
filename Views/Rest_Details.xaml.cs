@@ -28,25 +28,6 @@ namespace personnel.Views
 
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            //Decision d = (Decision)DataContext;
-            //List<string> emp_id=new List<string>();
-            
-            //List<Rest> Custom_Dec= db.Rests.Where(x => x.DecisionId == d.DecisionId).ToList();
-            //foreach (Rest r in Custom_Dec) {
-
-            //  User user=  db.Users.Where(x => x.UserId == r.PersonId).FirstOrDefault();
-            //    emp_id.Add(user.UserName);
-               
-            
-            
-            //}
-            //MessageBox.Show(emp_id.Count.ToString());
-           // emp_name.ItemsSource = emp_id;
-
-
-
-        }
+       
     }
 }

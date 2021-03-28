@@ -345,7 +345,7 @@ namespace personnel.Views
                 collaps_all();
 
                 fc.dec_id.Text = m.ToString();
-                fc.dec_id.Visibility = Visibility.Visible;
+               // fc.dec_id.Visibility = Visibility.Visible;
                 fc.Visibility = Visibility.Visible;
                
                 fc.DataContext = dec;

@@ -6,7 +6,7 @@
              xmlns:model="clr-namespace:personnel.Models"
         xmlns:local="clr-namespace:personnel.Views"
         mc:Ignorable="d"
-         Height="450" Width="800" FlowDirection="RightToLeft" Loaded="UserControl_Loaded">
+         Height="450" Width="800" FlowDirection="RightToLeft" >
 
     <Grid VerticalAlignment="Top" Height="220" Margin="0,51,0,0">
 

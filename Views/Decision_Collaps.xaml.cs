@@ -114,6 +114,24 @@ namespace personnel.Views
                             db.Bonuses.Remove(row);
 
                     }
+                    else if (con == "قرار ترفيعة استثنائية")
+                    {
+                        var x = (from y in db.Bonuses
+                                 where y.DecisionId == des.DecisionId
+                                 select y);
+                        foreach (var row in x.ToList())
+                            db.Bonuses.Remove(row);
+
+                    }
+                    else if (con == "قرار ترفيعة تدريسية")
+                    {
+                        var x = (from y in db.Bonuses
+                                 where y.DecisionId == des.DecisionId
+                                 select y);
+                        foreach (var row in x.ToList())
+                            db.Bonuses.Remove(row);
+
+                    }
                     else if (con == "قرار مكافأة")
                     {
                         var x = (from y in db.Rewards

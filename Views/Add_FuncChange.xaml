@@ -126,7 +126,7 @@
 
                 </ComboBox>
                 <Label Foreground="#FF633656" Content="مكان العمل" Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" />
-                <ComboBox Foreground="#FF633656" Grid.Column="5" Grid.Row="1" x:Name="mission_Copy" Margin="0,8,0,0" DropDownClosed="mission_Copy_DropDownClosed" >
+                <ComboBox Foreground="#FF633656" Grid.Column="5" Grid.Row="1" x:Name="mission_Copy" DropDownClosed="mission_Copy_DropDownClosed" >
                     <ComboBoxItem Content="تعيين" />
                     <ComboBoxItem Content="اعادة إلى العمل" />
                     <ComboBoxItem Content="استقالة" />

@@ -6,8 +6,7 @@
       xmlns:local="clr-namespace:personnel.Views"
       mc:Ignorable="d" 
       xmlns:model="clr-namespace:personnel.Models"
-      d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft" Height="200"
-      >
+      d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft" >
     <UserControl.DataContext>
         <model:Decision>
         </model:Decision>
@@ -51,29 +50,33 @@
         </Style>
 
     </UserControl.Resources>
-    <Grid VerticalAlignment="Top" Height="200" Margin="9,16,-9,0">
+    <Grid Margin="0,0,0,0" >
 
 
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+
+
+            <!--<ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>-->
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto" MinHeight="267.96"/>
-            <RowDefinition Height="auto" MinHeight="0"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <!--<RowDefinition Height="auto" MinHeight="0"/>-->
+            <!--<RowDefinition Height="auto"/>
             <RowDefinition Height="auto" MinHeight="24"/>
             <RowDefinition Height="0*"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>-->
 
 
         </Grid.RowDefinitions>
@@ -82,18 +85,17 @@
             
         </RadioButton>-->
 
-        <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="5" Visibility="Hidden" Height="25" Width="28" Margin="0,6,0,0" Grid.RowSpan="2" />
-        <Button Foreground="#FF633656" Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="1" Grid.Column="5"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="56,139,7,0" Click="insert_rest"/>
-        <TextBlock Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="dec_id" Margin="149,0,0,0" Grid.RowSpan="2" />
-        <CheckBox Grid.Row="5" Grid.Column="1" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Margin="149,0,0,0" Grid.RowSpan="2"/>
-        <GroupBox  Grid.Row="1"  Header="" FlowDirection="RightToLeft"   Margin="0,-8,10,45" Grid.ColumnSpan="2"  MaxHeight="200"  >
+        <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="4" Visibility="Hidden" Height="25" Width="28" Margin="0,6,0,0" />
+        <Button Foreground="#FF633656" Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="3" Grid.Column="2"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Center" Margin="27,0,37,0" Click="insert_rest"/>
+        <TextBlock Grid.Row="4" Grid.Column="2" Visibility="Hidden" Name="dec_id" Margin="245,3,-159,131" />
+        <CheckBox Grid.Row="4" Grid.Column="2" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Margin="95,0,0,134" />
+        <GroupBox  Grid.Row="1"  Header="" FlowDirection="RightToLeft"  Grid.RowSpan="2" >
 
 
-            <Grid VerticalAlignment="Center" Height="200" Margin="0,0,17,0"  >
+            <Grid Margin="0,0,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="110.773"/>
-                    <ColumnDefinition Width="0"/>
+
 
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -102,7 +104,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <ListView x:Name="list" IsTextSearchEnabled="True"  Grid.Row="1" MaxHeight="150" VerticalContentAlignment="Top" ScrollViewer.CanContentScroll="True"  ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Single" Grid.ColumnSpan="3" Margin="0,10,-61,81" Grid.RowSpan="3" >
+                <ListView x:Name="list" IsTextSearchEnabled="True"  Grid.Row="0"  VerticalContentAlignment="Top" ScrollViewer.CanContentScroll="True"  ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Single" Margin="0,0,0,55" Grid.RowSpan="2"  >
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="اسم الموظف" />
@@ -110,14 +112,14 @@
                     </ListView.View>
 
                 </ListView>
-                <Button Foreground="#FF633656" Content="حذف الموظف المحدد" Grid.Row="3" Grid.ColumnSpan="3" Height="26" VerticalAlignment="Top" Click="Button_Click" FontSize="12" Margin="0,124,-61,0"/>
+                <Button Foreground="#FF633656" Content="حذف الموظف المحدد" Grid.Row="1"  Height="26" Click="Button_Click" FontSize="12" Margin="5,63,5,3"/>
             </Grid>
         </GroupBox>
-
-        <Label Foreground="#FF633656" Content="قرار الترفية من تاريخ" Grid.Column="3" Margin="12,11,0,0" Grid.Row="1" VerticalAlignment="Top" Height="40" Width="114"/>
-        <Label Foreground="#FF633656" Content="حتى تاريخ" Grid.Column="3" Grid.Row="1" Margin="13,46,0,0" Height="40" Width="60" VerticalAlignment="Top"/>
-        <DatePicker Foreground="#FF633656"  x:Name="from" Grid.Column="3" HorizontalAlignment="Left" Margin="131,16,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="245" Height="24"/>
-        <DatePicker Foreground="#FF633656"  x:Name="to" Grid.Column="3" HorizontalAlignment="Left" Margin="131,47,0,0" Grid.Row="1" VerticalAlignment="Top" Width="245" Height="24" Grid.ColumnSpan="3"/>
+        <Label Foreground="#FF633656" Content=" تنفيذ قرار ترفيعة"  FontSize="25" Grid.Column="2" Margin="21,0,0,0" Grid.ColumnSpan="3"/>
+        <Label Foreground="#FF633656" Content="قرار الترفيعة من تاريخ" Grid.Column="1" Margin="12,11,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="auto" />
+        <Label Foreground="#FF633656" Content="حتى تاريخ" Grid.Column="3" Grid.Row="2"  Height="40" Width="60" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+        <DatePicker Foreground="#FF633656"  x:Name="from" Grid.Column="2"  Grid.Row="2" VerticalAlignment="Top" Height="24" Width="200" Margin="0,11,1,0" />
+        <DatePicker Foreground="#FF633656"  x:Name="to" Grid.Column="4" HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Top" Width="200" Height="24" Margin="87,10,0,0" />
 
 
     </Grid>

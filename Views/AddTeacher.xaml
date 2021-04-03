@@ -480,7 +480,7 @@
 
             </Grid>
         </GroupBox>
-        <TextBlock HorizontalAlignment="Right"  Text="إضافة ذاتية عضو هيئة فنية/ تدريسية"  VerticalAlignment="Center" FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold"  />
+        <TextBlock HorizontalAlignment="Center"  Text="إضافة ذاتية عضو هيئة فنية/ تدريسية"  VerticalAlignment="Center" FontWeight="Bold"  FontSize="20" Height="27" Grid.Column="1" Foreground="#FF777C66" FontFamily="Segoe UI Semibold" Grid.ColumnSpan="2"  />
         <StackPanel  Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
 
 

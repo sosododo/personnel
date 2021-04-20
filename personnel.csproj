@@ -103,6 +103,9 @@
     <Compile Update="Views\Statistics_emp.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Certificate_Add.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WorkDataSet1.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -175,6 +178,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Statistics_emp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Certificate_Add.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -1,0 +1,78 @@
+﻿<Window x:Class="personnel.Views.Configuration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:y="clr-namespace:personnel.Views"
+       
+        mc:Ignorable="d"
+        Title="تهيئة البرنامج" Height="450" Width="800" WindowState="Maximized">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFECE7E7" Offset="0"/>
+                <GradientStop Color="GhostWhite" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="BorderThickness" Value="1.5"/>
+                <Setter Property="BorderBrush" Value="#FFCBADAD"/>
+                <Setter Property="Background" Value="#FFCDC7C7"/>
+                <Setter Property="Foreground" Value="#FF851313"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontSize" Value="11"/>
+                <Style.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+
+                    </Style>
+                </Style.Resources>
+
+            </Style>
+        </Grid.Resources>
+
+        <StackPanel Orientation="Vertical" Margin="5,5,5,5">
+            <Label Content=" تهيئة البرنامج" HorizontalAlignment="Center" Margin="5,5,5,5" FontSize="20" Foreground="#FF9B2525"/>
+            <TabControl FlowDirection="RightToLeft" Background="#FFECE7E7" Width="auto" Margin="5,5,5,5"  >
+                <TabItem Header="مكان العمل" x:Name="work_tab" IsSelected="True" >
+                    <y:Work_Add></y:Work_Add>
+        
+                    <!--<TabItem.DataContext >
+                        <model:Work>
+                        </model:Work>
+                    </TabItem.DataContext>-->
+                    <!--<DockPanel>
+                       
+                        <DataGrid   Margin="10,10,10,0" Height="150"  ScrollViewer.VerticalScrollBarVisibility="Visible"  VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible"  MaxHeight="200" MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF851313"   FontSize="12" x:Name="work_grid" AutoGenerateColumns="False" Width="487" >
+                           
+                            <DataGrid.Columns >
+                                <DataGridTextColumn Binding="{Binding PlaceId }" ClipboardContentBinding="{x:Null}" Header="الرمز"/>
+                                <DataGridTextColumn Binding="{Binding WorkPlace}" ClipboardContentBinding="{x:Null}" Header="الاسم"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel >
+                            <StackPanel Orientation="Horizontal" >
+
+                                <Label Content="ادخال جديد" Margin="5,15,5,0" Height="35" VerticalAlignment="Top" Foreground="BLACK" FontSize="13"  FontWeight="Bold"/>
+                        <TextBox Width="172" Height="35" Margin="5,15,5,0" VerticalAlignment="Top" />
+                            </StackPanel>
+                                <Button Content="تثبيت" Margin="5,25,50,5" Width="87" Height="25" HorizontalAlignment="Right"/>
+                                
+                            </StackPanel>
+
+                    </DockPanel>-->
+                    
+                </TabItem>
+                <TabItem Header="الشهادات" >
+                    <y:Certificate_Add>
+                        </y:Certificate_Add>
+                    </TabItem>
+                        <TabItem Header="المستخدمون" />
+           
+            </TabControl>
+            <Button  Content="عودة" Height="30" Width="75" Margin="40,100,5,5"  Foreground="#FF9B2525" HorizontalAlignment="Left"  Click="ret"/>
+        </StackPanel>
+    </Grid>
+</Window>

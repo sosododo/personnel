@@ -112,7 +112,7 @@
                     </ListView.View>
 
                 </ListView>
-                <Button Foreground="#FF633656" Content="حذف الموظف المحدد" Grid.Row="1"  Height="26" Click="Button_Click" FontSize="12" Margin="5,63,5,3"/>
+                <Button Foreground="#FF633656" Content="حذف الموظف المحدد" Grid.Row="1"  Height="26" Click="Button_Click" FontSize="12" Margin="5,63,5,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
         <Label Foreground="#FF633656" Content=" تنفيذ قرار ترفيعة"  FontSize="25" Grid.Column="2" Margin="21,0,0,0" Grid.ColumnSpan="3"/>

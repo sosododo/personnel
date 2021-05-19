@@ -20,11 +20,11 @@ namespace personnel.Views
     public partial class Employee : Window
     {
 
-        
+
 
 
         PersonelDBContext db = new PersonelDBContext();
-       // SelfCard sc = new SelfCard();
+        // SelfCard sc = new SelfCard();
         public Employee()
         {
             InitializeComponent();
@@ -43,46 +43,49 @@ namespace personnel.Views
                 up.Show();
                 this.Close();
             }
-            else {
+            else
+            {
                 MessageBox.Show(" اختر موظفاً");
             }
         }
 
         private void Search_Employee(object sender, RoutedEventArgs e)
         {
-            
-          
+
+
             string work = workplace.Text;
             string inputsearch = search.Text;
             string lastname = last.Text;
-            List<SelfCard> selfCards=new List<SelfCard>();
+            List<SelfCard> selfCards = new List<SelfCard>();
             if (sname.IsChecked == true)
             {
 
-                if (inputsearch == "" || inputsearch == "الاسم الأول") {
+                if (inputsearch == "" || inputsearch == "الاسم الأول")
+                {
 
                     selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.LastName == lastname).ToList();
-                                 }
-               else if (lastname == "" || lastname == "الكنية") {
-                    selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.FirstName == inputsearch ).ToList();
+                }
+                else if (lastname == "" || lastname == "الكنية")
+                {
+                    selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.FirstName == inputsearch).ToList();
                 }
                 else
                 {
-                   
 
-                   selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.FirstName == inputsearch && x.LastName == lastname).ToList();
+
+                    selfCards = db.SelfCards.Where(x => x.IsTeacher == 0 && x.FirstName == inputsearch && x.LastName == lastname).ToList();
                 }
-         
 
-                if (selfCards.Count!=0)
+
+                if (selfCards.Count != 0)
                 {
-                    
+
                     search_emp.ItemsSource = selfCards;
 
-                  
+
 
                 }
-                else if(selfCards.Count==0)
+                else if (selfCards.Count == 0)
                 { MessageBox.Show("لا يوجد بيانات لهذا البحث"); }
 
             }
@@ -102,7 +105,7 @@ namespace personnel.Views
 
 
             }
-       
+
         }
 
         private void View_Employee(object sender, RoutedEventArgs e)
@@ -119,7 +122,7 @@ namespace personnel.Views
         }
         private void Insert_Employee(object sender, RoutedEventArgs e)
         {
-            AddPersonnel ad = new AddPersonnel();
+            AddPersonnel ad = new AddPersonnel();                                         
             ad.Show();
             this.Hide();
         }
@@ -134,7 +137,7 @@ namespace personnel.Views
 
         private void splace_Checked(object sender, RoutedEventArgs e)
         {
-           
+
             search.Visibility = Visibility.Hidden;
             last.Visibility = Visibility.Hidden;
             workplace.Visibility = Visibility.Visible;
@@ -151,7 +154,17 @@ namespace personnel.Views
             workplace.Visibility = Visibility.Hidden;
             search_emp.ItemsSource = null;
         }
+
+        private void clear_first(object sender, RoutedEventArgs e)
+        {
+            search.Text = "";
+
+        }
+        private void clear_last(object sender, RoutedEventArgs e)
+        {
+            last.Text = "";
+
+        }
     }
 }
-
 

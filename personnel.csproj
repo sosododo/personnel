@@ -65,6 +65,11 @@
  
 
   <ItemGroup>
+    <Compile Update="FirstDataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FirstDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Update="JobDataSet1.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -121,6 +126,10 @@
  
 
   <ItemGroup>
+    <None Update="FirstDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FirstDataSet1.Designer.cs</LastGenOutput>
+    </None>
     <None Update="JobDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>JobDataSet1.Designer.cs</LastGenOutput>

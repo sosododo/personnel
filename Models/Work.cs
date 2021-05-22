@@ -10,8 +10,8 @@ namespace personnel.Models
     {
         [Key]
         [Column("place_id")]
-        [StringLength(30)]
-        public string PlaceId { get; set; }
+       
+        public int PlaceId { get; set; }
 
         [Required]
         [Column("work_place")]

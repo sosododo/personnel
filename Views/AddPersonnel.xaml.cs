@@ -39,8 +39,12 @@ namespace personnel.Views
         private void Clear_Form(object sender, RoutedEventArgs e)
         {
             AddPersonnel ad = new AddPersonnel();
-            this.Close();
+           
+           
             ad.Show();
+            this.Close();
+
+
         }
 
         private void Exit(object sender, RoutedEventArgs e)
@@ -60,6 +64,11 @@ namespace personnel.Views
             Employee emp = new Employee();
             this.Close();
             emp.Show();
+           
+
+
+
+
         }
 
         private void Add_person(object sender, RoutedEventArgs e)

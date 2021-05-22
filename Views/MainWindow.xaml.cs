@@ -61,6 +61,11 @@ namespace personnel.Views
             this.Hide();
         }
 
-   
+        private void Config(object sender, RoutedEventArgs e)
+        {
+            Configuration con = new Configuration();
+            con.Show();
+            this.Hide();
+        }
     }
 }

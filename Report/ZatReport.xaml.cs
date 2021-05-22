@@ -113,28 +113,32 @@ namespace personnel.Report
            Microsoft.Reporting.WinForms.ReportDataSource();
                 Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new
            Microsoft.Reporting.WinForms.ReportDataSource();
-
+                Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new
+                         Microsoft.Reporting.WinForms.ReportDataSource();
 
                 ZATDataSet1 dataset = new ZATDataSet1();
-
+                FirstDataSet1 dataset2 = new FirstDataSet1();
                 dataset.BeginInit();
+                dataset2.BeginInit();
 
                 reportDataSource1.Name = "DataSet1";
                 reportDataSource2.Name = "DataSet2";
                 reportDataSource3.Name = "DataSet3";
                 reportDataSource4.Name = "DataSet4";
+                reportDataSource5.Name = "DataSet5";
                 //Name of the report dataset in our .RDLC file
 
                 reportDataSource1.Value = dataset.al;
                 reportDataSource2.Value = dataset.zat_fun;
                 reportDataSource3.Value = dataset.zat_pun;
                 reportDataSource4.Value = dataset.zat_rest;
+                reportDataSource5.Value = dataset2.zat_fun_first;
                 ReportParameter rp = new ReportParameter("pid", id.ToString());
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
-
+                this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
 
                 this.reportViewer1.LocalReport.ReportPath = "./Report/repzat.rdlc";
 
@@ -148,22 +152,23 @@ namespace personnel.Report
                 ZATDataSet1TableAdapters.zat_funTableAdapter fun = new ZATDataSet1TableAdapters.zat_funTableAdapter();
                 ZATDataSet1TableAdapters.zat_punTableAdapter pun = new ZATDataSet1TableAdapters.zat_punTableAdapter();
                 ZATDataSet1TableAdapters.zat_restTableAdapter res = new ZATDataSet1TableAdapters.zat_restTableAdapter();
-
+                FirstDataSet1TableAdapters.zat_fun_firstTableAdapter fr = new FirstDataSet1TableAdapters.zat_fun_firstTableAdapter();
                 sel.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 fun.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 pun.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 res.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
-
+                fr.Connection.ConnectionString= ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 sel.ClearBeforeFill = true;
                 fun.ClearBeforeFill = true;
                 pun.ClearBeforeFill = true;
                 res.ClearBeforeFill = true;
-                sel.Fill(dataset.al, id);
-                fun.Fill(dataset.zat_fun, id);
-                pun.Fill(dataset.zat_pun, id);
-                res.Fill(dataset.zat_rest, id);
+                fr.ClearBeforeFill = true;
+                sel.Fill(dataset.al,id);
+                fun.Fill(dataset.zat_fun,id);
+                pun.Fill(dataset.zat_pun,id);
+                res.Fill(dataset.zat_rest,id);
+                fr.Fill(dataset2.zat_fun_first,id);
 
-               
 
 
                 reportViewer1.RefreshReport();

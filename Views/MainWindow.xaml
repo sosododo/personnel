@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:personnel.Views"
         mc:Ignorable="d"
-        Title="أقسام البرنامج الرئيسية" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"  FlowDirection="RightToLeft">
+        Title="أقسام البرنامج الرئيسية" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"  FlowDirection="RightToLeft">
     <Window.Resources>
         <Style TargetType="Button">
 
@@ -62,7 +62,7 @@
             </StatusBarItem>
         </StatusBar>
         <Button Content="تسجيل خروج" Grid.Column="3" Width="100" Height="50" HorizontalAlignment="Center" Margin="0,19,0,0" Grid.Row="2" VerticalAlignment="Top"  FontWeight="Bold" Click="Button_Click_1" Foreground="#FF9B2525" />
-
+        <Button Content="تهيئة" Grid.Column="2" Width="100" Height="50" HorizontalAlignment="Center" Margin="0,19,0,0" Grid.Row="2" VerticalAlignment="Top"  FontWeight="Bold" Click="Config" Foreground="#FF9B2525" />
 
 
     </Grid>

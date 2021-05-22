@@ -3,6 +3,7 @@ using personnel.Models;
 using personnel.ModelView;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -156,12 +157,14 @@ namespace personnel.Views
         private void grade_DropDownClosed(object sender, EventArgs e)
         {
             PersonelDBContext db = new PersonelDBContext();
-
+            
             db.Jobs.Load();
 
             string cat = grade.Text;
             List<Job> job_titles = db.Jobs.Where(x => x.Category.Contains(cat)).ToList();
-            job.ItemsSource = job_titles.Select(x => x.JobTitle);
+        List<string>  vs = job_titles.Select(x => x.JobTitle).ToList<string>() ;
+            vs.Add("غير ذلك");
+            job.ItemsSource = vs;
             job.SelectedIndex = 0;
             
 

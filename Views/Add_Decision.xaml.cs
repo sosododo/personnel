@@ -21,10 +21,11 @@ namespace personnel.Views
     public partial class Add_Decision : UserControl
     { 
         PersonelDBContext pdb;
-       
+        List<Decision>  decisions= new List<Decision>();
         public Add_Decision()
         {
             InitializeComponent();
+          
      
 
         }
@@ -39,15 +40,6 @@ namespace personnel.Views
                 pdb = new PersonelDBContext();
             count=    pdb.Decisions.Where(x => x.DecisionNumber == Int32.Parse(dec_num.Text) && x.DecisionYear == Int32.Parse(dec_year.Text) && x.DecisionSource == dec_source.Text).Count() ;
             
-                
-                //List<int> decNum=  pdb.Decisions.Select(x => x.DecisionNumber).ToList<int>();
-              //  foreach (int num in decNum) {
-              //      if (num ==Int32.Parse( dec_num.Text)) {
-              //          count++;
-              //      }
-                
-              //  }
-
 
                 if (dec_con.Text != null && dec_year.Text != null && dec_type.Text != null && dec_start.Text != null && dec_end.Text != null && dec_source.Text != null && dec_effect.Text != null && dec_result.Text != null && dec_num.Text != null)
                 {
@@ -72,11 +64,32 @@ namespace personnel.Views
 
 
                             };
-
+                            decisions.Add(dec);
                             pdb.Decisions.Add(dec);
                             pdb.SaveChanges();
                             MessageBox.Show("تمت الاضافة بنجاح");
-                            this.Visibility = Visibility.Collapsed;
+                            string message = "هل تريد تنفيذ القرار؟";
+                            string caption = "تنبيه";
+                            var result = MessageBox.Show(message, caption,
+                                                         MessageBoxButton.YesNo,
+                                                         MessageBoxImage.Question);
+                            if (result == MessageBoxResult.Yes)
+                            {
+
+                                Decision_View dv = new Decision_View();
+
+
+                                dv.Show();
+
+                                dv.result.ItemsSource = decisions;
+                                var myWindow = Window.GetWindow(this);
+                                myWindow.Close();
+                            }
+                            else if (result == MessageBoxResult.No)
+                            {
+                                this.Visibility = Visibility.Collapsed;
+                            }
+                            
 
                         }
                         else {
@@ -97,11 +110,32 @@ namespace personnel.Views
 
 
                             };
-
+                            decisions.Add(dec);
                             pdb.Decisions.Add(dec);
                             pdb.SaveChanges();
                             MessageBox.Show("تمت الاضافة بنجاح");
-                            this.Visibility = Visibility.Collapsed;
+
+                            string message = "هل تريد تنفيذ القرار؟";
+                            string caption = "تنبيه";
+                            var result = MessageBox.Show(message, caption,
+                                                         MessageBoxButton.YesNo,
+                                                         MessageBoxImage.Question);
+                            if (result == MessageBoxResult.Yes)
+                            {
+
+                                Decision_View dv = new Decision_View();
+
+
+                                dv.Show();
+
+                                dv.result.ItemsSource = decisions;
+                                var myWindow = Window.GetWindow(this);
+                                myWindow.Close();
+                            }
+                            else if (result == MessageBoxResult.No)
+                            {
+                                this.Visibility = Visibility.Collapsed;
+                            }
                         }
 
                     }
@@ -132,6 +166,18 @@ namespace personnel.Views
                 dec_source.Visibility = Visibility.Collapsed;
                 others.Visibility = Visibility.Visible;
             }
+        }
+
+        private void ex_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+          
+
+
+
+
         }
     }
 }

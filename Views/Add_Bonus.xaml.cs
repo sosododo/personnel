@@ -135,16 +135,16 @@ namespace personnel.Views
             where d.Status == "قائم على رأس عمله" 
             select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName,d.Salary ,d.maxsalary }).ToList();
 
+            var id = emp_id.Where(d => d.full == list.Text).ToList().ElementAt(0);
 
 
-
-            foreach (string ss in emp.ToList())
-            {
+            //foreach (string ss in emp.ToList())
+            //{
                 int sum1 = 0;
                 double amount = 0;
             
                 double allDays =0;
-                var id = emp_id.Where(d => d.full == ss).ToList().ElementAt(0);
+              //  var id = emp_id.Where(d => d.full == ss).ToList().ElementAt(0);
                 long eid = id.PersonId;
                 int c = db.Bonuses.Where(x => x.DecisionId == long.Parse(dec_id.Text) && x.PersonId == eid).Count();
                 if (c > 0)
@@ -281,7 +281,7 @@ namespace personnel.Views
 
                 }
 
-                }
+               // }
             list.SelectedItem = null;
          
           

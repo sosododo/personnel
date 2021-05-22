@@ -86,7 +86,7 @@
         </RadioButton>-->
 
         <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="4" Visibility="Hidden" Height="25" Width="28" Margin="0,6,0,0" />
-        <Button Foreground="#FF633656" Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="3" Grid.Column="2"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Center" Margin="27,0,37,0" Click="insert_rest"/>
+        <Button Foreground="#FF633656" Content="تنفيذ قرار الترفيعة"  Height="26"  Grid.Row="3" Grid.Column="2"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="27,0,37,0" Click="insert_rest" Grid.RowSpan="2"/>
         <TextBlock Grid.Row="4" Grid.Column="2" Visibility="Hidden" Name="dec_id" Margin="245,3,-159,131" />
         <CheckBox Grid.Row="4" Grid.Column="2" Visibility="Hidden" Name="excute" IsChecked="{Binding IsExcute}" Margin="95,0,0,134" />
         <GroupBox  Grid.Row="1"  Header="" FlowDirection="RightToLeft"  Grid.RowSpan="2" >
@@ -104,19 +104,12 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <ListView x:Name="list" IsTextSearchEnabled="True"  Grid.Row="0"  VerticalContentAlignment="Top" ScrollViewer.CanContentScroll="True"  ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="Single" Margin="0,0,0,55" Grid.RowSpan="2"  >
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="اسم الموظف" />
-                        </GridView>
-                    </ListView.View>
-
-                </ListView>
-                <Button Foreground="#FF633656" Content="حذف الموظف المحدد" Grid.Row="1"  Height="26" Click="Button_Click" FontSize="12" Margin="5,63,5,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="list" HorizontalAlignment="Left" FlowDirection="RightToLeft" Margin="30,18,0,0" Width="172" Height="22" Grid.RowSpan="4"/>
+                <Label Content="اسم الموظف" Margin="26,0,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
         <Label Foreground="#FF633656" Content=" تنفيذ قرار ترفيعة"  FontSize="25" Grid.Column="2" Margin="21,0,0,0" Grid.ColumnSpan="3"/>
-        <Label Foreground="#FF633656" Content="قرار الترفيعة من تاريخ" Grid.Column="1" Margin="12,11,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="auto" />
+        <Label Foreground="#FF633656" Content="استحقاق الترفيعة من تاريخ" Grid.Column="1" Margin="12,11,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="auto" />
         <Label Foreground="#FF633656" Content="حتى تاريخ" Grid.Column="3" Grid.Row="2"  Height="40" Width="60" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
         <DatePicker Foreground="#FF633656"  x:Name="from" Grid.Column="2"  Grid.Row="2" VerticalAlignment="Top" Height="24" Width="200" Margin="0,11,1,0" />
         <DatePicker Foreground="#FF633656"  x:Name="to" Grid.Column="4" HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Top" Width="200" Height="24" Margin="87,10,0,0" />

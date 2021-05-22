@@ -127,7 +127,7 @@
             <ComboBoxItem Content="غير مؤثر"/>
         </ComboBox>
         <TextBox Text="{Binding Full}" Name="full" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Visibility="Hidden" />
-        <Button Content="إضافة"  Height="26" Foreground="#FF633656" Grid.Row="3" Grid.Column="2"  FontWeight="Bold"  FontSize="12"  VerticalAlignment="Top" Margin="18,14,24,0" Grid.ColumnSpan="2" Click="insert_decision"/>
+        <Button Width="100" Content="إضافة" Foreground="#FF633656" Grid.Row="3"  FontWeight="Bold"  FontSize="12"  Grid.ColumnSpan="3" Click="insert_decision" Height="26" VerticalAlignment="Top" Grid.Column="1"/>
         <TextBox x:Name="others" HorizontalAlignment="Center" Grid.Row="2" Visibility="Collapsed" Text="" Width="94" Grid.Column="1" VerticalAlignment="Center"/>
 
 

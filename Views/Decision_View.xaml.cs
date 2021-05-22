@@ -2249,6 +2249,10 @@ namespace personnel.Views
             Window win = new RestReport(l);
             win.Show();
         }
+
+        public void rr() {
+            fc.Visibility = Visibility.Visible;
+        }
     }
 
 }

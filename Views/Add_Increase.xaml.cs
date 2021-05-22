@@ -141,12 +141,13 @@ namespace personnel.Views
 
             var emp_id = (from Z in db.SelfCards
                           where Z.Status == "قائم على رأس عمله"
-                          select new { Z.PersonId, full = Z.FirstName + " " + Z.FatherName + " " + Z.LastName, Z.Salary }).ToList();
+                          select new { Z.PersonId, full = Z.FirstName + " " + Z.FatherName + " " + Z.LastName, Z.Salary,Z.maxsalary }).ToList();
             foreach (string ss in emp.ToList())
             {
 
                 var id = emp_id.Where(d => d.full == ss).ToList().ElementAt(0);
                 long eid = id.PersonId;
+                
                 long before = (long)id.Salary;
                 int c = db.SalaryIncrease.Where(x => x.DecisionId == long.Parse(dec_id.Text) && x.PersonId == eid).Count();
                 if (c > 0)
@@ -167,6 +168,7 @@ namespace personnel.Views
                     db.SaveChanges();
                     var self = db.SelfCards.Where(x => x.PersonId == eid).Single();
                     self.Salary = before + long.Parse(increase1.Text);
+                    self.maxsalary = id.maxsalary + long.Parse(increase1.Text);
                     db.SelfCards.Update(self);
                     db.SaveChanges();
 

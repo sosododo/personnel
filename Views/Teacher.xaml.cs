@@ -166,6 +166,17 @@ namespace personnel.Views
             workplace.Visibility = Visibility.Hidden;
             search_emp.ItemsSource = null;
         }
+
+        private void clear_first(object sender, RoutedEventArgs e)
+        {
+            search.Text = "";
+
+        }
+        private void clear_last(object sender, RoutedEventArgs e)
+        {
+            last.Text = "";
+
+        }
     }
 }
 

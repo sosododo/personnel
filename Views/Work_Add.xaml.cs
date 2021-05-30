@@ -47,6 +47,7 @@ namespace personnel.Views
                 MessageBox.Show("تمت الاضافة بنجاح");
                 IEnumerable w = db.Works.Where(mw => mw.WorkPlace != null).ToList();
                 work_grid.ItemsSource = w;
+                
             }
 
         }
@@ -63,6 +64,11 @@ namespace personnel.Views
                 MessageBox.Show("تمت  عملية الحذف  بنجاح");
                 IEnumerable a = db.Works.Where(mw => mw.WorkPlace != null).ToList();
                 work_grid.ItemsSource = a;
+                up_but.IsEnabled = false;
+                del_but.IsEnabled = false;
+                add_but.IsEnabled = true;
+                work.Text = null;
+                work_grid.SelectedItem = null;
             }
             else
             { MessageBox.Show("يرجى اختيار سطر للحذف"); }
@@ -70,7 +76,7 @@ namespace personnel.Views
         }
         private void update(object sender, RoutedEventArgs e)
         {
-            
+
 
             if (work_grid.SelectedItem != null)
 
@@ -78,16 +84,44 @@ namespace personnel.Views
                 var w = (Work)work_grid.SelectedItem;
                 db.Works.Where(m => m.PlaceId == w.PlaceId);
                 w.WorkPlace = work.Text;
-               
+
                 db.Works.Update(w);
                 db.SaveChanges();
                 work.Text = null;
                 MessageBox.Show("تمت  عملية التعديل بنجاح");
                 IEnumerable a = db.Works.Where(mw => mw.WorkPlace != null).ToList();
                 work_grid.ItemsSource = a;
+                up_but.IsEnabled = false;
+                del_but.IsEnabled = false;
+                add_but.IsEnabled = true;
+              
+                work_grid.SelectedItem = null;
 
             }
         }
+        private void select_item(object sender, RoutedEventArgs e)
+
+        {
+            if (work_grid.SelectedItem != null)
+            {
+                Work w = (Work)work_grid.SelectedItem;
+                work.Text = w.WorkPlace;
+                up_but.IsEnabled = true;
+                del_but.IsEnabled = true;
+                add_but.IsEnabled = false;
+
+            }
+
+
+
+
+
+        }
+
+
+
+
+
     }
     }
 

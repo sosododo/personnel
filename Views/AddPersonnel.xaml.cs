@@ -77,9 +77,10 @@ namespace personnel.Views
             Emp_Maxsalary em = new Emp_Maxsalary();
             maxsalary.Text = em.getmaxsal(grade.Text).ToString();
             float mx = float.Parse(maxsalary.Text);
-            salary.Text=em.getbigsal(grade.Text).ToString();
-            float sal= float.Parse(salary.Text);
-            try
+            salary.Text = em.getbigsal(grade.Text).ToString();
+            float sal = float.Parse(salary.Text);
+           
+              try
             {
                 //PersonelDBContext db = new PersonelDBContext();
                 SelfCard emp = new SelfCard

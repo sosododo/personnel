@@ -112,7 +112,7 @@
 
                 </ListView>
 
-                <Button Content="حذف الموظف المحدد" Grid.Row="3" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Center" Click="Button_Click"/>
+                <Button Content="حذف الموظف المحدد" Grid.Row="3" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" Click="Button_Click" Margin="0,62,0,0"/>
 
             </Grid>
         </GroupBox>

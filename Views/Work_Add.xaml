@@ -36,7 +36,7 @@
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-      
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -44,7 +44,7 @@
 
         </Grid.ColumnDefinitions>
         <StackPanel Margin="10,10,10,10" Height="212" Grid.Column="0" Grid.Row="0">
-            <DataGrid   Margin="10,10,10,0"   ScrollViewer.VerticalScrollBarVisibility="Visible"   ScrollViewer.HorizontalScrollBarVisibility="Visible"  MaxHeight="200" MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF851313"   FontSize="12" x:Name="work_grid" AutoGenerateColumns="False"  Grid.Column="0"  Grid.Row="0">
+            <DataGrid   Margin="10,10,10,0"   ScrollViewer.VerticalScrollBarVisibility="Visible"  ScrollViewer.HorizontalScrollBarVisibility="Visible"  MaxHeight="200" MinColumnWidth="100" ColumnHeaderHeight="25" HorizontalGridLinesBrush="#FF696E89"  VerticalGridLinesBrush="AliceBlue" BorderBrush="AliceBlue"  CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" Foreground="#FF851313"   SelectionChanged="select_item" FontSize="12" x:Name="work_grid" AutoGenerateColumns="False"  Grid.Column="0"  Grid.Row="0">
 
                 <DataGrid.Columns >
                     <DataGridTextColumn Binding="{Binding PlaceId }" ClipboardContentBinding="{x:Null}" Header="الرمز"/>
@@ -52,22 +52,24 @@
 
                 </DataGrid.Columns>
             </DataGrid>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="تعديل" Margin="5,15,20,5" Width="87" Height="25" HorizontalAlignment="Center" Click="update" />
-                <Button Content="حذف" Margin="5,15,5,5" Width="87" Height="25" HorizontalAlignment="Center" Click="delete" />
-            </StackPanel>
-            </StackPanel>
-                <StackPanel  Margin="10,10,10,10" Height="212" Grid.Column="1" Grid.Row="0">
-                <StackPanel Orientation="Horizontal" Margin="10,40,10,10" >
 
-                    <Label Content="ادخال جديد" Margin="5,15,5,0" Height="35" VerticalAlignment="Top" Foreground="BLACK" FontSize="13"  FontWeight="Bold"/>
-                    <TextBox Width="288" Height="35" Margin="5,15,5,0" VerticalAlignment="Top"  Name="work"/>
-             
-                     <Button Content="تثبيت" Margin="5,15,5,5" Width="87" Height="25" HorizontalAlignment="Center" Click="add_work"/>
-                </StackPanel>
-            </StackPanel>
+        </StackPanel>
 
-  
+        <StackPanel  Margin="10,10,10,10" Height="212" Grid.Column="1" Grid.Row="0">
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="10,40,10,10" >
+
+                <Label Content="ادخال جديد" Margin="5,15,5,0" Height="35" VerticalAlignment="Top" Foreground="BLACK" FontSize="13"  FontWeight="Bold"/>
+                <TextBox Width="288" Height="35" Margin="5,15,5,0" VerticalAlignment="Top"  Name="work"/>
+
+                <Button Content="تثبيت" Margin="5,15,5,5" Width="72" Height="24" Click="add_work" Name="add_but"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,129,0,-35" Grid.Column="1">
+            <Button Content="تعديل" Margin="5,15,20,5" Width="87" Height="25" HorizontalAlignment="Center" Click="update" IsEnabled="False" Name="up_but"/>
+            <Button Content="حذف" Margin="5,15,5,5" Width="87" Height="25" HorizontalAlignment="Center" Click="delete" IsEnabled="False" Name="del_but" />
+        </StackPanel>
+
+
 
     </Grid>
 </UserControl>

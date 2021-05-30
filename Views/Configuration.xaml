@@ -36,7 +36,7 @@
             <Label Content=" تهيئة البرنامج" HorizontalAlignment="Center" Margin="5,5,5,5" FontSize="20" Foreground="#FF9B2525"/>
             <TabControl FlowDirection="RightToLeft" Background="#FFECE7E7" Width="auto" Margin="5,5,5,5"  >
                 <TabItem Header="مكان العمل" x:Name="work_tab" IsSelected="True" >
-                    <y:Work_Add></y:Work_Add>
+                    <y:Work_Add ></y:Work_Add>
         
                     <!--<TabItem.DataContext >
                         <model:Work>

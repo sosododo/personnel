@@ -63,6 +63,11 @@ namespace personnel.Views
                 MessageBox.Show("تمت  عملية الحذف  بنجاح");
                 IEnumerable a = db.Certificates.Where(mw => mw.CertName != null).ToList();
                 cert_grid.ItemsSource = a;
+                up_but.IsEnabled = false;
+                del_but.IsEnabled = false;
+                add_but.IsEnabled = true;
+                cert.Text = "";
+                cert_grid.SelectedItem = null;
             }
             else
             { MessageBox.Show("يرجى اختيار سطر للحذف"); }
@@ -76,7 +81,7 @@ namespace personnel.Views
 
             {
                 var w = (Certificate)cert_grid.SelectedItem;
-                MessageBox.Show("أدخل القيمة الجديدة من فضلك");
+               
                 db.Certificates.Where(m => m.CertId == w.CertId);
                 w.CertName = cert.Text;
                
@@ -86,9 +91,33 @@ namespace personnel.Views
                 MessageBox.Show("تمت  عملية التعديل بنجاح");
                 IEnumerable a = db.Certificates.Where(mw => mw.CertName != null).ToList();
                 cert_grid.ItemsSource = a;
+                up_but.IsEnabled = false;
+                del_but.IsEnabled = false;
+                add_but.IsEnabled = true;
+             
+                cert_grid.SelectedItem = null;
 
             }
         }
+        private void select_item(object sender, RoutedEventArgs e)
+
+        {
+            if (cert_grid.SelectedItem != null)
+            {
+                Certificate c = (Certificate)cert_grid.SelectedItem;
+                cert.Text = c.CertName;
+                up_but.IsEnabled = true;
+                del_but.IsEnabled = true;
+                add_but.IsEnabled = false;
+
+            }
+
+
+
+
+
+        }
+
     }
-    }
+}
 

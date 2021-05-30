@@ -30,9 +30,10 @@ namespace personnel.Views
             List<string> workplaces = db.Works.Select(w => w.WorkPlace).ToList();
             workplace.ItemsSource = workplaces;
             workplace.SelectedIndex = 0;
-            List<string> ca = db.Jobs.Where(c => c.JobId > 89).Select(x => x.Category).ToList();
+            List<string> ca = db.Jobs.Where(c => c.JobId > 89).Select(x => x.Category).Distinct().ToList();
+           
+             
 
-          
             grade.ItemsSource = ca;
             List<string> cert = db.Certificates.Select(x => x.CertName).ToList();
             certificate.ItemsSource = cert;

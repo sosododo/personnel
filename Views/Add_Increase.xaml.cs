@@ -36,7 +36,7 @@ namespace personnel.Views
             if (Login.currentUser.Rule == "تدريسي")
             {
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && p.FileClass == "تدريسي")
+                       where (p.Status != "بحكم المستقيل" && p.Status != "كف اليد" && p.Status != "مصروف من الخدمة" && p.FileClass == "تدريسي")
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
@@ -46,7 +46,7 @@ namespace personnel.Views
             {
 
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && p.FileClass == "فني")
+                       where (p.Status != "بحكم المستقيل" && p.Status != "كف اليد" && p.Status != "مصروف من الخدمة"  && p.FileClass == "فني")
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
@@ -55,7 +55,7 @@ namespace personnel.Views
             else if (Login.currentUser.Rule == "معيد")
             {
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && p.FileClass == "معيد")
+                       where (p.Status != "بحكم المستقيل" && p.Status != "كف اليد" && p.Status != "مصروف من الخدمة" && p.FileClass == "معيد")
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
@@ -65,7 +65,7 @@ namespace personnel.Views
             else if (Login.currentUser.Rule == "الأولى")
             {
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && p.Category == "الأولى")
+                       where (p.Status != "بحكم المستقيل" && p.Status != "كف اليد" && p.Status != "مصروف من الخدمة" && p.Category == "الأولى")
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
@@ -75,7 +75,7 @@ namespace personnel.Views
             {
 
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && (p.Category == "الثانية/مخبريين" || p.Category== "الثانية/اداريين"))
+                       where (p.Status != "بحكم المستقيل" && p.Status != "كف اليد" && p.Status != "مصروف من الخدمة" && (p.Category == "الثانية/مخبريين" || p.Category== "الثانية/اداريين"))
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
@@ -84,7 +84,7 @@ namespace personnel.Views
             else if (Login.currentUser.Rule == "الثالثة")
             {
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && (p.Category == "الثالثة" || p.Category == "الرابعة"))
+                       where (p.Status != "بحكم المستقيل" && p.Status != "كف اليد" && p.Status != "مصروف من الخدمة" && (p.Category == "الثالثة" || p.Category == "الرابعة"))
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
@@ -94,7 +94,7 @@ namespace personnel.Views
             else if (Login.currentUser.Rule == "الخامسة")
             {
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && p.Category == "الخامسة")
+                       where (p.Status != "بحكم المستقيل" && p.Status != "كف اليد" && p.Status != "مصروف من الخدمة" && p.Category == "الخامسة")
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
@@ -104,7 +104,7 @@ namespace personnel.Views
             {
 
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله" && p.FileClass == "عقد")
+                       where (p.Status != "بحكم المستقيل" && p.Status != "كف اليد" && p.Status != "مصروف من الخدمة" && p.FileClass == "عقد")
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
@@ -113,7 +113,7 @@ namespace personnel.Views
             else if (Login.currentUser.Rule == "admin")
             {
                 emp = (from p in db.SelfCards
-                       where (p.Status == "قائم على رأس عمله")
+                       where (p.Status != "بحكم المستقيل" && p.Status != "كف اليد" && p.Status != "مصروف من الخدمة")
                        select p.FirstName + " " + p.FatherName + " " + p.LastName).ToList<string>();
 
 
@@ -140,8 +140,8 @@ namespace personnel.Views
 
 
             var emp_id = (from Z in db.SelfCards
-                          where Z.Status == "قائم على رأس عمله"
-                          select new { Z.PersonId, full = Z.FirstName + " " + Z.FatherName + " " + Z.LastName, Z.Salary,Z.maxsalary }).ToList();
+                          where Z.Status != "بحكم المستقيل" && Z.Status != "كف اليد" && Z.Status != "مصروف من الخدمة"
+                          select new { Z.PersonId, full = Z.FirstName + " " + Z.FatherName + " " + Z.LastName, Z.Salary,Z.maxsalary,Z.Status }).ToList();
             foreach (string ss in emp.ToList())
             {
 
@@ -156,21 +156,42 @@ namespace personnel.Views
                 }
                 else
                 {
-                    SalaryIncrease sn = new SalaryIncrease
+                    if (id.Status == "متقاعد") {
+                        SalaryIncrease sn = new SalaryIncrease
+                        {
+                            PersonId = eid,
+                            DecisionId = long.Parse(dec_id.Text),
+                            SalaryBefore = before,
+                            SalaryAfter = before + long.Parse(off.Text),
+                            Increase = long.Parse(off.Text),
+                        };
+                        db.SalaryIncrease.Add(sn);
+                        db.SaveChanges();
+                        var self = db.SelfCards.Where(x => x.PersonId == eid).Single();
+                        self.Salary = before + long.Parse(off.Text);
+                        self.maxsalary = id.maxsalary + long.Parse(off.Text);
+                        db.SelfCards.Update(self);
+                        db.SaveChanges();
+                    }
+                    else
                     {
-                        PersonId = eid,
-                        DecisionId = long.Parse(dec_id.Text),
-                        SalaryBefore = before,
-                        SalaryAfter = before + long.Parse(increase1.Text),
-                        Increase = long.Parse(increase1.Text),
-                    };
-                    db.SalaryIncrease.Add(sn);
-                    db.SaveChanges();
-                    var self = db.SelfCards.Where(x => x.PersonId == eid).Single();
-                    self.Salary = before + long.Parse(increase1.Text);
-                    self.maxsalary = id.maxsalary + long.Parse(increase1.Text);
-                    db.SelfCards.Update(self);
-                    db.SaveChanges();
+                        SalaryIncrease sn = new SalaryIncrease
+                        {
+                            PersonId = eid,
+                            DecisionId = long.Parse(dec_id.Text),
+                            SalaryBefore = before,
+                            SalaryAfter = before + long.Parse(increase1.Text),
+                            Increase = long.Parse(increase1.Text),
+                        };
+                        db.SalaryIncrease.Add(sn);
+                        db.SaveChanges();
+                        var self = db.SelfCards.Where(x => x.PersonId == eid).Single();
+                        self.Salary = before + long.Parse(increase1.Text);
+                        self.maxsalary = id.maxsalary + long.Parse(increase1.Text);
+                        db.SelfCards.Update(self);
+                        db.SaveChanges();
+                    }
+                  
 
 
                 }

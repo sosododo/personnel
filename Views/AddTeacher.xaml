@@ -414,7 +414,8 @@
                     <ComboBoxItem Content="كف اليد"/>
                     <ComboBoxItem Content="مصروف من الخدمة"/>
                     <ComboBoxItem Content="متقاعد"/>
-                    <ComboBoxItem Content="اجازة دراسية"/>
+                    <ComboBoxItem Content="اجازة دراسية بتمام الأجر"/>
+                    <ComboBoxItem Content="اجازة دراسية بلا أجر"/>
                     <ComboBoxItem Content="موفد خارجياً"/>
                     <ComboBoxItem Content="موفد داخلياً"/>
                     <ComboBoxItem Content="احتياط"/>
@@ -462,7 +463,7 @@
                     <ComboBoxItem Content="نقل "/>
                 </ComboBox>
 
-                <TextBox  Grid.Column="10" Grid.Row="4" Name="salary"/>
+                <TextBox  IsEnabled="False" Grid.Column="10" Grid.Row="4" Name="salary"/>
 
                 <TextBox  Grid.Column="6" Grid.Row="5" Name="photo" Text="{Binding Photo}"/>
                 <TextBox   Grid.Column="8" Grid.Row="5" Name="register" Text="{Binding Register}"/>

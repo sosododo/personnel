@@ -100,7 +100,8 @@ namespace personnel.Views
 
                     Employer = employer.Text,
                     JobTitle = job.Text,
-                    Salary = long.Parse(salary.Text),
+                    //  Salary = long.Parse(salary.Text),
+                    Salary = 0,
                     Workplace = workplace.Text,
                     Photo = photo.Text,
                     Section = dept.Text,

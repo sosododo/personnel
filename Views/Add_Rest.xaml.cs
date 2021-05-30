@@ -196,7 +196,7 @@ namespace personnel.Views
 
                         SelfCard person = new SelfCard();
                         person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
-                        person.Status = "اجازة دراسية";
+                        person.Status = "اجازة دراسية بتمام الأجر";
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                         dec_excute(); }
@@ -212,7 +212,7 @@ namespace personnel.Views
 
                             SelfCard person = new SelfCard();
                             person = db.SelfCards.Where(x => x.PersonId == empId).FirstOrDefault();
-                            person.Status = "اجازة دراسية";
+                            person.Status = "اجازة دراسية بلا أجر";
                             db.SelfCards.Update(person);
                             db.SaveChanges();
                             dec_excute();

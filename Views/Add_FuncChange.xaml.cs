@@ -151,6 +151,7 @@ namespace personnel.Views
                     {
                         status.Text = "قائم على رأس عمله";
                         person.Status = "قائم على رأس عمله";
+                        person.Salary =double.Parse(salary.Text);
                         db.SelfCards.Update(person);
                         db.SaveChanges();
                     }

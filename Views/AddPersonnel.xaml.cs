@@ -32,9 +32,9 @@ namespace personnel.Views
             List<string> workplaces = db.Works.Select(w => w.WorkPlace).ToList();
             workplace.ItemsSource = workplaces;
             workplace.SelectedIndex = 0;
-            List<string> cert = db.Certificates.Select(x => x.CertName).ToList();
-            certificate.ItemsSource = cert;
-            certificate.SelectedIndex = 0;
+        //    List<string> cert = db.Certificates.Select(x => x.CertName).ToList();
+        //    certificate.ItemsSource = cert;
+        //    certificate.SelectedIndex = 0;
         }
 
         private void Clear_Form(object sender, RoutedEventArgs e)
@@ -111,7 +111,8 @@ namespace personnel.Views
 
                     Employer = employer.Text,
                     JobTitle = job.Text,
-                    Salary = sal,
+                    //Salary = sal,
+                    Salary = 0,
                     Workplace = workplace.Text,
                     Photo = photo.Text,
                     Section = dept.Text,

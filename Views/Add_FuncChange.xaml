@@ -48,7 +48,7 @@
                 <TextBlock Text="اسم الموظف" Grid.Column="0" Grid.Row="1" Foreground="#FF633656"/>
                 <TextBlock Foreground="#FF633656" Grid.Column="4"   Grid.Row="2" Text="المهمة"/>
                 <TextBlock  Grid.Column="0" Text="الحالة" Grid.Row="3" Foreground="#FF633656"  />
-                <TextBlock  FlowDirection="RightToLeft" Text="الراتب" Grid.Column="2" Grid.Row="3" Foreground="#FF633656"/>
+                <TextBlock  FlowDirection="RightToLeft" Text="راتب بدء التعيين" Grid.Column="2" Grid.Row="3" Foreground="#FF633656"/>
                 <DatePicker Foreground="#FF633656"  VerticalAlignment="Center"  Margin="4,0,0,0" Grid.Column="3" Grid.Row="1"  Name="chandate1" Height="30"  />
                 <ComboBox Foreground="#FF633656"  Grid.Column="1" Grid.Row="2" Name="grade" DropDownClosed="grade_DropDownClosed" IsEditable="True" >
                     <ComboBoxItem Content="الأولى" />
@@ -83,7 +83,8 @@
                     <ComboBoxItem Content="كف اليد"/>
                     <ComboBoxItem Content="مصروف من الخدمة"/>
                     <ComboBoxItem Content="متقاعد"/>
-                    <ComboBoxItem Content="اجازة دراسية"/>
+                    <ComboBoxItem Content="اجازة دراسية بتمام الأجر"/>
+                    <ComboBoxItem Content="اجازة دراسية بلا أجر"/>
                     <ComboBoxItem Content="موفد خارجياً"/>
                     <ComboBoxItem Content="موفد داخلياً"/>
                     <ComboBoxItem Content="احتياط"/>

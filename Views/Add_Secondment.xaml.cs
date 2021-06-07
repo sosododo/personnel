@@ -144,8 +144,8 @@ namespace personnel.Views
                         SecondmentStart = sec_start.SelectedDate,
                         SecondmentEnd=sec_end.SelectedDate,
                         Notes=note.Text,
-                        JobTitle=id.JobTitle,Salary=id.Salary,Category=id.Category,Register=id.Register
-                      
+                        JobTitle=id.JobTitle,Salary=id.Salary,Category=id.Category,Register= Login.regName
+
 
                     };
                     db.Add(r);

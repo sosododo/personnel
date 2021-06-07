@@ -285,7 +285,7 @@ namespace personnel.Views
                         ChangeDate = (DateTime)chandate1.SelectedDate,
                         Status = status.Text,
                         Salary = double.Parse(salary.Text),
-                        JobTitle = job.Text
+                        JobTitle = job.Text,Register= Login.regName
 
                     };
                     db.FunctionalChanges.Add(fn);

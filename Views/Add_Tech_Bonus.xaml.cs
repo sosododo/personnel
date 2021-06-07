@@ -99,7 +99,7 @@ namespace personnel.Views
             int days;
             var emp_id = (from d in db.SelfCards
             where d.Status == "قائم على رأس عمله"
-            select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName,d.Salary ,d.maxsalary }).ToList();
+            select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName,d.Salary ,d.maxsalary,d.Workplace,d.JobTitle,d.Category }).ToList();
 
 
 
@@ -158,8 +158,11 @@ namespace personnel.Views
                                 ToYear = (DateTime)to.SelectedDate,
                                 Salary = (double)id.Salary,
                                 NumDays = (int)allDays,
-                                SalaryBouns = (double)(id.Salary + ((allDays / 720) * (0.09 * id.Salary)))
-
+                                SalaryBouns = (double)(id.Salary + ((allDays / 720) * (0.09 * id.Salary))),
+                                 Workplace = id.Workplace,
+                                JobTitle = id.JobTitle,
+                                Category = id.Category,
+                                Register = Login.regName
 
                             };
                             db.Bonuses.Add(r);

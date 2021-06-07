@@ -195,7 +195,7 @@ namespace personnel.Views
                                 Salary = (double)id.Salary,
                                 NumDays = (int)allDays,
                                 SalaryBouns = (double)(id.Salary + ((allDays / 720) * (0.09 * id.Salary))),
-                                Workplace=id.Workplace,JobTitle=id.JobTitle,Category=id.Category,Register=id.Register
+                                Workplace=id.Workplace,JobTitle=id.JobTitle,Category=id.Category,Register=Login.regName
 
 
 
@@ -231,7 +231,7 @@ namespace personnel.Views
                                 Workplace = id.Workplace,
                                 JobTitle = id.JobTitle,
                                 Category = id.Category,
-                                Register = id.Register
+                                Register = Login.regName
 
 
                             };
@@ -269,7 +269,7 @@ namespace personnel.Views
                             Workplace = id.Workplace,
                             JobTitle = id.JobTitle,
                             Category = id.Category,
-                            Register = id.Register
+                            Register = Login.regName
 
 
 

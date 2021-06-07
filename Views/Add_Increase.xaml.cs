@@ -168,7 +168,7 @@ namespace personnel.Views
                             Category = id.Category,
                             Workplace = id.Workplace,
                             JobTitle = id.JobTitle,
-                            Register = id.Register 
+                            Register = Login.regName
                         };
                         db.SalaryIncrease.Add(sn);
                         db.SaveChanges();

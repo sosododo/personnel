@@ -163,7 +163,8 @@ namespace personnel.Views
                             ScarStart = del_start.SelectedDate,
                             ScarEnd = del_end.SelectedDate,
                             Notes = note.Text,
-                            JobTitle=id.JobTitle,Category=id.Category,Register=id.Register,Salary=id.Salary
+                            JobTitle=id.JobTitle,Category=id.Category,Register= Login.regName,
+                            Salary=id.Salary
                         };
                         db.Scars.Add(del);
                         db.SaveChanges();

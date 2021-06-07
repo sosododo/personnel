@@ -23,6 +23,7 @@ namespace personnel.Views
         PersonelDBContext db = new PersonelDBContext();
         public static User currentUser = new User();
         public static int user_id;
+        public static string regName;
         public Login()
         {
             InitializeComponent();
@@ -47,6 +48,7 @@ namespace personnel.Views
                 login_user = user1.FirstOrDefault();
                 App.Current.Properties["user_id"] = login_user.UserId;
                 rule = login_user.Rule;
+                regName = login_user.UserName;
                 win1.currentu.Text = "أهلا بك"+" " + login_user.UserName;
                 switch (rule)
                 {

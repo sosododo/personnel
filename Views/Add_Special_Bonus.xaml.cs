@@ -66,7 +66,7 @@ namespace personnel.Views
             //emp = empname.Text;///////////
             var id = (from x in db.SelfCards
                       where x.FirstName + " " + x.FatherName + " " + x.LastName == emp_list.Text
-                      select new { x.PersonId, x.Salary, x.maxsalary, x.Category }).Single();
+                      select new { x.PersonId, x.Salary, x.maxsalary, x.Category,x.Workplace,x.JobTitle }).Single();
 
 
             double amount = 0;
@@ -112,7 +112,11 @@ namespace personnel.Views
                         ToYear = null,
                         Salary = (double)id.Salary,
                         NumDays = 0,
-                        SalaryBouns = (double)(id.Salary + amount)
+                        SalaryBouns = (double)(id.Salary + amount),
+                        Workplace = id.Workplace,
+                        JobTitle = id.JobTitle,
+                        Category = id.Category,
+                        Register = Login.regName
 
 
                     };

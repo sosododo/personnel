@@ -299,7 +299,7 @@ namespace personnel.Views
                 RestPeriod = Int32.Parse(perod.Text),
                 Attachment = att.Text,
                 Notes = note.Text,
-                Salary=id.Salary,Workplace=id.Workplace,JobTitle=id.JobTitle,Category=id.Category,Register=id.Register
+                Salary=id.Salary,Workplace=id.Workplace,JobTitle=id.JobTitle,Category=id.Category,Register= Login.regNames
 
             };
             db.Rests.Add(r);

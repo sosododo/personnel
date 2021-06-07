@@ -152,8 +152,8 @@ namespace personnel.Views
                         Notes = note.Text,
                         JobTitle=id.JobTitle,
                         Salary=id.Salary,Category=id.Category,
-                        Register=id.Register
-                       
+                        Register= Login.regName
+
                     };
                     db.Delegatings.Add(del);
                     db.SaveChanges();

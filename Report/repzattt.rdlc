@@ -2,18 +2,18 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="personnelDataSet1">
+    <DataSource Name="personnelDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>015fbf0b-ae1a-45f7-bf91-60a6ff88f620</rd:DataSourceID>
+      <rd:DataSourceID>ded0e691-2226-44a5-b862-d5c0a7f92944</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>personnelDataSet1</DataSourceName>
+        <DataSourceName>personnelDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -195,8 +195,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>personnelDataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>personnelDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet.xsd</rd:SchemaPath>
         <rd:TableName>al</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -205,7 +205,7 @@
     </DataSet>
     <DataSet Name="DataSet2">
       <Query>
-        <DataSourceName>personnelDataSet1</DataSourceName>
+        <DataSourceName>personnelDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -237,10 +237,14 @@
           <DataField>decision_year</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="register">
+          <DataField>register</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>personnelDataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>personnelDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet.xsd</rd:SchemaPath>
         <rd:TableName>zat_fun</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -249,7 +253,7 @@
     </DataSet>
     <DataSet Name="DataSet3">
       <Query>
-        <DataSourceName>personnelDataSet1</DataSourceName>
+        <DataSourceName>personnelDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -355,8 +359,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>personnelDataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>personnelDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet.xsd</rd:SchemaPath>
         <rd:TableName>zat_pun</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -365,7 +369,7 @@
     </DataSet>
     <DataSet Name="DataSet4">
       <Query>
-        <DataSourceName>personnelDataSet1</DataSourceName>
+        <DataSourceName>personnelDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -465,10 +469,30 @@
           <DataField>attachment1</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="work_place">
+          <DataField>work_place</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="job_title">
+          <DataField>job_title</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="category">
+          <DataField>category</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="register">
+          <DataField>register</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="salary">
+          <DataField>salary</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>personnelDataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>personnelDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet.xsd</rd:SchemaPath>
         <rd:TableName>zat_rest</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -477,7 +501,7 @@
     </DataSet>
     <DataSet Name="DataSet5">
       <Query>
-        <DataSourceName>personnelDataSet1</DataSourceName>
+        <DataSourceName>personnelDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -595,8 +619,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>personnelDataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>personnelDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet.xsd</rd:SchemaPath>
         <rd:TableName>zat_fun_first</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -605,7 +629,7 @@
     </DataSet>
     <DataSet Name="DataSet6">
       <Query>
-        <DataSourceName>personnelDataSet1</DataSourceName>
+        <DataSourceName>personnelDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -629,10 +653,14 @@
           <DataField>salary</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
+        <Field Name="register">
+          <DataField>register</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>personnelDataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>personnelDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\البعث\Source\Repos\sosododo\personnel\personnelDataSet.xsd</rd:SchemaPath>
         <rd:TableName>zat_fun1</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -834,14 +862,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="registered_id">
+                        <Textbox Name="nation_id">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!registered_id.Value</Value>
+                                  <Value>=Fields!nation_id.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -850,7 +878,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>registered_id</rd:DefaultName>
+                          <rd:DefaultName>nation_id</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -861,6 +889,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -2887,7 +2916,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!register.Value</Value>
                                   <Style>
                                     <FontFamily>Times New Roman</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -3126,7 +3155,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>

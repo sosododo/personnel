@@ -91,11 +91,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>personnelDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Update="personnelDataSet1.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>personnelDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Update="personnel_dataset.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -161,10 +156,6 @@
     <None Update="personnelDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>personnelDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="personnelDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>personnelDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Update="personnel_dataset.xsd">
       <Generator>MSDataSetGenerator</Generator>

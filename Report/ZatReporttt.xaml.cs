@@ -120,7 +120,7 @@ namespace personnel.Report
 
                 //ZATDataSet1 dataset = new ZATDataSet1();
                 //FirstDataSet1 dataset2 = new FirstDataSet1();
-                personnelDataSet1 dataset= new personnelDataSet1();
+                personnelDataSet dataset= new personnelDataSet();
                
                 dataset.BeginInit();
                 reportDataSource1.Name = "DataSet1";
@@ -152,12 +152,12 @@ namespace personnel.Report
 
 
                 //fill data into WpfApplication4DataSet
-                personnelDataSet1TableAdapters.alTableAdapter sel = new personnelDataSet1TableAdapters.alTableAdapter();
-                personnelDataSet1TableAdapters.zat_funTableAdapter fun = new personnelDataSet1TableAdapters.zat_funTableAdapter();
-                personnelDataSet1TableAdapters.zat_punTableAdapter pun = new personnelDataSet1TableAdapters.zat_punTableAdapter();
-                personnelDataSet1TableAdapters.zat_restTableAdapter res = new personnelDataSet1TableAdapters.zat_restTableAdapter();
-                personnelDataSet1TableAdapters.zat_fun_firstTableAdapter fr = new personnelDataSet1TableAdapters.zat_fun_firstTableAdapter();
-                personnelDataSet1TableAdapters.zat_fun1TableAdapter fun1 = new personnelDataSet1TableAdapters.zat_fun1TableAdapter();
+                personnelDataSetTableAdapters.alTableAdapter sel = new personnelDataSetTableAdapters.alTableAdapter();
+                personnelDataSetTableAdapters.zat_funTableAdapter fun = new personnelDataSetTableAdapters.zat_funTableAdapter();
+                personnelDataSetTableAdapters.zat_punTableAdapter pun = new personnelDataSetTableAdapters.zat_punTableAdapter();
+                personnelDataSetTableAdapters.zat_restTableAdapter res = new personnelDataSetTableAdapters.zat_restTableAdapter();
+                personnelDataSetTableAdapters.zat_fun_firstTableAdapter fr = new personnelDataSetTableAdapters.zat_fun_firstTableAdapter();
+                personnelDataSetTableAdapters.zat_fun1TableAdapter fun1 = new personnelDataSetTableAdapters.zat_fun1TableAdapter();
                 sel.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 fun.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 pun.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;

@@ -118,7 +118,7 @@ namespace personnel.Views
 
 
 
-                var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName }).ToList();
+                var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName ,d.JobTitle,d.Salary,d.Category,d.Register}).ToList();
 
                 var id = emp_id.Where(d => d.full == emp_name.Text).ToList().ElementAt(0);
 
@@ -149,7 +149,11 @@ namespace personnel.Views
                         DelegatingCountry = country.Text,
                         DelegatingStart = del_start.SelectedDate,
                         DelegatingEnd = del_end.SelectedDate,
-                        Notes = note.Text
+                        Notes = note.Text,
+                        JobTitle=id.JobTitle,
+                        Salary=id.Salary,Category=id.Category,
+                        Register=id.Register
+                       
                     };
                     db.Delegatings.Add(del);
                     db.SaveChanges();

@@ -36,6 +36,23 @@ namespace personnel.Models
         [StringLength(50)]
         public string Notes { get; set; }
 
+        [Column("job_title")]
+        [StringLength(20)]
+        public string JobTitle { get; set; }
+
+
+        [Column("category")]
+        [StringLength(30)]
+        public string Category { get; set; }
+
+       
+
+        [Column("salary")]
+        public double? Salary { get; set; }
+
+        [Column("register")]
+        public string Register { get; set; }
+
         [ForeignKey(nameof(DecisionId))]
         [InverseProperty(nameof(Models.Decision.Delegatings))]
         public virtual Decision Decision { get; set; }

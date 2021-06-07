@@ -113,7 +113,7 @@ namespace personnel.Views
             {
               
 
-                    var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName }).ToList();
+                    var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName,d.Salary,d.Workplace,d.JobTitle,d.Category,d.Register }).ToList();
 
                    var  id = emp_id.Where(d => d.full == emp_name.Text).ToList().ElementAt(0);
 
@@ -275,7 +275,7 @@ namespace personnel.Views
         }
 
         public void dec_excute() {
-            var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName }).ToList();
+            var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName,d.Salary,d.Workplace,d.JobTitle,d.Category,d.Register }).ToList();
 
             var id = emp_id.Where(d => d.full == emp_name.Text).ToList().ElementAt(0);
 
@@ -298,7 +298,8 @@ namespace personnel.Views
                 Period = res_per,
                 RestPeriod = Int32.Parse(perod.Text),
                 Attachment = att.Text,
-                Notes = note.Text
+                Notes = note.Text,
+                Salary=id.Salary,Workplace=id.Workplace,JobTitle=id.JobTitle,Category=id.Category,Register=id.Register
 
             };
             db.Rests.Add(r);

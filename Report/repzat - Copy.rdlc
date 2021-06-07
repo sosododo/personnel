@@ -1969,7 +1969,7 @@
             <Top>2.28694in</Top>
             <Left>0.14458in</Left>
             <Height>0.26042in</Height>
-            <Width>6.99998in</Width>
+            <Width>6.99999in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -8781,8 +8781,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>0.1168in</Top>
-              <Left>0.11679in</Left>
+              <Top>0.12722in</Top>
+              <Left>0.1029in</Left>
               <Height>0.58112in</Height>
               <Width>5.20226in</Width>
               <ZIndex>1</ZIndex>

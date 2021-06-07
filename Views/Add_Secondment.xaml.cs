@@ -112,7 +112,7 @@ namespace personnel.Views
 
             try {
 
-                var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName }).ToList();
+                var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName,d.JobTitle,d.Salary,d.Category,d.Register }).ToList();
 
                 var id = emp_id.Where(d => d.full == emp_name.Text).ToList().ElementAt(0);
 
@@ -143,7 +143,8 @@ namespace personnel.Views
                         SecondmentPlace= place.Text,
                         SecondmentStart = sec_start.SelectedDate,
                         SecondmentEnd=sec_end.SelectedDate,
-                        Notes=note.Text
+                        Notes=note.Text,
+                        JobTitle=id.JobTitle,Salary=id.Salary,Category=id.Category,Register=id.Register
                       
 
                     };

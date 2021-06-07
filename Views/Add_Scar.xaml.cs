@@ -115,7 +115,7 @@ namespace personnel.Views
                 List<Scar> scars = new List<Scar>();
                
 
-                var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName }).ToList();
+                var emp_id = (from d in db.SelfCards select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName ,d.JobTitle,d.Category,d.Register,d.Salary }).ToList();
 
                 var id = emp_id.Where(d => d.full == emp_name.Text).ToList().ElementAt(0);
 
@@ -162,7 +162,8 @@ namespace personnel.Views
                             ScarPlace = country.Text,
                             ScarStart = del_start.SelectedDate,
                             ScarEnd = del_end.SelectedDate,
-                            Notes = note.Text
+                            Notes = note.Text,
+                            JobTitle=id.JobTitle,Category=id.Category,Register=id.Register,Salary=id.Salary
                         };
                         db.Scars.Add(del);
                         db.SaveChanges();

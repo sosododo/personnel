@@ -142,7 +142,7 @@ namespace personnel.Views
 
         private void print(object sender, RoutedEventArgs e)
         {
-            Window win = new Report.ZatReport(emp.PersonId);
+            Window win = new Report.ZatReporttt(emp.PersonId);
             win.Show();
 
         }

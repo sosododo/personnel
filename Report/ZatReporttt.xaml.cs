@@ -17,10 +17,10 @@ namespace personnel.Report
     /// <summary>
     /// Interaction logic for ZatReport.xaml
     /// </summary>
-    public partial class ZatReport : Window
+    public partial class ZatReporttt : Window
     {
        long id;
-        public ZatReport(long id1 )
+        public ZatReporttt(long id1 )
         {
             InitializeComponent();
             
@@ -118,12 +118,11 @@ namespace personnel.Report
                 Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new
                          Microsoft.Reporting.WinForms.ReportDataSource();
 
-                ZATDataSet1 dataset = new ZATDataSet1();
-                FirstDataSet1 dataset2 = new FirstDataSet1();
-                DataSet6 dataset3 = new DataSet6();
+                //ZATDataSet1 dataset = new ZATDataSet1();
+                //FirstDataSet1 dataset2 = new FirstDataSet1();
+                personnelDataSet1 dataset= new personnelDataSet1();
+               
                 dataset.BeginInit();
-                dataset2.BeginInit();
-                dataset3.BeginInit();
                 reportDataSource1.Name = "DataSet1";
                 reportDataSource2.Name = "DataSet2";
                 reportDataSource3.Name = "DataSet3";
@@ -136,8 +135,8 @@ namespace personnel.Report
                 reportDataSource2.Value = dataset.zat_fun;
                 reportDataSource3.Value = dataset.zat_pun;
                 reportDataSource4.Value = dataset.zat_rest;
-                reportDataSource5.Value = dataset2.zat_fun_first;
-                reportDataSource6.Value = dataset3.zat_fun1;
+                reportDataSource5.Value = dataset.zat_fun_first;
+                reportDataSource6.Value = dataset.zat_fun1;
                 ReportParameter rp = new ReportParameter("pid", id.ToString());
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
@@ -145,7 +144,7 @@ namespace personnel.Report
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
                 this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
-                this.reportViewer1.LocalReport.ReportPath = "./Report/repzat.rdlc";
+                this.reportViewer1.LocalReport.ReportPath = "./Report/repzattt.rdlc";
 
                 this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp });
 
@@ -153,12 +152,12 @@ namespace personnel.Report
 
 
                 //fill data into WpfApplication4DataSet
-                ZATDataSet1TableAdapters.alTableAdapter sel = new ZATDataSet1TableAdapters.alTableAdapter();
-                ZATDataSet1TableAdapters.zat_funTableAdapter fun = new ZATDataSet1TableAdapters.zat_funTableAdapter();
-                ZATDataSet1TableAdapters.zat_punTableAdapter pun = new ZATDataSet1TableAdapters.zat_punTableAdapter();
-                ZATDataSet1TableAdapters.zat_restTableAdapter res = new ZATDataSet1TableAdapters.zat_restTableAdapter();
-                FirstDataSet1TableAdapters.zat_fun_firstTableAdapter fr = new FirstDataSet1TableAdapters.zat_fun_firstTableAdapter();
-                DataSet6TableAdapters.zat_fun1TableAdapter fun1 = new DataSet6TableAdapters.zat_fun1TableAdapter();
+                personnelDataSet1TableAdapters.alTableAdapter sel = new personnelDataSet1TableAdapters.alTableAdapter();
+                personnelDataSet1TableAdapters.zat_funTableAdapter fun = new personnelDataSet1TableAdapters.zat_funTableAdapter();
+                personnelDataSet1TableAdapters.zat_punTableAdapter pun = new personnelDataSet1TableAdapters.zat_punTableAdapter();
+                personnelDataSet1TableAdapters.zat_restTableAdapter res = new personnelDataSet1TableAdapters.zat_restTableAdapter();
+                personnelDataSet1TableAdapters.zat_fun_firstTableAdapter fr = new personnelDataSet1TableAdapters.zat_fun_firstTableAdapter();
+                personnelDataSet1TableAdapters.zat_fun1TableAdapter fun1 = new personnelDataSet1TableAdapters.zat_fun1TableAdapter();
                 sel.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 fun.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
                 pun.Connection.ConnectionString = ConfigurationManager.ConnectionStrings["personelConfig"].ConnectionString;
@@ -175,8 +174,8 @@ namespace personnel.Report
                 fun.Fill(dataset.zat_fun,id);
                 pun.Fill(dataset.zat_pun,id);
                 res.Fill(dataset.zat_rest,id);
-                fr.Fill(dataset2.zat_fun_first,id);
-                fun1.Fill(dataset3.zat_fun1, id);
+                fr.Fill(dataset.zat_fun_first,id);
+                fun1.Fill(dataset.zat_fun1, id);
 
 
                 reportViewer1.RefreshReport();

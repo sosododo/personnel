@@ -14,6 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Report\repzattt.rdlc" />
     <None Remove="Statistics\jobstatis.rdlc" />
     <None Remove="Statistics\specstatis.rdlc" />
     <None Remove="Statistics\workstatis.rdlc" />
@@ -41,14 +42,14 @@
     <Resource Include="Icon\image1.jpg" />
     <Resource Include="Icon\login.jpg" />
     <Resource Include="Icon\pass.jpg" />
+    <Content Include="Report\repzattt.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
 	
     <Content Include="Report\rest_report.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Report\repzat - Copy.rdlc">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Report\repzat.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Statistics\specstatis.rdlc">
@@ -65,6 +66,11 @@
  
 
   <ItemGroup>
+    <Compile Update="DataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Update="DataSet6.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -84,6 +90,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>personnelDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="personnelDataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>personnelDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Update="personnel_dataset.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -131,6 +142,10 @@
  
 
   <ItemGroup>
+    <None Update="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
     <None Update="DataSet6.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSet6.Designer.cs</LastGenOutput>
@@ -146,6 +161,10 @@
     <None Update="personnelDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>personnelDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="personnelDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>personnelDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Update="personnel_dataset.xsd">
       <Generator>MSDataSetGenerator</Generator>

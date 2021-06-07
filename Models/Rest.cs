@@ -34,7 +34,27 @@ namespace personnel.Models
         [Column("period")]
         [StringLength(30)]
         public string Period { get; set; }
-       
+
+
+        [Column("job_title")]
+        [StringLength(20)]
+        public string JobTitle { get; set; }
+
+
+        [Column("category")]
+        [StringLength(30)]
+        public string Category { get; set; }
+
+        [Column("work_place")]
+        [StringLength(30)]
+        public string Workplace { get; set; }
+
+        [Column("salary")]
+        public double? Salary { get; set; }
+
+        [Column("register")]
+        public string Register { get; set; }
+
 
         [ForeignKey(nameof(DecisionId))]
         [InverseProperty(nameof(Models.Decision.Rests))]

@@ -127,6 +127,7 @@ namespace personnel.Views
 
         private void excute_increase(object sender, RoutedEventArgs e)
         {
+            
             try
             {
 
@@ -141,7 +142,7 @@ namespace personnel.Views
 
             var emp_id = (from Z in db.SelfCards
                           where Z.Status != "بحكم المستقيل" && Z.Status != "كف اليد" && Z.Status != "مصروف من الخدمة"
-                          select new { Z.PersonId, full = Z.FirstName + " " + Z.FatherName + " " + Z.LastName, Z.Salary,Z.maxsalary,Z.Status }).ToList();
+                          select new { Z.PersonId, full = Z.FirstName + " " + Z.FatherName + " " + Z.LastName, Z.Salary,Z.maxsalary,Z.Status, Z.JobTitle,Z.Workplace,Z.Category,Z.Register }).ToList();
             foreach (string ss in emp.ToList())
             {
 
@@ -164,6 +165,10 @@ namespace personnel.Views
                             SalaryBefore = before,
                             SalaryAfter = before + long.Parse(off.Text),
                             Increase = long.Parse(off.Text),
+                            Category = id.Category,
+                            Workplace = id.Workplace,
+                            JobTitle = id.JobTitle,
+                            Register = id.Register 
                         };
                         db.SalaryIncrease.Add(sn);
                         db.SaveChanges();

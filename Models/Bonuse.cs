@@ -29,6 +29,24 @@ namespace personnel.Models
         [Column("to_year", TypeName = "date")]
         public DateTime? ToYear { get; set; }
 
+        [Column("job_title")]
+        [StringLength(20)]
+        public string JobTitle { get; set; }
+
+
+        [Column("category")]
+        [StringLength(30)]
+        public string Category { get; set; }
+
+        [Column("work_place")]
+        [StringLength(30)]
+        public string Workplace { get; set; }
+
+
+        [Column("register")]
+        public string Register { get; set; }
+
+
         [ForeignKey(nameof(DecisionId))]
         [InverseProperty(nameof(Models.Decision.Bonuses))]
         public virtual Decision Decision { get; set; }

@@ -133,7 +133,7 @@ namespace personnel.Views
             int days;
             var emp_id = (from d in db.SelfCards
             where d.Status != "بحكم المستقيل" && d.Status != "كف اليد" && d.Status != "مصروف من الخدمة" && d.Status != "بلا أجر" && d.Status != "متوفى" && d.Status != "مستقيل" && d.Status != "متقاعد"
-                          select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName,d.Salary ,d.maxsalary }).ToList();
+                          select new { d.PersonId, full = d.FirstName + " " + d.FatherName + " " + d.LastName,d.Salary ,d.maxsalary,d.Workplace,d.JobTitle,d.Category,d.Register }).ToList();
 
             var id = emp_id.Where(d => d.full == list.Text).ToList().ElementAt(0);
 
@@ -194,7 +194,9 @@ namespace personnel.Views
                                 ToYear = (DateTime)to.SelectedDate,
                                 Salary = (double)id.Salary,
                                 NumDays = (int)allDays,
-                                SalaryBouns = (double)(id.Salary + ((allDays / 720) * (0.09 * id.Salary)))
+                                SalaryBouns = (double)(id.Salary + ((allDays / 720) * (0.09 * id.Salary))),
+                                Workplace=id.Workplace,JobTitle=id.JobTitle,Category=id.Category,Register=id.Register
+
 
 
                             };
@@ -225,7 +227,11 @@ namespace personnel.Views
                                 ToYear = (DateTime)to.SelectedDate,
                                 Salary = (double)id.Salary,
                                 NumDays = (int)allDays,
-                                SalaryBouns = (double)(id.Salary + (id.maxsalary - id.Salary))
+                                SalaryBouns = (double)(id.Salary + (id.maxsalary - id.Salary)),
+                                Workplace = id.Workplace,
+                                JobTitle = id.JobTitle,
+                                Category = id.Category,
+                                Register = id.Register
 
 
                             };
@@ -259,7 +265,13 @@ namespace personnel.Views
                             ToYear = (DateTime)to.SelectedDate,
                             Salary = (double)id.Salary,
                             NumDays = 0,
-                            SalaryBouns = (double)id.Salary
+                            SalaryBouns = (double)id.Salary,
+                            Workplace = id.Workplace,
+                            JobTitle = id.JobTitle,
+                            Category = id.Category,
+                            Register = id.Register
+
+
 
 
                         };
